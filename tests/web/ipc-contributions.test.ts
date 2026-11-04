@@ -49,7 +49,7 @@ describe('contribuciones mensuales del IPC', () => {
     expect(buildSourceLine(result, 'level')).toContain('Elaboración propia');
   });
 
-  it('exporta barras apiladas con los tres colores, unidad p.p. y nota de estimación', () => {
+  it('exporta barras apiladas con los tres colores, unidad p.p. y sin notas metodológicas', () => {
     const series = buildIpcContributions([general, ...categories]);
     const model = buildChartModel({ series, transform: 'level', range: '24m' })!;
     const option = exportTimeSeriesOption({
@@ -64,7 +64,7 @@ describe('contribuciones mensuales del IPC', () => {
     expect(bars[1]!.data.some((v) => v !== null && v < 0)).toBe(true);
     const svg = renderSvgString(option);
     expect(svg).toContain('p.p.');
-    expect(svg).toContain('Estimación propia');
+    expect(svg).not.toContain('Estimación propia');
     expect(svg).toContain('Núcleo');
   });
 });

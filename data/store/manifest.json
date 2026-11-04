@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
  "dataMode": "real",
- "generatedAt": "2026-11-04T15:05:22.314Z",
+ "generatedAt": "2026-11-04T18:02:24.563Z",
  "lastRun": {
-  "runId": "20261104T150251Z-60da",
-  "startedAt": "2026-11-04T15:02:51.010Z",
-  "finishedAt": "2026-11-04T15:05:22.314Z",
+  "runId": "20261104T180224Z-5585",
+  "startedAt": "2026-11-04T18:02:24.420Z",
+  "finishedAt": "2026-11-04T18:02:24.563Z",
   "ok": true,
   "partial": false
  },
@@ -152,6 +152,17 @@
    "totalRows": 325,
    "lastFullReconcileAt": "2026-11-04T15:05:22.117Z",
    "mode": "full"
+  },
+  "ipi_minero": {
+   "dataset": "ipi_minero",
+   "lastSuccessAt": "2026-11-04T18:02:24.431Z",
+   "lastAttemptAt": "2026-11-04T18:02:24.431Z",
+   "lastRunId": "20261104T180224Z-5585",
+   "ok": true,
+   "lastFullReconcileAt": "2026-11-04T18:02:24.431Z",
+   "mode": "full",
+   "rowsFetched": 5684,
+   "totalRows": 5684
   }
  },
  "series": {
@@ -1126,6 +1137,27 @@
    "lastPeriod": "2026-09",
    "count": 489,
    "retrievedAt": "2026-11-04T15:05:15.736Z",
+   "stale": false
+  },
+  "actividad.ipi_minero.total.orig": {
+   "firstPeriod": "2017-01",
+   "lastPeriod": "2026-08",
+   "count": 116,
+   "retrievedAt": "2026-11-04T18:02:24.431Z",
+   "stale": false
+  },
+  "actividad.ipi_minero.total.sa": {
+   "firstPeriod": "2017-01",
+   "lastPeriod": "2026-08",
+   "count": 116,
+   "retrievedAt": "2026-11-04T18:02:24.431Z",
+   "stale": false
+  },
+  "actividad.ipi_minero.total.tc": {
+   "firstPeriod": "2017-01",
+   "lastPeriod": "2026-08",
+   "count": 116,
+   "retrievedAt": "2026-11-04T18:02:24.431Z",
    "stale": false
   }
  }

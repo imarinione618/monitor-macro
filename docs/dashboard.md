@@ -40,7 +40,7 @@ SITE_BASE_PATH=/monitor-macro npm run build   # build con subruta (lo hace el wo
     rango (12m / 24m / 5 años / Todo), base 100 con período elegible, corte transversal. Usa
     `buildWideTable` de `src/core/views.ts`: mismos números que Sheets.
   - `chartOptions.ts`: opciones ECharts de pantalla y de exportación (1600×900, fondo blanco, título,
-    subtítulo con transformación/unidad/ajuste/período/base, fuente y notas completas al pie, aviso de
+    subtítulo con transformación/unidad/ajuste/período/base, fuente al pie sin notas metodológicas, aviso de
     datos sintéticos, sin tooltip ni controles, sin animación).
   - `csv.ts`: UTF-8 con BOM, `;`, coma decimal, fecha ISO + período canónico, valores sin redondear, faltante vacío.
   - `format.ts`: es-AR (coma decimal), hora de Buenos Aires. `kpi.ts`: tarjetas, sparklines, resumen de comercio.
@@ -49,7 +49,7 @@ SITE_BASE_PATH=/monitor-macro npm run build   # build con subruta (lo hace el wo
   - `exportRender.ts`: render fuera de pantalla — SVG (`renderer:'svg'`, también SSR en Node) y PNG
     (`renderer:'canvas'`, `pixelRatio` 3 → 4800×2700 px).
 - `components/` — `ChartPanel` (gráfico reutilizable con selectores, tabla accesible alternable, CSV/PNG/SVG,
-  fuente y notas), `SnapshotPanel` (barras horizontales del período elegido), `KpiCard`, `EChart`,
+  fuente al pie), `SnapshotPanel` (barras horizontales del período elegido), `KpiCard`, `EChart`,
   `Nav`, `StateMessages` (banner sintético, store vacío/ilegible), `PageIntro`.
 
 ## Criterios de presentación
@@ -68,7 +68,7 @@ La comparación usa meses calendario: faltantes o denominador no positivo produc
 
 - Sin doble eje. Líneas para series temporales; barras para saldo y composiciones (apiladas solo con
   magnitudes aditivas: nivel, acumulado, 12 meses; con % se pasa a líneas y se avisa).
-- Sin rojo/verde como juicio: subas y bajas con el mismo color; el signo lo dan el número y el eje.
+- En cortes interanuales y acumulados interanuales: positivos en azul `#1A4CC8`, negativos en magenta `#E32D91`, cero y nivel general en gris `#969696`. La regla se aplica a barras, tablas y exportaciones. En series temporales, el color sigue identificando la serie.
 - Tooltip: período largo ("agosto 2026"), serie, valor es-AR y unidad. Tabla `<table>` con `caption`.
 - Estados: carga (`loading.tsx`, "Cargando gráfico…"), store vacío (indica `npm run data:refresh`),
   error de lectura, datos conservados (`stale` → insignia en tarjeta/selector y aviso en el gráfico),

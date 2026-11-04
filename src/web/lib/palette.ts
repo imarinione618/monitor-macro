@@ -1,7 +1,7 @@
 /**
  * Paleta violeta-rojo del dashboard, con los tres colores prioritarios del usuario.
- * Los colores identifican SERIES, nunca juicios (no hay "verde = bueno / rojo = malo").
- * Las subas y bajas se muestran con el mismo color; el signo lo da el número y el eje.
+ * Series temporales: colores por serie. Cortes interanuales: azul positivo,
+ * magenta negativo y gris para el nivel general o cero, según el criterio del usuario.
  */
 
 export interface ChartTheme {
@@ -26,7 +26,7 @@ export const LIGHT_THEME: ChartTheme = {
   grid: '#e1e0d9',
   axis: '#c3c2b7',
   series: SERIES_PALETTE,
-  reference: '#52514e',
+  reference: '#969696',
 };
 
 export const DARK_THEME: ChartTheme = {
@@ -37,7 +37,7 @@ export const DARK_THEME: ChartTheme = {
   grid: '#2c2c2a',
   axis: '#383835',
   series: SERIES_PALETTE,
-  reference: '#c3c2b7',
+  reference: '#969696',
 };
 
 /** Exportación (PowerPoint): siempre fondo blanco puro, independiente del tema de pantalla. */

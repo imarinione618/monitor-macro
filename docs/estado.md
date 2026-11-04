@@ -6,11 +6,11 @@ _Última actualización: 2026-11-04_
 
 | Componente | Estado |
 |---|---|
-| **Ingesta API INDEC** | 13/13 datasets. 139 series verificadas con `data:check` (134 de la API + 5 derivadas). La 2.ª corrida no detecta cambios (idempotente). |
+| **Ingesta API INDEC** | 14 datasets. 142 series (137 de la API + 5 derivadas); 3 series del IPI minero incorporadas y verificadas el 2026-11-04. |
 | **Google Sheets** | 4 documentos creados en Mi unidad (OAuth de usuario). Idempotencia, preservación de pestañas y gráficos manuales y propagación de revisiones verificadas en los documentos reales. |
 | **Dashboard** | Sitio estático (`out/`) con datos reales; 6 rutas OK, también bajo subruta; escaneo de secretos OK. Publicado con GitHub Pages. |
 | **Validación** | Más de 50 cifras contrastadas con informes del INDEC y con variaciones publicadas por la API: coinciden dentro del redondeo. Hallazgos A1, A3, A4 y B2 corregidos; A2 documentado. Ver `docs/validacion.md`. |
-| **Pruebas** | 608 pruebas (core, ingest, sheets, web, validation). Instalación limpia verificada. |
+| **Pruebas** | 625 pruebas aprobadas (core, ingest, sheets, web, validation). |
 
 ### Documentos de Google Sheets
 Los 4 documentos (Actividad, Mercado laboral, Precios, Comercio exterior) están en Mi unidad del usuario. Sus IDs y links están en `config/sheets.local.json`, archivo local que no se publica.
@@ -35,6 +35,9 @@ Publicación inicial completada el 2026-11-04:
 - **Lista para activar (no activa):** GitHub Actions (`deploy/github-actions/update.yml`) para actualizar con el equipo apagado. Ver `docs/despliegue.md`.
 
 ## Cambios del dashboard — 2026-11-04
+- IPI minero incorporado en Actividad con sus tres ajustes; 116 meses por serie (ene-2017 a ago-2026), sin huecos ni nulos. Se incorpora a las próximas actualizaciones automáticas.
+- Notas y enlaces metodológicos retirados del pie de los gráficos; las exportaciones tampoco incluyen notas. Se conserva la fuente y la documentación técnica en el repositorio.
+- Cortes interanuales (incluidos acumulados interanuales): barras y valores de tabla positivos azules, negativos magenta, cero gris; el nivel general siempre gris. Misma regla en PNG/SVG.
 - Logo SVG de one618 Asset Management en el encabezado de todas las páginas, enlazado al resumen, con adaptación al tema oscuro y a pantallas pequeñas. Servido desde `public/` respetando la subruta de GitHub Pages.
 - Paleta violeta-rojo: prioridad a magenta `#E32D91`, azul `#1A4CC8` y gris `#969696`, también en exportaciones y minigráficos del resumen.
 - Precios incorpora barras apiladas de contribución mensual estimada: núcleo azul, estacionales gris y regulados magenta. Fórmula confirmada por el usuario: `100 × peso × (IPCcategoría_t − IPCcategoría_t−1) / IPCgeneral_t−1` (p.p.).
@@ -58,7 +61,7 @@ El proyecto vive en una carpeta local fuera de OneDrive desde el 2026-11-04. La 
 - **Tamaño de páginas:** el HTML de `/comercio` y `/actividad` pesa ~600 KB porque envía la historia completa.
 
 ## Próximos pasos sugeridos
-- **Series disponibles todavía no incorporadas:** IPI minero, tendencia-ciclo por bloque del IPI, subsectores públicos de salarios (121/122), incidencias del IPC, hogares 1 y 3 de las canastas.
+- **Series disponibles todavía no incorporadas:** aperturas del IPI minero, tendencia-ciclo por bloque del IPI manufacturero, subsectores públicos de salarios (121/122), incidencias del IPC, hogares 1 y 3 de las canastas.
 - **Fuentes complementarias:** SIPA y RIPTE (datos.gob.ar / MTEySS), como módulo separado.
 - **Dashboard:** recortar del lado del servidor la historia enviada al navegador según el rango.
 - **Pendientes de baja severidad de la validación:** B3, B4 y B5.

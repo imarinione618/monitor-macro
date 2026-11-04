@@ -163,6 +163,32 @@ export const ACTIVIDAD: SeriesDef[] = [
       headline: suf === 'sa' ? { order: 4, transform: 'pct_prev', compare: undefined } : undefined,
     }),
   ),
+  // ---------------- IPI minero: nivel general, base 2016=100
+  ...([
+    ['orig', 'original', 'Serie Original'],
+    ['sa', 'desestacionalizada', 'Serie Desestacionalizada'],
+    ['tc', 'tendencia-ciclo', 'Serie Tendencia-Ciclo'],
+  ] as const).map(([suf, adjustment, serie]): SeriesDef => ({
+    id: `actividad.ipi_minero.total.${suf}`,
+    topic: 'actividad',
+    family: 'ipi_minero',
+    name: `IPI minero — Nivel general, ${serie.toLowerCase()}`,
+    shortName: `IPI minero ${suf === 'orig' ? 'original' : suf === 'sa' ? 'desest.' : 'tend.-ciclo'}`,
+    frequency: 'M',
+    measure: 'index',
+    unit: 'Índice base 2016=100',
+    base: '2016=100',
+    seasonalAdjustment: adjustment,
+    geography: 'Total país',
+    priority: 1,
+    status: 'verificado',
+    source: { kind: 'api', dataset: 'ipi_minero', selector: { codigo_ClaNAE_2010: 'B', serie, tipo_de_indicador: 'Índice' } },
+    seasonalVariants: {
+      original: 'actividad.ipi_minero.total.orig',
+      desestacionalizada: 'actividad.ipi_minero.total.sa',
+      'tendencia-ciclo': 'actividad.ipi_minero.total.tc',
+    },
+  })),
   // ---------------- IPI manufacturero por bloques (divisiones CLaNAE 2004)
   // Serie original: "Cuadro 2"; desestacionalizada: "Cuadro 5" (la API publica SA para los 16 bloques).
   // Verificado con data:check (2026-11-04): 1 fila por período y serie.

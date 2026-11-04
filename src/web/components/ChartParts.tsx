@@ -5,7 +5,6 @@ import type { EChartsCoreOption } from 'echarts/core';
 import { downloadBlob, downloadUrl, renderPngDataUrl, renderSvgString } from '@/web/lib/exportRender';
 import { slugify } from '@/web/lib/format';
 import type { SeriesNotice } from '@/web/lib/meta';
-import type { SourceRef } from '@/web/lib/types';
 
 function stamp(): string {
   const d = new Date();
@@ -85,34 +84,10 @@ export function Notices({ notices }: { notices: SeriesNotice[] }) {
   );
 }
 
-export function SourceFooter({ source, sources, notes }: { source: string; sources: SourceRef[]; notes: string[] }) {
-  const links = sources.filter((s) => s.methodologyUrl);
+export function SourceFooter({ source }: { source: string }) {
   return (
     <footer className="chart-foot">
       <p className="chart-source">{source}</p>
-      {links.length > 0 && (
-        <p className="chart-method">
-          Metodología:{' '}
-          {links.map((s, i) => (
-            <span key={s.title}>
-              {i > 0 && ' · '}
-              <a href={s.methodologyUrl} target="_blank" rel="noopener noreferrer">
-                {s.title}
-              </a>
-            </span>
-          ))}
-        </p>
-      )}
-      {notes.length > 0 && (
-        <div className="chart-notes">
-          <p className="chart-notes-title">Notas metodológicas</p>
-          <ul>
-            {notes.map((n) => (
-              <li key={n}>{n}</li>
-            ))}
-          </ul>
-        </div>
-      )}
     </footer>
   );
 }

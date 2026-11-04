@@ -11,6 +11,7 @@ import { ADDITIVE_TRANSFORMS, type ChartModel, type SnapshotModel } from './char
 import { formatAxis, formatWithUnit } from './format';
 import { EXPORT_THEME, type ChartTheme } from './palette';
 import type { ChartKind } from './types';
+import { snapshotValueColor } from './snapshotColors';
 
 export const EXPORT_SIZE = { width: 1600, height: 900 } as const;
 export const EXPORT_PIXEL_RATIO = 3;
@@ -78,15 +79,6 @@ function footer(meta: ChartTextMeta, theme: ChartTheme, width: number, height: n
   const maxWidth = width - left * 2;
   const blocks: string[] = [];
   blocks.push(meta.source);
-  // Notas completas (nunca cortadas a mitad): se incluyen mientras entren en 5 líneas.
-  let budget = 5 - estimateLines(meta.source, maxWidth, fontSize);
-  for (const n of meta.notes ?? []) {
-    const txt = `Nota: ${n}`;
-    const l = estimateLines(txt, maxWidth, fontSize);
-    if (l > budget) break;
-    blocks.push(txt);
-    budget -= l;
-  }
   if (meta.synthetic) blocks.push(SYNTHETIC_WARNING);
   const lines = blocks.reduce((acc, b) => acc + estimateLines(b, maxWidth, fontSize), 0);
   const blockH = lines * lineH;
@@ -341,7 +333,7 @@ export function buildSnapshotOption({ snap, theme, mode, meta }: SnapshotOptionI
         animation: !exp,
         data: rows.map((r) => ({
           value: r.value,
-          itemStyle: { color: r.isReference ? theme.reference : theme.series[0] },
+          itemStyle: { color: snapshotValueColor(r.value, r.isReference, snap.transform, theme) },
         })),
         label: {
           show: true,

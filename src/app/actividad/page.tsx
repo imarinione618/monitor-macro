@@ -29,7 +29,7 @@ export default function ActividadPage() {
     <>
       <PageIntro title="Actividad">
         <p>
-          Estimador mensual de actividad económica (EMAE) e índice de producción industrial manufacturero (IPI). Variaciones mensuales solo sobre series
+          Estimador mensual de actividad económica (EMAE) e índices de producción industrial manufacturero y minero (IPI). Variaciones mensuales solo sobre series
           desestacionalizadas o tendencia-ciclo; la serie original se compara en forma interanual.
         </p>
       </PageIntro>
@@ -109,6 +109,17 @@ export default function ActividadPage() {
           />
         </>
       )}
+
+      <ChartPanel
+        title="IPI minero — Nivel general"
+        description="Índice base 2016=100. Serie original, desestacionalizada y tendencia-ciclo."
+        pool={poolWithVariants(['actividad.ipi_minero.total.orig'])}
+        options={['actividad.ipi_minero.total.orig']}
+        defaultSelected={['actividad.ipi_minero.total.orig']}
+        defaultAdjustment="desestacionalizada"
+        defaultTransform="level"
+        synthetic={synthetic}
+      />
 
       <Unavailable items={ACTIVIDAD_NO_DISPONIBLE} />
     </>

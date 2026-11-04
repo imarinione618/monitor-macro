@@ -16,7 +16,7 @@ import {
 import { buildSubtitle, buildTimeSeriesOption, effectiveKind, exportTimeSeriesOption, type ChartTextMeta } from '@/web/lib/chartOptions';
 import { toCsv } from '@/web/lib/csv';
 import { decimalsForUnit, formatNumber } from '@/web/lib/format';
-import { buildSourceLine, collectNotes, lastPeriodsLine, seriesNotices, uniqueSources } from '@/web/lib/meta';
+import { buildSourceLine, collectNotes, lastPeriodsLine, seriesNotices } from '@/web/lib/meta';
 import { assignColorSlots, MAX_SERIES } from '@/web/lib/palette';
 import { RANGE_LABELS, type ChartKind, type ClientSeries, type RangeId } from '@/web/lib/types';
 import { ChartToolbar, Notices, SourceFooter } from './ChartParts';
@@ -298,7 +298,7 @@ export function ChartPanel(props: ChartPanelProps) {
         )}
       </div>
 
-      <SourceFooter source={sourceLine} sources={uniqueSources(resolvedSeries)} notes={notes} />
+      <SourceFooter source={sourceLine} />
     </section>
   );
 }

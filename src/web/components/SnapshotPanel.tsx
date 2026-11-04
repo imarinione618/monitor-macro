@@ -7,8 +7,9 @@ import { buildSnapshotModel, transformLabel } from '@/web/lib/chartModel';
 import { buildSnapshotOption, exportSnapshotOption, type ChartTextMeta } from '@/web/lib/chartOptions';
 import { CSV_BOM, csvNumber } from '@/web/lib/csv';
 import { decimalsForUnit, formatNumber } from '@/web/lib/format';
-import { buildSourceLine, collectNotes, seriesNotices, uniqueSources } from '@/web/lib/meta';
+import { buildSourceLine, collectNotes, seriesNotices } from '@/web/lib/meta';
 import type { ClientSeries } from '@/web/lib/types';
+import { snapshotValueColor } from '@/web/lib/snapshotColors';
 import { ChartToolbar, Notices, SourceFooter } from './ChartParts';
 import { Segmented, Select } from './controls';
 import { EChart, useChartTheme } from './EChart';
@@ -104,7 +105,7 @@ export function SnapshotPanel({ title, description, series, referenceId, transfo
                 {snap.rows.map((r) => (
                   <tr key={r.id}>
                     <th scope="row">{r.name}</th>
-                    <td>{formatNumber(r.value, decimalsForUnit(snap.unit))}</td>
+                    <td style={{ color: snapshotValueColor(r.value, r.isReference, snap.transform, theme), fontWeight: r.isReference ? 700 : 600 }}>{formatNumber(r.value, decimalsForUnit(snap.unit))}</td>
                   </tr>
                 ))}
               </tbody>
@@ -112,7 +113,7 @@ export function SnapshotPanel({ title, description, series, referenceId, transfo
           </div>
         )}
       </div>
-      <SourceFooter source={sourceLine} sources={uniqueSources(series)} notes={notes} />
+      <SourceFooter source={sourceLine} />
     </section>
   );
 }
