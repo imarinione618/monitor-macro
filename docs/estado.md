@@ -9,7 +9,7 @@ _Última actualización: 2026-11-04_
 | **Ingesta API INDEC** | 14 datasets. 142 series (137 de la API + 5 derivadas); 3 series del IPI minero incorporadas y verificadas el 2026-11-04. |
 | **Google Sheets** | 4 documentos creados en Mi unidad (OAuth de usuario). Idempotencia, preservación de pestañas y gráficos manuales y propagación de revisiones verificadas en los documentos reales. |
 | **Dashboard** | Sitio estático (`out/`) con datos reales; 7 secciones, incluida Monetario con tres pestañas; subruta y escaneo de secretos OK. Publicación mediante GitHub Pages. |
-| **BCRA / Monetario** | 84 series oficiales, 439.907 observaciones reales; ingesta y catálogo independientes de Sheets. Tasas, depósitos/préstamos ARS/USD y agregados; IPC nacional reutilizado. |
+| **BCRA / Monetario** | 85 series oficiales, 440.224 observaciones reales; ingesta y catálogo independientes de Sheets. Incluye Otros198 y cálculos con componentes vigentes para resúmenes discontinuados en mayo. |
 | **Validación** | Más de 50 cifras contrastadas con informes del INDEC y con variaciones publicadas por la API: coinciden dentro del redondeo. Hallazgos A1, A3, A4 y B2 corregidos; A2 documentado. Ver `docs/validacion.md`. |
 | **Pruebas** | 660 pruebas aprobadas (core, ingest, monetary, sheets, web, validation); build estático y TypeScript OK. |
 

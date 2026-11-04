@@ -2,7 +2,7 @@
 
 Auditoría: 4 de noviembre de 2026. Fuente principal: [API BCRA vigente](https://www.bcra.gob.ar/apis-banco-central/), [documentación v4](https://www.bcra.gob.ar/documentacion-apis/?fileName=estadisticas-monetarias-v4), [manual técnico](https://www.bcra.gob.ar/archivos/Catalogo/Content/files/pdf/principales-variables-v4.pdf). Consulta sin autenticación y en modo lectura. No se escribe en las planillas de referencia.
 
-El catálogo oficial completo devuelve 1.610 variables; cada identificación se contrastó con descripción, tipo, frecuencia, moneda, unidad, fechas y metodología v4. El [catálogo declarativo](../src/monetary/catalog.ts) conserva estos metadatos y enlaza el endpoint exacto. Se ingieren 84 series, con historia completa disponible, sin recorte temporal. La interfaz consulta el almacén local y no depende operativamente de Google Sheets.
+El catálogo oficial completo devuelve 1.610 variables; cada identificación se contrastó con descripción, tipo, frecuencia, moneda, unidad, fechas y metodología v4. El [catálogo declarativo](../src/monetary/catalog.ts) conserva estos metadatos y enlaza el endpoint exacto. Se ingieren 85 series, con historia completa disponible, sin recorte temporal. La interfaz consulta el almacén local y no depende operativamente de Google Sheets.
 
 ## Contrato y actualización
 
@@ -32,9 +32,11 @@ El catálogo oficial completo devuelve 1.610 variables; cada identificación se 
 | Crédito garantía real | 112+113 | Hipotecarios + prendarios | Depósitos y préstamos |
 | Base monetaria | 15; cierre oficial 1606 | Millones ARS; cierre mensual1606 normalizado ×0,001 | Variables monetarias |
 | Circulante público | 17 | No confundir con circulación total ni efectivo en bancos18 | Variables monetarias |
-| M1 / M2 / M3 total diario | 1232 / 1233 / 1234 | No sumar entre sí: son agregados anidados | Variables monetarias |
+| M1 / M2 / M3 total diario | 17+69+85 / 17+69+85+86 / 17+69+91 | Cálculos propios desde2005;1232/1233/1234 se conservan históricos | Variables monetarias |
 | M1 / M2 / M3 total cierre mensual | 1612 / 1618 / 1624 | Miles a millones ARS ×0,001; cierre oficial | Variables monetarias |
-| M2 privado / transaccional privado | 1239 / 197 | Series oficiales distintas; la segunda resta vista remunerada jurídica | Variables monetarias |
+| M2 privado / transaccional privado | 17+69+94+95 / 197 | Primero cálculo propio; segundo oficial, resta vista remunerada jurídica | Variables monetarias |
+| Depósitos públicos ARS | 91−100 | Total menos privados, fechas comunes, neto de Uso FUCO | Depósitos y préstamos |
+| Otros pasivos BCRA ARS | 198 | Saldo diario oficial; historia desde15/07/2025 | Instrumentos por separado |
 | Base + instrumentos | 1248+1258+1260+1262 | Construcción propia con balance, fechas y moneda comunes | Variables monetarias |
 
 La agrupación comercial de la referencia incluye otros; esa categoría no vuelve a sumarse por separado en la composición agrupada. En la vista por líneas puede mostrarse individualmente. No se incluyen simultáneamente un total y sus componentes. En depósitos debe calcularse un residuo explícito si se grafican solo CC, CA y plazo.
@@ -53,7 +55,7 @@ Moneda de denominación no es unidad: la API etiqueta `ME` a series expresadas e
 
 1. **Mensuales992 y893 excluidos del catálogo operativo.** Declaran miles ARS, pero al aplicar esa escala quedan aproximadamente mil veces debajo del saldo diario comparable. Al31/08/2026, depósitos100=126.016.828 millones y992 bruto=125.898.002; préstamos117=106.542.291 millones y893 bruto=106.545.854. No se adivina una escala a partir de montos. Se requiere confirmación de BCRA; mientras tanto, se calcula cierre desde diarios. En contraste, base1606 bruto47.451.536.857 miles →47.451.536,857 millones coincide con15=47.451.537 millones (redondeo diario).
 2. **Depósitos públicos USD1494 excluido:** catálogo dice ML/millones ARS mientras metodología dice moneda extranjera. No se renombra como USD. El total públicoUSD puede construirse como107−108 en fechas comunes, con rótulo derivado; sus aperturas1495/1499/1501 sí especifican USD.
-3. **M1/M2/M3 diarios1232/1233/1234 terminan07/05/2026; M2privado1239 termina22/05/2026.** No se rellenan hasta el presente. Cierres1612/1618/1624 llegan a agosto2026 y son una convención distinta. Puede construirse un agregado derivado con componentes oficiales si se documenta identidad y fechas.
+3. **M1/M2/M3 diarios1232/1233/1234 y depósitos públicos1229/1230/1231 terminan07/05/2026; M2privado1239 termina22/05/2026.** Se conservan históricos y la vista principal usa cálculos propios con componentes vigentes, sin empalmar los valores antiguos. Cierres1612/1618/1624 llegan a agosto2026 y son una convención distinta. Ver identidades en [metodología](monetario-metodologia.md).
 4. **Caución:** no se atribuye al BCRA; hace falta una fuente de mercado verificable con plazo y convención. Los pases entre terceros150 no se renombran caución.
 5. **Remu:** 1196 significa tasa de vista remunerada de FCI, seguros y fiduciarios financieros. La correspondencia concreta quedó confirmada mediante el ID en Tasas!H3 y una observación histórica; ver [auditoría de referencias](monetario-referencias.md). No es tasa genérica de proveedores de servicios de pago ni tasa de política.
 6. **Política:**160 contiene regímenes distintos (LEBAC35d, corredor pases7d, LELIQ, pases1d, LEFI). La metodología documenta cada cambio y deja de anunciarse desde11/07/2025. No se empalma con TAMAR.

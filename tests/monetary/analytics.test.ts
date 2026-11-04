@@ -91,9 +91,10 @@ describe('Convenciones monetarias',()=>{
     expect(prepareSeries(s,{...opts,transform:'pct_mom'}).at(-1)?.value).toBeNull();
   });
   it('composición pública ARS reconcilia total/vista/plazo del mismo juego, sin mezclar CC contable',()=>{
-    const input=[make(1229,[['2026-05-07',27011173]]),make(1230,[['2026-05-07',9434436]]),make(1231,[['2026-05-07',16757781]]),make(1457,[['2026-05-07',16233622]])];
+    const values:[[number,number],...[number,number][]]=[[91,143958154],[100,116946981],[85,27969269],[94,19454864],[86,31328530],[95,30408499],[87,80480920.507],[96,63748389.507],[88,1413699.493],[97,1388449.493],[1457,16233622]];
+    const input=values.map(([id,value])=>make(id,[['2026-05-07',value]]));
     const residual=deriveMonetarySeries(input).find(s=>s.def.id==='monetario.residuo_depositos.publicos.ARS');
-    expect(residual?.observations[0]?.value).toBe(818956);
+    expect(residual?.observations[0]?.value).toBeCloseTo(818956);
     expect(9434436+16757781+residual!.observations[0]!.value!).toBe(27011173);
   });
   it('M1/M3 propios incluyen cheques ARS y excluyen período de cuasimonedas',()=>{

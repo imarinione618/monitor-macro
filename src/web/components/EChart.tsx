@@ -4,17 +4,11 @@ import { useEffect, useRef, useState } from 'react';
 import type { EChartsCoreOption } from 'echarts/core';
 import { echarts } from '@/web/lib/echarts';
 import { DARK_THEME, LIGHT_THEME, type ChartTheme } from '@/web/lib/palette';
+import { useDarkMode } from './ThemeToggle';
 
-/** Tema del gráfico según el esquema de color del sistema (claro/oscuro). */
+/** Respeta la preferencia explícita del monitor y, por defecto, la del sistema. */
 export function useChartTheme(): ChartTheme {
-  const [dark, setDark] = useState(false);
-  useEffect(() => {
-    const mq = window.matchMedia('(prefers-color-scheme: dark)');
-    const update = () => setDark(mq.matches);
-    update();
-    mq.addEventListener('change', update);
-    return () => mq.removeEventListener('change', update);
-  }, []);
+  const dark = useDarkMode();
   return dark ? DARK_THEME : LIGHT_THEME;
 }
 

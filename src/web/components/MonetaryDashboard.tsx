@@ -4,24 +4,19 @@ import { useMemo, useState } from 'react';
 import type { MonetaryDef, MonetarySeries } from '@/monetary/types';
 import type { IpcPoint } from '@/web/lib/monetaryChartModel';
 import { SECTOR_LABELS } from '@/web/lib/monetaryChartModel';
+import { selectableMonetarySeries } from '@/web/lib/monetarySelection';
 import { MonetaryChartPanel } from './MonetaryChartPanel';
 import { Segmented } from './controls';
 
 interface Props { series: MonetarySeries[]; ipc: IpcPoint[]; updatedAt: string | null; error?: string }
 
-/** Prefiere la diaria con su companion mensual; conserva mensuales independientes. */
-function selectable(series: MonetarySeries[]): MonetarySeries[] {
-  const companions = new Set(series.map(s => s.def.monthlyCompanionId).filter(Boolean));
-  const daily = new Set(series.filter(s => s.def.frequency === 'D').map(s => `${s.def.group}|${s.def.category}|${s.def.currency}|${s.def.sector}`));
-  return series.filter(s => !companions.has(s.def.id) && (s.def.frequency === 'D' || !daily.has(`${s.def.group}|${s.def.category}|${s.def.currency}|${s.def.sector}`)));
-}
 const ids = (series: MonetarySeries[], categories: string[]) => categories.flatMap(category => series.filter(s => s.def.category === category).slice(0, 1).map(s => s.def.id));
 
 export function MonetaryDashboard({ series, ipc, updatedAt, error }: Props) {
   const [tab, setTab] = useState('tasas');
   const [currency, setCurrency] = useState<'ARS' | 'USD'>('ARS');
   const [sector, setSector] = useState<'private' | 'public' | 'total'>('private');
-  const available = useMemo(() => selectable(series), [series]);
+  const available = useMemo(() => selectableMonetarySeries(series), [series]);
   const filter = (groups: MonetaryDef['group'][]) => available.filter(s => groups.includes(s.def.group));
   const passive = filter(['passive_rates', 'policy_rates']).filter(s => s.def.category !== 'spread');
   const active = filter(['active_rates']);
@@ -29,7 +24,7 @@ export function MonetaryDashboard({ series, ipc, updatedAt, error }: Props) {
   const stocks = filter(['deposits', 'loans']).filter(s => s.def.currency === currency && s.def.sector === sector && !s.def.id.includes('ratio'));
   const deposits = stocks.filter(s => s.def.group === 'deposits');
   const loans = stocks.filter(s => s.def.group === 'loans');
-  const totals = stocks.filter(s => s.def.category === 'total');
+  const totals = stocks.filter(s => s.def.category === 'total').sort((a, b) => Number(b.def.group === 'deposits') - Number(a.def.group === 'deposits'));
   const ratios = available.filter(s => (s.def.category === 'ratio' || s.def.id.includes('ratio')) && (s.def.currency === currency || s.def.id.endsWith(`.${currency}`)) && s.def.sector === sector);
   const base = filter(['base']).filter(s => s.def.category !== 'base_instrumentos');
   const instruments = filter(['instruments']);
@@ -38,7 +33,7 @@ export function MonetaryDashboard({ series, ipc, updatedAt, error }: Props) {
   const common = { allSeries: series, ipc, asOf: updatedAt ?? undefined };
   const panel = (title: string, pool: MonetarySeries[], categories?: string[], description?: string, mode: 'rate' | 'stock' | 'ratio' | 'composition' = 'stock', defaultTransform?: 'pct_mom') => <MonetaryChartPanel key={`${title}-${currency}-${sector}`} title={title} description={description} series={pool} defaultIds={categories ? ids(pool, categories) : undefined} mode={mode} defaultTransform={defaultTransform} {...common} />;
   const depositParts = sector === 'public'
-    ? currency === 'ARS' ? deposits.filter(s => [1230,1231].includes(s.def.bcraId) || s.def.id === 'monetario.residuo_depositos.publicos.ARS') : []
+    ? currency === 'ARS' ? deposits.filter(s => ['monetario.vista.publicos.ARS','monetario.plazo.publicos.ARS','monetario.residuo_depositos.publicos.ARS'].includes(s.def.id)) : []
     : deposits.filter(s => ['cuenta_corriente', 'caja_ahorro', 'plazo_fijo', 'plazo_fijo_no_ajustable', 'plazo_fijo_ajustable', 'otros', 'cedro', 'residual', 'residuo'].includes(s.def.category));
   const loanParts = loans.filter(s => ['adelantos', 'documentos', 'hipotecarios', 'prendarios', 'personales', 'tarjetas', 'otros', 'residual', 'residuo'].includes(s.def.category));
 
@@ -72,11 +67,11 @@ export function MonetaryDashboard({ series, ipc, updatedAt, error }: Props) {
     </div>}
     {tab === 'variables' && <div role="tabpanel" id="monetary-pane-variables" aria-labelledby="monetary-tab-variables">
       {panel('Base monetaria y componentes', base, ['base_monetaria', 'circulante_publico'], 'La base monetaria se compara con sus componentes; no se suman nuevamente componentes incluidos en el total.')}
-      {panel('Instrumentos monetarios por separado', instruments, undefined, 'Cada instrumento conserva emisor, naturaleza y vigencia. Pases activos y títulos del Tesoro no se suman como pasivos monetarios del BCRA.')}
+      {panel('Instrumentos monetarios por separado', instruments, ['pases_pasivos_imd', 'pases_activos_imd', 'otros'], 'Cada instrumento conserva emisor, naturaleza y vigencia. Otros corresponde a otros pasivos del BCRA en ARS (serie 198).')}
       {aggregateTotal.length > 0 ? panel('Base monetaria más instrumentos elegibles', aggregateTotal, undefined, 'Construcción propia con componentes auditados, fechas comunes y sin imputar cero a datos faltantes. La historia del total puede terminar antes que la de sus componentes: un instrumento sin dato impide calcular un total actual.') : <p className="monetary-status">Base monetaria más instrumentos: total no disponible cuando falta un componente elegible o no existe cobertura simultánea. Los instrumentos se pueden consultar individualmente.</p>}
       {panel('Composición de base monetaria e instrumentos elegibles', available.filter(s => [1248, 1258, 1260, 1262].includes(s.def.bcraId)), undefined, 'Construcción propia v1 = base monetaria contable + otras letras BCRA en ARS + LELIQ/NOTALIQ + pases pasivos. Excluye activos, LEFI del Tesoro y componentes ya incluidos en la base.', 'composition')}
-      {panel('Agregados monetarios privados', aggregates.filter(s => s.def.sector === 'private'), ['m1', 'm2', 'm3'], 'M2 y M2 transaccional oficiales. M1 y M3 privados: construcciones propias sobre componentes oficiales desde 2005; consultá la definición de cada serie.')}
-      {panel('Agregados monetarios totales', aggregates.filter(s => s.def.sector === 'total'), ['m1', 'm2', 'm3'], 'Se conserva la convención de cada serie oficial; promedio y cierre no se intercambian.')}
+      {panel('Agregados monetarios privados', aggregates.filter(s => s.def.sector === 'private'), ['m1', 'm2', 'm3'], 'M1, M2 y M3 privados: cálculos propios con componentes de la API BCRA desde 2005. M2 transaccional: serie oficial.')}
+      {panel('Agregados monetarios totales', aggregates.filter(s => s.def.sector === 'total'), ['m1', 'm2', 'm3'], 'M1, M2 y M3: cálculos propios con componentes de la API BCRA desde 2005. Para cierres mensuales se prioriza la serie oficial compatible; promedio y cierre no se intercambian.')}
     </div>}
   </div>;
 }

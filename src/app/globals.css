@@ -137,6 +137,10 @@ h3 {
   padding: 0 16px;
 }
 
+.header-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+.theme-toggle { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+@media (max-width: 640px) { .header-actions { align-items: flex-start; } }
+
 .skip {
   position: absolute;
   left: -9999px;

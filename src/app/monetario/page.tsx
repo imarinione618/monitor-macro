@@ -9,5 +9,5 @@ export const metadata: Metadata = { title: 'Monetario' };
 
 export default async function MonetarioPage() {
   const data = await getMonetaryPageData();
-  return <><PageIntro title="Monetario"><p>Tasas, depósitos, préstamos y agregados monetarios con datos oficiales del BCRA. Saldos mensuales, fechas propias por serie y valores reales con el IPC nacional del INDEC.</p></PageIntro><MonetaryDashboard {...data} /></>;
+  return <><PageIntro title="Monetario"><p>Tasas, depósitos, préstamos y agregados descargados directamente de la API BCRA v4. Saldos mensuales, fechas propias por serie y valores reales con el IPC nacional del INDEC. Las construcciones desde componentes oficiales se identifican como cálculos propios.</p></PageIntro><MonetaryDashboard {...data} /></>;
 }

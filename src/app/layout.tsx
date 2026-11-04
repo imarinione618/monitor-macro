@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import Link from 'next/link';
 import './globals.css';
 import { Nav } from '@/web/components/Nav';
+import { ThemeToggle } from '@/web/components/ThemeToggle';
 import { SyntheticBanner } from '@/web/components/StateMessages';
 import { formatDateTimeAR } from '@/web/lib/format';
 import { getStoreState } from '@/web/server/store';
@@ -30,7 +31,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   const synthetic = state.dataMode === 'synthetic';
   const basePath = (process.env.SITE_BASE_PATH || '').replace(/\/+$/, '');
   return (
-    <html lang="es-AR">
+    <html lang="es-AR" suppressHydrationWarning>
+      <head><script dangerouslySetInnerHTML={{ __html: "try{var t=localStorage.getItem('monitor-macro-theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t;}catch(e){}" }} /></head>
       <body className={synthetic ? 'is-synthetic' : undefined}>
         <a href="#contenido" className="skip">
           Saltar al contenido
@@ -47,7 +49,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 <span className="brand-sub">Datos oficiales del INDEC y BCRA</span>
               </p>
             </div>
-            <p className="updated">
+            <div className="header-actions"><ThemeToggle /><p className="updated">
               {state.updatedAt ? (
                 <>
                   Actualización INDEC: <time dateTime={state.updatedAt}>{formatDateTimeAR(state.updatedAt)}</time>{' '}
@@ -56,7 +58,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               ) : (
                 <span className="muted">Sin actualización registrada</span>
               )}
-            </p>
+            </p></div>
           </div>
           <div className="wrap">
             <Nav />

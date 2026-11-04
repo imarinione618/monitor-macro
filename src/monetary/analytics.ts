@@ -146,14 +146,25 @@ export function deriveMonetarySeries(input: MonetarySeries[]): MonetarySeries[] 
       retrievedAt:sources.map(s=>s.retrievedAt).sort()[0]!, stale:sources.some(s=>s.stale), ...(sources.some(s=>s.error) ? {error:'Un componente tiene datos conservados de una consulta anterior.'}: {})});
   };
   const sum = (v:number[]) => v.reduce((a,b)=>a+b,0);
+  // Los IDs resumidos 1229–1234/1239 dejaron de publicar en mayo de 2026.
+  // Construcciones completas desde componentes vigentes; nunca empalmar sus
+  // valores históricos, que pueden tener distinta precisión o revisiones.
+  const publicDef = {sector:'public' as const,coverage:'Entidades financieras; sector público no financiero; neto del Uso del Fondo Unificado de Cuentas Oficiales'};
+  add('depositos.publicos.ARS','Depósitos públicos ARS (total − privados)',[91,100],'total',v=>v[0]!-v[1]!,{...publicDef,methodology:'Cálculo propio: BCRA 91 − 100 en cada fecha común. Ambas series provienen directamente de la API BCRA v4 y mantienen datos posteriores a mayo de 2026. Neto del Uso del Fondo Unificado de Cuentas Oficiales. No se empalma con el ID histórico 1229.'});
+  add('vista.publicos.ARS','Vista pública ARS (cálculo propio)',[85,94,86,95],'vista',v=>v[0]!-v[1]!+v[2]!-v[3]!,{...publicDef,methodology:'API BCRA: (85 − 94) + (86 − 95), cuentas corrientes netas de Uso del Fondo Unificado + cajas de ahorro públicas, en fechas comunes. Sustituye en la vista principal al ID 1230 sin extender ni empalmar sus valores.'});
+  add('plazo.publicos.ARS','Plazo público ARS (cálculo propio)',[87,96,88,97],'plazo_fijo',v=>v[0]!-v[1]!+v[2]!-v[3]!,{...publicDef,methodology:'API BCRA: (87 − 96) + (88 − 97), depósitos públicos a plazo ajustables y no ajustables en fechas comunes. Construcción propia, sin empalmar el ID 1231.'});
+  add('residuo_depositos.publicos.ARS','Residuo depósitos públicos ARS',[91,100,85,94,86,95,87,96,88,97],'residuo',v=>v[0]!-v[1]!-(v[2]!-v[3]!+v[4]!-v[5]!)-(v[6]!-v[7]!+v[8]!-v[9]!),{...publicDef,methodology:'Residuo = (91 − 100) − [(85 − 94) + (86 − 95)] − [(87 − 96) + (88 − 97)]. Misma fecha y cobertura, sin mezclar cuentas contables 1457/1461 ni imputar ceros.'});
+  for (const [category, ids, officialMonthly] of [['m1',[17,69,85],1612],['m2',[17,69,85,86],1618],['m3',[17,69,91],1624]] as const) {
+    add(`${category}.total`,`${category.toUpperCase()} total (cálculo propio)`,[...ids],category,sum,{group:'aggregates',sector:'total',coverage:'Circulante + cheques cancelatorios ARS + depósitos de sectores público y privado no financieros',monthlyCompanionId:`monetario.bcra.${officialMonthly}`,methodology:`Construcción propia diaria desde 2005 con componentes API BCRA ${ids.join(' + ')} en fechas comunes. No se empalma con el agregado histórico terminado en mayo de 2026; puede diferir por precisión y revisiones de componentes. Cierre mensual: se prefiere la serie oficial ${officialMonthly} cuando está disponible.`});
+  }
+  add('m2.privado','M2 privado (cálculo propio)',[17,69,94,95],'m2',sum,{group:'aggregates',sector:'private',coverage:'Circulante + cheques cancelatorios ARS + depósitos privados no financieros',methodology:'Construcción propia desde 2005: API BCRA 17 + 69 + 94 + 95, fechas comunes. No se empalma con la serie histórica 1239 terminada en mayo de 2026; las revisiones y precisión de los componentes pueden generar diferencias históricas.'});
   add('m1.privado','M1 privado (construcción propia)',[17,69,94],'m1',sum,{group:'aggregates',sector:'private',coverage:'Circulante + cheques cancelatorios ARS + depósitos privados no financieros',methodology:'Construcción propia por fechas comunes desde2005: circulante17 + cheques cancelatorios69 + cuenta corriente privada94. Se excluye historia2003/04 que requeriría cuasimonedas. No es una nueva serie oficial.'});
   add('m3.privado','M3 privado (construcción propia)',[17,69,100],'m3',sum,{group:'aggregates',sector:'private',coverage:'Circulante + cheques cancelatorios ARS + depósitos privados no financieros',methodology:'Construcción propia por fechas comunes desde2005: circulante17 + cheques cancelatorios69 + depósitos privados100. Se excluye historia2003/04 que requeriría cuasimonedas. No es una nueva serie oficial.'});
-  for (const s of result.filter(s=>['monetario.m1.privado','monetario.m3.privado'].includes(s.def.id))) {
+  for (const s of result.filter(s=>/^monetario\.m[123]\.(privado|total)$/.test(s.def.id))) {
     s.observations=s.observations.filter(o=>o.date>='2005-01-01');
     s.def.firstDate=s.observations.find(o=>o.value!==null)?.date ?? '';
   }
   add('depositos.publicos.USD','Depósitos públicos USD (total − privados)',[107,108],'total',v=>v[0]!-v[1]!,{sector:'public',coverage:'Entidades financieras; sector público no financiero',methodology:'Construcción propia107−108 por fechas comunes, no financiero. Evita usar1494, cuya moneda y unidad declaradas son inconsistentes.'});
-  add('residuo_depositos.publicos.ARS','Residuo depósitos públicos ARS',[1229,1230,1231],'residuo',v=>v[0]!-v[1]!-v[2]!,{methodology:'Depósitos públicos1229 − vista1230 − plazo1231, mismo juego IMD y fechas comunes. No se mezcla con cuentas corrientes1457 y cajas1461, cuyo tratamiento del Fondo Unificado difiere.'});
   for (const [currency, offset] of [['ARS',0],['USD',8]] as const) {
     add(`comerciales.${currency}`,`Comerciales ${currency}`, [110+offset,111+offset,116+offset], 'comerciales', sum);
     add(`consumo.${currency}`,`Consumo ${currency}`, [114+offset,115+offset], 'consumo', sum);

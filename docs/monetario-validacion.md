@@ -2,7 +2,7 @@
 
 ## Resultado
 
-Se integran tres pestañas en la aplicación existente y tarjetas en Resumen. El catálogo operativo contiene84 series BCRA y439.907 observaciones históricas reales. El IPC nacional proviene del store INDEC existente. La ingesta está separada de Sheets y mantiene los últimos datos válidos ante fallas.
+Se integran tres pestañas en la aplicación existente y tarjetas en Resumen. El catálogo operativo contiene85 series BCRA y440.224 observaciones históricas reales, incluyendo317 de Otros198. El IPC nacional proviene del store INDEC existente. La ingesta está separada de Sheets y mantiene los últimos datos válidos ante fallas.
 
 ## Contraste de fuentes
 
@@ -36,7 +36,7 @@ Resultado global: **660 pruebas aprobadas en27 archivos**, build de producción 
 
 ## Correcciones de la auditoría final
 
-La composición pública ARS no puede sumar1457+1461+1231: al07/05/2026 da33.911.434millones frente al total1229 de27.011.173. Se usa vista1230+plazo1231+residuo(1229−1230−1231), de definición compatible. El test reproduce esa discrepancia.
+La composición pública ARS no puede sumar1457+1461+1231: al07/05/2026 da33.911.434millones frente al total1229 de27.011.173. Se usan los componentes vigentes descritos en [metodología](monetario-metodologia.md); el test verifica un residuo de818.956millones en esa fecha. Al29/10/2026, el total público91−100 es43.247.874millones. La prueba adicional verifica composición, fechas faltantes, agregados vigentes y prioridad de cierres oficiales. Se reconciliaron contra la API las historias completas de91/100/85/94/86/95/87/96/88/97/17/69, sin revisiones respecto del almacén.
 
 En USD público,107−108 da2.978millones al29/10/2026 y1495+1499+1501 suma2.843. Se conservan aperturas individuales; composición pública USD pendiente de auditar las modalidades del residuo135millones. Nunca se lo fuerza a cero.
 

@@ -32,9 +32,7 @@ export function MonetaryChartPanel({ title, description, series, allSeries, ipc,
   const [valueMode, setValueMode] = useState<'nominal' | 'real'>('nominal');
   const [transform, setTransform] = useState<MonetaryOptions['transform']>(defaultTransform);
   const [basePeriod, setBasePeriod] = useState('');
-  const latest = series.flatMap(s => s.observations.filter(o => o.value !== null).slice(-1).map(o => o.date)).sort().at(-1) ?? '';
-  const initialFrom = latest ? `${Number(latest.slice(0, 4)) - 2}${latest.slice(4, 7)}-01` : '';
-  const [from, setFrom] = useState(mode === 'composition' && series.some(s => s.def.eligibleInstrument) ? '' : initialFrom);
+  const [from, setFrom] = useState('2018-01-01');
   const [to, setTo] = useState('');
   const [showTable, setShowTable] = useState(false);
   const picked = useMemo(() => series.filter(s => selected.includes(s.def.id)), [series, selected]);
