@@ -9,6 +9,7 @@ on:
     paths:
       - 'data/store/**'
       - 'src/**'
+      - 'public/**'
       - 'package.json'
       - 'package-lock.json'
       - 'next.config.mjs'

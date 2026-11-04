@@ -35,6 +35,7 @@ Publicación inicial completada el 2026-11-04:
 - **Lista para activar (no activa):** GitHub Actions (`deploy/github-actions/update.yml`) para actualizar con el equipo apagado. Ver `docs/despliegue.md`.
 
 ## Cambios del dashboard — 2026-11-04
+- Logo SVG de one618 Asset Management en el encabezado de todas las páginas, enlazado al resumen, con adaptación al tema oscuro y a pantallas pequeñas. Servido desde `public/` respetando la subruta de GitHub Pages.
 - Paleta violeta-rojo: prioridad a magenta `#E32D91`, azul `#1A4CC8` y gris `#969696`, también en exportaciones y minigráficos del resumen.
 - Precios incorpora barras apiladas de contribución mensual estimada: núcleo azul, estacionales gris y regulados magenta. Fórmula confirmada por el usuario: `100 × peso × (IPCcategoría_t − IPCcategoría_t−1) / IPCgeneral_t−1` (p.p.).
 - Pesos conservados exactamente (0,679236; 0,113209; 0,208047). Se informa que suman 1,000492 y que los aportes estimados pueden diferir de la inflación general; no se presentan como incidencias oficiales.
