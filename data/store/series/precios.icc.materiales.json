@@ -1,0 +1,563 @@
+{
+ "id": "precios.icc.materiales",
+ "observations": [
+  {
+   "period": "2015-11",
+   "value": 9.3526
+  },
+  {
+   "period": "2015-12",
+   "value": 10.0005
+  },
+  {
+   "period": "2016-01",
+   "value": 10.6049
+  },
+  {
+   "period": "2016-02",
+   "value": 10.927
+  },
+  {
+   "period": "2016-03",
+   "value": 11.1243
+  },
+  {
+   "period": "2016-04",
+   "value": 11.3541
+  },
+  {
+   "period": "2016-05",
+   "value": 11.5659
+  },
+  {
+   "period": "2016-06",
+   "value": 11.6527
+  },
+  {
+   "period": "2016-07",
+   "value": 11.9242
+  },
+  {
+   "period": "2016-08",
+   "value": 12.0273
+  },
+  {
+   "period": "2016-09",
+   "value": 12.1712
+  },
+  {
+   "period": "2016-10",
+   "value": 12.3485
+  },
+  {
+   "period": "2016-11",
+   "value": 12.5811
+  },
+  {
+   "period": "2016-12",
+   "value": 12.7476
+  },
+  {
+   "period": "2017-01",
+   "value": 12.9847
+  },
+  {
+   "period": "2017-02",
+   "value": 13.2064
+  },
+  {
+   "period": "2017-03",
+   "value": 13.4651
+  },
+  {
+   "period": "2017-04",
+   "value": 13.6
+  },
+  {
+   "period": "2017-05",
+   "value": 13.8425
+  },
+  {
+   "period": "2017-06",
+   "value": 13.9945
+  },
+  {
+   "period": "2017-07",
+   "value": 14.2578
+  },
+  {
+   "period": "2017-08",
+   "value": 14.5663
+  },
+  {
+   "period": "2017-09",
+   "value": 14.8432
+  },
+  {
+   "period": "2017-10",
+   "value": 15.0749
+  },
+  {
+   "period": "2017-11",
+   "value": 15.3056
+  },
+  {
+   "period": "2017-12",
+   "value": 15.5454
+  },
+  {
+   "period": "2018-01",
+   "value": 15.9209
+  },
+  {
+   "period": "2018-02",
+   "value": 16.3706
+  },
+  {
+   "period": "2018-03",
+   "value": 16.7851
+  },
+  {
+   "period": "2018-04",
+   "value": 17.0665
+  },
+  {
+   "period": "2018-05",
+   "value": 18.1242
+  },
+  {
+   "period": "2018-06",
+   "value": 19.1449
+  },
+  {
+   "period": "2018-07",
+   "value": 19.9113
+  },
+  {
+   "period": "2018-08",
+   "value": 20.5266
+  },
+  {
+   "period": "2018-09",
+   "value": 23.4167
+  },
+  {
+   "period": "2018-10",
+   "value": 24.3614
+  },
+  {
+   "period": "2018-11",
+   "value": 24.7242
+  },
+  {
+   "period": "2018-12",
+   "value": 25.126
+  },
+  {
+   "period": "2019-01",
+   "value": 25.4355
+  },
+  {
+   "period": "2019-02",
+   "value": 25.8788
+  },
+  {
+   "period": "2019-03",
+   "value": 26.467
+  },
+  {
+   "period": "2019-04",
+   "value": 27.5773
+  },
+  {
+   "period": "2019-05",
+   "value": 28.1527
+  },
+  {
+   "period": "2019-06",
+   "value": 28.864
+  },
+  {
+   "period": "2019-07",
+   "value": 29.13
+  },
+  {
+   "period": "2019-08",
+   "value": 33.1946
+  },
+  {
+   "period": "2019-09",
+   "value": 34.7012
+  },
+  {
+   "period": "2019-10",
+   "value": 35.3816
+  },
+  {
+   "period": "2019-11",
+   "value": 36.9778
+  },
+  {
+   "period": "2019-12",
+   "value": 37.851
+  },
+  {
+   "period": "2020-01",
+   "value": 38.5215
+  },
+  {
+   "period": "2020-02",
+   "value": 39.0445
+  },
+  {
+   "period": "2020-03",
+   "value": 39.5322
+  },
+  {
+   "period": "2020-04",
+   "value": 40.4135
+  },
+  {
+   "period": "2020-05",
+   "value": 41.4912
+  },
+  {
+   "period": "2020-06",
+   "value": 43.2276
+  },
+  {
+   "period": "2020-07",
+   "value": 45.4047
+  },
+  {
+   "period": "2020-08",
+   "value": 47.8976
+  },
+  {
+   "period": "2020-09",
+   "value": 50.5651
+  },
+  {
+   "period": "2020-10",
+   "value": 54.5256
+  },
+  {
+   "period": "2020-11",
+   "value": 58.6156
+  },
+  {
+   "period": "2020-12",
+   "value": 62.2278
+  },
+  {
+   "period": "2021-01",
+   "value": 65.8825
+  },
+  {
+   "period": "2021-02",
+   "value": 68.8947
+  },
+  {
+   "period": "2021-03",
+   "value": 71.6446
+  },
+  {
+   "period": "2021-04",
+   "value": 74.5863
+  },
+  {
+   "period": "2021-05",
+   "value": 77.6519
+  },
+  {
+   "period": "2021-06",
+   "value": 80.457
+  },
+  {
+   "period": "2021-07",
+   "value": 82.72
+  },
+  {
+   "period": "2021-08",
+   "value": 85.4662
+  },
+  {
+   "period": "2021-09",
+   "value": 87.6786
+  },
+  {
+   "period": "2021-10",
+   "value": 90.7325
+  },
+  {
+   "period": "2021-11",
+   "value": 94.275
+  },
+  {
+   "period": "2021-12",
+   "value": 96.6557
+  },
+  {
+   "period": "2022-01",
+   "value": 100
+  },
+  {
+   "period": "2022-02",
+   "value": 103.462
+  },
+  {
+   "period": "2022-03",
+   "value": 107.6107
+  },
+  {
+   "period": "2022-04",
+   "value": 112.4662
+  },
+  {
+   "period": "2022-05",
+   "value": 117.4329
+  },
+  {
+   "period": "2022-06",
+   "value": 123.566
+  },
+  {
+   "period": "2022-07",
+   "value": 138.7613
+  },
+  {
+   "period": "2022-08",
+   "value": 151.1189
+  },
+  {
+   "period": "2022-09",
+   "value": 160.0642
+  },
+  {
+   "period": "2022-10",
+   "value": 169.5326
+  },
+  {
+   "period": "2022-11",
+   "value": 178.9748
+  },
+  {
+   "period": "2022-12",
+   "value": 187.7845
+  },
+  {
+   "period": "2023-01",
+   "value": 198.3486
+  },
+  {
+   "period": "2023-02",
+   "value": 208.5545
+  },
+  {
+   "period": "2023-03",
+   "value": 220.1213
+  },
+  {
+   "period": "2023-04",
+   "value": 235.7137
+  },
+  {
+   "period": "2023-05",
+   "value": 254.0687
+  },
+  {
+   "period": "2023-06",
+   "value": 272.1775
+  },
+  {
+   "period": "2023-07",
+   "value": 291.6898
+  },
+  {
+   "period": "2023-08",
+   "value": 356.4973
+  },
+  {
+   "period": "2023-09",
+   "value": 390.7705
+  },
+  {
+   "period": "2023-10",
+   "value": 445.9983
+  },
+  {
+   "period": "2023-11",
+   "value": 503.2131
+  },
+  {
+   "period": "2023-12",
+   "value": 746.2525
+  },
+  {
+   "period": "2024-01",
+   "value": 845.0518
+  },
+  {
+   "period": "2024-02",
+   "value": 898.355
+  },
+  {
+   "period": "2024-03",
+   "value": 943.6357
+  },
+  {
+   "period": "2024-04",
+   "value": 971.1659
+  },
+  {
+   "period": "2024-05",
+   "value": 985.5223
+  },
+  {
+   "period": "2024-06",
+   "value": 997.7098
+  },
+  {
+   "period": "2024-07",
+   "value": 1023.1878
+  },
+  {
+   "period": "2024-08",
+   "value": 1044.6464
+  },
+  {
+   "period": "2024-09",
+   "value": 1062.8946
+  },
+  {
+   "period": "2024-10",
+   "value": 1077.4854
+  },
+  {
+   "period": "2024-11",
+   "value": 1090.2384
+  },
+  {
+   "period": "2024-12",
+   "value": 1099.781
+  },
+  {
+   "period": "2025-01",
+   "value": 1113.1575
+  },
+  {
+   "period": "2025-02",
+   "value": 1134.275
+  },
+  {
+   "period": "2025-03",
+   "value": 1141.5012
+  },
+  {
+   "period": "2025-04",
+   "value": 1174.884
+  },
+  {
+   "period": "2025-05",
+   "value": 1181.2496
+  },
+  {
+   "period": "2025-06",
+   "value": 1193.0996
+  },
+  {
+   "period": "2025-07",
+   "value": 1210.5135
+  },
+  {
+   "period": "2025-08",
+   "value": 1233.5077
+  },
+  {
+   "period": "2025-09",
+   "value": 1268.7291
+  },
+  {
+   "period": "2025-10",
+   "value": 1294.7844
+  },
+  {
+   "period": "2025-11",
+   "value": 1313.4905
+  },
+  {
+   "period": "2025-12",
+   "value": 1334.3039
+  },
+  {
+   "period": "2026-01",
+   "value": 1353.4199
+  },
+  {
+   "period": "2026-02",
+   "value": 1373.3918
+  },
+  {
+   "period": "2026-03",
+   "value": 1397.7967
+  },
+  {
+   "period": "2026-04",
+   "value": 1439.0038,
+   "flags": [
+    "provisorio"
+   ],
+   "rawNote": "* Dato provisorio"
+  },
+  {
+   "period": "2026-05",
+   "value": 1461.5129,
+   "flags": [
+    "provisorio"
+   ],
+   "rawNote": "* Dato provisorio"
+  },
+  {
+   "period": "2026-06",
+   "value": 1488.008,
+   "flags": [
+    "provisorio"
+   ],
+   "rawNote": "* Dato provisorio"
+  },
+  {
+   "period": "2026-07",
+   "value": 1511.5749,
+   "flags": [
+    "provisorio"
+   ],
+   "rawNote": "* Dato provisorio"
+  },
+  {
+   "period": "2026-08",
+   "value": 1537.8917,
+   "flags": [
+    "provisorio"
+   ],
+   "rawNote": "* Dato provisorio"
+  },
+  {
+   "period": "2026-09",
+   "value": 1558.2057,
+   "flags": [
+    "provisorio"
+   ],
+   "rawNote": "* Dato provisorio"
+  }
+ ],
+ "meta": {
+  "firstPeriod": "2015-11",
+  "lastPeriod": "2026-09",
+  "retrievedAt": "2026-11-04T15:04:59.659Z",
+  "runId": "20261104T150251Z-60da",
+  "dataset": "icc_precios_construccion",
+  "query": "https://api.indec.gob.ar/v1/icc_precios_construccion?order=indicador%2Ccodigo_apertura%2Ccodigo_CPC_1%2Cclasificador%2Cnivel%2Cdescripcion%2Cperiodo%2Canio%2Cmes%2Ctipo_de_indicador%2Ctipo_de_indicador_descripcion%2Cregion%2Cunidad_de_medida",
+  "publishedAt": null,
+  "stale": false
+ }
+}

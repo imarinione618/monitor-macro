@@ -1,0 +1,63 @@
+# Publica el dashboard como sitio estático en GitHub Pages.
+# Se dispara cuando cambian los datos (data/store, subidos por la tarea diaria local)
+# o el código. No usa secretos: el sitio se genera desde los datos versionados.
+name: Publicar dashboard
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/store/**'
+      - 'src/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'next.config.mjs'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      TZ: America/Argentina/Buenos_Aires
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Pruebas
+        run: npm test
+      - id: pages
+        uses: actions/configure-pages@v5
+      - name: Generar sitio estático
+        run: npm run build
+        env:
+          SITE_BASE_PATH: ${{ steps.pages.outputs.base_path }}
+      - name: Verificar que el sitio no contenga secretos
+        run: npx vitest run tests/web/no-secrets.test.ts
+      - run: touch out/.nojekyll
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,242 @@
+[
+ {
+  "tipo_de_indicador_descripcion": "Var % interanual serie original",
+  "anio": 2004,
+  "mes": 1,
+  "periodo": "200401",
+  "tipo_de_indicador": "Variación porcentual",
+  "valor": null,
+  "valor_null": "///",
+  "observaciones": null
+ },
+ {
+  "tipo_de_indicador_descripcion": "Var % mensual serie desestacionalizada",
+  "anio": 2004,
+  "mes": 1,
+  "periodo": "200401",
+  "tipo_de_indicador": "Variación porcentual",
+  "valor": null,
+  "valor_null": "///",
+  "observaciones": null
+ },
+ {
+  "tipo_de_indicador_descripcion": "Var % mensual serie tendencia-ciclo",
+  "anio": 2004,
+  "mes": 1,
+  "periodo": "200401",
+  "tipo_de_indicador": "Variación porcentual",
+  "valor": null,
+  "valor_null": "///",
+  "observaciones": null
+ },
+ {
+  "tipo_de_indicador_descripcion": "Índice serie desestacionalizada",
+  "anio": 2004,
+  "mes": 1,
+  "periodo": "200401",
+  "tipo_de_indicador": "Índice base 2004=100",
+  "valor": 98.52915340919432,
+  "valor_null": null,
+  "observaciones": null
+ },
+ {
+  "tipo_de_indicador_descripcion": "Índice serie original",
+  "anio": 2004,
+  "mes": 1,
+  "periodo": "200401",
+  "tipo_de_indicador": "Índice base 2004=100",
+  "valor": 92.62750602691052,
+  "valor_null": null,
+  "observaciones": null
+ },
+ {
+  "tipo_de_indicador_descripcion": "Índice serie tendencia-ciclo",
+  "anio": 2004,
+  "mes": 1,
+  "periodo": "200401",
+  "tipo_de_indicador": "Índice base 2004=100",
+  "valor": 96.0498909638345,
+  "valor_null": null,
+  "observaciones": null
+ },
+ {
+  "tipo_de_indicador_descripcion": "Var % interanual serie original",
+  "anio": 2004,
+  "mes": 2,
+  "periodo": "200402",
+  "tipo_de_indicador": "Variación porcentual",
+  "valor": null,
+  "valor_null": "///",
+  "observaciones": null
+ },
+ {
+  "tipo_de_indicador_descripcion": "Var % mensual serie desestacionalizada",
+  "anio": 2004,
+  "mes": 2,
+  "periodo": "200402",
+  "tipo_de_indicador": "Variación porcentual",
+  "valor": -0.5109826073428678,
+  "valor_null": null,
+  "observaciones": null
+ },
+ {
+  "tipo_de_indicador_descripcion": "Var % mensual serie tendencia-ciclo",
+  "anio": 2004,
+  "mes": 2,
+  "periodo": "200402",
+  "tipo_de_indicador": "Variación porcentual",
+  "valor": 0.641651911463839,
+  "valor_null": null,
+  "observaciones": null
+ },
+ {
+  "tipo_de_indicador_descripcion": "Índice serie desestacionalizada",
+  "anio": 2004,
+  "mes": 2,
+  "periodo": "200402",
+  "tipo_de_indicador": "Índice base 2004=100",
+  "valor": 98.02568657211117,
+  "valor_null": null,
+  "observaciones": null
+ },
+ {
+  "tipo_de_indicador_descripcion": "Índice serie original",
+  "anio": 2004,
+  "mes": 2,
+  "periodo": "200402",
+  "tipo_de_indicador": "Índice base 2004=100",
+  "valor": 90.18617931655959,
+  "valor_null": null,
+  "observaciones": null
+ },
+ {
+  "tipo_de_indicador_descripcion": "Índice serie tendencia-ciclo",
+  "anio": 2004,
+  "mes": 2,
+  "periodo": "200402",
+  "tipo_de_indicador": "Índice base 2004=100",
+  "valor": 96.66619692516286,
+  "valor_null": null,
+  "observaciones": null
+ },
+ {
+  "tipo_de_indicador_descripcion": "Var % interanual serie original",
+  "anio": 2026,
+  "mes": 7,
+  "periodo": "202607",
+  "tipo_de_indicador": "Variación porcentual",
+  "valor": -1.4690865441220669,
+  "valor_null": null,
+  "observaciones": null
+ },
+ {
+  "tipo_de_indicador_descripcion": "Var % mensual serie desestacionalizada",
+  "anio": 2026,
+  "mes": 7,
+  "periodo": "202607",
+  "tipo_de_indicador": "Variación porcentual",
+  "valor": -2.8065440901734795,
+  "valor_null": null,
+  "observaciones": null
+ },
+ {
+  "tipo_de_indicador_descripcion": "Var % mensual serie tendencia-ciclo",
+  "anio": 2026,
+  "mes": 7,
+  "periodo": "202607",
+  "tipo_de_indicador": "Variación porcentual",
+  "valor": 0.013708698102510297,
+  "valor_null": null,
+  "observaciones": null
+ },
+ {
+  "tipo_de_indicador_descripcion": "Índice serie desestacionalizada",
+  "anio": 2026,
+  "mes": 7,
+  "periodo": "202607",
+  "tipo_de_indicador": "Índice base 2004=100",
+  "valor": 149.79189486575558,
+  "valor_null": null,
+  "observaciones": null
+ },
+ {
+  "tipo_de_indicador_descripcion": "Índice serie original",
+  "anio": 2026,
+  "mes": 7,
+  "periodo": "202607",
+  "tipo_de_indicador": "Índice base 2004=100",
+  "valor": 151.51213833845293,
+  "valor_null": null,
+  "observaciones": null
+ },
+ {
+  "tipo_de_indicador_descripcion": "Índice serie tendencia-ciclo",
+  "anio": 2026,
+  "mes": 7,
+  "periodo": "202607",
+  "tipo_de_indicador": "Índice base 2004=100",
+  "valor": 154.2959675312639,
+  "valor_null": null,
+  "observaciones": null
+ },
+ {
+  "tipo_de_indicador_descripcion": "Var % interanual serie original",
+  "anio": 2026,
+  "mes": 8,
+  "periodo": "202608",
+  "tipo_de_indicador": "Variación porcentual",
+  "valor": -1.744290968177853,
+  "valor_null": null,
+  "observaciones": null
+ },
+ {
+  "tipo_de_indicador_descripcion": "Var % mensual serie desestacionalizada",
+  "anio": 2026,
+  "mes": 8,
+  "periodo": "202608",
+  "tipo_de_indicador": "Variación porcentual",
+  "valor": 0.06598509944459874,
+  "valor_null": null,
+  "observaciones": null
+ },
+ {
+  "tipo_de_indicador_descripcion": "Var % mensual serie tendencia-ciclo",
+  "anio": 2026,
+  "mes": 8,
+  "periodo": "202608",
+  "tipo_de_indicador": "Variación porcentual",
+  "valor": 0.01555443359086972,
+  "valor_null": null,
+  "observaciones": null
+ },
+ {
+  "tipo_de_indicador_descripcion": "Índice serie desestacionalizada",
+  "anio": 2026,
+  "mes": 8,
+  "periodo": "202608",
+  "tipo_de_indicador": "Índice base 2004=100",
+  "valor": 149.8907351965427,
+  "valor_null": null,
+  "observaciones": null
+ },
+ {
+  "tipo_de_indicador_descripcion": "Índice serie original",
+  "anio": 2026,
+  "mes": 8,
+  "periodo": "202608",
+  "tipo_de_indicador": "Índice base 2004=100",
+  "valor": 147.75319588401308,
+  "valor_null": null,
+  "observaciones": null
+ },
+ {
+  "tipo_de_indicador_descripcion": "Índice serie tendencia-ciclo",
+  "anio": 2026,
+  "mes": 8,
+  "periodo": "202608",
+  "tipo_de_indicador": "Índice base 2004=100",
+  "valor": 154.31996739506695,
+  "valor_null": null,
+  "observaciones": null
+ }
+]

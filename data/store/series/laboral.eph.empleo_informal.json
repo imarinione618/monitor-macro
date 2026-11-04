@@ -1,0 +1,64 @@
+{
+ "id": "laboral.eph.empleo_informal",
+ "observations": [
+  {
+   "period": "2023-Q4",
+   "value": 18.9,
+   "rawNote": "La información respecto a la condición de formalidad en el emplo se encuentra disponible a partir del cuarto trimestre de 2023."
+  },
+  {
+   "period": "2024-Q1",
+   "value": 18.1
+  },
+  {
+   "period": "2024-Q2",
+   "value": 18.6
+  },
+  {
+   "period": "2024-Q3",
+   "value": 19.1
+  },
+  {
+   "period": "2024-Q4",
+   "value": 19.2
+  },
+  {
+   "period": "2025-Q1",
+   "value": 18.7
+  },
+  {
+   "period": "2025-Q2",
+   "value": 19.2
+  },
+  {
+   "period": "2025-Q3",
+   "value": 19.7
+  },
+  {
+   "period": "2025-Q4",
+   "value": 19.3
+  },
+  {
+   "period": "2026-Q1",
+   "value": 19.8
+  },
+  {
+   "period": "2026-Q2",
+   "value": 20.2,
+   "flags": [
+    "provisorio"
+   ],
+   "rawNote": "Dato provisorio"
+  }
+ ],
+ "meta": {
+  "firstPeriod": "2023-Q4",
+  "lastPeriod": "2026-Q2",
+  "retrievedAt": "2026-11-04T15:04:49.130Z",
+  "runId": "20261104T150251Z-60da",
+  "dataset": "mercado_trabajo_eph",
+  "query": "https://api.indec.gob.ar/v1/mercado_trabajo_eph?order=area_geografica_nom%2Cperiodo",
+  "publishedAt": null,
+  "stale": false
+ }
+}

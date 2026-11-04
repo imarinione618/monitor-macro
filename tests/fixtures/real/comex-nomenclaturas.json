@@ -1,0 +1,77 @@
+[
+ {
+  "nombre_columna": "rubro_cod",
+  "codigo": "1",
+  "codigo_descripcion": "PRODUCTOS PRIMARIOS"
+ },
+ {
+  "nombre_columna": "rubro_cod",
+  "codigo": "2",
+  "codigo_descripcion": "MANUFACTURAS DE ORIGEN AGROPECUARIO (MOA)"
+ },
+ {
+  "nombre_columna": "rubro_cod",
+  "codigo": "3",
+  "codigo_descripcion": "MANUFACTURAS DE ORIGEN INDUSTRIAL (MOI)"
+ },
+ {
+  "nombre_columna": "rubro_cod",
+  "codigo": "4",
+  "codigo_descripcion": "COMBUSTIBLE Y ENERGIA"
+ },
+ {
+  "nombre_columna": "rubro_cod",
+  "codigo": "9",
+  "codigo_descripcion": "CONFIDENCIAL"
+ },
+ {
+  "nombre_columna": "rubro_cod",
+  "codigo": "X",
+  "codigo_descripcion": "DESCONOCIDO"
+ },
+ {
+  "nombre_columna": "rubro_cod",
+  "codigo": "Z",
+  "codigo_descripcion": "NO SE PUEDE ASIGNAR"
+ },
+ {
+  "nombre_columna": "uso_economico_cod",
+  "codigo": "1",
+  "codigo_descripcion": "Bienes de Capital"
+ },
+ {
+  "nombre_columna": "uso_economico_cod",
+  "codigo": "2",
+  "codigo_descripcion": "Bienes Intermedios"
+ },
+ {
+  "nombre_columna": "uso_economico_cod",
+  "codigo": "3",
+  "codigo_descripcion": "Combustibles y Lubricantes"
+ },
+ {
+  "nombre_columna": "uso_economico_cod",
+  "codigo": "4",
+  "codigo_descripcion": "Piezas y Accesorios para Bienes de Capital"
+ },
+ {
+  "nombre_columna": "uso_economico_cod",
+  "codigo": "5",
+  "codigo_descripcion": "Bienes de Consumo"
+ },
+ {
+  "nombre_columna": "uso_economico_cod",
+  "codigo": "6",
+  "codigo_descripcion": "Vehiculos Automotores de Pasajeros"
+ },
+ {
+  "nombre_columna": "uso_economico_cod",
+  "codigo": "9",
+  "codigo_descripcion": "Resto"
+ },
+ {
+  "nombre_columna": "uso_economico_cod",
+  "codigo": "X",
+  "codigo_descripcion": "DESCONOCIDO"
+ }
+]

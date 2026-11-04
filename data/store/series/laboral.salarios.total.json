@@ -1,0 +1,491 @@
+{
+ "id": "laboral.salarios.total",
+ "observations": [
+  {
+   "period": "2016-10",
+   "value": 100
+  },
+  {
+   "period": "2016-11",
+   "value": 101.41
+  },
+  {
+   "period": "2016-12",
+   "value": 102.79
+  },
+  {
+   "period": "2017-01",
+   "value": 104.38
+  },
+  {
+   "period": "2017-02",
+   "value": 105.76
+  },
+  {
+   "period": "2017-03",
+   "value": 108.82
+  },
+  {
+   "period": "2017-04",
+   "value": 112.63
+  },
+  {
+   "period": "2017-05",
+   "value": 114.43
+  },
+  {
+   "period": "2017-06",
+   "value": 116.45
+  },
+  {
+   "period": "2017-07",
+   "value": 121.1
+  },
+  {
+   "period": "2017-08",
+   "value": 123.95
+  },
+  {
+   "period": "2017-09",
+   "value": 125.71
+  },
+  {
+   "period": "2017-10",
+   "value": 127.62
+  },
+  {
+   "period": "2017-11",
+   "value": 129.61
+  },
+  {
+   "period": "2017-12",
+   "value": 131.03
+  },
+  {
+   "period": "2018-01",
+   "value": 132.48
+  },
+  {
+   "period": "2018-02",
+   "value": 133.59
+  },
+  {
+   "period": "2018-03",
+   "value": 136.14
+  },
+  {
+   "period": "2018-04",
+   "value": 139.81
+  },
+  {
+   "period": "2018-05",
+   "value": 141.93
+  },
+  {
+   "period": "2018-06",
+   "value": 143.14
+  },
+  {
+   "period": "2018-07",
+   "value": 146.9
+  },
+  {
+   "period": "2018-08",
+   "value": 151.05
+  },
+  {
+   "period": "2018-09",
+   "value": 155.44
+  },
+  {
+   "period": "2018-10",
+   "value": 161.12
+  },
+  {
+   "period": "2018-11",
+   "value": 165.83
+  },
+  {
+   "period": "2018-12",
+   "value": 169.94
+  },
+  {
+   "period": "2019-01",
+   "value": 175.19
+  },
+  {
+   "period": "2019-02",
+   "value": 179.84
+  },
+  {
+   "period": "2019-03",
+   "value": 186.94
+  },
+  {
+   "period": "2019-04",
+   "value": 191.11
+  },
+  {
+   "period": "2019-05",
+   "value": 196.51
+  },
+  {
+   "period": "2019-06",
+   "value": 200.44
+  },
+  {
+   "period": "2019-07",
+   "value": 209.9
+  },
+  {
+   "period": "2019-08",
+   "value": 215.02
+  },
+  {
+   "period": "2019-09",
+   "value": 220.77
+  },
+  {
+   "period": "2019-10",
+   "value": 227.92
+  },
+  {
+   "period": "2019-11",
+   "value": 233.32
+  },
+  {
+   "period": "2019-12",
+   "value": 239.44
+  },
+  {
+   "period": "2020-01",
+   "value": 253.78
+  },
+  {
+   "period": "2020-02",
+   "value": 263.55
+  },
+  {
+   "period": "2020-03",
+   "value": 271.58
+  },
+  {
+   "period": "2020-04",
+   "value": 272.03
+  },
+  {
+   "period": "2020-05",
+   "value": 271.84
+  },
+  {
+   "period": "2020-06",
+   "value": 273.47
+  },
+  {
+   "period": "2020-07",
+   "value": 278.37
+  },
+  {
+   "period": "2020-08",
+   "value": 283.92
+  },
+  {
+   "period": "2020-09",
+   "value": 291.02
+  },
+  {
+   "period": "2020-10",
+   "value": 302.94
+  },
+  {
+   "period": "2020-11",
+   "value": 312.92
+  },
+  {
+   "period": "2020-12",
+   "value": 318.42
+  },
+  {
+   "period": "2021-01",
+   "value": 328.84
+  },
+  {
+   "period": "2021-02",
+   "value": 343.06
+  },
+  {
+   "period": "2021-03",
+   "value": 360.28
+  },
+  {
+   "period": "2021-04",
+   "value": 371.84
+  },
+  {
+   "period": "2021-05",
+   "value": 382.42
+  },
+  {
+   "period": "2021-06",
+   "value": 391.16
+  },
+  {
+   "period": "2021-07",
+   "value": 410.37
+  },
+  {
+   "period": "2021-08",
+   "value": 423.41
+  },
+  {
+   "period": "2021-09",
+   "value": 440.34
+  },
+  {
+   "period": "2021-10",
+   "value": 458.07
+  },
+  {
+   "period": "2021-11",
+   "value": 476.11
+  },
+  {
+   "period": "2021-12",
+   "value": 488.33
+  },
+  {
+   "period": "2022-01",
+   "value": 506.68
+  },
+  {
+   "period": "2022-02",
+   "value": 522.56
+  },
+  {
+   "period": "2022-03",
+   "value": 561.16
+  },
+  {
+   "period": "2022-04",
+   "value": 589.01
+  },
+  {
+   "period": "2022-05",
+   "value": 625.63
+  },
+  {
+   "period": "2022-06",
+   "value": 655.94
+  },
+  {
+   "period": "2022-07",
+   "value": 692.32
+  },
+  {
+   "period": "2022-08",
+   "value": 737.46
+  },
+  {
+   "period": "2022-09",
+   "value": 787.08
+  },
+  {
+   "period": "2022-10",
+   "value": 827.54
+  },
+  {
+   "period": "2022-11",
+   "value": 883.06
+  },
+  {
+   "period": "2022-12",
+   "value": 929.56
+  },
+  {
+   "period": "2023-01",
+   "value": 973.35
+  },
+  {
+   "period": "2023-02",
+   "value": 1031.74
+  },
+  {
+   "period": "2023-03",
+   "value": 1136.04
+  },
+  {
+   "period": "2023-04",
+   "value": 1200.49
+  },
+  {
+   "period": "2023-05",
+   "value": 1290.46
+  },
+  {
+   "period": "2023-06",
+   "value": 1368.71
+  },
+  {
+   "period": "2023-07",
+   "value": 1519.5
+  },
+  {
+   "period": "2023-08",
+   "value": 1635.33
+  },
+  {
+   "period": "2023-09",
+   "value": 1826.29
+  },
+  {
+   "period": "2023-10",
+   "value": 1978.41
+  },
+  {
+   "period": "2023-11",
+   "value": 2157.73
+  },
+  {
+   "period": "2023-12",
+   "value": 2348.79
+  },
+  {
+   "period": "2024-01",
+   "value": 2734.97
+  },
+  {
+   "period": "2024-02",
+   "value": 3099.2
+  },
+  {
+   "period": "2024-03",
+   "value": 3417.34
+  },
+  {
+   "period": "2024-04",
+   "value": 3764.21
+  },
+  {
+   "period": "2024-05",
+   "value": 4077.32
+  },
+  {
+   "period": "2024-06",
+   "value": 4329.8
+  },
+  {
+   "period": "2024-07",
+   "value": 4653.26
+  },
+  {
+   "period": "2024-08",
+   "value": 4916.19
+  },
+  {
+   "period": "2024-09",
+   "value": 5147.61
+  },
+  {
+   "period": "2024-10",
+   "value": 5383.96
+  },
+  {
+   "period": "2024-11",
+   "value": 5591
+  },
+  {
+   "period": "2024-12",
+   "value": 5765.54
+  },
+  {
+   "period": "2025-01",
+   "value": 5934.47
+  },
+  {
+   "period": "2025-02",
+   "value": 6161.52
+  },
+  {
+   "period": "2025-03",
+   "value": 6344.81
+  },
+  {
+   "period": "2025-04",
+   "value": 6559.31
+  },
+  {
+   "period": "2025-05",
+   "value": 6755.22
+  },
+  {
+   "period": "2025-06",
+   "value": 6956.46
+  },
+  {
+   "period": "2025-07",
+   "value": 7129.22
+  },
+  {
+   "period": "2025-08",
+   "value": 7354.44
+  },
+  {
+   "period": "2025-09",
+   "value": 7518.03
+  },
+  {
+   "period": "2025-10",
+   "value": 7705.88
+  },
+  {
+   "period": "2025-11",
+   "value": 7843.14
+  },
+  {
+   "period": "2025-12",
+   "value": 7969.6
+  },
+  {
+   "period": "2026-01",
+   "value": 8171.66
+  },
+  {
+   "period": "2026-02",
+   "value": 8370.04
+  },
+  {
+   "period": "2026-03",
+   "value": 8654.99
+  },
+  {
+   "period": "2026-04",
+   "value": 8978.1
+  },
+  {
+   "period": "2026-05",
+   "value": 9177.39
+  },
+  {
+   "period": "2026-06",
+   "value": 9442.5
+  },
+  {
+   "period": "2026-07",
+   "value": 9708.64
+  },
+  {
+   "period": "2026-08",
+   "value": 9973.55
+  }
+ ],
+ "meta": {
+  "firstPeriod": "2016-10",
+  "lastPeriod": "2026-08",
+  "retrievedAt": "2026-11-04T15:04:47.667Z",
+  "runId": "20261104T150251Z-60da",
+  "dataset": "indice_salarios",
+  "query": "https://api.indec.gob.ar/v1/indice_salarios?order=clasificador%2Cnivel%2Ccodigo%2Cdescripcion%2Cperiodo%2Canio%2Cmes%2Cindicador%2Ctipo_de_indicador%2Ctipo_de_indicador_descripcion%2Cunidad_de_medida",
+  "publishedAt": null,
+  "stale": false
+ }
+}

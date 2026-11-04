@@ -1,0 +1,62 @@
+[
+ {
+  "Anio": 2024,
+  "Mes": 9,
+  "Periodo": "202409",
+  "uso_economico_cod": "1",
+  "gce_cod": "410",
+  "pais_cod": "BR",
+  "valor_CIF": 112180221.18,
+  "valor_CIF_null": null
+ },
+ {
+  "Anio": 2024,
+  "Mes": 9,
+  "Periodo": "202409",
+  "uso_economico_cod": "1",
+  "gce_cod": "410",
+  "pais_cod": "CN",
+  "valor_CIF": 350011149.88,
+  "valor_CIF_null": null
+ },
+ {
+  "Anio": 2024,
+  "Mes": 9,
+  "Periodo": "202409",
+  "uso_economico_cod": "1",
+  "gce_cod": "521",
+  "pais_cod": "BR",
+  "valor_CIF": 115765187.1,
+  "valor_CIF_null": null
+ },
+ {
+  "Anio": 2024,
+  "Mes": 9,
+  "Periodo": "202409",
+  "uso_economico_cod": "1",
+  "gce_cod": "521",
+  "pais_cod": "CN",
+  "valor_CIF": 14358929.83,
+  "valor_CIF_null": null
+ },
+ {
+  "Anio": 2024,
+  "Mes": 9,
+  "Periodo": "202409",
+  "uso_economico_cod": "6",
+  "gce_cod": "510",
+  "pais_cod": "BR",
+  "valor_CIF": 300190912.19,
+  "valor_CIF_null": null
+ },
+ {
+  "Anio": 2024,
+  "Mes": 9,
+  "Periodo": "202409",
+  "uso_economico_cod": "6",
+  "gce_cod": "510",
+  "pais_cod": "CN",
+  "valor_CIF": 30069018.38,
+  "valor_CIF_null": null
+ }
+]

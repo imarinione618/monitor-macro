@@ -1,0 +1,29 @@
+node_modules/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+next-env.d.ts
+
+# Secretos
+.env
+.env.*
+!.env.example
+.secrets/
+*.pem
+*service-account*.json
+
+# Datos locales / caché
+data/cache/
+data/.lock
+data/runs/
+data/store-fixtures/
+data/sheets-preview/
+config/sheets.local.json
+
+# Credenciales descargadas de Google Cloud (cliente OAuth / cuentas de servicio)
+client_secret*.json
+credentials*.json
+
+# Configuración personal del editor
+.vscode/

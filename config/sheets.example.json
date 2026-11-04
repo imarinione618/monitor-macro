@@ -1,0 +1,22 @@
+{
+ "actividad": {
+  "spreadsheetId": "REEMPLAZAR_CON_ID_DEL_DOCUMENTO",
+  "url": "https://docs.google.com/spreadsheets/d/REEMPLAZAR_CON_ID_DEL_DOCUMENTO/edit",
+  "title": "Argentina — Actividad"
+ },
+ "laboral": {
+  "spreadsheetId": "REEMPLAZAR_CON_ID_DEL_DOCUMENTO",
+  "url": "https://docs.google.com/spreadsheets/d/REEMPLAZAR_CON_ID_DEL_DOCUMENTO/edit",
+  "title": "Argentina — Mercado laboral"
+ },
+ "precios": {
+  "spreadsheetId": "REEMPLAZAR_CON_ID_DEL_DOCUMENTO",
+  "url": "https://docs.google.com/spreadsheets/d/REEMPLAZAR_CON_ID_DEL_DOCUMENTO/edit",
+  "title": "Argentina — Precios"
+ },
+ "comex": {
+  "spreadsheetId": "REEMPLAZAR_CON_ID_DEL_DOCUMENTO",
+  "url": "https://docs.google.com/spreadsheets/d/REEMPLAZAR_CON_ID_DEL_DOCUMENTO/edit",
+  "title": "Argentina — Comercio exterior"
+ }
+}

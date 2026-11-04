@@ -1,0 +1,483 @@
+{
+ "id": "precios.ipc.ng.nacional.var_m_pub",
+ "observations": [
+  {
+   "period": "2017-01",
+   "value": 1.6
+  },
+  {
+   "period": "2017-02",
+   "value": 2.1
+  },
+  {
+   "period": "2017-03",
+   "value": 2.4
+  },
+  {
+   "period": "2017-04",
+   "value": 2.7
+  },
+  {
+   "period": "2017-05",
+   "value": 1.4
+  },
+  {
+   "period": "2017-06",
+   "value": 1.2
+  },
+  {
+   "period": "2017-07",
+   "value": 1.7
+  },
+  {
+   "period": "2017-08",
+   "value": 1.4
+  },
+  {
+   "period": "2017-09",
+   "value": 1.9
+  },
+  {
+   "period": "2017-10",
+   "value": 1.5
+  },
+  {
+   "period": "2017-11",
+   "value": 1.4
+  },
+  {
+   "period": "2017-12",
+   "value": 3.1
+  },
+  {
+   "period": "2018-01",
+   "value": 1.8
+  },
+  {
+   "period": "2018-02",
+   "value": 2.4
+  },
+  {
+   "period": "2018-03",
+   "value": 2.3
+  },
+  {
+   "period": "2018-04",
+   "value": 2.7
+  },
+  {
+   "period": "2018-05",
+   "value": 2.1
+  },
+  {
+   "period": "2018-06",
+   "value": 3.7
+  },
+  {
+   "period": "2018-07",
+   "value": 3.1
+  },
+  {
+   "period": "2018-08",
+   "value": 3.9
+  },
+  {
+   "period": "2018-09",
+   "value": 6.5
+  },
+  {
+   "period": "2018-10",
+   "value": 5.4
+  },
+  {
+   "period": "2018-11",
+   "value": 3.2
+  },
+  {
+   "period": "2018-12",
+   "value": 2.6
+  },
+  {
+   "period": "2019-01",
+   "value": 2.9
+  },
+  {
+   "period": "2019-02",
+   "value": 3.8
+  },
+  {
+   "period": "2019-03",
+   "value": 4.7
+  },
+  {
+   "period": "2019-04",
+   "value": 3.4
+  },
+  {
+   "period": "2019-05",
+   "value": 3.1
+  },
+  {
+   "period": "2019-06",
+   "value": 2.7
+  },
+  {
+   "period": "2019-07",
+   "value": 2.2
+  },
+  {
+   "period": "2019-08",
+   "value": 4
+  },
+  {
+   "period": "2019-09",
+   "value": 5.9
+  },
+  {
+   "period": "2019-10",
+   "value": 3.3
+  },
+  {
+   "period": "2019-11",
+   "value": 4.3
+  },
+  {
+   "period": "2019-12",
+   "value": 3.7
+  },
+  {
+   "period": "2020-01",
+   "value": 2.3
+  },
+  {
+   "period": "2020-02",
+   "value": 2
+  },
+  {
+   "period": "2020-03",
+   "value": 3.3
+  },
+  {
+   "period": "2020-04",
+   "value": 1.5
+  },
+  {
+   "period": "2020-05",
+   "value": 1.5
+  },
+  {
+   "period": "2020-06",
+   "value": 2.2
+  },
+  {
+   "period": "2020-07",
+   "value": 1.9
+  },
+  {
+   "period": "2020-08",
+   "value": 2.7
+  },
+  {
+   "period": "2020-09",
+   "value": 2.8
+  },
+  {
+   "period": "2020-10",
+   "value": 3.8
+  },
+  {
+   "period": "2020-11",
+   "value": 3.2
+  },
+  {
+   "period": "2020-12",
+   "value": 4
+  },
+  {
+   "period": "2021-01",
+   "value": 4
+  },
+  {
+   "period": "2021-02",
+   "value": 3.6
+  },
+  {
+   "period": "2021-03",
+   "value": 4.8
+  },
+  {
+   "period": "2021-04",
+   "value": 4.1
+  },
+  {
+   "period": "2021-05",
+   "value": 3.3
+  },
+  {
+   "period": "2021-06",
+   "value": 3.2
+  },
+  {
+   "period": "2021-07",
+   "value": 3
+  },
+  {
+   "period": "2021-08",
+   "value": 2.5
+  },
+  {
+   "period": "2021-09",
+   "value": 3.5
+  },
+  {
+   "period": "2021-10",
+   "value": 3.5
+  },
+  {
+   "period": "2021-11",
+   "value": 2.5
+  },
+  {
+   "period": "2021-12",
+   "value": 3.8
+  },
+  {
+   "period": "2022-01",
+   "value": 3.9
+  },
+  {
+   "period": "2022-02",
+   "value": 4.7
+  },
+  {
+   "period": "2022-03",
+   "value": 6.7
+  },
+  {
+   "period": "2022-04",
+   "value": 6
+  },
+  {
+   "period": "2022-05",
+   "value": 5.1
+  },
+  {
+   "period": "2022-06",
+   "value": 5.3
+  },
+  {
+   "period": "2022-07",
+   "value": 7.4
+  },
+  {
+   "period": "2022-08",
+   "value": 7
+  },
+  {
+   "period": "2022-09",
+   "value": 6.2
+  },
+  {
+   "period": "2022-10",
+   "value": 6.3
+  },
+  {
+   "period": "2022-11",
+   "value": 4.9
+  },
+  {
+   "period": "2022-12",
+   "value": 5.1
+  },
+  {
+   "period": "2023-01",
+   "value": 6
+  },
+  {
+   "period": "2023-02",
+   "value": 6.6
+  },
+  {
+   "period": "2023-03",
+   "value": 7.7
+  },
+  {
+   "period": "2023-04",
+   "value": 8.4
+  },
+  {
+   "period": "2023-05",
+   "value": 7.8
+  },
+  {
+   "period": "2023-06",
+   "value": 6
+  },
+  {
+   "period": "2023-07",
+   "value": 6.3
+  },
+  {
+   "period": "2023-08",
+   "value": 12.4
+  },
+  {
+   "period": "2023-09",
+   "value": 12.7
+  },
+  {
+   "period": "2023-10",
+   "value": 8.3
+  },
+  {
+   "period": "2023-11",
+   "value": 12.8
+  },
+  {
+   "period": "2023-12",
+   "value": 25.5
+  },
+  {
+   "period": "2024-01",
+   "value": 20.6
+  },
+  {
+   "period": "2024-02",
+   "value": 13.2
+  },
+  {
+   "period": "2024-03",
+   "value": 11
+  },
+  {
+   "period": "2024-04",
+   "value": 8.8
+  },
+  {
+   "period": "2024-05",
+   "value": 4.2
+  },
+  {
+   "period": "2024-06",
+   "value": 4.6
+  },
+  {
+   "period": "2024-07",
+   "value": 4
+  },
+  {
+   "period": "2024-08",
+   "value": 4.2
+  },
+  {
+   "period": "2024-09",
+   "value": 3.5
+  },
+  {
+   "period": "2024-10",
+   "value": 2.7
+  },
+  {
+   "period": "2024-11",
+   "value": 2.4
+  },
+  {
+   "period": "2024-12",
+   "value": 2.7
+  },
+  {
+   "period": "2025-01",
+   "value": 2.2
+  },
+  {
+   "period": "2025-02",
+   "value": 2.4
+  },
+  {
+   "period": "2025-03",
+   "value": 3.7
+  },
+  {
+   "period": "2025-04",
+   "value": 2.8
+  },
+  {
+   "period": "2025-05",
+   "value": 1.5
+  },
+  {
+   "period": "2025-06",
+   "value": 1.6
+  },
+  {
+   "period": "2025-07",
+   "value": 1.9
+  },
+  {
+   "period": "2025-08",
+   "value": 1.9
+  },
+  {
+   "period": "2025-09",
+   "value": 2.1
+  },
+  {
+   "period": "2025-10",
+   "value": 2.3
+  },
+  {
+   "period": "2025-11",
+   "value": 2.5
+  },
+  {
+   "period": "2025-12",
+   "value": 2.8
+  },
+  {
+   "period": "2026-01",
+   "value": 2.9
+  },
+  {
+   "period": "2026-02",
+   "value": 2.9
+  },
+  {
+   "period": "2026-03",
+   "value": 3.4
+  },
+  {
+   "period": "2026-04",
+   "value": 2.6
+  },
+  {
+   "period": "2026-05",
+   "value": 2.1
+  },
+  {
+   "period": "2026-06",
+   "value": 1.9
+  },
+  {
+   "period": "2026-07",
+   "value": 2.1
+  },
+  {
+   "period": "2026-08",
+   "value": 1.7
+  },
+  {
+   "period": "2026-09",
+   "value": 1.9
+  }
+ ],
+ "meta": {
+  "firstPeriod": "2017-01",
+  "lastPeriod": "2026-09",
+  "retrievedAt": "2026-11-04T15:04:49.635Z",
+  "runId": "20261104T150251Z-60da",
+  "dataset": "ipc_nacional",
+  "query": "https://api.indec.gob.ar/v1/ipc_nacional?nivel=in.(%22Nivel%20General%22%2C%22Categor%C3%ADa%22%2C%22Divisi%C3%B3n%22)&tipo_de_indicador=in.(Indice%2Cv_m)&order=clasificador%2Cnivel%2Ccodigo%2Cdescripcion%2Cperiodo%2Canio%2Cmes%2Cindicador%2Ctipo_de_indicador%2Ctipo_de_indicador_descripcion%2Cregion%2Cunidad_de_medida",
+  "publishedAt": null,
+  "stale": false
+ }
+}

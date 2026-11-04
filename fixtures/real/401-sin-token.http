@@ -1,0 +1,12 @@
+HTTP/1.1 401 Unauthorized
+Server: nginx/1.31.5
+Content-Type: application/json; charset=utf-8
+Content-Length: 88
+Connection: keep-alive
+Proxy-Status: PostgREST; error=42501
+WWW-Authenticate: Bearer
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+Allow: GET, HEAD, OPTIONS
+
+{"code":"42501","details":null,"hint":null,"message":"permission denied for schema api"}

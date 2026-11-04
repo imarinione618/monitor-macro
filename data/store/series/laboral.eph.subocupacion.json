@@ -1,0 +1,186 @@
+{
+ "id": "laboral.eph.subocupacion",
+ "observations": [
+  {
+   "period": "2016-Q2",
+   "value": 11.2
+  },
+  {
+   "period": "2016-Q3",
+   "value": 10.2
+  },
+  {
+   "period": "2016-Q4",
+   "value": 10.3
+  },
+  {
+   "period": "2017-Q1",
+   "value": 9.9
+  },
+  {
+   "period": "2017-Q2",
+   "value": 11
+  },
+  {
+   "period": "2017-Q3",
+   "value": 10.8
+  },
+  {
+   "period": "2017-Q4",
+   "value": 10.2
+  },
+  {
+   "period": "2018-Q1",
+   "value": 9.8
+  },
+  {
+   "period": "2018-Q2",
+   "value": 11.2
+  },
+  {
+   "period": "2018-Q3",
+   "value": 11.8
+  },
+  {
+   "period": "2018-Q4",
+   "value": 12
+  },
+  {
+   "period": "2019-Q1",
+   "value": 11.8
+  },
+  {
+   "period": "2019-Q2",
+   "value": 13.1
+  },
+  {
+   "period": "2019-Q3",
+   "value": 12.8,
+   "rawNote": "Los resultados del tercer trimestre de 2019 no incluyen el aglomerado Gran Resistencia."
+  },
+  {
+   "period": "2019-Q4",
+   "value": 13.1
+  },
+  {
+   "period": "2020-Q1",
+   "value": 11.7
+  },
+  {
+   "period": "2020-Q2",
+   "value": 9.6
+  },
+  {
+   "period": "2020-Q3",
+   "value": 13.4,
+   "rawNote": "Los resultados del tercer trimestre de 2020 no incluyen el aglomerado Ushuaia-Rio Grande"
+  },
+  {
+   "period": "2020-Q4",
+   "value": 15.1
+  },
+  {
+   "period": "2021-Q1",
+   "value": 11.9
+  },
+  {
+   "period": "2021-Q2",
+   "value": 12.4
+  },
+  {
+   "period": "2021-Q3",
+   "value": 12.2
+  },
+  {
+   "period": "2021-Q4",
+   "value": 12.1
+  },
+  {
+   "period": "2022-Q1",
+   "value": 10
+  },
+  {
+   "period": "2022-Q2",
+   "value": 11.1
+  },
+  {
+   "period": "2022-Q3",
+   "value": 11
+  },
+  {
+   "period": "2022-Q4",
+   "value": 10.9
+  },
+  {
+   "period": "2023-Q1",
+   "value": 9.4
+  },
+  {
+   "period": "2023-Q2",
+   "value": 10.6
+  },
+  {
+   "period": "2023-Q3",
+   "value": 10.3
+  },
+  {
+   "period": "2023-Q4",
+   "value": 10.5,
+   "rawNote": "La información respecto a la condición de formalidad en el emplo se encuentra disponible a partir del cuarto trimestre de 2023."
+  },
+  {
+   "period": "2024-Q1",
+   "value": 10.2
+  },
+  {
+   "period": "2024-Q2",
+   "value": 11.8
+  },
+  {
+   "period": "2024-Q3",
+   "value": 11.4
+  },
+  {
+   "period": "2024-Q4",
+   "value": 11.3
+  },
+  {
+   "period": "2025-Q1",
+   "value": 10
+  },
+  {
+   "period": "2025-Q2",
+   "value": 11.6
+  },
+  {
+   "period": "2025-Q3",
+   "value": 10.9
+  },
+  {
+   "period": "2025-Q4",
+   "value": 11.3
+  },
+  {
+   "period": "2026-Q1",
+   "value": 11.1
+  },
+  {
+   "period": "2026-Q2",
+   "value": 11.5,
+   "flags": [
+    "provisorio"
+   ],
+   "rawNote": "Dato provisorio"
+  }
+ ],
+ "meta": {
+  "firstPeriod": "2016-Q2",
+  "lastPeriod": "2026-Q2",
+  "retrievedAt": "2026-11-04T15:04:49.130Z",
+  "runId": "20261104T150251Z-60da",
+  "dataset": "mercado_trabajo_eph",
+  "query": "https://api.indec.gob.ar/v1/mercado_trabajo_eph?order=area_geografica_nom%2Cperiodo",
+  "publishedAt": null,
+  "stale": false
+ }
+}

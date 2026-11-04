@@ -1,0 +1,79 @@
+# PLANTILLA — NO ACTIVA. Copiar a .github/workflows/update.yml en un repositorio
+# PRIVADO de GitHub para actualizar con el equipo apagado. Ver docs/despliegue.md.
+#
+# Secrets requeridos en el repo (Settings → Secrets and variables → Actions):
+#   INDEC_API_TOKEN               JWT de api.indec.gob.ar
+#   GOOGLE_AUTH_MODE              "oauth" o "service_account"
+#   GOOGLE_OAUTH_CLIENT_ID / GOOGLE_OAUTH_CLIENT_SECRET / GOOGLE_OAUTH_TOKEN_JSON   (modo oauth)
+#   GOOGLE_SERVICE_ACCOUNT_JSON   (modo service_account)
+#   SHEETS_ID_ACTIVIDAD / SHEETS_ID_LABORAL / SHEETS_ID_PRECIOS / SHEETS_ID_COMEX
+#
+# Persistencia: el store (data/store) se versiona en el propio repo con un commit
+# por corrida con cambios. El disco del runner es efímero: no se usa como almacenamiento.
+name: Actualizacion diaria
+
+on:
+  schedule:
+    # 11:30 UTC = 08:30 en Buenos Aires (UTC-3, sin horario de verano)
+    - cron: '30 11 * * *'
+  workflow_dispatch:
+    inputs:
+      full:
+        description: 'Reconciliación completa'
+        type: boolean
+        default: false
+
+concurrency:
+  group: actualizacion-datos
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      TZ: America/Argentina/Buenos_Aires
+      INDEC_API_TOKEN: ${{ secrets.INDEC_API_TOKEN }}
+      GOOGLE_AUTH_MODE: ${{ secrets.GOOGLE_AUTH_MODE }}
+      GOOGLE_OAUTH_CLIENT_ID: ${{ secrets.GOOGLE_OAUTH_CLIENT_ID }}
+      GOOGLE_OAUTH_CLIENT_SECRET: ${{ secrets.GOOGLE_OAUTH_CLIENT_SECRET }}
+      GOOGLE_OAUTH_TOKEN_PATH: .secrets/google-oauth-token.json
+      GOOGLE_SERVICE_ACCOUNT_KEY_FILE: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON != '' && '.secrets/sa.json' || '' }}
+      SHEETS_ID_ACTIVIDAD: ${{ secrets.SHEETS_ID_ACTIVIDAD }}
+      SHEETS_ID_LABORAL: ${{ secrets.SHEETS_ID_LABORAL }}
+      SHEETS_ID_PRECIOS: ${{ secrets.SHEETS_ID_PRECIOS }}
+      SHEETS_ID_COMEX: ${{ secrets.SHEETS_ID_COMEX }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Materializar credenciales (sin imprimirlas)
+        env:
+          OAUTH_TOKEN_JSON: ${{ secrets.GOOGLE_OAUTH_TOKEN_JSON }}
+          SA_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          mkdir -p .secrets
+          if [ -n "$OAUTH_TOKEN_JSON" ]; then printf '%s' "$OAUTH_TOKEN_JSON" > .secrets/google-oauth-token.json; fi
+          if [ -n "$SA_JSON" ]; then printf '%s' "$SA_JSON" > .secrets/sa.json; fi
+      - name: Ingesta INDEC
+        run: npm run data:refresh -- ${{ inputs.full && '--full' || '' }}
+        continue-on-error: true
+        id: refresh
+      - name: Google Sheets
+        run: npm run sheets:sync
+      - name: Versionar store actualizado
+        run: |
+          git config user.name "actualizacion-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/store
+          git diff --cached --quiet || git commit -m "datos: actualización $(date +%F)"
+          git push
+      - name: Fallar si la ingesta falló
+        if: steps.refresh.outcome == 'failure'
+        run: exit 1

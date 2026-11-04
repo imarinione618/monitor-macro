@@ -1,0 +1,101 @@
+{
+ "id": "laboral.pobreza.indigencia_personas",
+ "observations": [
+  {
+   "period": "2016-S2",
+   "value": 6.1
+  },
+  {
+   "period": "2017-S1",
+   "value": 6.2
+  },
+  {
+   "period": "2017-S2",
+   "value": 4.8
+  },
+  {
+   "period": "2018-S1",
+   "value": 4.9
+  },
+  {
+   "period": "2018-S2",
+   "value": 6.7
+  },
+  {
+   "period": "2019-S1",
+   "value": 7.7
+  },
+  {
+   "period": "2019-S2",
+   "value": 8,
+   "rawNote": "Los resultados del segundo semestre de 2019 no incluyen el aglomerado Gran Resistencia."
+  },
+  {
+   "period": "2020-S1",
+   "value": 10.5
+  },
+  {
+   "period": "2020-S2",
+   "value": 10.5,
+   "rawNote": "Los resultados del segundo semestre de 2020 no incluyen el aglomerado Ushuaia-Rio Grande"
+  },
+  {
+   "period": "2021-S1",
+   "value": 10.7
+  },
+  {
+   "period": "2021-S2",
+   "value": 8.2
+  },
+  {
+   "period": "2022-S1",
+   "value": 8.8
+  },
+  {
+   "period": "2022-S2",
+   "value": 8.1
+  },
+  {
+   "period": "2023-S1",
+   "value": 9.3
+  },
+  {
+   "period": "2023-S2",
+   "value": 11.9
+  },
+  {
+   "period": "2024-S1",
+   "value": 18.1
+  },
+  {
+   "period": "2024-S2",
+   "value": 8.2
+  },
+  {
+   "period": "2025-S1",
+   "value": 6.9
+  },
+  {
+   "period": "2025-S2",
+   "value": 6.3
+  },
+  {
+   "period": "2026-S1",
+   "value": 7.5,
+   "flags": [
+    "provisorio"
+   ],
+   "rawNote": "Dato provisorio"
+  }
+ ],
+ "meta": {
+  "firstPeriod": "2016-S2",
+  "lastPeriod": "2026-S1",
+  "retrievedAt": "2026-11-04T15:04:49.394Z",
+  "runId": "20261104T150251Z-60da",
+  "dataset": "pobreza_eph",
+  "query": "https://api.indec.gob.ar/v1/pobreza_eph?order=area_geografica_nom%2Cperiodo",
+  "publishedAt": null,
+  "stale": false
+ }
+}

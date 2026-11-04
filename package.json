@@ -1,0 +1,42 @@
+{
+  "name": "monitor-macro-argentina",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Monitoreo macroeconómico de Argentina con datos oficiales (API INDEC) -> Google Sheets + dashboard web",
+  "type": "module",
+  "engines": {
+    "node": ">=20.10"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "node scripts/serve-static.mjs",
+    "lint": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "data:refresh": "tsx src/ingest/cli/refresh.ts",
+    "data:discover": "tsx src/ingest/cli/discover.ts",
+    "data:check": "tsx src/ingest/cli/check-registry.ts",
+    "fixtures:generate": "tsx src/core/fixtures/generate.ts",
+    "sheets:auth": "tsx src/sheets/cli/auth.ts",
+    "sheets:sync": "tsx src/sheets/cli/sync.ts",
+    "update": "npm run data:refresh && npm run sheets:sync"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1",
+    "echarts": "^5.6.0",
+    "googleapis": "^144.0.0",
+    "next": "^15.5.29",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vitest": "^2.1.9"
+  }
+}

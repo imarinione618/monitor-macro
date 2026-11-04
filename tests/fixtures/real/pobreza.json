@@ -1,0 +1,38 @@
+[
+ {
+  "area_geografica_nom": "T_31_A",
+  "area_geografica_cod": null,
+  "area_geografica_cod_null": null,
+  "periodo": "20252S",
+  "anio": 2025,
+  "semestre": 2,
+  "tasa_pobreza_hogares": 21,
+  "tasa_pobreza_hogares_null": null,
+  "tasa_pobreza_personas": 28.2,
+  "tasa_pobreza_personas_null": null,
+  "tasa_indigencia_hogares": 4.8,
+  "tasa_indigencia_hogares_null": null,
+  "tasa_indigencia_personas": 6.3,
+  "tasa_indigencia_personas_null": null,
+  "observaciones": null,
+  "observaciones_null": null
+ },
+ {
+  "area_geografica_nom": "T_31_A",
+  "area_geografica_cod": null,
+  "area_geografica_cod_null": null,
+  "periodo": "20261S",
+  "anio": 2026,
+  "semestre": 1,
+  "tasa_pobreza_hogares": 24.4,
+  "tasa_pobreza_hogares_null": null,
+  "tasa_pobreza_personas": 32.3,
+  "tasa_pobreza_personas_null": null,
+  "tasa_indigencia_hogares": 5.6,
+  "tasa_indigencia_hogares_null": null,
+  "tasa_indigencia_personas": 7.5,
+  "tasa_indigencia_personas_null": null,
+  "observaciones": "Dato provisorio",
+  "observaciones_null": null
+ }
+]

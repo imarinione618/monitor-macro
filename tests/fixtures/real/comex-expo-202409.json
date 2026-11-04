@@ -1,0 +1,132 @@
+[
+ {
+  "Anio": 2024,
+  "Mes": 9,
+  "Periodo": "202409",
+  "rubro_cod": "9",
+  "subrubro_cod": "999",
+  "pais_cod": "XR",
+  "valor_FOB": 811456973.6,
+  "valor_FOB_null": null
+ },
+ {
+  "Anio": 2024,
+  "Mes": 9,
+  "Periodo": "202409",
+  "rubro_cod": "4",
+  "subrubro_cod": "401",
+  "pais_cod": "BR",
+  "valor_FOB": 24510255.54,
+  "valor_FOB_null": null
+ },
+ {
+  "Anio": 2024,
+  "Mes": 9,
+  "Periodo": "202409",
+  "rubro_cod": "4",
+  "subrubro_cod": "402",
+  "pais_cod": "BR",
+  "valor_FOB": 7754102.26,
+  "valor_FOB_null": null
+ },
+ {
+  "Anio": 2024,
+  "Mes": 9,
+  "Periodo": "202409",
+  "rubro_cod": "4",
+  "subrubro_cod": "403",
+  "pais_cod": "BR",
+  "valor_FOB": 839807.94,
+  "valor_FOB_null": null
+ },
+ {
+  "Anio": 2024,
+  "Mes": 9,
+  "Periodo": "202409",
+  "rubro_cod": "4",
+  "subrubro_cod": "404",
+  "pais_cod": "BR",
+  "valor_FOB": 23731964.78,
+  "valor_FOB_null": null
+ },
+ {
+  "Anio": 2024,
+  "Mes": 9,
+  "Periodo": "202409",
+  "rubro_cod": "4",
+  "subrubro_cod": "499",
+  "pais_cod": "BR",
+  "valor_FOB": 1692875.15,
+  "valor_FOB_null": null
+ },
+ {
+  "Anio": 2024,
+  "Mes": 9,
+  "Periodo": "202409",
+  "rubro_cod": "1",
+  "subrubro_cod": "101",
+  "pais_cod": "AE",
+  "valor_FOB": null,
+  "valor_FOB_null": "s"
+ },
+ {
+  "Anio": 2024,
+  "Mes": 9,
+  "Periodo": "202409",
+  "rubro_cod": "1",
+  "subrubro_cod": "101",
+  "pais_cod": "AM",
+  "valor_FOB": null,
+  "valor_FOB_null": "s"
+ },
+ {
+  "Anio": 2024,
+  "Mes": 9,
+  "Periodo": "202409",
+  "rubro_cod": "1",
+  "subrubro_cod": "101",
+  "pais_cod": "AU",
+  "valor_FOB": null,
+  "valor_FOB_null": "s"
+ },
+ {
+  "Anio": 2024,
+  "Mes": 9,
+  "Periodo": "202409",
+  "rubro_cod": "1",
+  "subrubro_cod": "102",
+  "pais_cod": "CN",
+  "valor_FOB": 14489317.96,
+  "valor_FOB_null": null
+ },
+ {
+  "Anio": 2024,
+  "Mes": 9,
+  "Periodo": "202409",
+  "rubro_cod": "1",
+  "subrubro_cod": "105",
+  "pais_cod": "CN",
+  "valor_FOB": null,
+  "valor_FOB_null": "s"
+ },
+ {
+  "Anio": 2024,
+  "Mes": 9,
+  "Periodo": "202409",
+  "rubro_cod": "1",
+  "subrubro_cod": "106",
+  "pais_cod": "CN",
+  "valor_FOB": 36057663.8,
+  "valor_FOB_null": null
+ },
+ {
+  "Anio": 2024,
+  "Mes": 9,
+  "Periodo": "202409",
+  "rubro_cod": "1",
+  "subrubro_cod": "107",
+  "pais_cod": "CN",
+  "valor_FOB": 109813762.04,
+  "valor_FOB_null": null
+ }
+]
