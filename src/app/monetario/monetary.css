@@ -1,0 +1,15 @@
+.monetary-tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--border-strong); margin: 0 0 24px; overflow-x: auto; }
+.monetary-tabs button { flex: 0 0 auto; font: inherit; font-weight: 600; background: transparent; border: 0; border-bottom: 3px solid transparent; color: var(--muted); padding: 12px 16px; cursor: pointer; }
+.monetary-tabs button[aria-selected='true'] { color: var(--text); border-bottom-color: #E32D91; }
+.monetary-filters { display: flex; flex-wrap: wrap; gap: 28px; padding: 18px 22px; }
+.monetary-panel .controls input[type='date'] { min-height: 34px; width: 150px; max-width: 100%; padding: 5px 8px; border: 1px solid var(--border-strong); border-radius: 4px; background: var(--surface); color: var(--text); font: inherit; }
+.monetary-all { align-self: flex-end; }
+.monetary-status { color: var(--text-2); font-size: .85rem; border-left: 2px solid var(--border-strong); padding: 6px 12px; margin: 12px 0; }
+.monetary-last-values { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 8px; margin: 14px 0; }
+.monetary-last { display: flex; flex-direction: column; padding: 10px 12px; background: var(--surface-2); border-radius: 5px; gap: 4px; }
+.monetary-last > span { font-variant-numeric: tabular-nums; font-size: 1.12rem; font-weight: 600; }
+.monetary-last small { color: var(--muted); font-weight: 400; font-size: .75rem; }
+.monetary-cell-meta { display: block; color: var(--muted); font-size: .7rem; white-space: nowrap; }
+.monetary-definitions { font-size: .76rem; color: var(--text-2); margin-top: 12px; }
+.monetary-definitions p { margin: 5px 0; }
+@media (max-width: 600px) { .monetary-tabs button { padding: 10px; font-size: .85rem; } .monetary-last-values { grid-template-columns: repeat(2, minmax(0, 1fr)); } .monetary-last { overflow-wrap: anywhere; } }

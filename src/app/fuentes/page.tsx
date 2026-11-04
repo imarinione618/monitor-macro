@@ -6,6 +6,7 @@ import { FREQUENCY_LABELS, TOPIC_LABELS, type RevisionRecord, type SeriesStatus,
 import { PageIntro } from '@/web/components/PageIntro';
 import { formatDateTimeAR, formatNumber } from '@/web/lib/format';
 import { getRecentRevisions, getStoreState } from '@/web/server/store';
+import { readMonetaryStore } from '@/monetary/store';
 
 // Sitio estático: se genera con los datos del store al momento del build (npm run build).
 export const dynamic = 'force-static';
@@ -44,15 +45,25 @@ export default function FuentesPage() {
   const datasets = requiredDatasets();
   const topics = Object.keys(TOPIC_LABELS) as Topic[];
   const pendientes = SERIES.filter((s) => s.status === 'no_encontrado' || s.status === 'fuente_complementaria');
+  const monetary = readMonetaryStore();
 
   return (
     <>
       <PageIntro title="Fuentes, metodología y estado de actualización">
         <p>
-          Todas las series provienen del Catálogo API-INDEC. El dashboard lee el store local normalizado; no consulta la API en cada visita. Período de
+          Las series provienen del Catálogo API-INDEC y de Estadísticas Monetarias BCRA v4. El dashboard lee los datos locales normalizados; no consulta la API en cada visita. Período de
           referencia, fecha de publicación y fecha de consulta son cosas distintas: acá se informa la fecha de consulta (<em>retrievedAt</em>).
         </p>
       </PageIntro>
+
+      <section className="panel" aria-labelledby="estado-monetario">
+        <h2 id="estado-monetario">BCRA — Monetario</h2>
+        <p>{monetary.series.length} series oficiales almacenadas. Consulta: {formatDateTimeAR(monetary.updatedAt)}. Actualización independiente de INDEC, sin sincronización monetaria con Google Sheets.</p>
+        {monetary.error && <p className="notice notice-stale">{monetary.error}</p>}
+        <p>Promedio: media de observaciones publicadas, sin completar días. Cierre: última fecha válida. Reales mensuales: IPC nacional; meses sin IPC quedan sin dato. Las sumas requieren fechas comunes.</p>
+        <p>Pendientes: caución sin mercado/plazo/fuente verificables; cierres oficiales de depósitos 992 y préstamos 893 por inconsistencia de escala. Se usan cierres calculados desde las series diarias. Los agregados privados M1 y M3 son construcciones propias desde 2005.</p>
+        <div className="table-scroll"><table className="data-table"><caption>Catálogo BCRA y última observación individual</caption><thead><tr><th>Serie / ID</th><th>Unidad</th><th>Último dato</th><th>Estado</th></tr></thead><tbody>{monetary.series.map(s=><tr key={s.def.id}><th scope="row"><a href={s.def.sourceUrl} target="_blank" rel="noreferrer">{s.def.shortName} · {s.def.bcraId}</a></th><td>{s.def.unit}</td><td>{s.observations.filter(o=>o.value!==null).at(-1)?.date ?? 'Sin datos'}</td><td>{s.stale ? `Datos conservados: ${s.error ?? 'actualización fallida'}` : 'Disponible'}</td></tr>)}</tbody></table></div>
+      </section>
 
       <section className="panel" aria-labelledby="estado">
         <h2 id="estado">Estado general</h2>

@@ -1,6 +1,6 @@
 ﻿<#
 .SYNOPSIS
-  Actualización completa: ingesta INDEC -> store -> Google Sheets -> publicación del
+  Actualización completa: ingesta INDEC/BCRA -> stores -> Sheets INDEC -> publicación del
   dashboard (push a GitHub). Pensado para el Programador de tareas de Windows
   (ver scripts/schedule-windows.ps1) o ejecución manual.
 
@@ -9,10 +9,10 @@
     porque el store conserva el último dato válido), `npm run sheets:sync`.
   - Escribe un log por día en data/runs/update-AAAA-MM-DD.log (sin secretos).
   - El lock de la ingesta evita corridas simultáneas incompatibles.
-  - Si el repositorio tiene remoto "origin", sube los cambios de data/store (commit +
+  - Si el repositorio tiene remoto "origin", sube los cambios de data/store y data/monetary (commit +
     push); GitHub Actions regenera y publica el dashboard (.github/workflows/pages.yml).
     Desactivar con -SkipPublish o con la variable PUBLISH_GITHUB=0.
-  - Código de salida: 0 OK, 1 falla de ingesta, 2 falla de Sheets, 3 falla de publicación.
+  - Código de salida: 0 OK, 1 falla de ingesta, 2 falla de Sheets, 3 falla de publicación, 4 falla BCRA.
 #>
 param(
   [switch]$SkipSheets,
@@ -39,6 +39,10 @@ cmd.exe /d /c "$refreshCmd >> `"$log`" 2>&1"
 $refreshCode = $LASTEXITCODE
 Log "data:refresh terminó con código $refreshCode"
 
+$monetaryCmd = 'npm.cmd run monetary:refresh' + $(if ($Full) { ' -- --full' } else { '' })
+cmd.exe /d /c "$monetaryCmd >> `"$log`" 2>&1"
+$monetaryCode = $LASTEXITCODE
+Log "monetary:refresh terminó con código $monetaryCode (sin sincronización Sheets)"
 $sheetsCode = 0
 if (-not $SkipSheets) {
   cmd.exe /d /c "npm.cmd run sheets:sync >> `"$log`" 2>&1"
@@ -51,14 +55,14 @@ $hasOrigin = $false
 cmd.exe /d /c "git remote get-url origin >nul 2>&1"
 if ($LASTEXITCODE -eq 0) { $hasOrigin = $true }
 if (-not $SkipPublish -and $env:PUBLISH_GITHUB -ne '0' -and $hasOrigin) {
-  cmd.exe /d /c "git add data/store >> `"$log`" 2>&1"
+  cmd.exe /d /c "git add data/store data/monetary >> `"$log`" 2>&1"
   $publishCode = $LASTEXITCODE
   if ($publishCode -eq 0) {
-    cmd.exe /d /c "git diff --cached --quiet -- data/store"
+    cmd.exe /d /c "git diff --cached --quiet -- data/store data/monetary"
     $diffCode = $LASTEXITCODE
     if ($diffCode -eq 1) {
       $msg = "datos: actualización {0}" -f (Get-Date -Format 'yyyy-MM-dd')
-      cmd.exe /d /c "git commit -m `"$msg`" -- data/store >> `"$log`" 2>&1"
+      cmd.exe /d /c "git commit -m `"$msg`" -- data/store data/monetary >> `"$log`" 2>&1"
       $publishCode = $LASTEXITCODE
     } elseif ($diffCode -ne 0) {
       $publishCode = $diffCode
@@ -79,6 +83,7 @@ if (-not $SkipPublish -and $env:PUBLISH_GITHUB -ne '0' -and $hasOrigin) {
 }
 
 if ($refreshCode -ne 0) { Log "=== Fin con fallas de ingesta (se conservaron los últimos datos válidos) ==="; exit 1 }
+if ($monetaryCode -ne 0) { Log "=== Fin con fallas BCRA; datos anteriores conservados ==="; exit 4 }
 if ($sheetsCode -ne 0) { Log "=== Fin con fallas en Google Sheets ==="; exit 2 }
 if ($publishCode -ne 0) { Log "=== Fin con falla al publicar en GitHub (datos y Sheets OK) ==="; exit 3 }
 Log "=== Fin OK ==="

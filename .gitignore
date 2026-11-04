@@ -16,6 +16,7 @@ next-env.d.ts
 # Datos locales / caché
 data/cache/
 data/.lock
+data/monetary/.lock
 data/runs/
 data/store-fixtures/
 data/sheets-preview/

@@ -11,8 +11,8 @@ import { getStoreState } from '@/web/server/store';
 export const dynamic = 'force-static';
 
 export const metadata: Metadata = {
-  title: { default: 'Monitor macro Argentina — INDEC', template: '%s · Monitor macro Argentina' },
-  description: 'Indicadores macroeconómicos de Argentina con datos oficiales del INDEC: actividad, mercado laboral, precios y comercio exterior.',
+  title: { default: 'Monitor macro Argentina — INDEC y BCRA', template: '%s · Monitor macro Argentina' },
+  description: 'Indicadores macroeconómicos de Argentina con datos oficiales del INDEC y BCRA: actividad, mercado laboral, precios, comercio exterior y monetario.',
   robots: { index: false, follow: false },
 };
 
@@ -44,13 +44,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               </Link>
               <p className="brand">
                 <span className="brand-name">Monitor macro Argentina</span>
-                <span className="brand-sub">Datos oficiales del INDEC</span>
+                <span className="brand-sub">Datos oficiales del INDEC y BCRA</span>
               </p>
             </div>
             <p className="updated">
               {state.updatedAt ? (
                 <>
-                  Última actualización: <time dateTime={state.updatedAt}>{formatDateTimeAR(state.updatedAt)}</time>{' '}
+                  Actualización INDEC: <time dateTime={state.updatedAt}>{formatDateTimeAR(state.updatedAt)}</time>{' '}
                   <span className="muted">(hora de Buenos Aires)</span>
                 </>
               ) : (
@@ -67,7 +67,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </main>
         <footer className="site-footer wrap">
           <p>
-            Fuente: INDEC — Catálogo API-INDEC. Período de referencia ≠ fecha de publicación ≠ fecha de consulta. Las transformaciones (variaciones, acumulados,
+            Fuentes: INDEC — Catálogo API-INDEC; BCRA — Estadísticas monetarias API v4. Período de referencia ≠ fecha de publicación ≠ fecha de consulta. Las transformaciones (variaciones, acumulados,
             bases) son cálculos propios sobre los valores oficiales.
           </p>
         </footer>

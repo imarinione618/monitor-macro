@@ -8,15 +8,26 @@ _Última actualización: 2026-11-04_
 |---|---|
 | **Ingesta API INDEC** | 14 datasets. 142 series (137 de la API + 5 derivadas); 3 series del IPI minero incorporadas y verificadas el 2026-11-04. |
 | **Google Sheets** | 4 documentos creados en Mi unidad (OAuth de usuario). Idempotencia, preservación de pestañas y gráficos manuales y propagación de revisiones verificadas en los documentos reales. |
-| **Dashboard** | Sitio estático (`out/`) con datos reales; 6 rutas OK, también bajo subruta; escaneo de secretos OK. Publicado con GitHub Pages. |
+| **Dashboard** | Sitio estático (`out/`) con datos reales; 7 secciones, incluida Monetario con tres pestañas; subruta y escaneo de secretos OK. Publicación mediante GitHub Pages. |
+| **BCRA / Monetario** | 84 series oficiales, 439.907 observaciones reales; ingesta y catálogo independientes de Sheets. Tasas, depósitos/préstamos ARS/USD y agregados; IPC nacional reutilizado. |
 | **Validación** | Más de 50 cifras contrastadas con informes del INDEC y con variaciones publicadas por la API: coinciden dentro del redondeo. Hallazgos A1, A3, A4 y B2 corregidos; A2 documentado. Ver `docs/validacion.md`. |
-| **Pruebas** | 625 pruebas aprobadas (core, ingest, sheets, web, validation). |
+| **Pruebas** | 660 pruebas aprobadas (core, ingest, monetary, sheets, web, validation); build estático y TypeScript OK. |
 
 ### Documentos de Google Sheets
 Los 4 documentos (Actividad, Mercado laboral, Precios, Comercio exterior) están en Mi unidad del usuario. Sus IDs y links están en `config/sheets.local.json`, archivo local que no se publica.
 
 ### Dashboard publicado
 https://imarinione618.github.io/monitor-macro/ (GitHub Pages, repositorio público `imarinione618/monitor-macro`).
+
+### Ampliación monetaria — 2026-11-04
+
+- Tres pestañas: Tasas; Depósitos y Préstamos; Variables Monetarias. Tarjetas monetarias en Resumen y estado BCRA en Fuentes.
+- Frecuencia diaria/mensual, promedio/cierre, nominal/real ARS, base100, variaciones por calendario, ratios y composición con fechas comunes. Tasas en p.p./pb, sin convertir convenciones.
+- Exportaciones CSV/PNG/SVG comparten datos visibles; PNG4800×2700 comprobado en navegador e inspeccionado visualmente, SVG probado mediante render real. Fondo blanco y convención/fuente incorporadas.
+- Actualización independiente con caché, lock, conservación ante falla y revisiones históricas. Script Windows publica `data/store` y `data/monetary`; Sheets conserva únicamente su integración INDEC anterior. No se escribió en la planilla de referencia ni en otros Sheets durante esta ampliación.
+- Pendientes: caución sin fuente/plazo verificados; series992/893 y1494 con metadata inconsistente; composición pública USD y cuasimonedas2003/04. Los derivados y cortes incompletos están identificados.
+- Ver [validación](monetario-validacion.md), [catálogo](monetario-catalogo.md), [metodología](monetario-metodologia.md), [instrumentos elegibles](monetario-instrumentos.md) y [auditoría de referencias](monetario-referencias.md).
+- No se disparó la tarea diaria completa ampliada porque incluye escrituras Sheets preexistentes. Se verificaron por separado ingesta BCRA real, fallas/revisiones simuladas, sintaxis de scripts y build.
 
 Publicación inicial completada el 2026-11-04:
 - Repositorio público creado y rama `main` sincronizada con GitHub.
