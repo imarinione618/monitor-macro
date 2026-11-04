@@ -27,7 +27,9 @@ export function MonetaryDashboard({ series, ipc, updatedAt, error }: Props) {
   const totals = stocks.filter(s => s.def.category === 'total').sort((a, b) => Number(b.def.group === 'deposits') - Number(a.def.group === 'deposits'));
   const ratios = available.filter(s => (s.def.category === 'ratio' || s.def.id.includes('ratio')) && (s.def.currency === currency || s.def.id.endsWith(`.${currency}`)) && s.def.sector === sector);
   const base = filter(['base']).filter(s => s.def.category !== 'base_instrumentos');
-  const instruments = filter(['instruments']);
+  const instruments = filter(['instruments'])
+    .filter(s => [152, 154, 155, 156, 196, 198].includes(s.def.bcraId))
+    .map(s => ({ ...s, def: { ...s.def, regimeNotes: [] } }));
   const aggregates = filter(['aggregates']);
   const aggregateTotal = available.filter(s => s.def.category === 'base_instrumentos');
   const common = { allSeries: series, ipc, asOf: updatedAt ?? undefined };
@@ -67,7 +69,7 @@ export function MonetaryDashboard({ series, ipc, updatedAt, error }: Props) {
     </div>}
     {tab === 'variables' && <div role="tabpanel" id="monetary-pane-variables" aria-labelledby="monetary-tab-variables">
       {panel('Base monetaria y componentes', base, ['base_monetaria', 'circulante_publico'], 'La base monetaria se compara con sus componentes; no se suman nuevamente componentes incluidos en el total.')}
-      {panel('Instrumentos monetarios por separado', instruments, ['pases_pasivos_imd', 'pases_activos_imd', 'otros'], 'Cada instrumento conserva emisor, naturaleza y vigencia. Otros corresponde a otros pasivos del BCRA en ARS (serie 198).')}
+      {panel('Instrumentos monetarios por separado', instruments, ['pases_pasivos_imd', 'pases_activos_imd', 'otros'])}
       {aggregateTotal.length > 0 ? panel('Base monetaria más instrumentos elegibles', aggregateTotal, undefined, 'Construcción propia con componentes auditados, fechas comunes y sin imputar cero a datos faltantes. La historia del total puede terminar antes que la de sus componentes: un instrumento sin dato impide calcular un total actual.') : <p className="monetary-status">Base monetaria más instrumentos: total no disponible cuando falta un componente elegible o no existe cobertura simultánea. Los instrumentos se pueden consultar individualmente.</p>}
       {panel('Composición de base monetaria e instrumentos elegibles', available.filter(s => [1248, 1258, 1260, 1262].includes(s.def.bcraId)), undefined, 'Construcción propia v1 = base monetaria contable + otras letras BCRA en ARS + LELIQ/NOTALIQ + pases pasivos. Excluye activos, LEFI del Tesoro y componentes ya incluidos en la base.', 'composition')}
       {panel('Agregados monetarios privados', aggregates.filter(s => s.def.sector === 'private'), ['m1', 'm2', 'm3'], 'M1, M2 y M3 privados: cálculos propios con componentes de la API BCRA desde 2005. M2 transaccional: serie oficial.')}
