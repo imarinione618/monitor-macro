@@ -1,6 +1,6 @@
 # Monitor macro Argentina
 
-Sistema de monitoreo macroeconómico de Argentina con **datos oficiales del INDEC** (Catálogo API-INDEC), con dos productos que se alimentan de una misma capa de datos:
+Sistema de monitoreo macroeconómico de Argentina con **datos oficiales del INDEC y BCRA**, con dos productos:
 
 1. **Cuatro Google Sheets por tema**, base para gráficos de presentaciones: *Argentina — Actividad*, *Mercado laboral*, *Precios* y *Comercio exterior*.
 2. **Un dashboard web** (Next.js + ECharts), publicado como sitio estático en **https://imarinione618.github.io/monitor-macro/**. Se genera desde los datos normalizados: no depende de Google Sheets ni expone el token del INDEC al navegador.
@@ -9,9 +9,12 @@ Sistema de monitoreo macroeconómico de Argentina con **datos oficiales del INDE
 API INDEC (JWT) ─▶ ingesta + normalización + revisiones ─▶ data/store (JSON)
                                                              ├─▶ Google Sheets (4 documentos)
                                                              └─▶ Dashboard web
+API BCRA v4 ────▶ ingesta + catálogo + revisiones ──────▶ data/monetary ─▶ Dashboard web
 ```
 
 Las transformaciones económicas (variaciones, acumulados, base 100, salario real) se calculan **una sola vez**, en `src/core/transforms.ts`. Por eso Sheets y el dashboard muestran exactamente el mismo número para la misma serie, período y transformación.
+
+Monetario tiene tres pestañas: Tasas, Depósitos y Préstamos, y Variables Monetarias. Su capa compartida de cálculo está en `src/monetary/analytics.ts`; reutiliza IPC nacional para valores reales mensuales. **No sincroniza Google Sheets**. La planilla de referencia se utilizó únicamente para una auditoría de lectura.
 
 ## Requisitos
 
@@ -43,11 +46,12 @@ npm run sheets:sync         # crea (1.ª vez) o actualiza los 4 documentos
 | Comando | Qué hace |
 |---|---|
 | `npm run data:refresh` | Ingesta incremental con detección de revisiones. Flags: `-- --full` (reconciliación completa), `-- --dataset <id>`, `-- --no-cache` |
+| `npm run monetary:refresh` | Ingesta BCRA independiente, sin credenciales; `-- --full` reconcilia historia. Conserva el último conjunto válido ante falla |
 | `npm run data:check` | Verifica contra la API que cada selector identifique exactamente una serie por período |
 | `npm run data:discover` | Releva dimensiones reales de cada endpoint → `docs/catalogo-dimensiones.md` |
 | `npm run sheets:auth` | Autorización OAuth de Google (una vez) |
 | `npm run sheets:sync` | Sincroniza los 4 Google Sheets. `-- --dry-run`: vista previa local en `data/sheets-preview/`. `-- --topic=precios` |
-| `npm run update` | `data:refresh` + `sheets:sync` |
+| `npm run update` | Ingesta INDEC + BCRA independientes, y sincronización Sheets existente solo para INDEC |
 | `npm run dev` | Dashboard en modo desarrollo (lee los datos en cada recarga) |
 | `npm run build` / `npm start` | Genera el sitio estático en `out/` / lo sirve en http://localhost:3000 |
 | `npm run test` | Pruebas (vitest) |
@@ -58,7 +62,7 @@ npm run sheets:sync         # crea (1.ª vez) o actualiza los 4 documentos
 
 El dashboard se publica en **https://imarinione618.github.io/monitor-macro/**.
 
-- **Cómo se actualiza:** la tarea diaria actualiza los datos y los sube a este repositorio (`data/store`). GitHub Actions (`.github/workflows/pages.yml`) corre las pruebas, regenera el sitio y lo publica. GitHub no necesita ningún secreto.
+- **Cómo se actualiza:** la tarea diaria actualiza los datos y los sube a este repositorio (`data/store` y `data/monetary`). GitHub Actions (`.github/workflows/pages.yml`) corre las pruebas, regenera el sitio y lo publica. El workflow de publicación no necesita secretos.
 - **Verlo localmente:** `npm run build && npm start`.
 
 ## Actualización automática
@@ -73,10 +77,12 @@ El dashboard se publica en **https://imarinione618.github.io/monitor-macro/**.
 ```
 src/core/      contratos compartidos: tipos, períodos, transformaciones, registro de series, store
 src/ingest/    cliente API INDEC, paginación, normalización, revisiones, CLI
+src/monetary/  catálogo y cliente BCRA, revisiones, cálculos diarios/mensuales y CLI
 src/sheets/    conector Google Sheets (auth, plan de pestañas, escritura idempotente)
 src/app/       páginas del dashboard (Next.js App Router)
 src/web/       componentes y lógica del dashboard
 data/store/    datos normalizados (versionables) + manifest + revisions.jsonl
+data/monetary/ datos BCRA normalizados, independientes de Sheets
 docs/          documentación (ver abajo)
 scripts/       actualización y programación en Windows
 deploy/        plantilla de GitHub Actions
@@ -94,6 +100,9 @@ tests/         pruebas: core, ingest, sheets, web, validation (+ fixtures reales
 | `docs/google-sheets.md` | Credenciales, pestañas y rangos administrados, qué podés editar |
 | `docs/dashboard.md` | Pantallas, gráficos, exportaciones |
 | `docs/validacion.md` | Contraste con publicaciones oficiales y verificaciones |
+| [Catálogo monetario](docs/monetario-catalogo.md) | IDs BCRA, correspondencias, unidades y cobertura |
+| [Metodología monetaria](docs/monetario-metodologia.md) | Promedios, cierres, fechas comunes, valores reales y ratios |
+| [Validación monetaria](docs/monetario-validacion.md) | Contrastes oficiales, discrepancias de referencia y pendientes |
 | `docs/despliegue.md` | Ejecución local, programación y opciones de despliegue |
 | `docs/agregar-serie.md` | Cómo agregar una serie |
 | `docs/estado.md` | Estado actual, bloqueos y próximos pasos |

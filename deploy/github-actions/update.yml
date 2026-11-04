@@ -66,14 +66,21 @@ jobs:
         continue-on-error: true
         id: refresh
       - name: Google Sheets
+        # Integración preexistente INDEC; ninguna serie monetaria se escribe en Sheets.
         run: npm run sheets:sync
+        continue-on-error: true
+        id: sheets
+      - name: Ingesta BCRA independiente
+        run: npm run monetary:refresh -- ${{ inputs.full && '--full' || '' }}
+        continue-on-error: true
+        id: monetary
       - name: Versionar store actualizado
         run: |
           git config user.name "actualizacion-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/store
+          git add data/store data/monetary
           git diff --cached --quiet || git commit -m "datos: actualización $(date +%F)"
           git push
-      - name: Fallar si la ingesta falló
-        if: steps.refresh.outcome == 'failure'
+      - name: Informar fuentes o sincronización con errores
+        if: steps.refresh.outcome == 'failure' || steps.monetary.outcome == 'failure' || steps.sheets.outcome == 'failure'
         run: exit 1

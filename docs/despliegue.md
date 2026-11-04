@@ -7,6 +7,7 @@ Este documento cubre tres frentes: dónde corre la actualización de datos, qué
 | Componente | Estado |
 |---|---|
 | Ingesta API INDEC (`npm run data:refresh`) | Activa y verificada en este equipo (corrida manual) |
+| Ingesta BCRA (`npm run monetary:refresh`) | Verificada con historia real; independiente de INDEC y de Sheets |
 | Google Sheets (`npm run sheets:sync`) | Activo y verificado: 4 documentos creados en Mi unidad del usuario |
 | Dashboard | **Publicado** como sitio estático en GitHub Pages: https://imarinione618.github.io/monitor-macro/ |
 | Tarea diaria en Windows (`scripts/schedule-windows.ps1`) | **Activa y verificada**: diaria a las 12:00. Hace ingesta, Sheets y push de `data/store` |
@@ -18,6 +19,7 @@ Este documento cubre tres frentes: dónde corre la actualización de datos, qué
 ```bash
 npm ci
 npm run data:refresh
+npm run monetary:refresh
 npm run sheets:sync
 npm run build
 npm start        # sirve el sitio estático de out/ en http://localhost:3000 (--port 8080 para otro puerto)
@@ -37,7 +39,7 @@ powershell -ExecutionPolicy Bypass -File scripts/schedule-windows.ps1 -Status   
 powershell -ExecutionPolicy Bypass -File scripts/schedule-windows.ps1 -Unregister   # quitar
 ```
 
-- La tarea corre `scripts/update.ps1`: primero `data:refresh`, después `sheets:sync`. Deja el log en `data/runs/update-AAAA-MM-DD.log`.
+- La tarea corre `scripts/update.ps1`: `data:refresh`, `monetary:refresh` y `sheets:sync` (solo INDEC). Cada fuente conserva sus datos ante falla. Publica ambos stores y deja el log en `data/runs/update-AAAA-MM-DD.log`. La ampliación monetaria fue validada por separado; no se disparó una nueva escritura Sheets para probarla.
 - **Permisos:** solo los del usuario actual. Usa el `.env` y el refresh token de `.secrets/`. No necesita permisos de administrador.
 - **Limitación:** solo corre con el equipo encendido. Si estaba apagado a la hora pactada, corre al encenderlo (`StartWhenAvailable`).
 - La hora es la del equipo; el script advierte si la zona horaria no es la de Buenos Aires.
