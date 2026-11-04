@@ -49,6 +49,8 @@ export function dependenciesOf(def: SeriesDef): string[] {
       return [op.minuend, op.subtrahend];
     case 'real_index':
       return [op.nominal, op.deflator];
+    case 'ipc_contribution':
+      return [op.category, op.general];
     case 'sum':
       return op.inputs;
   }

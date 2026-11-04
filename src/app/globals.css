@@ -19,7 +19,7 @@
   --err-bg: #fdecec;
   --err-border: #b42318;
   --err-ink: #7a1610;
-  --spark: #2a78d6;
+  --spark: #E32D91;
   --radius: 8px;
   --font: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
@@ -44,7 +44,7 @@
     --err-bg: #3a1212;
     --err-border: #e66767;
     --err-ink: #ffd5d5;
-    --spark: #3987e5;
+    --spark: #E32D91;
   }
 }
 :root[data-theme='dark'] {
@@ -66,7 +66,7 @@
   --err-bg: #3a1212;
   --err-border: #e66767;
   --err-ink: #ffd5d5;
-  --spark: #3987e5;
+  --spark: #E32D91;
 }
 
 *,

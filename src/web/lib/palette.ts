@@ -1,5 +1,5 @@
 /**
- * Paleta del dashboard (paleta de referencia validada para daltonismo, orden fijo).
+ * Paleta violeta-rojo del dashboard, con los tres colores prioritarios del usuario.
  * Los colores identifican SERIES, nunca juicios (no hay "verde = bueno / rojo = malo").
  * Las subas y bajas se muestran con el mismo color; el signo lo da el número y el eje.
  */
@@ -16,6 +16,8 @@ export interface ChartTheme {
   reference: string;
 }
 
+export const SERIES_PALETTE = ['#E32D91', '#1A4CC8', '#969696', '#7030A0', '#C00000', '#A674C5', '#F19BC6', '#8064A2'] as const;
+
 export const LIGHT_THEME: ChartTheme = {
   surface: '#fcfcfb',
   text: '#0b0b0b',
@@ -23,7 +25,7 @@ export const LIGHT_THEME: ChartTheme = {
   muted: '#6b6a65',
   grid: '#e1e0d9',
   axis: '#c3c2b7',
-  series: ['#2a78d6', '#eb6834', '#1baf7a', '#eda100', '#e87ba4', '#008300', '#6250d6', '#e34948'],
+  series: SERIES_PALETTE,
   reference: '#52514e',
 };
 
@@ -34,7 +36,7 @@ export const DARK_THEME: ChartTheme = {
   muted: '#a3a199',
   grid: '#2c2c2a',
   axis: '#383835',
-  series: ['#3987e5', '#d95926', '#199e70', '#c98500', '#d55181', '#008300', '#9085e9', '#e66767'],
+  series: SERIES_PALETTE,
   reference: '#c3c2b7',
 };
 

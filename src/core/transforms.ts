@@ -290,6 +290,19 @@ export function realIndex(nominal: Observation[], deflator: Observation[], baseP
   return out;
 }
 
+/** Aporte mensual estimado, en p.p. Pesos fijos sin normalizar; comparación por calendario. */
+export function ipcContribution(category: Observation[], general: Observation[], weight: number): Observation[] {
+  if (!Number.isFinite(weight) || weight < 0) throw new Error('Ponderación del IPC inválida');
+  const c = toMap(category), g = toMap(general);
+  return category.map((o) => {
+    const previous = shiftPeriod(o.period, -1);
+    const current = get(c, o.period), prior = get(c, previous), denominator = get(g, previous);
+    const value = current === null || prior === null || denominator === null || denominator <= 0
+      ? null : 100 * weight * (current - prior) / denominator;
+    return { period: o.period, value: value !== null && Number.isFinite(value) ? value : null };
+  });
+}
+
 /** a − b por período (p.ej. saldo = expo − impo). Solo períodos presentes en ambas. */
 export function differenceSeries(a: Observation[], b: Observation[]): Observation[] {
   const bm = toMap(b);

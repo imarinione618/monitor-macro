@@ -23,7 +23,7 @@ SITE_BASE_PATH=/monitor-macro npm run build   # build con subruta (lo hace el wo
 | `/` | Resumen: tarjetas de `headlineSeries()` (valor de `headline.transform`, unidad, período propio, comparación `headline.compare` o período anterior, sparkline, fecha de consulta, aviso de datos anteriores). |
 | `/actividad` | EMAE nivel general (toggle original/desest./tendencia-ciclo), EMAE sectores (barras horizontales del mes elegido + evolución), IPI manufacturero (toggle), indicadores no disponibles. |
 | `/laboral` | Salarios nominales por sector, salarios reales (nota de cálculo propio), EPH desocupación/subocupación y actividad/empleo (aviso "31 aglomerados urbanos — no es total nacional"), pobreza semestral, fuentes complementarias. |
-| `/precios` | IPC nivel general por región, núcleo/regulados/estacionales, divisiones (corte del mes + evolución), mayoristas (SIPM), ICC (GBA), canastas en pesos. |
+| `/precios` | IPC nivel general por región, núcleo/regulados/estacionales, contribuciones mensuales estimadas (barras apiladas en p.p.), divisiones (corte del mes + evolución), mayoristas (SIPM), ICC (GBA), canastas en pesos. |
 | `/comercio` | Tarjetas expo/impo/saldo, tabla mes / acumulado del año / 12 meses con var. i.a. (saldo: diferencia absoluta), expo e impo (transformaciones ytd y 12m), saldo en barras, expo por rubro e impo por uso (barras apiladas), socios (advertencia de supresión "s"). |
 | `/fuentes` | Estado general (modo de datos, última corrida), estado por dataset (último éxito, último intento, error, filas, metodología), estado por serie (rango, cantidad, consulta, stale/error), revisiones recientes (`readRevisions`), no disponibles y fuentes complementarias del registro, signos convencionales, criterios. |
 
@@ -45,7 +45,7 @@ SITE_BASE_PATH=/monitor-macro npm run build   # build con subruta (lo hace el wo
   - `csv.ts`: UTF-8 con BOM, `;`, coma decimal, fecha ISO + período canónico, valores sin redondear, faltante vacío.
   - `format.ts`: es-AR (coma decimal), hora de Buenos Aires. `kpi.ts`: tarjetas, sparklines, resumen de comercio.
   - `meta.ts`: línea de fuente, notas, avisos por serie (stale, sin datos, error, supresión).
-  - `palette.ts`: paleta categórica validada para daltonismo (orden fijo, máx. 8 series; el color sigue a la serie).
+  - `palette.ts`: paleta violeta-rojo con prioridad a `#E32D91`, `#1A4CC8` y `#969696` (máx. 8 series; el color sigue a la serie). Se conserva en pantalla y exportaciones. En categorías del IPC: núcleo azul, estacionales gris y regulados magenta.
   - `exportRender.ts`: render fuera de pantalla — SVG (`renderer:'svg'`, también SSR en Node) y PNG
     (`renderer:'canvas'`, `pixelRatio` 3 → 4800×2700 px).
 - `components/` — `ChartPanel` (gráfico reutilizable con selectores, tabla accesible alternable, CSV/PNG/SVG,
@@ -53,6 +53,18 @@ SITE_BASE_PATH=/monitor-macro npm run build   # build con subruta (lo hace el wo
   `Nav`, `StateMessages` (banner sintético, store vacío/ilegible), `PageIntro`.
 
 ## Criterios de presentación
+
+### Contribuciones del IPC
+
+Se calculan con `ipcContribution` en `src/core/transforms.ts`, usando los niveles nacionales de cada categoría y del IPC general de igual base:
+
+`aporte_t (p.p.) = 100 × peso × (IPCcategoría_t − IPCcategoría_t−1) / IPCgeneral_t−1`.
+
+Pesos provistos y confirmados por el usuario: núcleo `0.679236`, estacionales `0.113209`, regulados `0.208047`. Se conservan sin normalizar (suma `1.000492`), por lo que el gráfico se identifica como estimación propia y su suma puede diferir de la inflación general. La [metodología INDEC N.º 32, sección 6](https://www.indec.gob.ar/ftp/cuadros/economia/metodologia_ipc_nacional_2019.pdf) explica el concepto de incidencia.
+
+La comparación usa meses calendario: faltantes o denominador no positivo producen `null`, nunca cero. Los aportes negativos conservan su signo. El gráfico ofrece rango temporal, selección de categorías, tabla y CSV/PNG/SVG; usa azul para núcleo, gris para estacionales y magenta para regulados. Se genera desde el store existente y no agrega series a los documentos de Sheets.
+
+### Criterios generales
 
 - Sin doble eje. Líneas para series temporales; barras para saldo y composiciones (apiladas solo con
   magnitudes aditivas: nivel, acumulado, 12 meses; con % se pasa a líneas y se avisa).

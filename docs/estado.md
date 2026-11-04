@@ -34,6 +34,13 @@ Publicación inicial completada el 2026-11-04:
   - **Solo corre con el equipo encendido.** Si estaba apagado a las 12:00, corre al encenderlo.
 - **Lista para activar (no activa):** GitHub Actions (`deploy/github-actions/update.yml`) para actualizar con el equipo apagado. Ver `docs/despliegue.md`.
 
+## Cambios del dashboard — 2026-11-04
+- Paleta violeta-rojo: prioridad a magenta `#E32D91`, azul `#1A4CC8` y gris `#969696`, también en exportaciones y minigráficos del resumen.
+- Precios incorpora barras apiladas de contribución mensual estimada: núcleo azul, estacionales gris y regulados magenta. Fórmula confirmada por el usuario: `100 × peso × (IPCcategoría_t − IPCcategoría_t−1) / IPCgeneral_t−1` (p.p.).
+- Pesos conservados exactamente (0,679236; 0,113209; 0,208047). Se informa que suman 1,000492 y que los aportes estimados pueden diferir de la inflación general; no se presentan como incidencias oficiales.
+- Se calcula al generar el dashboard a partir de los índices existentes, con la función compartida de transformaciones. No requiere una nueva ingesta ni modifica los documentos de Sheets.
+- Validación: 614 pruebas aprobadas; build estático con subruta y chequeo de tipos correctos; 15 verificaciones posteriores de exportación sin secretos y layout de Sheets aprobadas. Tabla de 24 meses, gráfico y colores comprobados en navegador local.
+
 ## Decisiones pendientes del usuario
 1. **Actualización con el equipo apagado:** mover la ingesta y Sheets a GitHub Actions (`deploy/github-actions/update.yml`) si hace falta. Implica guardar el token del INDEC y el de Google como secrets del repositorio.
 2. **Rubros de exportación:** integrar la serie mensual del ICA de datos.gob.ar (fuente INDEC, coincide exactamente con las planillas del INDEC) para tener PP/MOA/MOI/CyE con lo confidencial asignado.

@@ -5,6 +5,7 @@ import { PageIntro } from '@/web/components/PageIntro';
 import { SnapshotPanel } from '@/web/components/SnapshotPanel';
 import { StoreProblem } from '@/web/components/StateMessages';
 import { getClientSeriesList, getStoreState } from '@/web/server/store';
+import { buildIpcContributions, contributionId, IPC_CONTRIBUTIONS } from '@/web/lib/ipcContributions';
 
 // Sitio estático: se genera con los datos del store al momento del build (npm run build).
 export const dynamic = 'force-static';
@@ -22,6 +23,8 @@ export default function PreciosPage() {
   const regiones = ids('ipc_nivel_general');
   const categorias = [NG, ...ids('ipc_categorias')];
   const divisiones = [NG, ...ids('ipc_divisiones')];
+  const contributions = buildIpcContributions(getClientSeriesList(categorias));
+  const contributionIds = IPC_CONTRIBUTIONS.map(({ key }) => contributionId(key));
 
   return (
     <>
@@ -51,8 +54,30 @@ export default function PreciosPage() {
         pool={getClientSeriesList(categorias)}
         options={categorias}
         defaultSelected={[NG, 'precios.ipc.cat.nucleo.nacional', 'precios.ipc.cat.regulados.nacional', 'precios.ipc.cat.estacionales.nacional']}
+        fixedColorSlots={{
+          [NG]: 3,
+          'precios.ipc.cat.nucleo.nacional': 1,
+          'precios.ipc.cat.regulados.nacional': 0,
+          'precios.ipc.cat.estacionales.nacional': 2,
+          'precios.ipc.cat.bienes.nacional': 4,
+          'precios.ipc.cat.servicios.nacional': 5,
+        }}
         defaultTransform="pct_prev"
         defaultRange="24m"
+        pickerLabel="Categorías"
+        synthetic={synthetic}
+      />
+
+      <ChartPanel
+        title="Incidencia en la inflación general por categoría"
+        description="Contribución mensual estimada, en puntos porcentuales. Las barras apiladas muestran el aporte de núcleo, estacionales y regulados; los aportes negativos se ubican debajo de cero."
+        pool={contributions}
+        options={contributionIds}
+        defaultSelected={contributionIds}
+        fixedColorSlots={Object.fromEntries(IPC_CONTRIBUTIONS.map(({ key, colorSlot }) => [contributionId(key), colorSlot]))}
+        defaultTransform="level"
+        defaultRange="24m"
+        kind="stacked"
         pickerLabel="Categorías"
         synthetic={synthetic}
       />

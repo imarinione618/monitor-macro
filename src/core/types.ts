@@ -53,7 +53,7 @@ export type Measure =
   | 'price_level' // valor monetario de un stock/canasta (CBA, CBT en $) -> % variación
   | 'published_change' // variación % publicada por la fuente (no se re-transforma)
   | 'weight' // ponderación
-  | 'incidence'; // incidencia publicada por la fuente (p.p.)
+  | 'incidence'; // incidencia publicada o estimación propia identificada en source/notes (p.p.)
 
 export type SeriesStatus =
   | 'verificado' // probado contra la API real (selector devuelve 1 serie, datos OK)
@@ -165,6 +165,7 @@ export interface DerivedSpec {
   op:
     | { type: 'difference'; minuend: string; subtrahend: string } // saldo = X - M
     | { type: 'real_index'; nominal: string; deflator: string; basePeriod: Period } // salario real
+    | { type: 'ipc_contribution'; category: string; general: string; weight: number }
     | { type: 'sum'; inputs: string[] };
 }
 

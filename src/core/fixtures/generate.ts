@@ -12,7 +12,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { SERIES, dependenciesOf, getSeries } from '../registry';
 import { periodRange } from '../periods';
-import { differenceSeries, realIndex } from '../transforms';
+import { differenceSeries, ipcContribution, realIndex } from '../transforms';
 import { emptyManifest, writeManifest, writeSeriesData } from '../store';
 import type { Observation, Period, SeriesData, SeriesDef } from '../types';
 
@@ -73,6 +73,7 @@ export function generateFixtureStore(dir: string): void {
       const deps = dependenciesOf(def).map((d) => produced.get(d) ?? synth(getSeries(d)));
       if (op.type === 'difference') obs = differenceSeries(deps[0]!, deps[1]!);
       else if (op.type === 'real_index') obs = realIndex(deps[0]!, deps[1]!, op.basePeriod);
+      else if (op.type === 'ipc_contribution') obs = ipcContribution(deps[0]!, deps[1]!, op.weight);
       else obs = deps[0]!;
     } else obs = synth(def);
     produced.set(def.id, obs);

@@ -549,7 +549,9 @@ function buildCatalogo(
           ? `diferencia: ${op.minuend} − ${op.subtrahend}`
           : op.type === 'real_index'
             ? `índice real: ${op.nominal} / ${op.deflator}, base ${op.basePeriod} = 100`
-            : `suma: ${op.inputs.join(' + ')}`;
+            : op.type === 'ipc_contribution'
+              ? `aporte mensual (p.p.): 100 × ${op.weight} × (${op.category}_t − ${op.category}_t−1) / ${op.general}_t−1`
+              : `suma: ${op.inputs.join(' + ')}`;
     }
     rows.push([
       d.id,

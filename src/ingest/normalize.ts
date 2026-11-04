@@ -13,7 +13,7 @@
  */
 import type { DatasetConfig, DerivedSpec, Observation, ObservationFlag, Period, SeriesDef, SourceSpec } from '../core/types';
 import { comparePeriods, fromEphQuarter, fromEphSemester, fromYYYYMM, isValidPeriod } from '../core/periods';
-import { differenceSeries, realIndex, toMap } from '../core/transforms';
+import { differenceSeries, ipcContribution, realIndex, toMap } from '../core/transforms';
 import { IngestError } from './errors';
 import type { Row } from './client';
 
@@ -286,6 +286,9 @@ export function buildDerivedSeries(def: SeriesDef, getObs: (id: string) => Obser
       if (!toMap(n).has(op.basePeriod) || !toMap(d).has(op.basePeriod)) out.issues.push(`el período base ${op.basePeriod} falta en alguna de las series de entrada`);
       else obs = realIndex(n, d, op.basePeriod);
     }
+  } else if (op.type === 'ipc_contribution') {
+    const category = need(op.category), general = need(op.general);
+    if (category && general) obs = ipcContribution(category, general, op.weight);
   } else if (op.type === 'sum') {
     const inputs = op.inputs.map(need);
     if (inputs.every((x) => x)) {

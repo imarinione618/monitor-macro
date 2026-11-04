@@ -31,6 +31,8 @@ export interface ChartPanelProps {
   /** IDs seleccionables en el selector de series (sin las variantes). */
   options: string[];
   defaultSelected: string[];
+  /** Colores semánticos fijos por serie, compartidos con las exportaciones. */
+  fixedColorSlots?: Record<string, number>;
   defaultTransform: TransformId;
   /** Transformaciones a probar si la elegida deja de ser válida (p.ej. al cambiar el ajuste). */
   fallbackTransforms?: TransformId[];
@@ -54,6 +56,7 @@ export function ChartPanel(props: ChartPanelProps) {
     pool,
     options,
     defaultSelected,
+    fixedColorSlots,
     defaultTransform,
     fallbackTransforms = ['pct_yoy', 'level'],
     defaultAdjustment,
@@ -73,7 +76,7 @@ export function ChartPanel(props: ChartPanelProps) {
 
   const initialSel = defaultSelected.filter((id) => byId[id]);
   const [selected, setSelected] = useState<string[]>(initialSel);
-  const [slots, setSlots] = useState<Record<string, number>>(() => assignColorSlots(initialSel, {}));
+  const [slots, setSlots] = useState<Record<string, number>>(() => assignColorSlots(initialSel, fixedColorSlots ?? {}));
   const [adjustment, setAdjustment] = useState<SeasonalAdjustment | null>(defaultAdjustment ?? null);
   const [transform, setTransform] = useState<TransformId>(defaultTransform);
   const [range, setRange] = useState<RangeId>(defaultRange);
@@ -110,10 +113,10 @@ export function ChartPanel(props: ChartPanelProps) {
 
   const colorSlots = useMemo(() => {
     const out: Record<string, number> = {};
-    for (const r of resolved) out[r.series.def.id] = slots[r.baseId] ?? 0;
+    for (const r of resolved) out[r.series.def.id] = fixedColorSlots?.[r.baseId] ?? slots[r.baseId] ?? 0;
     return out;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [resolved.map((r) => r.series.def.id).join(','), slots]);
+  }, [resolved.map((r) => r.series.def.id).join(','), slots, fixedColorSlots]);
 
   const showAdjToggle = adjustments.length > 1 || selectedDefs.some((d) => d.seasonalVariants);
   const adjExtra = showAdjToggle && adj ? [adjustmentLabel(adj)] : [];
@@ -136,7 +139,7 @@ export function ChartPanel(props: ChartPanelProps) {
     else next = [...selected, id];
     if (!next.length) return; // siempre al menos una serie
     setSelected(next);
-    setSlots(assignColorSlots(next, slots));
+    setSlots(assignColorSlots(next, { ...slots, ...fixedColorSlots }));
   };
 
   const tableId = `${uid}-tabla`;
@@ -211,7 +214,7 @@ export function ChartPanel(props: ChartPanelProps) {
               const comp = effTransform ? compatibility(candDef, others, effTransform) : { ok: true };
               const full = !on && selected.length >= MAX_SERIES;
               const disabled = (!on && (!comp.ok || full)) || s.missing;
-              const slot = slots[s.def.id];
+              const slot = fixedColorSlots?.[s.def.id] ?? slots[s.def.id];
               return (
                 <label
                   key={s.def.id}
