@@ -18,9 +18,18 @@ Los 4 documentos (Actividad, Mercado laboral, Precios, Comercio exterior) están
 ### Dashboard publicado
 https://imarinione618.github.io/monitor-macro/ (GitHub Pages, repositorio público `imarinione618/monitor-macro`).
 
+Publicación inicial completada el 2026-11-04:
+- Repositorio público creado y rama `main` sincronizada con GitHub.
+- [Primer despliegue de GitHub Actions](https://github.com/imarinione618/monitor-macro/actions/runs/41866798897) finalizado correctamente: pruebas, exportación estática, escaneo y publicación.
+- Verificación local: TypeScript sin errores y 608/608 pruebas aprobadas; build con `SITE_BASE_PATH=/monitor-macro`.
+- Verificación del sitio público: las 6 rutas y los 17 recursos JS/CSS referenciados responden HTTP 200. No se realizó una nueva inspección visual interactiva (el navegador automatizado no estaba disponible).
+- Los archivos versionados se comprobaron contra las credenciales locales y los IDs de Sheets: sin coincidencias. No se subieron secretos a GitHub.
+
 ## Actualización programada
 - **Activa y verificada:** tarea de Windows "MonitorMacroAR - Actualizacion", diaria a las **12:00** (hora de Buenos Aires).
-  - Hace ingesta, sincroniza Sheets y publica: commit y push de `data/store`, y GitHub Actions regenera el dashboard. Se probó con un disparo manual el 2026-11-04 a las 11:49: 13/13 datasets, 139/139 series, Sheets OK, resultado 0.
+  - Hace ingesta, sincroniza Sheets y publica: commit y push de `data/store`, y GitHub Actions regenera el dashboard. La ingesta y Sheets se probaron con un disparo manual el 2026-11-04 a las 11:49: 13/13 datasets, 139/139 series, Sheets OK, resultado 0. La publicación se verificó por separado con el primer despliegue enlazado arriba.
+  - La tarea apunta a la nueva carpeta local. Próxima ejecución confirmada al finalizar la publicación: 2026-11-05 a las 12:00.
+  - Si un push falla, la siguiente corrida vuelve a intentar los commits pendientes aunque no haya datos nuevos. Los errores de preparación del commit no se ocultan con un push exitoso. Se verificaron 5 escenarios simulados de publicación y fallo sin modificar datos ni Sheets reales.
   - Log en `data/runs/update-AAAA-MM-DD.log`. Estado: `scripts/schedule-windows.ps1 -Status`.
   - **Solo corre con el equipo encendido.** Si estaba apagado a las 12:00, corre al encenderlo.
 - **Lista para activar (no activa):** GitHub Actions (`deploy/github-actions/update.yml`) para actualizar con el equipo apagado. Ver `docs/despliegue.md`.
