@@ -37,7 +37,7 @@ El catálogo oficial completo devuelve 1.610 variables; cada identificación se 
 | M2 privado / transaccional privado | 17+69+94+95 / 197 | Primero cálculo propio; segundo oficial, resta vista remunerada jurídica | Variables monetarias |
 | Depósitos públicos ARS | 91−100 | Total menos privados, fechas comunes, neto de Uso FUCO | Depósitos y préstamos |
 | Otros pasivos BCRA ARS | 198 | Saldo diario oficial; historia desde15/07/2025 | Instrumentos por separado |
-| Base + instrumentos | 1248+1258+1260+1262 | Construcción propia con balance, fechas y moneda comunes | Variables monetarias |
+| Base + instrumentos | 1248+1258+1260+1262; agrega198 desde15/07/2025 | Construcción propia v2, fechas comunes; cobertura histórica anterior sin Repo | Variables monetarias y composición |
 
 La agrupación comercial de la referencia incluye otros; esa categoría no vuelve a sumarse por separado en la composición agrupada. En la vista por líneas puede mostrarse individualmente. No se incluyen simultáneamente un total y sus componentes. En depósitos debe calcularse un residuo explícito si se grafican solo CC, CA y plazo.
 

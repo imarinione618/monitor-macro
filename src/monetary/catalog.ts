@@ -25,7 +25,7 @@ export const MONETARY_CATALOG: MonetaryDef[] = [
     lastDate: '2026-11-02',
     issuer: 'BCRA',
     balanceSide: 'liability',
-    eligibleInstrument: false,
+    eligibleInstrument: true,
   },
   {
     "id": "monetario.bcra.44",

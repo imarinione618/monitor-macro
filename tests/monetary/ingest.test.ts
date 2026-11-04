@@ -65,7 +65,7 @@ describe('ingesta monetaria BCRA v4', () => {
     expect(client.observations).toHaveBeenCalledTimes(1);
   });
   it('audita monedas y componentes: LEFI y activos no son pasivos elegibles', () => {
-    expect(MONETARY_CATALOG.filter(d => d.eligibleInstrument).map(d => d.bcraId)).toEqual([1258, 1260, 1262]);
+    expect(MONETARY_CATALOG.filter(d => d.eligibleInstrument).map(d => d.bcraId)).toEqual([198, 1258, 1260, 1262]);
     expect(MONETARY_CATALOG.find(d => d.bcraId === 196)?.issuer).toBe('Tesoro Nacional');
     expect(MONETARY_CATALOG.find(d => d.bcraId === 1263)?.balanceSide).toBe('asset');
     expect(MONETARY_CATALOG.find(d => d.bcraId === 1606)?.scale).toBe(.001);

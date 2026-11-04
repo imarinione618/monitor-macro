@@ -72,8 +72,8 @@ describe('Convenciones monetarias',()=>{
   });
   it('agregado auditado sin activos/LEFI, faltantes no cero tras extinción',()=>{
     expect([...ELIGIBLE_BALANCE_V1]).toEqual([1248,1258,1260,1262]);
-    const input=ELIGIBLE_BALANCE_V1.map(id=>make(id,[['2026-09-30',id===1260?null:10]]));
-    expect(deriveMonetarySeries(input).find(s=>s.def.id==='monetario.base_instrumentos.v1')?.observations[0]?.value).toBeNull();
+    const input=[...ELIGIBLE_BALANCE_V1,198].map(id=>make(id,[['2026-09-30',id===1260?null:10]]));
+    expect(deriveMonetarySeries(input).find(s=>s.def.id==='monetario.base_instrumentos.v2')?.observations[0]?.value).toBeNull();
   });
   it('prefiere cierre mensual oficial compatible sin usarlo como promedio',()=>{
     const s=make(15,[['2026-09-01',10],['2026-09-30',30]]), companion=make(1606,[['2026-09-01',25]]);

@@ -130,13 +130,35 @@ export function prepareComposition(series: MonetarySeries[], options: MonetaryOp
 
 /** Lista versionada, misma fuente contable. No incluye activos, LEFI ni títulos en garantía. */
 export const ELIGIBLE_BALANCE_V1 = [1248, 1258, 1260, 1262] as const;
+export const ELIGIBLE_BALANCE_V2 = [...ELIGIBLE_BALANCE_V1, 198] as const;
+export const REPO_AGGREGATE_FROM = '2025-07-15';
+
+/** Componentes de la construcción con cobertura histórica explícita.
+ * El cero previo representa exclusión del agregado, NO un saldo observado de Repo.
+ * La serie oficial 198 se conserva intacta para su consulta individual.
+ */
+export function baseInstrumentComponents(input: MonetarySeries[]): MonetarySeries[] {
+  const components = ELIGIBLE_BALANCE_V2.map(id => input.find(s => s.def.bcraId === id));
+  if (components.some(s => !s)) return [];
+  const historical = components.slice(0, -1) as MonetarySeries[];
+  const repo = components.at(-1)!;
+  const dates = [...new Set(historical.flatMap(s => s.observations.map(o => o.date)))].filter(date => date < REPO_AGGREGATE_FROM).sort();
+  const contribution: MonetarySeries = { ...repo, def: { ...repo.def,
+    id: 'monetario.aporte_repo.v2', bcraId: 0,
+    name: 'Repo BCRA — aporte al agregado desde 15/07/2025',
+    convention: 'Aporte al agregado; Repo incluido desde 15/07/2025',
+    methodology: 'Aporte calculado: antes del 15/07/2025 Repo queda fuera de la cobertura (aporte cero, no saldo oficial cero); desde esa fecha se usa la serie API BCRA 198 sin completar faltantes. La serie individual conserva únicamente observaciones oficiales.',
+    regimeNotes: [],
+  }, observations: [...dates.map(date => ({ date, value: 0 })), ...repo.observations.filter(o => o.date >= REPO_AGGREGATE_FROM)] };
+  return [...historical, contribution];
+}
 
 export function deriveMonetarySeries(input: MonetarySeries[]): MonetarySeries[] {
   const result = [...input];
   const byId = (id: number) => input.find(s => s.def.bcraId === id);
-  const add = (id: string, name: string, ids: number[], category: string, calc: (v:number[])=>number|null, overrides: Partial<MonetaryDef> = {}) => {
-    const components = ids.map(byId);
-    if (components.some(s => !s)) return;
+  const add = (id: string, name: string, ids: number[], category: string, calc: (v:number[])=>number|null, overrides: Partial<MonetaryDef> = {}, provided?: MonetarySeries[]) => {
+    const components = provided ?? ids.map(byId);
+    if (!components.length || components.some(s => !s)) return;
     const sources = components as MonetarySeries[];
     if (new Set(sources.map(s=>s.def.currency)).size !== 1 || new Set(sources.map(s=>s.def.frequency)).size !== 1) return;
     const observations = combineObservations(sources, calc);
@@ -180,6 +202,6 @@ export function deriveMonetarySeries(input: MonetarySeries[]): MonetarySeries[] 
     const x=byId(a),y=byId(b);
     if (x && y && x.def.convention === y.def.convention && x.def.currency === y.def.currency) add(`spread.${a}.${b}`,label,[a,b],'spread',v=>v[0]!-v[1]!,{group:'passive_rates',unit:'puntos porcentuales',convention:'Diferencia entre TNA; puntos porcentuales'});
   }
-  add('base_instrumentos.v1','Base monetaria + letras ARS y pases pasivos (v1)',[...ELIGIBLE_BALANCE_V1], 'base_instrumentos',sum,{group:'base',methodology:'Construcción propia v1 = BCRA 1248 + 1258 + 1260 + 1262; balance contable ARS, fechas comunes. Excluye pases activos, LEFI del Tesoro, deuda en moneda extranjera y títulos en garantía. Faltantes impiden el total; no se imputa cero por discontinuación.'});
+  add('base_instrumentos.v2','Base monetaria + instrumentos (incluye Repo)',[...ELIGIBLE_BALANCE_V2], 'base_instrumentos',sum,{group:'base',coverage:'Base y pasivos elegibles en ARS; incorpora Repo BCRA desde 15/07/2025',methodology:'Construcción propia v2: BCRA 1248 + 1258 + 1260 + 1262; desde 15/07/2025 incorpora además Repo BCRA 198. Antes de esa fecha se conserva la cobertura histórica de cuatro componentes, sin afirmar un saldo Repo igual a cero. Suma diaria sobre fechas comunes antes de promediar. Excluye pases activos, LEFI del Tesoro y deuda en moneda extranjera. Un faltante de cualquier componente incluido impide el total.',regimeNotes:[]},baseInstrumentComponents(input));
   return result;
 }

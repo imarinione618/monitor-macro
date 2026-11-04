@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import type { MonetaryDef, MonetarySeries } from '@/monetary/types';
+import { baseInstrumentComponents } from '@/monetary/analytics';
 import type { IpcPoint } from '@/web/lib/monetaryChartModel';
 import { SECTOR_LABELS } from '@/web/lib/monetaryChartModel';
 import { selectableMonetarySeries } from '@/web/lib/monetarySelection';
@@ -32,6 +33,7 @@ export function MonetaryDashboard({ series, ipc, updatedAt, error }: Props) {
     .map(s => ({ ...s, def: { ...s.def, regimeNotes: [] } }));
   const aggregates = filter(['aggregates']);
   const aggregateTotal = available.filter(s => s.def.category === 'base_instrumentos');
+  const aggregateComponents = useMemo(() => baseInstrumentComponents(available), [available]);
   const common = { allSeries: series, ipc, asOf: updatedAt ?? undefined };
   const panel = (title: string, pool: MonetarySeries[], categories?: string[], description?: string, mode: 'rate' | 'stock' | 'ratio' | 'composition' = 'stock', defaultTransform?: 'pct_mom') => <MonetaryChartPanel key={`${title}-${currency}-${sector}`} title={title} description={description} series={pool} defaultIds={categories ? ids(pool, categories) : undefined} mode={mode} defaultTransform={defaultTransform} {...common} />;
   const depositParts = sector === 'public'
@@ -70,8 +72,8 @@ export function MonetaryDashboard({ series, ipc, updatedAt, error }: Props) {
     {tab === 'variables' && <div role="tabpanel" id="monetary-pane-variables" aria-labelledby="monetary-tab-variables">
       {panel('Base monetaria y componentes', base, ['base_monetaria', 'circulante_publico'], 'La base monetaria se compara con sus componentes; no se suman nuevamente componentes incluidos en el total.')}
       {panel('Instrumentos monetarios por separado', instruments, ['pases_pasivos_imd', 'pases_activos_imd', 'otros'])}
-      {aggregateTotal.length > 0 ? panel('Base monetaria más instrumentos elegibles', aggregateTotal, undefined, 'Construcción propia con componentes auditados, fechas comunes y sin imputar cero a datos faltantes. La historia del total puede terminar antes que la de sus componentes: un instrumento sin dato impide calcular un total actual.') : <p className="monetary-status">Base monetaria más instrumentos: total no disponible cuando falta un componente elegible o no existe cobertura simultánea. Los instrumentos se pueden consultar individualmente.</p>}
-      {panel('Composición de base monetaria e instrumentos elegibles', available.filter(s => [1248, 1258, 1260, 1262].includes(s.def.bcraId)), undefined, 'Construcción propia v1 = base monetaria contable + otras letras BCRA en ARS + LELIQ/NOTALIQ + pases pasivos. Excluye activos, LEFI del Tesoro y componentes ya incluidos en la base.', 'composition')}
+      {aggregateTotal.length > 0 ? panel('Base monetaria más instrumentos elegibles', aggregateTotal, undefined, 'Base monetaria + otras letras + LELIQ/NOTALIQ + pases pasivos + Repo BCRA. Repo se incorpora desde el 15/07/2025; antes se muestra el agregado histórico sin Repo. Cálculo propio sobre fechas comunes.') : <p className="monetary-status">Base monetaria más instrumentos: total no disponible cuando falta un componente elegible o no existe cobertura simultánea. Los instrumentos se pueden consultar individualmente.</p>}
+      {panel('Composición de base monetaria e instrumentos elegibles', aggregateComponents, undefined, 'Incluye Repo BCRA (serie 198) desde el 15/07/2025. Antes se conserva la composición histórica sin Repo; su aporte cero indica exclusión de la cobertura, no un saldo oficial cero.', 'composition')}
       {panel('Agregados monetarios privados', aggregates.filter(s => s.def.sector === 'private'), ['m1', 'm2', 'm3'], 'M1, M2 y M3 privados: cálculos propios con componentes de la API BCRA desde 2005. M2 transaccional: serie oficial.')}
       {panel('Agregados monetarios totales', aggregates.filter(s => s.def.sector === 'total'), ['m1', 'm2', 'm3'], 'M1, M2 y M3: cálculos propios con componentes de la API BCRA desde 2005. Para cierres mensuales se prioriza la serie oficial compatible; promedio y cierre no se intercambian.')}
     </div>}

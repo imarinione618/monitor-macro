@@ -1,4 +1,19 @@
-# Base monetaria más instrumentos: definición auditada v1
+# Base monetaria más instrumentos: definición v2 con Repo BCRA
+
+La versión actual incluye **Repo BCRA (API 198, nombre oficial «Otros»)** tanto en el total como en la composición. Es una construcción propia solicitada por el usuario, no un agregado oficial BCRA.
+
+- Hasta el 14/07/2025 se conserva la cobertura histórica: 1248 + 1258 + 1260 + 1262.
+- Desde el 15/07/2025 se suma además 198, en millones ARS y en la misma fecha. Esa fecha fija corresponde al comienzo de la publicación de la serie 198, no se desplaza si faltan sus primeros datos.
+- El aporte previo de Repo al agregado es cero **por exclusión de cobertura**, no porque se haya observado un saldo oficial cero. La serie individual 198 conserva sus observaciones originales desde julio de 2025. Las barras emplean un aporte derivado identificado como cálculo propio.
+- Total y barras usan la misma lista de componentes y el mismo calendario antes de promediar o cerrar el mes. Esto también aplica a julio de 2025: no se suman medias de calendarios diferentes.
+- Desde el inicio de inclusión de Repo, un faltante suyo impide calcular el total de ese día; no se arrastra el último valor ni se sustituye por cero. Tampoco se completan faltantes de los otros componentes.
+- Los gráficos explicitan el cambio de cobertura. Las variaciones que crucen julio de 2025 reflejan también esa incorporación.
+
+Al 30/10/2026: 47.321.620 + 243.895 + 0 + 0 + 1.326.629,282 = **48.892.144,282 millones ARS**. El corte del total sigue limitado a las fechas comunes de todos los componentes.
+
+## Antecedente: definición v1 sin Repo
+
+La documentación siguiente corresponde a la versión anterior y fundamenta sus cuatro componentes. La v2 conserva esos componentes y agrega 198 según la regla anterior.
 
 Fuente: [catálogo API BCRA v4](https://api.bcra.gob.ar/estadisticas/v4.0/monetarias), metodologías de cada ID y observaciones efectivamente descargadas el 04/11/2026. La construcción propia se llama **Base monetaria + otras letras BCRA ARS + LELIQ/NOTALIQ + pases pasivos**. No se presenta como una Base Monetaria Amplia oficial.
 
