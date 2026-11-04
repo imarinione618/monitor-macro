@@ -11,7 +11,7 @@ _Última actualización: 2026-11-04_
 | **Dashboard** | Sitio estático (`out/`) con datos reales; 7 secciones, incluida Monetario con tres pestañas; subruta y escaneo de secretos OK. Publicación mediante GitHub Pages. |
 | **BCRA / Monetario** | 85 series oficiales, 440.224 observaciones reales; ingesta y catálogo independientes de Sheets. Incluye Otros198 y cálculos con componentes vigentes para resúmenes discontinuados en mayo. |
 | **Validación** | Más de 50 cifras contrastadas con informes del INDEC y con variaciones publicadas por la API: coinciden dentro del redondeo. Hallazgos A1, A3, A4 y B2 corregidos; A2 documentado. Ver `docs/validacion.md`. |
-| **Pruebas** | 660 pruebas aprobadas (core, ingest, monetary, sheets, web, validation); build estático y TypeScript OK. |
+| **Pruebas** | 663 pruebas aprobadas y 6 omitidas en CI (run 41902449530, 2026-11-04): core, ingest, monetary, sheets, web, validation; build estático y TypeScript OK. |
 
 ### Documentos de Google Sheets
 Los 4 documentos (Actividad, Mercado laboral, Precios, Comercio exterior) están en Mi unidad del usuario. Sus IDs y links están en `config/sheets.local.json`, archivo local que no se publica.
@@ -28,6 +28,15 @@ https://imarinione618.github.io/monitor-macro/ (GitHub Pages, repositorio públi
 - Pendientes: caución sin fuente/plazo verificados; series992/893 y1494 con metadata inconsistente; composición pública USD y cuasimonedas2003/04. Los derivados y cortes incompletos están identificados.
 - Ver [validación](monetario-validacion.md), [catálogo](monetario-catalogo.md), [metodología](monetario-metodologia.md), [instrumentos elegibles](monetario-instrumentos.md) y [auditoría de referencias](monetario-referencias.md).
 - No se disparó la tarea diaria completa ampliada porque incluye escrituras Sheets preexistentes. Se verificaron por separado ingesta BCRA real, fallas/revisiones simuladas, sintaxis de scripts y build.
+
+### Base monetaria + instrumentos con Repo BCRA (v2) — 2026-11-04
+
+- Commits `e44fa24` (rótulo «Repo BCRA» para la serie 198 «Otros», selección de instrumentos simplificada) y `f3e644a` (Repo incluido en total y composición).
+- Definición: 1248 + 1258 + 1260 + 1262 hasta el 14/07/2025; desde el 15/07/2025 se suma la 198. Antes de esa fecha Repo aporta cero por exclusión de cobertura, no por saldo observado. Detalle en [instrumentos elegibles](monetario-instrumentos.md).
+- Último total con Repo: **48.892.144,28 millones ARS al 30/10/2026** (última fecha común de los componentes).
+- Publicado y verificado en el sitio (`/monetario/` muestra Repo BCRA) el 2026-11-04 a las 17:02 (hora de Buenos Aires).
+- **Incidente de publicación:** el run [41896612896](https://github.com/imarinione618/monitor-macro/actions/runs/41896612896) (`f3e644a`) falló dos veces en `deploy`: Pages quedó en `updating_pages` y `deploy-pages` cortó a los 10 min. El build y las pruebas estaban bien, el artefacto pesaba 8 MB (igual que antes) y GitHub no tenía incidentes declarados. Se resolvió con un run manual nuevo ([41902449530](https://github.com/imarinione618/monitor-macro/actions/runs/41902449530), `0e9b7a9`), que desplegó en 33 s. Procedimiento en [despliegue §4](despliegue.md#4-dashboard-publicado-github-pages).
+- La copia duplicada `one618-logo-asset-management.svg` subida a la raíz en el commit `0e9b7a9` se borró; el sitio usa `public/one618-logo-asset-management.svg`.
 
 Publicación inicial completada el 2026-11-04:
 - Repositorio público creado y rama `main` sincronizada con GitHub.

@@ -72,3 +72,12 @@ Detalles de funcionamiento:
 - **Qué se publica:** el código, la documentación y los datos normalizados (públicos, del INDEC). Los IDs de los Google Sheets no se publican (`config/sheets.local.json` es local).
 - **Equipo apagado:** si a las 12:00 la computadora estaba apagada, la tarea corre al encenderla y el sitio se actualiza en ese momento.
 - **Despublicar:** *Settings → Pages → Unpublish*, o pasar el repositorio a privado (en el plan gratuito, Pages se desactiva).
+- **Qué dispara el workflow:** solo cambios en `data/store/`, `data/monetary/`, `src/`, `public/`, `package*.json`, `next.config.mjs` o el propio workflow. Un commit que toque solo otros archivos (docs, archivos en la raíz) no publica. Los recursos del sitio, como el logo, van en `public/`.
+
+### Si falla el deploy
+
+Un deploy normal tarda menos de 1 minuto. Si el job `build` pasa y falla `deploy` con `Timeout reached, aborting!` tras ~10 min en `Current status: updating_pages`, el problema es de GitHub Pages, no del código.
+
+1. **No usar "Re-run"** sobre el run fallido: vuelve a desplegar el mismo commit, que es el despliegue que quedó trabado. El 2026-11-04 el re-run falló igual.
+2. Esperar a que termine o cancelarlo, dejar pasar 2 o 3 minutos y lanzar un run nuevo: *Actions → Publicar dashboard → Run workflow* sobre `main`, o `gh workflow run pages.yml --ref main`. Usa la punta de `main` y crea un despliegue nuevo.
+3. Si se repite, revisar que *Settings → Pages → Source* siga en «GitHub Actions» y consultar https://www.githubstatus.com/. Mientras tanto el sitio sigue sirviendo la última versión publicada.
