@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/1196",
   "methodology": "Tasa de interés promedio ponderada por saldos en cuentas corrientes remuneradas y cajas de ahorro con tasas de interés positivas de empresas prestadoras de servicios financieros en el  total de entidades informantes en SISCEN-0002. Se consideran personas jurídicas prestadoras de servicios financieros, exclusivamente, a fondos comunes de inversión, las compañías de seguros y sociedades autorizadas para actuar como fiduciario financiero.",
   "firstDate": "2018-01-02",
-  "lastDate": "2026-11-02",
+  "lastDate": "2026-11-03",
   "regimeNotes": [
    "Correspondencia Remu confirmada por Tasas!H3 de la referencia (ID1196). No es una tasa de política ni una tasa genérica de billeteras."
   ]
@@ -8583,7 +8583,7 @@
   },
   {
    "date": "2026-10-27",
-   "value": 14
+   "value": 14.01
   },
   {
    "date": "2026-10-28",
@@ -8600,8 +8600,12 @@
   {
    "date": "2026-11-02",
    "value": 14.26
+  },
+  {
+   "date": "2026-11-03",
+   "value": 14.27
   }
  ],
- "retrievedAt": "2026-11-04T18:27:45.092Z",
+ "retrievedAt": "2026-11-05T15:00:53.645Z",
  "stale": false
 }

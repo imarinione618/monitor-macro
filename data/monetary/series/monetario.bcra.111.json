@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/111",
   "methodology": "Préstamos de efectivo a suscriptores de letras, pagarés, debentures u otros documentos. Incluye préstamos para la prefinanciación y financiación de exportaciones.",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-10-29"
+  "lastDate": "2026-10-30"
  },
  "observations": [
   {
@@ -23224,71 +23224,71 @@
   },
   {
    "date": "2026-09-01",
-   "value": 25365533
+   "value": 25365512
   },
   {
    "date": "2026-09-02",
-   "value": 25324659
+   "value": 25324652
   },
   {
    "date": "2026-09-03",
-   "value": 25516857
+   "value": 25516855
   },
   {
    "date": "2026-09-04",
-   "value": 25701052
+   "value": 25701049
   },
   {
    "date": "2026-09-07",
-   "value": 25716769
+   "value": 25716760
   },
   {
    "date": "2026-09-08",
-   "value": 25658905
+   "value": 25658899
   },
   {
    "date": "2026-09-09",
-   "value": 25725785
+   "value": 25725766
   },
   {
    "date": "2026-09-10",
-   "value": 25927705
+   "value": 25927702
   },
   {
    "date": "2026-09-11",
-   "value": 25994041
+   "value": 25994007
   },
   {
    "date": "2026-09-14",
-   "value": 25991397
+   "value": 25991370
   },
   {
    "date": "2026-09-15",
-   "value": 25876416
+   "value": 25876588
   },
   {
    "date": "2026-09-16",
-   "value": 25872335
+   "value": 25872536
   },
   {
    "date": "2026-09-17",
-   "value": 26055996
+   "value": 26055991
   },
   {
    "date": "2026-09-18",
-   "value": 26460923
+   "value": 26460913
   },
   {
    "date": "2026-09-21",
-   "value": 26188584
+   "value": 26188569
   },
   {
    "date": "2026-09-22",
-   "value": 25995284
+   "value": 25995273
   },
   {
    "date": "2026-09-23",
-   "value": 25989405
+   "value": 25989403
   },
   {
    "date": "2026-09-24",
@@ -23296,15 +23296,15 @@
   },
   {
    "date": "2026-09-25",
-   "value": 26209467
+   "value": 26209451
   },
   {
    "date": "2026-09-28",
-   "value": 26215609
+   "value": 26215596
   },
   {
    "date": "2026-09-29",
-   "value": 26210490
+   "value": 26210460
   },
   {
    "date": "2026-09-30",
@@ -23368,7 +23368,7 @@
   },
   {
    "date": "2026-10-22",
-   "value": 26948351
+   "value": 26948340
   },
   {
    "date": "2026-10-23",
@@ -23376,11 +23376,11 @@
   },
   {
    "date": "2026-10-26",
-   "value": 27020099
+   "value": 27019984
   },
   {
    "date": "2026-10-27",
-   "value": 26916800
+   "value": 26917275
   },
   {
    "date": "2026-10-28",
@@ -23388,9 +23388,13 @@
   },
   {
    "date": "2026-10-29",
-   "value": 27150738
+   "value": 27143246
+  },
+  {
+   "date": "2026-10-30",
+   "value": 27346996
   }
  ],
- "retrievedAt": "2026-11-04T18:27:45.092Z",
+ "retrievedAt": "2026-11-05T15:00:53.645Z",
  "stale": false
 }

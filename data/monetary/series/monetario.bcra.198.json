@@ -3,7 +3,7 @@
   "id": "monetario.bcra.198",
   "bcraId": 198,
   "name": "Otros",
-  "shortName": "Otros (pasivos ARS)",
+  "shortName": "Repo BCRA",
   "group": "instruments",
   "category": "otros",
   "currency": "ARS",
@@ -19,10 +19,10 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/198",
   "methodology": "Otros pasivos del BCRA",
   "firstDate": "2025-07-15",
-  "lastDate": "2026-11-02",
+  "lastDate": "2026-11-03",
   "issuer": "BCRA",
   "balanceSide": "liability",
-  "eligibleInstrument": false
+  "eligibleInstrument": true
  },
  "observations": [
   {
@@ -1292,8 +1292,12 @@
   {
    "date": "2026-11-02",
    "value": 1428312.1216
+  },
+  {
+   "date": "2026-11-03",
+   "value": 1451451.3319
   }
  ],
- "retrievedAt": "2026-11-04T19:00:06.832Z",
+ "retrievedAt": "2026-11-05T15:00:53.645Z",
  "stale": false
 }

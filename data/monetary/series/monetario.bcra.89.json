@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/89",
   "methodology": "Depósitos de efectivo en entidades financieras no incluidos en otros rubros. ",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-10-29"
+  "lastDate": "2026-10-30"
  },
  "observations": [
   {
@@ -23224,91 +23224,91 @@
   },
   {
    "date": "2026-09-01",
-   "value": 3145685
+   "value": 3146809
   },
   {
    "date": "2026-09-02",
-   "value": 2833424
+   "value": 2833311
   },
   {
    "date": "2026-09-03",
-   "value": 2975320
+   "value": 2975718
   },
   {
    "date": "2026-09-04",
-   "value": 3134917
+   "value": 3134593
   },
   {
    "date": "2026-09-07",
-   "value": 3154932
+   "value": 3154620
   },
   {
    "date": "2026-09-08",
-   "value": 2990668
+   "value": 2990817
   },
   {
    "date": "2026-09-09",
-   "value": 3208909
+   "value": 3209474
   },
   {
    "date": "2026-09-10",
-   "value": 3250071
+   "value": 3249709
   },
   {
    "date": "2026-09-11",
-   "value": 3427174
+   "value": 3424152
   },
   {
    "date": "2026-09-14",
-   "value": 3215450
+   "value": 3214003
   },
   {
    "date": "2026-09-15",
-   "value": 3239937
+   "value": 3239676
   },
   {
    "date": "2026-09-16",
-   "value": 3051524
+   "value": 3052041
   },
   {
    "date": "2026-09-17",
-   "value": 3899288
+   "value": 3899178
   },
   {
    "date": "2026-09-18",
-   "value": 2951423
+   "value": 2951188
   },
   {
    "date": "2026-09-21",
-   "value": 3134538
+   "value": 3134747
   },
   {
    "date": "2026-09-22",
-   "value": 3028076
+   "value": 3027456
   },
   {
    "date": "2026-09-23",
-   "value": 2907175
+   "value": 2905736
   },
   {
    "date": "2026-09-24",
-   "value": 2998951
+   "value": 2999068
   },
   {
    "date": "2026-09-25",
-   "value": 2900699
+   "value": 2900745
   },
   {
    "date": "2026-09-28",
-   "value": 2914615
+   "value": 2914867
   },
   {
    "date": "2026-09-29",
-   "value": 2998374
+   "value": 2999575
   },
   {
    "date": "2026-09-30",
-   "value": 3504124
+   "value": 3504121
   },
   {
    "date": "2026-10-01",
@@ -23380,17 +23380,21 @@
   },
   {
    "date": "2026-10-27",
-   "value": 3110576
+   "value": 3111006
   },
   {
    "date": "2026-10-28",
-   "value": 2899754
+   "value": 2899761
   },
   {
    "date": "2026-10-29",
-   "value": 2905874
+   "value": 2905808
+  },
+  {
+   "date": "2026-10-30",
+   "value": 3143284
   }
  ],
- "retrievedAt": "2026-11-04T18:27:45.092Z",
+ "retrievedAt": "2026-11-05T15:00:53.645Z",
  "stale": false
 }

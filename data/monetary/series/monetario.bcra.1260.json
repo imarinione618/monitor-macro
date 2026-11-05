@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/1260",
   "methodology": "Letras y notas de liquidez emitidas por el BCRA. Referencia normativa: Comunicaciones \"A\" 6426 y \"A\" 7460. Sin saldo en circulación desde el 13/03/24.",
   "firstDate": "2018-01-02",
-  "lastDate": "2026-10-30",
+  "lastDate": "2026-11-02",
   "eligibleInstrument": true,
   "balanceSide": "liability",
   "issuer": "BCRA",
@@ -8599,8 +8599,12 @@
   {
    "date": "2026-10-30",
    "value": 0
+  },
+  {
+   "date": "2026-11-02",
+   "value": 0
   }
  ],
- "retrievedAt": "2026-11-04T18:27:45.092Z",
+ "retrievedAt": "2026-11-05T15:00:53.645Z",
  "stale": false
 }

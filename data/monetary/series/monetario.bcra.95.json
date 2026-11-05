@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/95",
   "methodology": "Depósitos de efectivo constituidos bajo el sistema de caja de ahorros. Incluye depósitos de efectivo en cuentas de ahorro vinculado a préstamos, en cuentas especiales para círculos cerrados, en la cuenta Fondo de desempleo, en cuentas abiertas bajo el sistema de usuras pupilares, en cuentas especiales para la acreditación de remuneraciones, en cuentas corrientes especiales para personas jurídicas y en las Cuentas especiales a las que se refiere la Ley 27.260 - Régimen de 27.260 - Régimen de sinceramiento fiscal – LIBRO II - Título I – Artículo 38, inciso c), Art. 41 y Art. 42, incisos b) y c) y Art. 41 y Art. 44 y Ley 27.613.",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-10-29"
+  "lastDate": "2026-10-30"
  },
  "observations": [
   {
@@ -23224,91 +23224,91 @@
   },
   {
    "date": "2026-09-01",
-   "value": 33202721
+   "value": 33202731
   },
   {
    "date": "2026-09-02",
-   "value": 33158338
+   "value": 33158428
   },
   {
    "date": "2026-09-03",
-   "value": 32838797
+   "value": 32838953
   },
   {
    "date": "2026-09-04",
-   "value": 33709155
+   "value": 33709203
   },
   {
    "date": "2026-09-07",
-   "value": 31742796
+   "value": 31742988
   },
   {
    "date": "2026-09-08",
-   "value": 31201594
+   "value": 31201765
   },
   {
    "date": "2026-09-09",
-   "value": 30943194
+   "value": 30943258
   },
   {
    "date": "2026-09-10",
-   "value": 30339656
+   "value": 30339743
   },
   {
    "date": "2026-09-11",
-   "value": 30505197
+   "value": 30505462
   },
   {
    "date": "2026-09-14",
-   "value": 30133331
+   "value": 30133610
   },
   {
    "date": "2026-09-15",
-   "value": 29267531
+   "value": 29267611
   },
   {
    "date": "2026-09-16",
-   "value": 29121547
+   "value": 29121607
   },
   {
    "date": "2026-09-17",
-   "value": 29263134
+   "value": 29263197
   },
   {
    "date": "2026-09-18",
-   "value": 29346459
+   "value": 29346467
   },
   {
    "date": "2026-09-21",
-   "value": 28410925
+   "value": 28411038
   },
   {
    "date": "2026-09-22",
-   "value": 28092759
+   "value": 28092788
   },
   {
    "date": "2026-09-23",
-   "value": 28765232
+   "value": 28765236
   },
   {
    "date": "2026-09-24",
-   "value": 28977512
+   "value": 28977513
   },
   {
    "date": "2026-09-25",
-   "value": 29032828
+   "value": 29031836
   },
   {
    "date": "2026-09-28",
-   "value": 29048079
+   "value": 29047079
   },
   {
    "date": "2026-09-29",
-   "value": 30034406
+   "value": 30035402
   },
   {
    "date": "2026-09-30",
-   "value": 33164448
+   "value": 33164363
   },
   {
    "date": "2026-10-01",
@@ -23356,41 +23356,45 @@
   },
   {
    "date": "2026-10-19",
-   "value": 28075539
+   "value": 28076013
   },
   {
    "date": "2026-10-20",
-   "value": 27591021
+   "value": 27593244
   },
   {
    "date": "2026-10-21",
-   "value": 27869278
+   "value": 27871871
   },
   {
    "date": "2026-10-22",
-   "value": 28273645
+   "value": 28276238
   },
   {
    "date": "2026-10-23",
-   "value": 28299421
+   "value": 28301680
   },
   {
    "date": "2026-10-26",
-   "value": 27771152
+   "value": 27773602
   },
   {
    "date": "2026-10-27",
-   "value": 27838797
+   "value": 27847683
   },
   {
    "date": "2026-10-28",
-   "value": 28771024
+   "value": 28775882
   },
   {
    "date": "2026-10-29",
-   "value": 30228656
+   "value": 30233874
+  },
+  {
+   "date": "2026-10-30",
+   "value": 33513671
   }
  ],
- "retrievedAt": "2026-11-04T18:52:57.368Z",
+ "retrievedAt": "2026-11-05T15:00:53.645Z",
  "stale": false
 }

@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/1216",
   "methodology": "Tasa de interés promedio ponderada por montos otorgados cobrada por las entidades financieras por préstamos otorgados mediante documentos a sola firma en moneda nacional a titulares del sector privado no financiero. Corresponde a operaciones concertadas con tasas de interés fijas o repactables.",
   "firstDate": "1993-06-30",
-  "lastDate": "2026-09-30",
+  "lastDate": "2026-10-31",
   "monthlyConvention": "mean"
  },
  "observations": [
@@ -1622,8 +1622,12 @@
   {
    "date": "2026-09-30",
    "value": 31.35
+  },
+  {
+   "date": "2026-10-31",
+   "value": 30.95
   }
  ],
- "retrievedAt": "2026-11-04T18:27:45.092Z",
+ "retrievedAt": "2026-11-05T15:00:53.645Z",
  "stale": false
 }

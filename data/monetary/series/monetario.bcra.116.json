@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/116",
   "methodology": "Préstamos de efectivo no comprendidos en las definiciones de las cuentas: adelantos en cuenta corriente, otros adelantos, documentos a sola firma, documentos descontados, documentos comprados, hipotecarios, prendarios, personales, o a titulares del sistema de tarjetas de crédito. Incluye créditos documentarios. Neto de intereses documentados.",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-10-29"
+  "lastDate": "2026-10-30"
  },
  "observations": [
   {
@@ -23224,91 +23224,91 @@
   },
   {
    "date": "2026-09-01",
-   "value": 7417915
+   "value": 7418705
   },
   {
    "date": "2026-09-02",
-   "value": 7451143
+   "value": 7451116
   },
   {
    "date": "2026-09-03",
-   "value": 7445077
+   "value": 7445048
   },
   {
    "date": "2026-09-04",
-   "value": 7436184
+   "value": 7436169
   },
   {
    "date": "2026-09-07",
-   "value": 7418241
+   "value": 7418195
   },
   {
    "date": "2026-09-08",
-   "value": 7277766
+   "value": 7277716
   },
   {
    "date": "2026-09-09",
-   "value": 7390050
+   "value": 7390009
   },
   {
    "date": "2026-09-10",
-   "value": 7391475
+   "value": 7391437
   },
   {
    "date": "2026-09-11",
-   "value": 7375463
+   "value": 7375448
   },
   {
    "date": "2026-09-14",
-   "value": 7341383
+   "value": 7341345
   },
   {
    "date": "2026-09-15",
-   "value": 7335191
+   "value": 7334986
   },
   {
    "date": "2026-09-16",
-   "value": 7322820
+   "value": 7322605
   },
   {
    "date": "2026-09-17",
-   "value": 7477007
+   "value": 7476983
   },
   {
    "date": "2026-09-18",
-   "value": 7465509
+   "value": 7465496
   },
   {
    "date": "2026-09-21",
-   "value": 7474076
+   "value": 7474067
   },
   {
    "date": "2026-09-22",
-   "value": 7457103
+   "value": 7457087
   },
   {
    "date": "2026-09-23",
-   "value": 7465087
+   "value": 7465071
   },
   {
    "date": "2026-09-24",
-   "value": 7473842
+   "value": 7473827
   },
   {
    "date": "2026-09-25",
-   "value": 7342807
+   "value": 7342794
   },
   {
    "date": "2026-09-28",
-   "value": 7354949
+   "value": 7354937
   },
   {
    "date": "2026-09-29",
-   "value": 7482000
+   "value": 7481990
   },
   {
    "date": "2026-09-30",
-   "value": 7483713
+   "value": 7483730
   },
   {
    "date": "2026-10-01",
@@ -23356,41 +23356,45 @@
   },
   {
    "date": "2026-10-19",
-   "value": 7563790
+   "value": 7563595
   },
   {
    "date": "2026-10-20",
-   "value": 7550764
+   "value": 7550569
   },
   {
    "date": "2026-10-21",
-   "value": 7542982
+   "value": 7542787
   },
   {
    "date": "2026-10-22",
-   "value": 7623400
+   "value": 7623414
   },
   {
    "date": "2026-10-23",
-   "value": 7644068
+   "value": 7643873
   },
   {
    "date": "2026-10-26",
-   "value": 7653342
+   "value": 7653147
   },
   {
    "date": "2026-10-27",
-   "value": 7657949
+   "value": 7657754
   },
   {
    "date": "2026-10-28",
-   "value": 7646148
+   "value": 7645953
   },
   {
    "date": "2026-10-29",
-   "value": 7709224
+   "value": 7709851
+  },
+  {
+   "date": "2026-10-30",
+   "value": 7696892
   }
  ],
- "retrievedAt": "2026-11-04T18:27:45.092Z",
+ "retrievedAt": "2026-11-05T15:00:53.645Z",
  "stale": false
 }

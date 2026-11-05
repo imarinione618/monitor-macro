@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/1276",
   "methodology": "Préstamos de efectivo comprendidos en las definiciones de las cuentas: adelantos en cuenta corriente, otros adelantos, documentos a sola firma, documentos descontados, documentos comprados, hipotecarios, prendarios, personales, o a titulares del sistema de tarjetas de crédito, créditos documentarios y otros préstamos.  Las operaciones corresponden a moneda local, asociadas a cuentas SISCEN N°:  44 a 54. Para conocer la correspondencia conceptual entre las cuentas del sistema SISCEN y las definidas en el plan de cuentas mínimo vigente, se recomiendo consultar la tabla SISCEN-T0010 CORRESPONDENCIA DE CUENTAS, disponible en http://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Tabt0010.xlsla página web del BCRA",
   "firstDate": "1996-04-01",
-  "lastDate": "2026-10-30",
+  "lastDate": "2026-11-02",
   "regimeNotes": [
    "Cobertura distinta de los préstamos privados netos de intereses documentados del Informe Monetario Diario; no sumar ni formar ratios cruzados sin conciliación."
   ]
@@ -29959,91 +29959,91 @@
   },
   {
    "date": "2026-09-01",
-   "value": 111767928
+   "value": 111764233
   },
   {
    "date": "2026-09-02",
-   "value": 111147684
+   "value": 111131998
   },
   {
    "date": "2026-09-03",
-   "value": 110755815
+   "value": 110751704
   },
   {
    "date": "2026-09-04",
-   "value": 111098169
+   "value": 111095958
   },
   {
    "date": "2026-09-07",
-   "value": 109422418
+   "value": 109418482
   },
   {
    "date": "2026-09-08",
-   "value": 109484382
+   "value": 109484596
   },
   {
    "date": "2026-09-09",
-   "value": 109703849
+   "value": 109704498
   },
   {
    "date": "2026-09-10",
-   "value": 109534175
+   "value": 109536437
   },
   {
    "date": "2026-09-11",
-   "value": 109631882
+   "value": 109637039
   },
   {
    "date": "2026-09-14",
-   "value": 110031448
+   "value": 110032993
   },
   {
    "date": "2026-09-15",
-   "value": 110265501
+   "value": 110266552
   },
   {
    "date": "2026-09-16",
-   "value": 110173233
+   "value": 110174285
   },
   {
    "date": "2026-09-17",
-   "value": 109994961
+   "value": 110014659
   },
   {
    "date": "2026-09-18",
-   "value": 110204005
+   "value": 110205245
   },
   {
    "date": "2026-09-21",
-   "value": 110875500
+   "value": 110876807
   },
   {
    "date": "2026-09-22",
-   "value": 111212633
+   "value": 111201914
   },
   {
    "date": "2026-09-23",
-   "value": 111211728
+   "value": 111212489
   },
   {
    "date": "2026-09-24",
-   "value": 111824858
+   "value": 111827426
   },
   {
    "date": "2026-09-25",
-   "value": 111397323
+   "value": 111403454
   },
   {
    "date": "2026-09-28",
-   "value": 112271469
+   "value": 112276010
   },
   {
    "date": "2026-09-29",
-   "value": 113549230
+   "value": 113550738
   },
   {
    "date": "2026-09-30",
-   "value": 114640612
+   "value": 114624924
   },
   {
    "date": "2026-10-01",
@@ -30091,45 +30091,49 @@
   },
   {
    "date": "2026-10-19",
-   "value": 112587056
+   "value": 112587046
   },
   {
    "date": "2026-10-20",
-   "value": 113160607
+   "value": 113160838
   },
   {
    "date": "2026-10-21",
-   "value": 113628768
+   "value": 113628968
   },
   {
    "date": "2026-10-22",
-   "value": 113821176
+   "value": 113829064
   },
   {
    "date": "2026-10-23",
-   "value": 114103721
+   "value": 114104167
   },
   {
    "date": "2026-10-26",
-   "value": 114735284
+   "value": 114732195
   },
   {
    "date": "2026-10-27",
-   "value": 115093052
+   "value": 115160478
   },
   {
    "date": "2026-10-28",
-   "value": 115383922
+   "value": 115384713
   },
   {
    "date": "2026-10-29",
-   "value": 115617133
+   "value": 115619963
   },
   {
    "date": "2026-10-30",
-   "value": 115893003
+   "value": 115903983
+  },
+  {
+   "date": "2026-11-02",
+   "value": 115991583
   }
  ],
- "retrievedAt": "2026-11-04T18:27:45.092Z",
+ "retrievedAt": "2026-11-05T15:00:53.645Z",
  "stale": false
 }

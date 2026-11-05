@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/12",
   "methodology": "Tasa de interés promedio ponderada por montos operados del total de entidades informantes en SISCEN-0002 en el segmento de operaciones de plazo fijo  de 30 días en moneda nacional, informados en las cuentas SISCEN 149 y 152  (plazos fijos transferibles e intransferibles con retribución fija).",
   "firstDate": "1985-08-26",
-  "lastDate": "2026-11-02"
+  "lastDate": "2026-11-03"
  },
  "observations": [
   {
@@ -38609,8 +38609,12 @@
   {
    "date": "2026-11-02",
    "value": 21.61
+  },
+  {
+   "date": "2026-11-03",
+   "value": 22.12
   }
  ],
- "retrievedAt": "2026-11-04T18:27:45.092Z",
+ "retrievedAt": "2026-11-05T15:00:53.645Z",
  "stale": false
 }

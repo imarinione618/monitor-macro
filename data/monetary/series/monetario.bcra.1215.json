@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/1215",
   "methodology": "Tasa de interés promedio ponderada para las operaciones correspondientes financiaciones con tarjeta de crédito a tasa fija otorgadas al sector privado. Para el período mayo 2020-julio 22 no se reportan datos debido a que en dicho perídodo la información de este rubro contiene los desembolsos realizados en el marco de la línea de Créditos a Tasa Cero (Com. A 6993 y Com. A 7082).",
   "firstDate": "2002-01-31",
-  "lastDate": "2026-09-30",
+  "lastDate": "2026-10-31",
   "monthlyConvention": "mean"
  },
  "observations": [
@@ -1097,13 +1097,17 @@
   },
   {
    "date": "2026-08-31",
-   "value": 79.11
+   "value": 79.15
   },
   {
    "date": "2026-09-30",
-   "value": 79.23
+   "value": 77.67
+  },
+  {
+   "date": "2026-10-31",
+   "value": 77.29
   }
  ],
- "retrievedAt": "2026-11-04T18:27:45.092Z",
+ "retrievedAt": "2026-11-05T15:00:53.645Z",
  "stale": false
 }

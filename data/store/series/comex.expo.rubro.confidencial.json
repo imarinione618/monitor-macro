@@ -425,8 +425,8 @@
  "meta": {
   "firstPeriod": "2018-01",
   "lastPeriod": "2026-09",
-  "retrievedAt": "2026-11-04T15:05:04.140Z",
-  "runId": "20261104T150251Z-60da",
+  "retrievedAt": "2026-11-05T15:00:34.792Z",
+  "runId": "20261105T150008Z-673e",
   "dataset": "comercio_exterior_exportacion_bienes",
   "query": "https://api.indec.gob.ar/v1/comercio_exterior_exportacion_bienes?select=Anio%2CMes%2CPeriodo%2Crubro_cod%2Csubrubro_cod%2Cpais_cod%2Cvalor_FOB%2Cvalor_FOB_null&Periodo=gte.202411&order=Anio%2CMes%2CPeriodo%2Crubro_cod%2Csubrubro_cod%2Cpais_cod",
   "publishedAt": null,

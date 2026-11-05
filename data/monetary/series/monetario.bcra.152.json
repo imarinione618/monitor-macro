@@ -3,7 +3,7 @@
   "id": "monetario.bcra.152",
   "bcraId": 152,
   "name": "Pases pasivos para el BCRA (incluye pases pasivos con fci)",
-  "shortName": "Pases pasivos (IMD)",
+  "shortName": "Pases pasivos",
   "group": "instruments",
   "category": "pases_pasivos_imd",
   "currency": "ARS",
@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/152",
   "methodology": "Stock de pases concertados por el BCRA hasta el 14 de julio de 2025.",
   "firstDate": "2004-05-28",
-  "lastDate": "2026-11-02",
+  "lastDate": "2026-11-03",
   "eligibleInstrument": false,
   "balanceSide": "liability",
   "issuer": "BCRA",
@@ -21999,8 +21999,12 @@
   {
    "date": "2026-11-02",
    "value": 0
+  },
+  {
+   "date": "2026-11-03",
+   "value": 0
   }
  ],
- "retrievedAt": "2026-11-04T18:27:45.092Z",
+ "retrievedAt": "2026-11-05T15:00:53.645Z",
  "stale": false
 }

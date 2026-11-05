@@ -3,7 +3,7 @@
   "id": "monetario.bcra.155",
   "bcraId": 155,
   "name": "LELIQ y NOTALQ",
-  "shortName": "LELIQ y NOTALQ (IMD)",
+  "shortName": "LELIQ y NOTALIQ",
   "group": "instruments",
   "category": "leliq_imd",
   "currency": "ARS",
@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/155",
   "methodology": "Saldo total en circulación. No incluye las emitidas como contrapartida de operaciones de pases con el BCRA. A partir de noviembre de 2018 se dejaron de emitir LEBAC y NOBAC",
   "firstDate": "2018-01-11",
-  "lastDate": "2026-11-02",
+  "lastDate": "2026-11-03",
   "eligibleInstrument": false,
   "balanceSide": "liability",
   "issuer": "BCRA",
@@ -8575,8 +8575,12 @@
   {
    "date": "2026-11-02",
    "value": 0
+  },
+  {
+   "date": "2026-11-03",
+   "value": 0
   }
  ],
- "retrievedAt": "2026-11-04T18:27:45.092Z",
+ "retrievedAt": "2026-11-05T15:00:53.645Z",
  "stale": false
 }

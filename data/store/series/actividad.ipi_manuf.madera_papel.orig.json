@@ -517,8 +517,8 @@
  "meta": {
   "firstPeriod": "2016-01",
   "lastPeriod": "2026-08",
-  "retrievedAt": "2026-11-04T15:03:37.449Z",
-  "runId": "20261104T150251Z-60da",
+  "retrievedAt": "2026-11-05T15:00:11.285Z",
+  "runId": "20261105T150008Z-673e",
   "dataset": "ipi_manufacturero",
   "query": "https://api.indec.gob.ar/v1/ipi_manufacturero?tipo_de_indicador=eq.%C3%8Dndice&order=periodo%2Cindicador%2Ccuadro_web%2Ccodigo_CLaNAE_2004%2Cdescripcion%2Cserie%2Ctipo_de_indicador",
   "publishedAt": null,

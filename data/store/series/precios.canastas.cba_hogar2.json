@@ -509,8 +509,8 @@
  "meta": {
   "firstPeriod": "2016-04",
   "lastPeriod": "2026-09",
-  "retrievedAt": "2026-11-04T15:05:03.700Z",
-  "runId": "20261104T150251Z-60da",
+  "retrievedAt": "2026-11-05T15:00:34.319Z",
+  "runId": "20261105T150008Z-673e",
   "dataset": "valorizacion_canastas_cba_cbt",
   "query": "https://api.indec.gob.ar/v1/valorizacion_canastas_cba_cbt?order=clasificador%2Cnivel%2Ccodigo%2Cdescripcion%2Cperiodo%2Canio%2Cmes%2Cindicador%2Ctipo_de_indicador%2Ctipo_de_indicador_descripcion%2Cregion%2Cunidad_de_medida",
   "publishedAt": null,

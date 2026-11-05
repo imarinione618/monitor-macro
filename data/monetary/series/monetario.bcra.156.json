@@ -3,7 +3,7 @@
   "id": "monetario.bcra.156",
   "bcraId": 156,
   "name": "LEBAC y NOBAC , LEGAR y LEMIN",
-  "shortName": "Otras letras (IMD)",
+  "shortName": "Otras letras",
   "group": "instruments",
   "category": "otras_letras_imd",
   "currency": "ARS",
@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/156",
   "methodology": "Stock de LEBAC en valor nominal, stock de LEGAR y LEMIN expresado en pesos según el Tipo de Cambio de Referencia)",
   "firstDate": "2003-01-02",
-  "lastDate": "2026-11-02",
+  "lastDate": "2026-11-03",
   "eligibleInstrument": false,
   "balanceSide": "liability",
   "issuer": "BCRA",
@@ -23399,8 +23399,12 @@
   {
    "date": "2026-11-02",
    "value": 242412.6847
+  },
+  {
+   "date": "2026-11-03",
+   "value": 246091.1495
   }
  ],
- "retrievedAt": "2026-11-04T18:27:45.092Z",
+ "retrievedAt": "2026-11-05T15:00:53.645Z",
  "stale": false
 }
