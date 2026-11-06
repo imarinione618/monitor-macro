@@ -469,8 +469,8 @@
  "meta": {
   "firstPeriod": "2017-01",
   "lastPeriod": "2026-08",
-  "retrievedAt": "2026-11-05T15:00:15.803Z",
-  "runId": "20261105T150008Z-673e",
+  "retrievedAt": "2026-11-06T15:00:13.956Z",
+  "runId": "20261106T150006Z-d291",
   "dataset": "ipi_minero",
   "query": "https://api.indec.gob.ar/v1/ipi_minero?tipo_de_indicador=eq.%C3%8Dndice&order=periodo%2Canio%2Cmes%2Cindicador%2Ccuadro_web%2Ccodigo_ClaNAE_2010%2Ccodigo_CPC_2_1%2Cserie%2Cdescripcion%2Ctipo_de_indicador%2Cunidad_de_medida",
   "publishedAt": null,

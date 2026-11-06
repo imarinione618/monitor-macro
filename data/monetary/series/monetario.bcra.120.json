@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/120",
   "methodology": "Préstamos de efectivo garantizados con hipoteca en primer grado. Incluye los préstamos instrumentados de acuerdo con el \"Manual de originación y administración de préstamos inmobiliarios - Estandarización de préstamos hipotecarios sobre la vivienda\"",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-10-30"
+  "lastDate": "2026-11-02"
  },
  "observations": [
   {
@@ -23393,8 +23393,12 @@
   {
    "date": "2026-10-30",
    "value": 873
+  },
+  {
+   "date": "2026-11-02",
+   "value": 873
   }
  ],
- "retrievedAt": "2026-11-05T15:00:53.645Z",
+ "retrievedAt": "2026-11-06T15:00:49.491Z",
  "stale": false
 }

@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/69",
   "methodology": "Cheques cancelatorios en pesos (medio de pago según lo establecido en la Comunicación A 5130).",
   "firstDate": "2003-01-02",
-  "lastDate": "2026-10-30"
+  "lastDate": "2026-11-02"
  },
  "observations": [
   {
@@ -23393,8 +23393,12 @@
   {
    "date": "2026-10-30",
    "value": 0
+  },
+  {
+   "date": "2026-11-02",
+   "value": 0
   }
  ],
- "retrievedAt": "2026-11-05T15:00:53.645Z",
+ "retrievedAt": "2026-11-06T15:00:49.491Z",
  "stale": false
 }

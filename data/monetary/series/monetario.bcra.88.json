@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/88",
   "methodology": "Plazo fijo con clausula CER/UVI Uvas e Inversiones UVA con opción anticipada del sector privado",
   "firstDate": "2003-01-31",
-  "lastDate": "2026-10-30"
+  "lastDate": "2026-11-02"
  },
  "observations": [
   {
@@ -23305,8 +23305,12 @@
   {
    "date": "2026-10-30",
    "value": 2095485.812
+  },
+  {
+   "date": "2026-11-02",
+   "value": 2082650.03
   }
  ],
- "retrievedAt": "2026-11-05T15:00:53.645Z",
+ "retrievedAt": "2026-11-06T15:00:49.491Z",
  "stale": false
 }

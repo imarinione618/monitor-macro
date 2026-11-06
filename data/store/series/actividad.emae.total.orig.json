@@ -1093,8 +1093,8 @@
  "meta": {
   "firstPeriod": "2004-01",
   "lastPeriod": "2026-08",
-  "retrievedAt": "2026-11-05T15:00:08.186Z",
-  "runId": "20261105T150008Z-673e",
+  "retrievedAt": "2026-11-06T15:00:06.748Z",
+  "runId": "20261106T150006Z-d291",
   "dataset": "estimador-mensual-de-actividad-economica-nivel-general",
   "query": "https://api.indec.gob.ar/v1/estimador-mensual-de-actividad-economica-nivel-general?order=tipo_de_indicador_descripcion%2Canio%2Cmes%2Cperiodo%2Ctipo_de_indicador",
   "publishedAt": null,

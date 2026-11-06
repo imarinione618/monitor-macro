@@ -91,8 +91,8 @@
  "meta": {
   "firstPeriod": "2016-S2",
   "lastPeriod": "2026-S1",
-  "retrievedAt": "2026-11-05T15:00:18.485Z",
-  "runId": "20261105T150008Z-673e",
+  "retrievedAt": "2026-11-06T15:00:16.588Z",
+  "runId": "20261106T150006Z-d291",
   "dataset": "pobreza_eph",
   "query": "https://api.indec.gob.ar/v1/pobreza_eph?order=area_geografica_nom%2Cperiodo",
   "publishedAt": null,

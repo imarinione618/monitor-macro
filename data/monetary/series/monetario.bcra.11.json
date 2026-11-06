@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/11",
   "methodology": "Es la tasa de interés promedio ponderada por monto correspondiente a préstamos entre entidades bancarias privadas por operaciones de préstamos de efectivo hasta 15 días de plazo, a tasa de interés fija distinta de cero",
   "firstDate": "1999-01-05",
-  "lastDate": "2026-11-03"
+  "lastDate": "2026-11-04"
  },
  "observations": [
   {
@@ -27241,8 +27241,12 @@
   {
    "date": "2026-11-03",
    "value": 21.86
+  },
+  {
+   "date": "2026-11-04",
+   "value": 21.66
   }
  ],
- "retrievedAt": "2026-11-05T15:00:53.645Z",
+ "retrievedAt": "2026-11-06T15:00:49.491Z",
  "stale": false
 }

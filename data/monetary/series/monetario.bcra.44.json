@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/44",
   "methodology": "Tasa de interés promedio ponderada por montos operados, correspondiente a depósitos a plazo fijo mayoristas en pesos, de 30 a 35 días de plazo, constituidos en todas las entidades bancarias privadas del país. En 2025 abarcó las operaciones de 1.000 millones de pesos y más. A partir de 2026, una vez al año, se actualiza el estrato de monto de las operaciones incluidas, según la variación del Índice de Precios al Consumidor. Los detalles metodológicos se pueden consultar en el siguiente vínculo: https://www.bcra.gob.ar/archivos//Pdfs/PublicacionesEstadisticas/tasmet.pdf ",
   "firstDate": "2024-10-01",
-  "lastDate": "2026-11-03",
+  "lastDate": "2026-11-04",
   "regimeNotes": [
    "El estrato mayorista se actualiza anualmente por IPC desde 2026; no representa una serie de monto mínimo fijo."
   ]
@@ -2044,8 +2044,12 @@
   {
    "date": "2026-11-03",
    "value": 24
+  },
+  {
+   "date": "2026-11-04",
+   "value": 23.5625
   }
  ],
- "retrievedAt": "2026-11-05T15:00:53.645Z",
+ "retrievedAt": "2026-11-06T15:00:49.491Z",
  "stale": false
 }
