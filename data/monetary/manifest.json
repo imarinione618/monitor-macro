@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
- "updatedAt": "2026-11-06T15:00:49.491Z",
- "lastAttemptAt": "2026-11-06T15:00:49.491Z",
+ "updatedAt": "2026-11-06T15:15:21.802Z",
+ "lastAttemptAt": "2026-11-06T15:15:21.802Z",
  "lastFullAt": "2026-11-04T18:27:45.092Z",
  "series": {
   "monetario.bcra.44": {
@@ -597,6 +597,13 @@
    "firstDate": "2025-07-15",
    "lastDate": "2026-11-04",
    "retrievedAt": "2026-11-06T15:00:49.491Z",
+   "stale": false
+  },
+  "monetario.a3.caucion": {
+   "count": 482,
+   "firstDate": "2024-11-07",
+   "lastDate": "2026-11-05",
+   "retrievedAt": "2026-11-06T15:15:21.802Z",
    "stale": false
   }
  }

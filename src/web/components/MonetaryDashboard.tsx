@@ -7,6 +7,7 @@ import type { IpcPoint } from '@/web/lib/monetaryChartModel';
 import { SECTOR_LABELS } from '@/web/lib/monetaryChartModel';
 import { selectableMonetarySeries } from '@/web/lib/monetarySelection';
 import { MonetaryChartPanel } from './MonetaryChartPanel';
+import { RepoRatesPanel } from './RepoRatesPanel';
 import { Segmented } from './controls';
 
 interface Props { series: MonetarySeries[]; ipc: IpcPoint[]; updatedAt: string | null; error?: string }
@@ -19,7 +20,7 @@ export function MonetaryDashboard({ series, ipc, updatedAt, error }: Props) {
   const [sector, setSector] = useState<'private' | 'public' | 'total'>('private');
   const available = useMemo(() => selectableMonetarySeries(series), [series]);
   const filter = (groups: MonetaryDef['group'][]) => available.filter(s => groups.includes(s.def.group));
-  const passive = filter(['passive_rates', 'policy_rates']).filter(s => s.def.category !== 'spread');
+  const passive = filter(['passive_rates', 'market_rates', 'policy_rates']).filter(s => s.def.category !== 'spread');
   const active = filter(['active_rates']);
   const spreads = available.filter(s => s.def.category === 'spread' || s.def.id.includes('spread'));
   const stocks = filter(['deposits', 'loans']).filter(s => s.def.currency === currency && s.def.sector === sector && !s.def.id.includes('ratio'));
@@ -54,10 +55,11 @@ export function MonetaryDashboard({ series, ipc, updatedAt, error }: Props) {
     {error && <p className="notice notice-stale" role="status">Actualización monetaria: {error}. Se muestran los datos disponibles.</p>}
     {!series.some(s => s.observations.length) && <p className="callout">Todavía no hay observaciones monetarias almacenadas. Las demás secciones del dashboard siguen disponibles.</p>}
     {tab === 'tasas' && <div role="tabpanel" id="monetary-pane-tasas" aria-labelledby="monetary-tab-tasas">
-      {panel('Tasas pasivas y de referencia', passive, ['tamar', 'badlar', 'remunerada'], 'Convención original de cada tasa. Los cambios se expresan en puntos porcentuales o básicos.', 'rate')}
+      {panel('Tasas pasivas, de mercado y de referencia', passive, ['tamar', 'badlar', 'remunerada', 'caucion'], 'Convención original de cada tasa. Caución: tasa de referencia a 1 día de A3 Mercados. Los cambios se expresan en puntos porcentuales o básicos.', 'rate')}
+      <RepoRatesPanel title="Repo BCRA, tasa de caución y TAMAR" description="Saldo de Repo BCRA (área, eje izquierdo, billones de ARS) frente a la caución a 1 día de A3 Mercados y la TAMAR de bancos privados (líneas, eje derecho, % TNA). Cada serie se dibuja en sus propias fechas publicadas." allSeries={series} asOf={updatedAt ?? undefined} />
       {panel('Tasas activas', active, ['personales', 'adelantos'], 'Préstamos personales, adelantos y otras líneas disponibles. Cada serie conserva su fecha y cobertura.', 'rate')}
       {spreads.length > 0 && panel('Spreads entre tasas comparables', spreads, undefined, 'Diferencias de tasas con igual convención, sobre fechas comunes. Unidad: puntos porcentuales.', 'rate')}
-      <p className="monetary-status">Caución pendiente: no se incorporó una serie sin verificar mercado, plazo y fuente. La tasa de vista remunerada PSF corresponde a prestadores de servicios financieros. La tasa de política histórica se muestra separada, sin empalmar instrumentos.</p>
+      <p className="monetary-status">Caución: tasa de referencia en pesos a 1 día hábil de A3 Mercados (índice I.CAUCION, mediana ponderada por volumen); no es una serie BCRA. La tasa de vista remunerada PSF corresponde a prestadores de servicios financieros. La tasa de política histórica se muestra separada, sin empalmar instrumentos.</p>
     </div>}
     {tab === 'depositos' && <div role="tabpanel" id="monetary-pane-depositos" aria-labelledby="monetary-tab-depositos">
       <div className="panel monetary-filters"><Segmented label="Moneda" value={currency} options={[{ value: 'ARS', label: 'Pesos (ARS)' }, { value: 'USD', label: 'Dólares (USD)' }]} onChange={setCurrency} /><Segmented label="Sector" value={sector} options={(['private', 'public', 'total'] as const).map(value => ({ value, label: SECTOR_LABELS[value], disabled: !available.some(s => ['deposits', 'loans'].includes(s.def.group) && s.def.currency === currency && s.def.sector === value) }))} onChange={setSector} /></div>

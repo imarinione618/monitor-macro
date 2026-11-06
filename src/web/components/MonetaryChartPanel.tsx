@@ -90,7 +90,7 @@ export function MonetaryChartPanel({ title, description, series, allSeries, ipc,
     })}</tr>)}</tbody></table></div>}</div>
     <div className="monetary-definitions">{picked.map(s => {
       const published = s.observations.filter(o => o.value !== null).at(-1);
-      return <p key={s.def.id}><a href={s.def.sourceUrl} target="_blank" rel="noreferrer">{s.def.shortName}</a> · {s.def.convention} · {s.def.coverage}. {s.def.bcraId === 0 && <span>{s.def.methodology} </span>}{published && <span>Último dato publicado: {formatNumber(published.value, 2)} {s.def.unit} ({monetaryDate(published.date)}). </span>}<span className="muted">Consulta: {formatDateTimeAR(s.retrievedAt)}.</span></p>;
+      return <p key={s.def.id}><a href={s.def.sourceUrl} target="_blank" rel="noreferrer">{s.def.shortName}</a> · {s.def.convention} · {s.def.coverage}. {(s.def.bcraId === 0 || s.def.provider === 'A3') && <span>{s.def.methodology} </span>}{published && <span>Último dato publicado: {formatNumber(published.value, 2)} {s.def.unit} ({monetaryDate(published.date)}). </span>}<span className="muted">Consulta: {formatDateTimeAR(s.retrievedAt)}.</span></p>;
     })}</div>
     <SourceFooter source={model.source} />
   </section>;

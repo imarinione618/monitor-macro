@@ -11,6 +11,13 @@ export interface MonetaryChartModel { periods: string[]; columns: MonetaryChartC
 export const SECTOR_LABELS = { private: 'Sector privado', public: 'Sector público', total: 'Total', bcra: 'BCRA', other: 'Otra cobertura' };
 export const TRANSFORM_LABELS = { level: 'Nivel', pct_mom: 'Variación mensual (%)', pct_yoy: 'Variación interanual (%)', absolute_mom: 'Cambio mensual de saldo', change_pp: 'Cambio en puntos porcentuales', change_bp: 'Cambio en puntos básicos', base100: 'Índice base 100' };
 
+/** Fuente según proveedores presentes: BCRA, A3 Mercados o ambos. */
+export function monetarySourceLabel(series: Pick<MonetarySeries, 'def'>[]): string {
+  const a3 = series.some(s => s.def.provider === 'A3');
+  const bcra = series.some(s => (s.def.provider ?? 'BCRA') === 'BCRA');
+  return `Fuente: ${[bcra ? 'BCRA · Estadísticas monetarias v4' : '', a3 ? 'A3 Mercados · Tasa de caución a 1 día' : ''].filter(Boolean).join('; ')}`;
+}
+
 export function monetaryDate(period: string): string {
   const [year, month, day] = period.split('-');
   if (day) return `${day}/${month}/${year}`;
@@ -39,7 +46,7 @@ export function buildMonetaryChartModel(series: MonetarySeries[], options: Monet
   const comparison = rateChange ? options.frequency === 'D' ? 'Contra observación previa' : 'Contra mes anterior' : '';
   const subtitle = [TRANSFORM_LABELS[options.transform], comparison, unit, currencies, sectors, frequency, price, options.transform === 'base100' && options.basePeriod ? `Base ${monetaryDate(options.basePeriod)} = 100` : '', options.transform === 'pct_mom' ? 'Sin ajuste estacional' : '', range, partialLabel].filter(Boolean).join(' · ');
   const latestUpdate = series.map(s => s.retrievedAt).filter(Boolean).sort().at(-1);
-  const source = `Fuente: BCRA · Estadísticas monetarias v4${options.valueMode === 'real' ? ' e IPC nacional INDEC' : ''}. ${series.some(s => s.def.bcraId <= 0) ? 'Cálculos propios. ' : ''}${latestUpdate ? `Consulta: ${latestUpdate.slice(0, 10)}.` : ''}`;
+  const source = `${monetarySourceLabel(series)}${options.valueMode === 'real' ? ' e IPC nacional INDEC' : ''}. ${series.some(s => s.def.bcraId === 0) ? 'Cálculos propios. ' : ''}${latestUpdate ? `Consulta: ${latestUpdate.slice(0, 10)}.` : ''}`;
   return { periods, columns, unit, subtitle, source };
 }
 

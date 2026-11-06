@@ -42,7 +42,8 @@ En USD público,107−108 da2.978millones al29/10/2026 y1495+1499+1501 suma2.843
 
 ## Limitaciones y pendientes
 
-- Caución: faltan mercado, plazo y proveedor verificables en la referencia; no se publica como una serie BCRA.
+- Caución: integrada desde A3 Mercados (I.CAUCION, 1 día hábil, mediana ponderada por volumen); no es una serie BCRA. El 15/10/2025 publicó 102% TNA (pico real de volatilidad, no error). Último dato verificado: 22,2% TNA el 05/11/2026.
+- Repo BCRA 198: el 30/01/2026 BCRA publica un saldo negativo (−726.437,96 millones ARS). Se conserva y se muestra; el eje del gráfico combinado baja de cero en ese caso.
 - Mensuales992/893: metadata «miles ARS» incompatible con valores de la muestra; excluidas hasta aclaración. Los cierres se calculan de diarios.1494 público USD también excluida por conflicto moneda/unidad; se deriva107−108.
 - Agregados privados M1/M3 propios desde2005; cuasimonedas2003/04 no incorporadas. Series oficiales históricas mantienen su fin de vigencia y sus notas.
 - No se crea ratio público/total cuando las coberturas de préstamos y depósitos difieren. Las aperturas se pueden consultar individualmente.

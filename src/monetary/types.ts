@@ -1,10 +1,13 @@
 /** Contratos BCRA separados del registro INDEC y de las sincronizaciones Sheets. */
 export interface MonetaryDef {
   id: string;
+  /** ID de la API BCRA. 0 = cálculo propio; -1 = serie de otra fuente (ver `provider`). */
   bcraId: number;
+  /** Proveedor de la serie. Ausente = BCRA. */
+  provider?: 'BCRA' | 'A3';
   name: string;
   shortName: string;
-  group: 'passive_rates' | 'active_rates' | 'policy_rates' | 'deposits' | 'loans' | 'base' | 'instruments' | 'aggregates';
+  group: 'passive_rates' | 'active_rates' | 'policy_rates' | 'market_rates' | 'deposits' | 'loans' | 'base' | 'instruments' | 'aggregates';
   category: string;
   currency: 'ARS' | 'USD' | null;
   sector: 'private' | 'public' | 'total' | 'bcra' | 'other';

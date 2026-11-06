@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-_Última actualización: 2026-11-04_
+_Última actualización: 2026-11-06_
 
 ## Operativo y verificado contra servicios reales
 
@@ -25,7 +25,7 @@ https://imarinione618.github.io/monitor-macro/ (GitHub Pages, repositorio públi
 - Frecuencia diaria/mensual, promedio/cierre, nominal/real ARS, base100, variaciones por calendario, ratios y composición con fechas comunes. Tasas en p.p./pb, sin convertir convenciones.
 - Exportaciones CSV/PNG/SVG comparten datos visibles; PNG4800×2700 comprobado en navegador e inspeccionado visualmente, SVG probado mediante render real. Fondo blanco y convención/fuente incorporadas.
 - Actualización independiente con caché, lock, conservación ante falla y revisiones históricas. Script Windows publica `data/store` y `data/monetary`; Sheets conserva únicamente su integración INDEC anterior. No se escribió en la planilla de referencia ni en otros Sheets durante esta ampliación.
-- Pendientes: caución sin fuente/plazo verificados; series992/893 y1494 con metadata inconsistente; composición pública USD y cuasimonedas2003/04. Los derivados y cortes incompletos están identificados.
+- Pendientes: series992/893 y1494 con metadata inconsistente; composición pública USD y cuasimonedas2003/04. Los derivados y cortes incompletos están identificados.
 - Ver [validación](monetario-validacion.md), [catálogo](monetario-catalogo.md), [metodología](monetario-metodologia.md), [instrumentos elegibles](monetario-instrumentos.md) y [auditoría de referencias](monetario-referencias.md).
 - No se disparó la tarea diaria completa ampliada porque incluye escrituras Sheets preexistentes. Se verificaron por separado ingesta BCRA real, fallas/revisiones simuladas, sintaxis de scripts y build.
 
@@ -44,6 +44,13 @@ Publicación inicial completada el 2026-11-04:
 - Verificación local: TypeScript sin errores y 608/608 pruebas aprobadas; build con `SITE_BASE_PATH=/monitor-macro`.
 - Verificación del sitio público: las 6 rutas y los 17 recursos JS/CSS referenciados responden HTTP 200. No se realizó una nueva inspección visual interactiva (el navegador automatizado no estaba disponible).
 - Los archivos versionados se comprobaron contra las credenciales locales y los IDs de Sheets: sin coincidencias. No se subieron secretos a GitHub.
+
+### Caución A3 + gráfico Repo/caución/TAMAR — 2026-11-06
+
+- Nueva fuente de mercado: tasa de caución a 1 día de **A3 Mercados** (índice I.CAUCION), desde el endpoint público que usa la función de Apps Script `TasaCaucion1DiaHistoricas`. 482 cierres diarios (07/11/2024 → 05/11/2026). Módulo `src/monetary/caucion.ts`; serie `monetario.a3.caucion` en `data/monetary`. Descarga completa en cada corrida, revisiones en `revisions.jsonl`, conservación ante falla. Se actualiza dentro de `npm run monetary:refresh` (tarea diaria incluida, sin cambios en scripts).
+- Tasas → «Tasas pasivas, de mercado y de referencia»: caución agregada y seleccionada por defecto.
+- Tasas → nuevo segundo gráfico «Repo BCRA, tasa de caución y TAMAR»: Repo 198 en área (eje izq., billones de ARS = millones ÷ 10⁶), caución y TAMAR en líneas (eje der., % TNA). Eje temporal: cada serie en sus propias fechas, sin completar días. Vista inicial: desde el 1/1 del año del último dato; CSV/PNG/SVG y tabla con el mismo modelo.
+- Validación: 682 pruebas aprobadas (incluye las nuevas de caución y del gráfico combinado), TypeScript y build estático OK; exportación con datos reales inspeccionada visualmente. No se tocó Google Sheets.
 
 ## Actualización programada
 - **Activa y verificada:** tarea de Windows "MonitorMacroAR - Actualizacion", diaria a las **12:00** (hora de Buenos Aires).

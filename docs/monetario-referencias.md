@@ -51,6 +51,8 @@ El libro también tiene una hoja denominada `Resumen`, distinta de `Resumen corp
 
 ## Caución: definición pendiente
 
+> **Actualización 2026-11-06:** el dashboard ya no depende de `benchmarks!G`. Se integró directamente la fuente explícita: A3 Mercados, índice I.CAUCION: tasa de referencia diaria de caución en pesos a 1 día hábil, mediana ponderada por volumen redondeada al punto básico, publicada cada día hábil a las 17:05 (metodología A3). Endpoint público `https://ws.matbarofex.com.ar:8999/api/caucion?from=…&to=…&closed_value=1` (el mismo que usa la función de Apps Script del usuario `TasaCaucion1DiaHistoricas`). Historia desde 07/11/2024. Serie `monetario.a3.caucion` (`provider: 'A3'`, `bcraId: -1`), en `data/monetary`, actualizada con `npm run monetary:refresh` (no con `--ids`). La columna del libro de referencia sigue sin trazabilidad propia.
+
 `benchmarks!G1` sólo dice «Tasa Caución». Las celdas inspeccionadas G2, G3 y G800 son valores directos, sin fórmula. El XLSX no contiene comentarios ni vínculos externos que documenten mercado, moneda, plazo, ponderación o proveedor. El código del sitio sólo añade la unidad TNA. No hay evidencia suficiente para llamarla caución BYMA, a un día, a siete días, ni para atribuirla al BCRA. Tampoco hay trazabilidad del proveedor de CCL en esa columna del libro. Cualquier integración debe conservar la identificación como pendiente o conseguir una fuente explícita, sin inventar esas dimensiones.
 
 ## Límites de la revisión
