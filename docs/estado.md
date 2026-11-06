@@ -55,6 +55,7 @@ Publicación inicial completada el 2026-11-04:
 - **Laboratorio (pestaña nueva):** 409 variables (sin combustibles), conversión de frecuencia, deflactado por IPC, transformaciones, escalas, dos ejes, ratios y exportación.
 - **Fuente de todos los gráficos:** «Fuente: one618 en base a …».
 - **Actualización diaria:** `data:refresh` incluye las fuentes externas; se agregó `combustibles:refresh` a la tarea de Windows (`scripts/update.ps1`, código de salida 5 si falla), a `scripts/update.mjs`, al workflow opcional y al disparador de Pages (`data/combustibles/**`).
+- Publicado (commit `12dc979`) y verificado en el sitio el 2026-11-06: las 7 rutas y los JSON del Laboratorio responden 200. El primer deploy cortó por timeout de Pages (`syncing_files`); un run manual nuevo desplegó bien. Ver [despliegue §4](despliegue.md#4-dashboard-publicado-github-pages).
 - Validación: 1274 pruebas aprobadas, TypeScript y build estático con subruta OK; exportaciones de los gráficos nuevos inspeccionadas visualmente. Sitio comprimido ≈13 MB (la página Monetario ya pesaba ~25 MB de HTML antes de estos cambios).
 
 ### Caución A3 + gráfico Repo/caución/TAMAR — 2026-11-06

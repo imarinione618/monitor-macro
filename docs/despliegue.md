@@ -76,7 +76,9 @@ Detalles de funcionamiento:
 
 ### Si falla el deploy
 
-Un deploy normal tarda menos de 1 minuto. Si el job `build` pasa y falla `deploy` con `Timeout reached, aborting!` tras ~10 min en `Current status: updating_pages`, el problema es de GitHub Pages, no del código.
+Un deploy normal tarda menos de 1 minuto. Si el job `build` pasa y falla `deploy` con `Timeout reached, aborting!` tras ~10 min en `Current status: updating_pages` o `syncing_files`, el problema es de GitHub Pages, no del código.
+
+Incidentes: 2026-11-04 (`updating_pages`, run 41896612896) y 2026-11-06 (`syncing_files`, run [42261798628](https://github.com/imarinione618/monitor-macro/actions/runs/42261798628), commit `12dc979`, artefacto ~70 MB sin comprimir con ~410 JSON del Laboratorio). En ambos casos un run nuevo desplegó en segundos ([42263898177](https://github.com/imarinione618/monitor-macro/actions/runs/42263898177)).
 
 1. **No usar "Re-run"** sobre el run fallido: vuelve a desplegar el mismo commit, que es el despliegue que quedó trabado. El 2026-11-04 el re-run falló igual.
 2. Esperar a que termine o cancelarlo, dejar pasar 2 o 3 minutos y lanzar un run nuevo: *Actions → Publicar dashboard → Run workflow* sobre `main`, o `gh workflow run pages.yml --ref main`. Usa la punta de `main` y crea un despliegue nuevo.
