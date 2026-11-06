@@ -11,7 +11,7 @@ import { readMonetaryStore } from '@/monetary/store';
 // Sitio estático: se genera con los datos del store al momento del build (npm run build).
 export const dynamic = 'force-static';
 
-const TOPIC_HREF: Record<Topic, string> = { actividad: '/actividad', laboral: '/laboral', precios: '/precios', comex: '/comercio' };
+const TOPIC_HREF: Record<Topic, string> = { actividad: '/actividad', laboral: '/laboral', precios: '/precios', comex: '/comercio', fiscal: '/fiscal' };
 
 export default function ResumenPage() {
   const state = getStoreState();

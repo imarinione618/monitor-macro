@@ -16,7 +16,7 @@ export function fakeSeries(id: string, from: Period, to: Period, f: (i: number) 
     retrievedAt: '2026-11-04T13:02:59.007Z',
     stale: false,
     synthetic: true,
-    sources: [{ title: 'Dataset de prueba', methodologyUrl: 'https://www.indec.gob.ar/' }],
+    sources: [{ title: 'Dataset de prueba', org: 'INDEC', methodologyUrl: 'https://www.indec.gob.ar/' }],
     ...extra,
   };
 }

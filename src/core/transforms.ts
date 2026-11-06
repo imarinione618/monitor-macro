@@ -321,3 +321,17 @@ export const SA_LABELS: Record<SeasonalAdjustment, string> = {
   'tendencia-ciclo': 'Tendencia-ciclo',
   no_aplica: '—',
 };
+
+/**
+ * Valores a precios constantes de `basePeriod`: x_t × D_base / D_t (D = deflactor, p.ej. IPC nacional).
+ * Mismo período calendario (mensual con mensual); sin deflactor en t → null (no se extrapola).
+ * Se usa para «precios de hoy» con basePeriod = último IPC publicado.
+ */
+export function atConstantPrices(nominal: Observation[], deflator: Observation[], basePeriod: Period): Observation[] {
+  const d = toMap(deflator);
+  const db = get(d, basePeriod);
+  return nominal.map((o) => {
+    const dv = get(d, o.period);
+    return { period: o.period, value: o.value === null || dv === null || db === null || dv === 0 ? null : (o.value * db) / dv };
+  });
+}

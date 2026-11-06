@@ -13,13 +13,14 @@
 
 // ---------------------------------------------------------------- Básicos
 
-export type Topic = 'actividad' | 'laboral' | 'precios' | 'comex';
+export type Topic = 'actividad' | 'laboral' | 'precios' | 'comex' | 'fiscal';
 
 export const TOPIC_LABELS: Record<Topic, string> = {
   actividad: 'Actividad',
   laboral: 'Mercado laboral',
   precios: 'Precios',
   comex: 'Comercio exterior',
+  fiscal: 'Fiscal',
 };
 
 /** M = mensual, Q = trimestral, S = semestral, A = anual */
@@ -159,6 +160,25 @@ export interface SourceSpec {
   scaleFactor?: number;
 }
 
+/**
+ * Serie de una fuente oficial distinta de la API INDEC (ver src/core/feeds.ts):
+ * CSV de distribuciones de datos.gob.ar (Series de Tiempo, catálogo SSPM) o archivos del IDECBA.
+ * No se sincroniza con Google Sheets.
+ */
+export interface ExternalSourceSpec {
+  kind: 'external';
+  /** ID del feed (src/core/feeds.ts). */
+  feed: string;
+  /** Columna del CSV (datos.gob.ar) o clave del parser (IDECBA). */
+  key: string;
+  /** ID de la API de Series de Tiempo, solo para trazabilidad. */
+  apiId?: string;
+  /** Escala aplicada al valor crudo para expresarlo en `unit`. */
+  scaleFactor?: number;
+  /** Ceros publicados que no son datos (p.ej. columnas sin cobertura) antes de este período → null. */
+  zeroAsNullBefore?: Period;
+}
+
 /** Serie derivada calculada en la capa compartida (no viene de la API). */
 export interface DerivedSpec {
   kind: 'derived';
@@ -186,7 +206,7 @@ export interface SeriesDef {
   coverage?: string;
   /** Moneda y valuación, si aplica (p.ej. "USD corrientes, FOB"). */
   currency?: string;
-  source: SourceSpec | DerivedSpec;
+  source: SourceSpec | ExternalSourceSpec | DerivedSpec;
   status: SeriesStatus;
   /** Prioridad: 1 = núcleo primera versión, 2 = aperturas. */
   priority: 1 | 2;
@@ -272,6 +292,15 @@ export interface DatasetRunStatus {
   mode?: 'full' | 'windowed';
 }
 
+export interface FeedRunStatus {
+  feed: string;
+  lastSuccessAt: string | null;
+  lastAttemptAt: string | null;
+  lastRunId: string | null;
+  ok: boolean;
+  error?: { kind: ErrorKind; message: string };
+}
+
 export interface Manifest {
   schemaVersion: 1;
   /** 'real' = API oficial. 'synthetic' = fixtures de desarrollo (NO reales). */
@@ -285,6 +314,8 @@ export interface Manifest {
     partial: boolean;
   } | null;
   datasets: Partial<Record<DatasetId, DatasetRunStatus>>;
+  /** Estado de fuentes externas (src/core/feeds.ts), por feed. */
+  feeds?: Record<string, FeedRunStatus>;
   series: Record<
     string,
     {

@@ -52,8 +52,7 @@ export function buildRepoRatesModel(all: MonetarySeries[], range: { from?: strin
   const dates = [...new Set(columns.flatMap(c => c.points.map(p => p.date)))].sort();
   const span = dates.length ? `${monetaryDate(dates[0]!)}–${monetaryDate(dates.at(-1)!)}` : 'Sin observaciones';
   const subtitle = ['Diaria', 'Repo BCRA: saldo en billones de ARS (eje izq.)', 'Caución 1 día y TAMAR: % TNA (eje der.)', 'Valores nominales', span].join(' · ');
-  const latest = columns.map(c => c.series.retrievedAt).filter(Boolean).sort().at(-1);
-  const source = `${monetarySourceLabel(columns.map(c => c.series))}. Repo BCRA: serie BCRA 198; TAMAR: serie BCRA 44 (bancos privados).${latest ? ` Consulta: ${latest.slice(0, 10)}.` : ''}`;
+  const source = `${monetarySourceLabel(columns.map(c => c.series))}.`;
   return { dates, columns, subtitle, source };
 }
 

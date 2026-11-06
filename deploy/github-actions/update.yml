@@ -74,13 +74,17 @@ jobs:
         run: npm run monetary:refresh -- ${{ inputs.full && '--full' || '' }}
         continue-on-error: true
         id: monetary
+      - name: Ingesta combustibles (Secretaría de Energía)
+        run: npm run combustibles:refresh -- ${{ inputs.full && '--full' || '' }}
+        continue-on-error: true
+        id: combustibles
       - name: Versionar store actualizado
         run: |
           git config user.name "actualizacion-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/store data/monetary
+          git add data/store data/monetary data/combustibles
           git diff --cached --quiet || git commit -m "datos: actualización $(date +%F)"
           git push
       - name: Informar fuentes o sincronización con errores
-        if: steps.refresh.outcome == 'failure' || steps.monetary.outcome == 'failure' || steps.sheets.outcome == 'failure'
+        if: steps.refresh.outcome == 'failure' || steps.monetary.outcome == 'failure' || steps.sheets.outcome == 'failure' || steps.combustibles.outcome == 'failure'
         run: exit 1

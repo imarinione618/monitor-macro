@@ -1,0 +1,5 @@
+﻿anio,mes,operador,nro_inscripcion,bandera,fecha_de_baja,cuit,tipo_negocio,direccion,localidad,provincia,producto,canal_de_comercializacion,precio_sin_impuestos,precio_con_impuestos,volumen,precio_surtidor,no_novimientos,exentos
+2016,01,10 DE SETIEMBRE S.A.,1376,BLANCA,,33-64337382-9,Estación de servicio,Av. Mosconi 299,LOMAS DEL MIRADOR,BUENOS AIRES,GNC,Al público,3.18,3.98,101213,3.98,NO,f
+2016,01,17 DE SETIEMBRE S.R.L.,1175,YPF,27/2021/10,30-66462880-1,Estación de servicio,RIVADAVIA 1819,MARCOS PAZ,BUENOS AIRES,Gas Oil Grado 2,Al público,9.005,13.4,5.3,13.4,NO,f
+2016,01,17 DE SETIEMBRE S.R.L.,1175,YPF,27/2021/10,30-66462880-1,Estación de servicio,RIVADAVIA 1819,MARCOS PAZ,BUENOS AIRES,Gas Oil Grado 3,Al público,8.87,15.4,1.81,15.4,NO,f
+2016,01,17 DE SETIEMBRE S.R.L.,1175,YPF,27/2021/10,30-66462880-1,Estación de servicio,RIVADAVIA 1819,MARCOS PAZ,BUENOS AIRES,Nafta (súper) entre 92 y 95 Ron,Al público,8.925,14.9,19.8,14.9,NO,f

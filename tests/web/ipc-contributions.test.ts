@@ -46,7 +46,7 @@ describe('contribuciones mensuales del IPC', () => {
     expect(result.every((s) => s.stale && s.synthetic && s.error === 'falló actualización' && s.retrievedAt === '2026-11-01T00:00:00Z')).toBe(true);
     expect(result[0]!.firstPeriod).toBe('2025-02');
     expect(collectNotes(result).join(' ')).toContain('1,000492');
-    expect(buildSourceLine(result, 'level')).toContain('Elaboración propia');
+    expect(buildSourceLine(result, 'level')).toBe('Fuente: one618 en base a INDEC.');
   });
 
   it('exporta barras apiladas con los tres colores, unidad p.p. y sin notas metodológicas', () => {

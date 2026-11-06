@@ -1,0 +1,242 @@
+{
+ "id": "precios.ipcba.alimentos_bebidas_no_alcoholicas",
+ "observations": [
+  {
+   "period": "2022-02",
+   "value": 132.39
+  },
+  {
+   "period": "2022-03",
+   "value": 139.95
+  },
+  {
+   "period": "2022-04",
+   "value": 148.57
+  },
+  {
+   "period": "2022-05",
+   "value": 155.91
+  },
+  {
+   "period": "2022-06",
+   "value": 164.46
+  },
+  {
+   "period": "2022-07",
+   "value": 177.07
+  },
+  {
+   "period": "2022-08",
+   "value": 189.56
+  },
+  {
+   "period": "2022-09",
+   "value": 202.96
+  },
+  {
+   "period": "2022-10",
+   "value": 217.09
+  },
+  {
+   "period": "2022-11",
+   "value": 226.29
+  },
+  {
+   "period": "2022-12",
+   "value": 236.84
+  },
+  {
+   "period": "2023-01",
+   "value": 251.38
+  },
+  {
+   "period": "2023-02",
+   "value": 270.64
+  },
+  {
+   "period": "2023-03",
+   "value": 295.31
+  },
+  {
+   "period": "2023-04",
+   "value": 326.09
+  },
+  {
+   "period": "2023-05",
+   "value": 347.65
+  },
+  {
+   "period": "2023-06",
+   "value": 367.66
+  },
+  {
+   "period": "2023-07",
+   "value": 388.18
+  },
+  {
+   "period": "2023-08",
+   "value": 436.53
+  },
+  {
+   "period": "2023-09",
+   "value": 498.14
+  },
+  {
+   "period": "2023-10",
+   "value": 542.75
+  },
+  {
+   "period": "2023-11",
+   "value": 619.9
+  },
+  {
+   "period": "2023-12",
+   "value": 808.44
+  },
+  {
+   "period": "2024-01",
+   "value": 1013.41
+  },
+  {
+   "period": "2024-02",
+   "value": 1161.94
+  },
+  {
+   "period": "2024-03",
+   "value": 1290.14
+  },
+  {
+   "period": "2024-04",
+   "value": 1356.48
+  },
+  {
+   "period": "2024-05",
+   "value": 1421.06
+  },
+  {
+   "period": "2024-06",
+   "value": 1459.9
+  },
+  {
+   "period": "2024-07",
+   "value": 1514.8
+  },
+  {
+   "period": "2024-08",
+   "value": 1562.1
+  },
+  {
+   "period": "2024-09",
+   "value": 1596.88
+  },
+  {
+   "period": "2024-10",
+   "value": 1624.04
+  },
+  {
+   "period": "2024-11",
+   "value": 1651.79
+  },
+  {
+   "period": "2024-12",
+   "value": 1690.39
+  },
+  {
+   "period": "2025-01",
+   "value": 1723.28
+  },
+  {
+   "period": "2025-02",
+   "value": 1767.15
+  },
+  {
+   "period": "2025-03",
+   "value": 1850.3
+  },
+  {
+   "period": "2025-04",
+   "value": 1890.89
+  },
+  {
+   "period": "2025-05",
+   "value": 1912.67
+  },
+  {
+   "period": "2025-06",
+   "value": 1942.41
+  },
+  {
+   "period": "2025-07",
+   "value": 1977.8
+  },
+  {
+   "period": "2025-08",
+   "value": 1997.52
+  },
+  {
+   "period": "2025-09",
+   "value": 2038.17
+  },
+  {
+   "period": "2025-10",
+   "value": 2080.1
+  },
+  {
+   "period": "2025-11",
+   "value": 2126.41
+  },
+  {
+   "period": "2025-12",
+   "value": 2177.69
+  },
+  {
+   "period": "2026-01",
+   "value": 2264.02
+  },
+  {
+   "period": "2026-02",
+   "value": 2328.9
+  },
+  {
+   "period": "2026-03",
+   "value": 2388.77
+  },
+  {
+   "period": "2026-04",
+   "value": 2421.67
+  },
+  {
+   "period": "2026-05",
+   "value": 2490.13
+  },
+  {
+   "period": "2026-06",
+   "value": 2528.99
+  },
+  {
+   "period": "2026-07",
+   "value": 2576.91
+  },
+  {
+   "period": "2026-08",
+   "value": 2624.58
+  },
+  {
+   "period": "2026-09",
+   "value": 2679.98
+  },
+  {
+   "period": "2026-10",
+   "value": 2738.99
+  }
+ ],
+ "meta": {
+  "firstPeriod": "2022-02",
+  "lastPeriod": "2026-10",
+  "retrievedAt": "2026-11-06T16:58:00.450Z",
+  "runId": "20261106T165759Z-631d",
+  "query": "https://www.estadisticaciudad.gob.ar/eyc/wp-content/uploads/2026/09/IPCBA_base_2021100-Nivel_general_empalme.xlsx",
+  "publishedAt": null,
+  "stale": false
+ }
+}

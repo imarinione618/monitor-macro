@@ -13,7 +13,7 @@
  */
 import { DATASETS } from '../core/datasets';
 import { comparePeriods, makePeriod, periodRange, periodToSheetsSerial } from '../core/periods';
-import { findSeries, seriesByTopic } from '../core/registry';
+import { findSeries, sheetsSeriesByTopic } from '../core/registry';
 import { SA_LABELS, TRANSFORMS } from '../core/transforms';
 import { buildWideTable, columnKey, defaultCalcTransforms, type ColumnSpec, type WideTable } from '../core/views';
 import {
@@ -295,7 +295,7 @@ function groupDefs(defs: SeriesDef[]): Group[] {
   return [...groups.values()];
 }
 
-const EXAMPLE_CHARTS: Record<Topic, { tab: string; keys: string[]; type: 'LINE' | 'COLUMN'; title: string; y: string }> = {
+const EXAMPLE_CHARTS: Partial<Record<Topic, { tab: string; keys: string[]; type: 'LINE' | 'COLUMN'; title: string; y: string }>> = {
   actividad: {
     tab: dataTabKey('emae', 'M'),
     keys: ['actividad.emae.total.sa|level'],
@@ -328,7 +328,7 @@ const EXAMPLE_CHARTS: Record<Topic, { tab: string; keys: string[]; type: 'LINE' 
 
 export function planTopic(input: PlanInput): TopicPlan {
   const { topic, source, now } = input;
-  const defs = input.defs ?? seriesByTopic(topic);
+  const defs = (input.defs ?? sheetsSeriesByTopic(topic)).filter((d) => d.source.kind !== 'external');
   const byId = new Map(defs.map((d) => [d.id, d]));
   const getDef = (id: string): SeriesDef => {
     const d = byId.get(id) ?? findSeries(id);
@@ -404,6 +404,7 @@ export function planTopic(input: PlanInput): TopicPlan {
   let chart: ChartPlan | null = null;
   {
     const spec = EXAMPLE_CHARTS[topic];
+    if (!spec) throw new Error(`Tema sin documento de Sheets: ${topic}`);
     const tabKey = spec.tab;
     const tab = [...dataTabs, ...calcTabs].find((t) => t.key === tabKey);
     const cols = spec.keys.map((k) => (tab?.columns ?? []).findIndex((c) => c.key === k));
@@ -540,7 +541,7 @@ function buildCatalogo(
         .filter(Boolean)
         .join('; ');
       metodologia = ds?.methodologyUrl ?? '';
-    } else {
+    } else if (d.source.kind === 'derived') {
       const op = d.source.op;
       fuente = 'Cálculo propio a partir de series INDEC del registro';
       endpoint = '—';

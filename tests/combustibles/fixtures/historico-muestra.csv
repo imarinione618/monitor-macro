@@ -1,0 +1,7 @@
+﻿idempresa,empresa,direccion,localidad,provincia,idproducto,producto,idtipohorario,tipohorario,precio,fecha_vigencia,idempresabandera,empresabandera,latitud,longitud,geojson,anio,mes
+1376,10 DE SETIEMBRE S.A.,Av. Mosconi 299,LOMAS DEL MIRADOR,BUENOS AIRES,19,Gas Oil Grado 2,2,Diurno,985,01/04/2024 10:11,28,PUMA,-34.658476,-58.529443,"{""type"":""Point"",""coordinates"":[-58.529443,-34.658476]}",2024,4
+1376,10 DE SETIEMBRE S.A.,Av. Mosconi 299,LOMAS DEL MIRADOR,BUENOS AIRES,19,Gas Oil Grado 2,3,Nocturno,985,01/04/2024 10:11,28,PUMA,-34.658476,-58.529443,"{""type"":""Point"",""coordinates"":[-58.529443,-34.658476]}",2024,4
+1376,10 DE SETIEMBRE S.A.,Av. Mosconi 299,LOMAS DEL MIRADOR,BUENOS AIRES,19,Gas Oil Grado 2,2,Diurno,2190,01/05/2026 12:43,28,PUMA,-34.658476,-58.529443,"{""type"":""Point"",""coordinates"":[-58.529443,-34.658476]}",2026,5
+1376,10 DE SETIEMBRE S.A.,Av. Mosconi 299,LOMAS DEL MIRADOR,BUENOS AIRES,19,Gas Oil Grado 2,3,Nocturno,2190,01/05/2026 12:43,28,PUMA,-34.658476,-58.529443,"{""type"":""Point"",""coordinates"":[-58.529443,-34.658476]}",2026,5
+7004,M LOGISTICA Y DISTRIBUCION S.R.L.,TTE. GRAL PERON ESQ. ARENALES,SALTA,SALTA,21,Gas Oil Grado 3,2,Diurno,27.99,21/04/9920 15:57,4,SHELL C.A.P.S.A.,-24.769381,-65.441566,"{""type"":""Point"",""coordinates"":[-65.441566,-24.769381]}",9920,4
+7004,M LOGISTICA Y DISTRIBUCION S.R.L.,TTE. GRAL PERON ESQ. ARENALES,SALTA,SALTA,21,Gas Oil Grado 3,3,Nocturno,27.99,21/04/9920 15:57,4,SHELL C.A.P.S.A.,-24.769381,-65.441566,"{""type"":""Point"",""coordinates"":[-65.441566,-24.769381]}",9920,4

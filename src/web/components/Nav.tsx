@@ -9,7 +9,9 @@ const LINKS = [
   { href: '/laboral', label: 'Mercado laboral' },
   { href: '/precios', label: 'Precios' },
   { href: '/comercio', label: 'Comercio exterior' },
+  { href: '/fiscal', label: 'Fiscal' },
   { href: '/monetario', label: 'Monetario' },
+  { href: '/laboratorio', label: 'Laboratorio' },
   { href: '/fuentes', label: 'Fuentes y estado' },
 ];
 

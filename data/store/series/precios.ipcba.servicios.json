@@ -1,0 +1,242 @@
+{
+ "id": "precios.ipcba.servicios",
+ "observations": [
+  {
+   "period": "2022-02",
+   "value": 128.19
+  },
+  {
+   "period": "2022-03",
+   "value": 135.87
+  },
+  {
+   "period": "2022-04",
+   "value": 142.23
+  },
+  {
+   "period": "2022-05",
+   "value": 150.23
+  },
+  {
+   "period": "2022-06",
+   "value": 157.85
+  },
+  {
+   "period": "2022-07",
+   "value": 169.33
+  },
+  {
+   "period": "2022-08",
+   "value": 178.7
+  },
+  {
+   "period": "2022-09",
+   "value": 187.14
+  },
+  {
+   "period": "2022-10",
+   "value": 201.11
+  },
+  {
+   "period": "2022-11",
+   "value": 214.77
+  },
+  {
+   "period": "2022-12",
+   "value": 227.95
+  },
+  {
+   "period": "2023-01",
+   "value": 248.01
+  },
+  {
+   "period": "2023-02",
+   "value": 262.87
+  },
+  {
+   "period": "2023-03",
+   "value": 280.12
+  },
+  {
+   "period": "2023-04",
+   "value": 300.08
+  },
+  {
+   "period": "2023-05",
+   "value": 323.04
+  },
+  {
+   "period": "2023-06",
+   "value": 348.64
+  },
+  {
+   "period": "2023-07",
+   "value": 376.63
+  },
+  {
+   "period": "2023-08",
+   "value": 413.08
+  },
+  {
+   "period": "2023-09",
+   "value": 456.42
+  },
+  {
+   "period": "2023-10",
+   "value": 500.26
+  },
+  {
+   "period": "2023-11",
+   "value": 553.63
+  },
+  {
+   "period": "2023-12",
+   "value": 632.28
+  },
+  {
+   "period": "2024-01",
+   "value": 756.07
+  },
+  {
+   "period": "2024-02",
+   "value": 868.08
+  },
+  {
+   "period": "2024-03",
+   "value": 1010.01
+  },
+  {
+   "period": "2024-04",
+   "value": 1149.75
+  },
+  {
+   "period": "2024-05",
+   "value": 1205.21
+  },
+  {
+   "period": "2024-06",
+   "value": 1282.22
+  },
+  {
+   "period": "2024-07",
+   "value": 1363.36
+  },
+  {
+   "period": "2024-08",
+   "value": 1430.54
+  },
+  {
+   "period": "2024-09",
+   "value": 1496.71
+  },
+  {
+   "period": "2024-10",
+   "value": 1555.42
+  },
+  {
+   "period": "2024-11",
+   "value": 1620
+  },
+  {
+   "period": "2024-12",
+   "value": 1688.77
+  },
+  {
+   "period": "2025-01",
+   "value": 1760.63
+  },
+  {
+   "period": "2025-02",
+   "value": 1798.46
+  },
+  {
+   "period": "2025-03",
+   "value": 1857.37
+  },
+  {
+   "period": "2025-04",
+   "value": 1901.64
+  },
+  {
+   "period": "2025-05",
+   "value": 1940.46
+  },
+  {
+   "period": "2025-06",
+   "value": 1991.15
+  },
+  {
+   "period": "2025-07",
+   "value": 2056.63
+  },
+  {
+   "period": "2025-08",
+   "value": 2091.67
+  },
+  {
+   "period": "2025-09",
+   "value": 2136.31
+  },
+  {
+   "period": "2025-10",
+   "value": 2181.67
+  },
+  {
+   "period": "2025-11",
+   "value": 2236.28
+  },
+  {
+   "period": "2025-12",
+   "value": 2297.64
+  },
+  {
+   "period": "2026-01",
+   "value": 2377.61
+  },
+  {
+   "period": "2026-02",
+   "value": 2448.59
+  },
+  {
+   "period": "2026-03",
+   "value": 2524.79
+  },
+  {
+   "period": "2026-04",
+   "value": 2586.89
+  },
+  {
+   "period": "2026-05",
+   "value": 2643.2
+  },
+  {
+   "period": "2026-06",
+   "value": 2696.66
+  },
+  {
+   "period": "2026-07",
+   "value": 2799.14
+  },
+  {
+   "period": "2026-08",
+   "value": 2848.41
+  },
+  {
+   "period": "2026-09",
+   "value": 2904.78
+  },
+  {
+   "period": "2026-10",
+   "value": 2961.22
+  }
+ ],
+ "meta": {
+  "firstPeriod": "2022-02",
+  "lastPeriod": "2026-10",
+  "retrievedAt": "2026-11-06T16:58:00.450Z",
+  "runId": "20261106T165759Z-631d",
+  "query": "https://www.estadisticaciudad.gob.ar/eyc/wp-content/uploads/2026/09/IPCBA_base_2021100-Nivel_general_empalme.xlsx",
+  "publishedAt": null,
+  "stale": false
+ }
+}

@@ -8,13 +8,15 @@ import { SECTOR_LABELS } from '@/web/lib/monetaryChartModel';
 import { selectableMonetarySeries } from '@/web/lib/monetarySelection';
 import { MonetaryChartPanel } from './MonetaryChartPanel';
 import { RepoRatesPanel } from './RepoRatesPanel';
+import { AggregatesGdpPanel } from './AggregatesGdpPanel';
+import type { AggregateGdpModel } from '@/web/lib/aggregatesGdp';
 import { Segmented } from './controls';
 
-interface Props { series: MonetarySeries[]; ipc: IpcPoint[]; updatedAt: string | null; error?: string }
+interface Props { series: MonetarySeries[]; ipc: IpcPoint[]; updatedAt: string | null; error?: string; aggregatesGdp?: AggregateGdpModel }
 
 const ids = (series: MonetarySeries[], categories: string[]) => categories.flatMap(category => series.filter(s => s.def.category === category).slice(0, 1).map(s => s.def.id));
 
-export function MonetaryDashboard({ series, ipc, updatedAt, error }: Props) {
+export function MonetaryDashboard({ series, ipc, updatedAt, error, aggregatesGdp }: Props) {
   const [tab, setTab] = useState('tasas');
   const [currency, setCurrency] = useState<'ARS' | 'USD'>('ARS');
   const [sector, setSector] = useState<'private' | 'public' | 'total'>('private');
@@ -76,6 +78,7 @@ export function MonetaryDashboard({ series, ipc, updatedAt, error }: Props) {
       {panel('Instrumentos monetarios por separado', instruments, ['pases_pasivos_imd', 'pases_activos_imd', 'otros'])}
       {aggregateTotal.length > 0 ? panel('Base monetaria más instrumentos elegibles', aggregateTotal, undefined, 'Base monetaria + otras letras + LELIQ/NOTALIQ + pases pasivos + Repo BCRA. Repo se incorpora desde el 15/07/2025; antes se muestra el agregado histórico sin Repo. Cálculo propio sobre fechas comunes.') : <p className="monetary-status">Base monetaria más instrumentos: total no disponible cuando falta un componente elegible o no existe cobertura simultánea. Los instrumentos se pueden consultar individualmente.</p>}
       {panel('Composición de base monetaria e instrumentos elegibles', aggregateComponents, undefined, 'Incluye Repo BCRA (serie 198) desde el 15/07/2025. Antes se conserva la composición histórica sin Repo; su aporte cero indica exclusión de la cobertura, no un saldo oficial cero.', 'composition')}
+      {aggregatesGdp && aggregatesGdp.periods.length > 0 && <AggregatesGdpPanel title="Agregados monetarios como % del PIB" description="Base monetaria, M1, M2 y M3 (totales) sobre el PIB a precios corrientes. Línea punteada: estimación con el último PIB publicado." model={aggregatesGdp} source="Fuente: one618 en base a BCRA e INDEC." />}
       {panel('Agregados monetarios privados', aggregates.filter(s => s.def.sector === 'private'), ['m1', 'm2', 'm3'], 'M1, M2 y M3 privados: cálculos propios con componentes de la API BCRA desde 2005. M2 transaccional: serie oficial.')}
       {panel('Agregados monetarios totales', aggregates.filter(s => s.def.sector === 'total'), ['m1', 'm2', 'm3'], 'M1, M2 y M3: cálculos propios con componentes de la API BCRA desde 2005. Para cierres mensuales se prioriza la serie oficial compatible; promedio y cierre no se intercambian.')}
     </div>}

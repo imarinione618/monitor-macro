@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
  "dataMode": "real",
- "generatedAt": "2026-11-06T15:00:48.617Z",
+ "generatedAt": "2026-11-06T16:58:00.901Z",
  "lastRun": {
-  "runId": "20261106T150006Z-d291",
-  "startedAt": "2026-11-06T15:00:06.724Z",
-  "finishedAt": "2026-11-06T15:00:48.617Z",
+  "runId": "20261106T165759Z-631d",
+  "startedAt": "2026-11-06T16:57:59.799Z",
+  "finishedAt": "2026-11-06T16:58:00.901Z",
   "ok": true,
   "partial": false
  },
@@ -1159,6 +1159,1247 @@
    "count": 116,
    "retrievedAt": "2026-11-06T15:00:13.956Z",
    "stale": false
+  },
+  "actividad.pib.total.orig": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.553Z",
+   "stale": false
+  },
+  "actividad.oyd.consumo_privado.orig": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.553Z",
+   "stale": false
+  },
+  "actividad.oyd.consumo_publico.orig": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.553Z",
+   "stale": false
+  },
+  "actividad.oyd.inversion.orig": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.553Z",
+   "stale": false
+  },
+  "actividad.oyd.inversion_construccion.orig": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.553Z",
+   "stale": false
+  },
+  "actividad.oyd.inversion_equipo.orig": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.553Z",
+   "stale": false
+  },
+  "actividad.oyd.exportaciones.orig": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.553Z",
+   "stale": false
+  },
+  "actividad.oyd.importaciones.orig": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.553Z",
+   "stale": false
+  },
+  "actividad.oyd.variacion_existencias.orig": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.553Z",
+   "stale": false
+  },
+  "actividad.oyd.discrepancia.orig": {
+   "firstPeriod": "2024-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 10,
+   "retrievedAt": "2026-11-06T16:50:30.553Z",
+   "stale": false
+  },
+  "actividad.pib.total.sa": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.674Z",
+   "stale": false
+  },
+  "actividad.oyd.consumo_privado.sa": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.674Z",
+   "stale": false
+  },
+  "actividad.oyd.consumo_publico.sa": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.674Z",
+   "stale": false
+  },
+  "actividad.oyd.inversion.sa": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.674Z",
+   "stale": false
+  },
+  "actividad.oyd.exportaciones.sa": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.674Z",
+   "stale": false
+  },
+  "actividad.oyd.importaciones.sa": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.674Z",
+   "stale": false
+  },
+  "actividad.pib.corriente": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.715Z",
+   "stale": false
+  },
+  "actividad.oyd_corriente.consumo_privado": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.715Z",
+   "stale": false
+  },
+  "actividad.oyd_corriente.consumo_publico": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.715Z",
+   "stale": false
+  },
+  "actividad.oyd_corriente.inversion": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.715Z",
+   "stale": false
+  },
+  "actividad.oyd_corriente.inversion_construccion": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.715Z",
+   "stale": false
+  },
+  "actividad.oyd_corriente.inversion_equipo": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.715Z",
+   "stale": false
+  },
+  "actividad.oyd_corriente.exportaciones": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.715Z",
+   "stale": false
+  },
+  "actividad.oyd_corriente.importaciones": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.715Z",
+   "stale": false
+  },
+  "actividad.oyd_corriente.variacion_existencias": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.715Z",
+   "stale": false
+  },
+  "actividad.oyd_corriente.discrepancia": {
+   "firstPeriod": "2024-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 10,
+   "retrievedAt": "2026-11-06T16:50:30.715Z",
+   "stale": false
+  },
+  "actividad.pib.deflactor": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.784Z",
+   "stale": false
+  },
+  "actividad.vab.agro": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.824Z",
+   "stale": false
+  },
+  "actividad.vab.pesca": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.824Z",
+   "stale": false
+  },
+  "actividad.vab.mineria": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.824Z",
+   "stale": false
+  },
+  "actividad.vab.industria": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.824Z",
+   "stale": false
+  },
+  "actividad.vab.egas": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.824Z",
+   "stale": false
+  },
+  "actividad.vab.construccion": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.824Z",
+   "stale": false
+  },
+  "actividad.vab.comercio": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.824Z",
+   "stale": false
+  },
+  "actividad.vab.hoteles_restaurantes": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.824Z",
+   "stale": false
+  },
+  "actividad.vab.transporte": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.824Z",
+   "stale": false
+  },
+  "actividad.vab.financiero": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.824Z",
+   "stale": false
+  },
+  "actividad.vab.inmobiliarias": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.824Z",
+   "stale": false
+  },
+  "actividad.vab.adm_publica": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.824Z",
+   "stale": false
+  },
+  "actividad.vab.ensenanza": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.824Z",
+   "stale": false
+  },
+  "actividad.vab.salud": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.824Z",
+   "stale": false
+  },
+  "actividad.vab.otros_servicios": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.824Z",
+   "stale": false
+  },
+  "actividad.vab.hogares": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.824Z",
+   "stale": false
+  },
+  "actividad.vab.bienes": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.824Z",
+   "stale": false
+  },
+  "actividad.vab.servicios": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.824Z",
+   "stale": false
+  },
+  "actividad.vab.vab_total": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.824Z",
+   "stale": false
+  },
+  "actividad.vab.impuestos_netos": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.824Z",
+   "stale": false
+  },
+  "actividad.vab_corriente.agro": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.919Z",
+   "stale": false
+  },
+  "actividad.vab_corriente.pesca": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.919Z",
+   "stale": false
+  },
+  "actividad.vab_corriente.mineria": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.919Z",
+   "stale": false
+  },
+  "actividad.vab_corriente.industria": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.919Z",
+   "stale": false
+  },
+  "actividad.vab_corriente.egas": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.919Z",
+   "stale": false
+  },
+  "actividad.vab_corriente.construccion": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.919Z",
+   "stale": false
+  },
+  "actividad.vab_corriente.comercio": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.919Z",
+   "stale": false
+  },
+  "actividad.vab_corriente.hoteles_restaurantes": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.919Z",
+   "stale": false
+  },
+  "actividad.vab_corriente.transporte": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.919Z",
+   "stale": false
+  },
+  "actividad.vab_corriente.financiero": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.919Z",
+   "stale": false
+  },
+  "actividad.vab_corriente.inmobiliarias": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.919Z",
+   "stale": false
+  },
+  "actividad.vab_corriente.adm_publica": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.919Z",
+   "stale": false
+  },
+  "actividad.vab_corriente.ensenanza": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.919Z",
+   "stale": false
+  },
+  "actividad.vab_corriente.salud": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.919Z",
+   "stale": false
+  },
+  "actividad.vab_corriente.otros_servicios": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.919Z",
+   "stale": false
+  },
+  "actividad.vab_corriente.hogares": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.919Z",
+   "stale": false
+  },
+  "actividad.vab_corriente.bienes": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.919Z",
+   "stale": false
+  },
+  "actividad.vab_corriente.servicios": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.919Z",
+   "stale": false
+  },
+  "actividad.vab_corriente.vab_total": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.919Z",
+   "stale": false
+  },
+  "actividad.vab_corriente.impuestos_netos": {
+   "firstPeriod": "2004-Q1",
+   "lastPeriod": "2026-Q2",
+   "count": 90,
+   "retrievedAt": "2026-11-06T16:50:30.919Z",
+   "stale": false
+  },
+  "actividad.consumo.supermercados.orig": {
+   "firstPeriod": "2017-01",
+   "lastPeriod": "2026-08",
+   "count": 116,
+   "retrievedAt": "2026-11-06T16:50:31.003Z",
+   "stale": false
+  },
+  "actividad.consumo.supermercados.sa": {
+   "firstPeriod": "2017-01",
+   "lastPeriod": "2026-08",
+   "count": 116,
+   "retrievedAt": "2026-11-06T16:50:31.003Z",
+   "stale": false
+  },
+  "actividad.consumo.supermercados.tc": {
+   "firstPeriod": "2017-01",
+   "lastPeriod": "2026-08",
+   "count": 116,
+   "retrievedAt": "2026-11-06T16:50:31.003Z",
+   "stale": false
+  },
+  "actividad.consumo_nominal.supermercados": {
+   "firstPeriod": "2017-01",
+   "lastPeriod": "2026-08",
+   "count": 116,
+   "retrievedAt": "2026-11-06T16:50:31.003Z",
+   "stale": false
+  },
+  "actividad.consumo_constante.supermercados": {
+   "firstPeriod": "2017-01",
+   "lastPeriod": "2026-08",
+   "count": 116,
+   "retrievedAt": "2026-11-06T16:50:31.003Z",
+   "stale": false
+  },
+  "actividad.consumo.mayoristas.orig": {
+   "firstPeriod": "2017-01",
+   "lastPeriod": "2026-08",
+   "count": 116,
+   "retrievedAt": "2026-11-06T16:50:31.041Z",
+   "stale": false
+  },
+  "actividad.consumo.mayoristas.sa": {
+   "firstPeriod": "2017-01",
+   "lastPeriod": "2026-08",
+   "count": 116,
+   "retrievedAt": "2026-11-06T16:50:31.041Z",
+   "stale": false
+  },
+  "actividad.consumo.mayoristas.tc": {
+   "firstPeriod": "2017-01",
+   "lastPeriod": "2026-08",
+   "count": 116,
+   "retrievedAt": "2026-11-06T16:50:31.041Z",
+   "stale": false
+  },
+  "actividad.consumo_nominal.mayoristas": {
+   "firstPeriod": "2017-01",
+   "lastPeriod": "2026-08",
+   "count": 116,
+   "retrievedAt": "2026-11-06T16:50:31.041Z",
+   "stale": false
+  },
+  "actividad.consumo_constante.mayoristas": {
+   "firstPeriod": "2017-01",
+   "lastPeriod": "2026-08",
+   "count": 116,
+   "retrievedAt": "2026-11-06T16:50:31.041Z",
+   "stale": false
+  },
+  "actividad.consumo.shoppings.orig": {
+   "firstPeriod": "2017-01",
+   "lastPeriod": "2026-08",
+   "count": 116,
+   "retrievedAt": "2026-11-06T16:50:31.090Z",
+   "stale": false
+  },
+  "actividad.consumo.shoppings.sa": {
+   "firstPeriod": "2017-01",
+   "lastPeriod": "2026-08",
+   "count": 116,
+   "retrievedAt": "2026-11-06T16:50:31.090Z",
+   "stale": false
+  },
+  "actividad.consumo.shoppings.tc": {
+   "firstPeriod": "2017-01",
+   "lastPeriod": "2026-08",
+   "count": 116,
+   "retrievedAt": "2026-11-06T16:50:31.090Z",
+   "stale": false
+  },
+  "actividad.consumo_nominal.shoppings": {
+   "firstPeriod": "2017-01",
+   "lastPeriod": "2026-08",
+   "count": 116,
+   "retrievedAt": "2026-11-06T16:50:31.090Z",
+   "stale": false
+  },
+  "actividad.consumo_constante.shoppings": {
+   "firstPeriod": "2017-01",
+   "lastPeriod": "2026-08",
+   "count": 116,
+   "retrievedAt": "2026-11-06T16:50:31.090Z",
+   "stale": false
+  },
+  "fiscal.ingresos.iva": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.ingresos.ganancias": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.ingresos.seguridad_social": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.ingresos.debitos_creditos": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.ingresos.bienes_personales": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.ingresos.internos": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.ingresos.combustibles": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.ingresos.derechos_exportacion": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.ingresos.derechos_importacion": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.ingresos.resto_tributarios": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.ingresos.rentas_fgs": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.ingresos.rentas_resto": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.ingresos.no_tributarios": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.ingresos.transferencias": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.ingresos.resto_corrientes": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.ingresos.capital": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.jubilaciones": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.asignaciones": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.pensiones_no_contributivas": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.inssjp": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.otros_programas": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.subsidios_energia": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.subsidios_transporte": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.subsidios_otros": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.salarios": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.otros_funcionamiento": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.transf_prov_educacion": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.transf_prov_seguridad_social": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.transf_prov_desarrollo_social": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.transf_prov_salud": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.transf_prov_otras": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.universidades": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.deficit_empresas": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.otros_corrientes_resto": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.capital_energia_nacion": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.capital_energia_provincias": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.capital_transporte_nacion": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.capital_transporte_provincias": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.capital_educacion_nacion": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.capital_educacion_provincias": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.capital_vivienda_nacion": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.capital_vivienda_provincias": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.capital_agua_nacion": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.capital_agua_provincias": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.capital_otros_nacion": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.capital_otros_provincias": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.fondo_federal_solidario": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.intereses": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.resultado.primario": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.resultado.financiero": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.ingresos.tributarios": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.ingresos.rentas": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.ingresos.otros_corrientes": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.ingresos.total": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.prestaciones_sociales": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.subsidios": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.funcionamiento": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.transf_provincias": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.otros_corrientes": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.capital": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.primario": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "fiscal.gastos.total": {
+   "firstPeriod": "2016-01",
+   "lastPeriod": "2026-09",
+   "count": 129,
+   "retrievedAt": "2026-11-06T16:50:31.136Z",
+   "stale": false
+  },
+  "precios.ipcba.nivel_general": {
+   "firstPeriod": "2012-07",
+   "lastPeriod": "2026-10",
+   "count": 172,
+   "retrievedAt": "2026-11-06T16:58:00.450Z",
+   "stale": false
+  },
+  "precios.ipcba.bienes": {
+   "firstPeriod": "2022-02",
+   "lastPeriod": "2026-10",
+   "count": 57,
+   "retrievedAt": "2026-11-06T16:58:00.450Z",
+   "stale": false
+  },
+  "precios.ipcba.servicios": {
+   "firstPeriod": "2022-02",
+   "lastPeriod": "2026-10",
+   "count": 57,
+   "retrievedAt": "2026-11-06T16:58:00.450Z",
+   "stale": false
+  },
+  "precios.ipcba.estacionales": {
+   "firstPeriod": "2022-02",
+   "lastPeriod": "2026-10",
+   "count": 57,
+   "retrievedAt": "2026-11-06T16:58:00.450Z",
+   "stale": false
+  },
+  "precios.ipcba.regulados": {
+   "firstPeriod": "2022-02",
+   "lastPeriod": "2026-10",
+   "count": 57,
+   "retrievedAt": "2026-11-06T16:58:00.450Z",
+   "stale": false
+  },
+  "precios.ipcba.resto_ipcba": {
+   "firstPeriod": "2022-02",
+   "lastPeriod": "2026-10",
+   "count": 57,
+   "retrievedAt": "2026-11-06T16:58:00.450Z",
+   "stale": false
+  },
+  "precios.ipcba.alimentos_bebidas_no_alcoholicas": {
+   "firstPeriod": "2022-02",
+   "lastPeriod": "2026-10",
+   "count": 57,
+   "retrievedAt": "2026-11-06T16:58:00.450Z",
+   "stale": false
+  },
+  "precios.ipcba.bebidas_alcoholicas_tabaco": {
+   "firstPeriod": "2022-02",
+   "lastPeriod": "2026-10",
+   "count": 57,
+   "retrievedAt": "2026-11-06T16:58:00.450Z",
+   "stale": false
+  },
+  "precios.ipcba.prendas_vestir_calzado": {
+   "firstPeriod": "2022-02",
+   "lastPeriod": "2026-10",
+   "count": 57,
+   "retrievedAt": "2026-11-06T16:58:00.450Z",
+   "stale": false
+  },
+  "precios.ipcba.vivienda_agua_electricidad_gas": {
+   "firstPeriod": "2022-02",
+   "lastPeriod": "2026-10",
+   "count": 57,
+   "retrievedAt": "2026-11-06T16:58:00.450Z",
+   "stale": false
+  },
+  "precios.ipcba.equipamiento_mantenimiento_hogar": {
+   "firstPeriod": "2022-02",
+   "lastPeriod": "2026-10",
+   "count": 57,
+   "retrievedAt": "2026-11-06T16:58:00.450Z",
+   "stale": false
+  },
+  "precios.ipcba.salud": {
+   "firstPeriod": "2022-02",
+   "lastPeriod": "2026-10",
+   "count": 57,
+   "retrievedAt": "2026-11-06T16:58:00.450Z",
+   "stale": false
+  },
+  "precios.ipcba.transporte": {
+   "firstPeriod": "2022-02",
+   "lastPeriod": "2026-10",
+   "count": 57,
+   "retrievedAt": "2026-11-06T16:58:00.450Z",
+   "stale": false
+  },
+  "precios.ipcba.informacion_comunicacion": {
+   "firstPeriod": "2022-02",
+   "lastPeriod": "2026-10",
+   "count": 57,
+   "retrievedAt": "2026-11-06T16:58:00.450Z",
+   "stale": false
+  },
+  "precios.ipcba.recreacion_cultura": {
+   "firstPeriod": "2022-02",
+   "lastPeriod": "2026-10",
+   "count": 57,
+   "retrievedAt": "2026-11-06T16:58:00.450Z",
+   "stale": false
+  },
+  "precios.ipcba.educacion": {
+   "firstPeriod": "2022-02",
+   "lastPeriod": "2026-10",
+   "count": 57,
+   "retrievedAt": "2026-11-06T16:58:00.450Z",
+   "stale": false
+  },
+  "precios.ipcba.restaurantes_hoteles": {
+   "firstPeriod": "2022-02",
+   "lastPeriod": "2026-10",
+   "count": 57,
+   "retrievedAt": "2026-11-06T16:58:00.450Z",
+   "stale": false
+  },
+  "precios.ipcba.seguros_servicios_financieros": {
+   "firstPeriod": "2022-02",
+   "lastPeriod": "2026-10",
+   "count": 57,
+   "retrievedAt": "2026-11-06T16:58:00.450Z",
+   "stale": false
+  },
+  "precios.ipcba.cuidado_personal_proteccion_social": {
+   "firstPeriod": "2022-02",
+   "lastPeriod": "2026-10",
+   "count": 57,
+   "retrievedAt": "2026-11-06T16:58:00.450Z",
+   "stale": false
+  },
+  "precios.ipcba.servicios_alimentos_bebidas_fuera_hogar": {
+   "firstPeriod": "2022-02",
+   "lastPeriod": "2026-10",
+   "count": 57,
+   "retrievedAt": "2026-11-06T16:58:00.450Z",
+   "stale": false
+  },
+  "actividad.caba.restaurantes": {
+   "firstPeriod": "2015-03",
+   "lastPeriod": "2026-09",
+   "count": 139,
+   "retrievedAt": "2026-11-06T16:58:00.823Z",
+   "stale": false
+  }
+ },
+ "feeds": {
+  "sspm.oyd_constantes": {
+   "feed": "sspm.oyd_constantes",
+   "lastSuccessAt": "2026-11-06T16:50:30.553Z",
+   "lastRunId": "20261106T165030Z-68f0",
+   "lastAttemptAt": "2026-11-06T16:50:30.392Z",
+   "ok": true
+  },
+  "sspm.oyd_desest": {
+   "feed": "sspm.oyd_desest",
+   "lastSuccessAt": "2026-11-06T16:50:30.674Z",
+   "lastRunId": "20261106T165030Z-68f0",
+   "lastAttemptAt": "2026-11-06T16:50:30.591Z",
+   "ok": true
+  },
+  "sspm.oyd_corrientes": {
+   "feed": "sspm.oyd_corrientes",
+   "lastSuccessAt": "2026-11-06T16:50:30.715Z",
+   "lastRunId": "20261106T165030Z-68f0",
+   "lastAttemptAt": "2026-11-06T16:50:30.691Z",
+   "ok": true
+  },
+  "sspm.oyd_deflactores": {
+   "feed": "sspm.oyd_deflactores",
+   "lastSuccessAt": "2026-11-06T16:50:30.784Z",
+   "lastRunId": "20261106T165030Z-68f0",
+   "lastAttemptAt": "2026-11-06T16:50:30.742Z",
+   "ok": true
+  },
+  "sspm.vab_constantes": {
+   "feed": "sspm.vab_constantes",
+   "lastSuccessAt": "2026-11-06T16:50:30.824Z",
+   "lastRunId": "20261106T165030Z-68f0",
+   "lastAttemptAt": "2026-11-06T16:50:30.788Z",
+   "ok": true
+  },
+  "sspm.vab_corrientes": {
+   "feed": "sspm.vab_corrientes",
+   "lastSuccessAt": "2026-11-06T16:50:30.919Z",
+   "lastRunId": "20261106T165030Z-68f0",
+   "lastAttemptAt": "2026-11-06T16:50:30.878Z",
+   "ok": true
+  },
+  "sspm.supermercados": {
+   "feed": "sspm.supermercados",
+   "lastSuccessAt": "2026-11-06T16:50:31.003Z",
+   "lastRunId": "20261106T165030Z-68f0",
+   "lastAttemptAt": "2026-11-06T16:50:30.972Z",
+   "ok": true
+  },
+  "sspm.mayoristas": {
+   "feed": "sspm.mayoristas",
+   "lastSuccessAt": "2026-11-06T16:50:31.041Z",
+   "lastRunId": "20261106T165030Z-68f0",
+   "lastAttemptAt": "2026-11-06T16:50:31.018Z",
+   "ok": true
+  },
+  "sspm.shoppings": {
+   "feed": "sspm.shoppings",
+   "lastSuccessAt": "2026-11-06T16:50:31.090Z",
+   "lastRunId": "20261106T165030Z-68f0",
+   "lastAttemptAt": "2026-11-06T16:50:31.056Z",
+   "ok": true
+  },
+  "sspm.imig": {
+   "feed": "sspm.imig",
+   "lastSuccessAt": "2026-11-06T16:50:31.136Z",
+   "lastRunId": "20261106T165030Z-68f0",
+   "lastAttemptAt": "2026-11-06T16:50:31.103Z",
+   "ok": true
+  },
+  "idecba.ipcba": {
+   "feed": "idecba.ipcba",
+   "lastSuccessAt": "2026-11-06T16:58:00.450Z",
+   "lastRunId": "20261106T165759Z-631d",
+   "lastAttemptAt": "2026-11-06T16:57:59.809Z",
+   "ok": true
+  },
+  "idecba.restaurantes": {
+   "feed": "idecba.restaurantes",
+   "lastSuccessAt": "2026-11-06T16:58:00.823Z",
+   "lastRunId": "20261106T165759Z-631d",
+   "lastAttemptAt": "2026-11-06T16:58:00.496Z",
+   "ok": true
   }
  }
 }

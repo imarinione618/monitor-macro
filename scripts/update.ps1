@@ -43,6 +43,11 @@ $monetaryCmd = 'npm.cmd run monetary:refresh' + $(if ($Full) { ' -- --full' } el
 cmd.exe /d /c "$monetaryCmd >> `"$log`" 2>&1"
 $monetaryCode = $LASTEXITCODE
 Log "monetary:refresh terminó con código $monetaryCode (sin sincronización Sheets)"
+
+$fuelCmd = 'npm.cmd run combustibles:refresh' + $(if ($Full) { ' -- --full' } else { '' })
+cmd.exe /d /c "$fuelCmd >> `"$log`" 2>&1"
+$fuelCode = $LASTEXITCODE
+Log "combustibles:refresh terminó con código $fuelCode (solo dashboard)"
 $sheetsCode = 0
 if (-not $SkipSheets) {
   cmd.exe /d /c "npm.cmd run sheets:sync >> `"$log`" 2>&1"
@@ -55,14 +60,14 @@ $hasOrigin = $false
 cmd.exe /d /c "git remote get-url origin >nul 2>&1"
 if ($LASTEXITCODE -eq 0) { $hasOrigin = $true }
 if (-not $SkipPublish -and $env:PUBLISH_GITHUB -ne '0' -and $hasOrigin) {
-  cmd.exe /d /c "git add data/store data/monetary >> `"$log`" 2>&1"
+  cmd.exe /d /c "git add data/store data/monetary data/combustibles >> `"$log`" 2>&1"
   $publishCode = $LASTEXITCODE
   if ($publishCode -eq 0) {
-    cmd.exe /d /c "git diff --cached --quiet -- data/store data/monetary"
+    cmd.exe /d /c "git diff --cached --quiet -- data/store data/monetary data/combustibles"
     $diffCode = $LASTEXITCODE
     if ($diffCode -eq 1) {
       $msg = "datos: actualización {0}" -f (Get-Date -Format 'yyyy-MM-dd')
-      cmd.exe /d /c "git commit -m `"$msg`" -- data/store data/monetary >> `"$log`" 2>&1"
+      cmd.exe /d /c "git commit -m `"$msg`" -- data/store data/monetary data/combustibles >> `"$log`" 2>&1"
       $publishCode = $LASTEXITCODE
     } elseif ($diffCode -ne 0) {
       $publishCode = $diffCode
@@ -84,6 +89,7 @@ if (-not $SkipPublish -and $env:PUBLISH_GITHUB -ne '0' -and $hasOrigin) {
 
 if ($refreshCode -ne 0) { Log "=== Fin con fallas de ingesta (se conservaron los últimos datos válidos) ==="; exit 1 }
 if ($monetaryCode -ne 0) { Log "=== Fin con fallas BCRA; datos anteriores conservados ==="; exit 4 }
+if ($fuelCode -ne 0) { Log "=== Fin con fallas en combustibles; datos anteriores conservados ==="; exit 5 }
 if ($sheetsCode -ne 0) { Log "=== Fin con fallas en Google Sheets ==="; exit 2 }
 if ($publishCode -ne 0) { Log "=== Fin con falla al publicar en GitHub (datos y Sheets OK) ==="; exit 3 }
 Log "=== Fin OK ==="

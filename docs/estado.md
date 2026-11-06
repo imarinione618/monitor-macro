@@ -45,6 +45,18 @@ Publicación inicial completada el 2026-11-04:
 - Verificación del sitio público: las 6 rutas y los 17 recursos JS/CSS referenciados responden HTTP 200. No se realizó una nueva inspección visual interactiva (el navegador automatizado no estaba disponible).
 - Los archivos versionados se comprobaron contra las credenciales locales y los IDs de Sheets: sin coincidencias. No se subieron secretos a GitHub.
 
+### Fuentes externas, Fiscal, agregados/PIB y Laboratorio — 2026-11-06
+
+- **Solo dashboard** (nada en Google Sheets). Detalle en [fuentes externas](fuentes-externas.md) y [combustibles](combustibles.md).
+- **Actividad:** PIB (constante original y desestacionalizado, corriente, deflactor), oferta y demanda (constantes, corrientes, desestacionalizadas), VAB por letra (constante y corriente), hasta 2026-T2; supermercados, mayoristas y shoppings (índices y M$), hasta ago-2026; restaurantes CABA (IDECBA), hasta sep-2026. Fuente: CSV de datos.gob.ar (más completos que la API JSON) y XLSX del IDECBA.
+- **Precios:** IPCBA (nivel general empalmado desde 2012-07, bienes/servicios, estacionales/regulados/resto, 13 divisiones), hasta oct-2026. Combustibles: mediana diaria en surtidor (Res. 314, desde 2018, hasta 02/11/2026) con quiebre de cobertura desde jul-2025 (YPF casi no informa) y promedio mensual ponderado por volumen (Res. 1104, desde 2016, hasta sep-2026).
+- **Fiscal (sección nueva):** IMIG base caja, partidas y subtotales, nominal y a precios de hoy (IPC nacional); var. i.a. nominal y real por partida; resultados como diferencia i.a. en niveles reales. Identidades contables exactas en 129 meses; sep-2026 coincide con lo publicado.
+- **Monetario:** BM, M1, M2 y M3 como % del PIB corriente (promedio trimestral ÷ PIB anual móvil) con línea punteada estimada para los trimestres posteriores al último PIB (hoy 2026-T3 completo y 2026-T4 en curso).
+- **Laboratorio (pestaña nueva):** 409 variables (sin combustibles), conversión de frecuencia, deflactado por IPC, transformaciones, escalas, dos ejes, ratios y exportación.
+- **Fuente de todos los gráficos:** «Fuente: one618 en base a …».
+- **Actualización diaria:** `data:refresh` incluye las fuentes externas; se agregó `combustibles:refresh` a la tarea de Windows (`scripts/update.ps1`, código de salida 5 si falla), a `scripts/update.mjs`, al workflow opcional y al disparador de Pages (`data/combustibles/**`).
+- Validación: 1274 pruebas aprobadas, TypeScript y build estático con subruta OK; exportaciones de los gráficos nuevos inspeccionadas visualmente. Sitio comprimido ≈13 MB (la página Monetario ya pesaba ~25 MB de HTML antes de estos cambios).
+
 ### Caución A3 + gráfico Repo/caución/TAMAR — 2026-11-06
 
 - Nueva fuente de mercado: tasa de caución a 1 día de **A3 Mercados** (índice I.CAUCION), desde el endpoint público que usa la función de Apps Script `TasaCaucion1DiaHistoricas`. 482 cierres diarios (07/11/2024 → 05/11/2026). Módulo `src/monetary/caucion.ts`; serie `monetario.a3.caucion` en `data/monetary`. Descarga completa en cada corrida, revisiones en `revisions.jsonl`, conservación ante falla. Se actualiza dentro de `npm run monetary:refresh` (tarea diaria incluida, sin cambios en scripts).
@@ -80,9 +92,11 @@ Publicación inicial completada el 2026-11-04:
 El proyecto vive en una carpeta local fuera de OneDrive desde el 2026-11-04. La carpeta anterior se conserva como respaldo y ya no se usa para las actualizaciones.
 
 ## Limitaciones conocidas
-- **No disponibles en la API de INDEC:** PIB trimestral y demanda agregada, ISAC, utilización de la capacidad instalada, supermercados, mayoristas y shoppings, índices de precios y cantidades de comercio, términos del intercambio.
+- **No disponibles:** ISAC, utilización de la capacidad instalada, índices de precios y cantidades de comercio, términos del intercambio. (PIB, demanda agregada y encuestas de comercio se toman de datos.gob.ar.)
 - **SIPA y RIPTE:** son fuentes oficiales complementarias, no del INDEC, y no están integradas.
 - **Rubros de exportación:** en la API no incluyen lo confidencial y difieren de los del informe ICA (A2).
+- **Combustibles diarios:** desde jul-2025 la muestra excluye casi toda YPF (sube el nivel por composición); la regla de 90 días reduce la muestra en congelamientos de precios (2020, 2021-22). Ver [combustibles](combustibles.md).
+- **Página Monetario:** ~25 MB de HTML por los datos diarios embebidos (preexistente); candidata a carga a demanda como el Laboratorio.
 - **Socios comerciales:** las sumas por país subestiman el comercio por el secreto estadístico (`s`).
 - **Fecha de publicación:** la API no la expone; las revisiones se detectan comparando corridas.
 - **Tamaño de páginas:** el HTML de `/comercio` y `/actividad` pesa ~600 KB porque envía la historia completa.

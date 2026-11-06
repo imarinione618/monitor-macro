@@ -18,18 +18,19 @@ export function latestRetrieved(series: ClientSeries[]): string | null {
   return xs[xs.length - 1] ?? null;
 }
 
-/**
- * "Fuente: INDEC, EMAE — Nivel general. Elaboración propia (transformación sobre datos oficiales).
- *  Datos consultados el 04/11/2026 10:02."
- */
-export function buildSourceLine(series: ClientSeries[], transform: TransformId): string {
-  const titles = uniqueSources(series).map((s) => s.title);
-  const derived = series.some((s) => s.def.source.kind === 'derived');
-  const parts = [`Fuente: INDEC${titles.length ? `, ${titles.join('; ')}` : ''} (API Catálogo INDEC).`];
-  if (derived || transform !== 'level') parts.push('Elaboración propia sobre datos oficiales.');
-  const r = latestRetrieved(series);
-  if (r) parts.push(`Datos consultados el ${formatDateTimeAR(r)} (hora de Buenos Aires).`);
-  return parts.join(' ');
+/** Une organismos: «INDEC», «INDEC y BCRA», «INDEC, BCRA y A3 Mercados». */
+export function joinOrgs(orgs: string[]): string {
+  const u = [...new Set(orgs.filter(Boolean))];
+  return u.length <= 1 ? (u[0] ?? '') : `${u.slice(0, -1).join(', ')} y ${u.at(-1)}`;
+}
+
+/** Formato único de fuente de los gráficos: «Fuente: one618 en base a <organismos>.» */
+export function sourceLineFor(orgs: string[]): string {
+  return `Fuente: one618 en base a ${joinOrgs(orgs) || 'datos oficiales'}.`;
+}
+
+export function buildSourceLine(series: ClientSeries[], _transform?: TransformId, extraOrgs: string[] = []): string {
+  return sourceLineFor([...uniqueSources(series).map((s) => s.org), ...extraOrgs]);
 }
 
 /** Notas metodológicas únicas de las series (y cobertura geográfica cuando no es total país). */

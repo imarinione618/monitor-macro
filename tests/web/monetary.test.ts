@@ -71,7 +71,7 @@ describe('monetary presentation export', () => {
     expect(svg).toContain('height="900"');
     expect(svg).toContain('TAMAR y BADLAR');
     expect(svg).toContain('% TNA');
-    expect(svg).toContain('Fuente: BCRA');
+    expect(svg).toContain('Fuente: one618 en base a BCRA');
     expect(svg).toContain('02/11/2026');
     expect(svg.match(/\s[a-zA-Z:-]+="[^"]*"(?![\s>/])/g) ?? []).toEqual([]);
   });

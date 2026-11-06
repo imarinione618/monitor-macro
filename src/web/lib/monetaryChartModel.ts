@@ -15,7 +15,7 @@ export const TRANSFORM_LABELS = { level: 'Nivel', pct_mom: 'Variación mensual (
 export function monetarySourceLabel(series: Pick<MonetarySeries, 'def'>[]): string {
   const a3 = series.some(s => s.def.provider === 'A3');
   const bcra = series.some(s => (s.def.provider ?? 'BCRA') === 'BCRA');
-  return `Fuente: ${[bcra ? 'BCRA · Estadísticas monetarias v4' : '', a3 ? 'A3 Mercados · Tasa de caución a 1 día' : ''].filter(Boolean).join('; ')}`;
+  return `Fuente: one618 en base a ${[bcra ? 'BCRA' : '', a3 ? 'A3 Mercados' : ''].filter(Boolean).join(' y ')}`;
 }
 
 export function monetaryDate(period: string): string {
@@ -45,8 +45,7 @@ export function buildMonetaryChartModel(series: MonetarySeries[], options: Monet
   const rateChange = options.transform === 'change_pp' || options.transform === 'change_bp';
   const comparison = rateChange ? options.frequency === 'D' ? 'Contra observación previa' : 'Contra mes anterior' : '';
   const subtitle = [TRANSFORM_LABELS[options.transform], comparison, unit, currencies, sectors, frequency, price, options.transform === 'base100' && options.basePeriod ? `Base ${monetaryDate(options.basePeriod)} = 100` : '', options.transform === 'pct_mom' ? 'Sin ajuste estacional' : '', range, partialLabel].filter(Boolean).join(' · ');
-  const latestUpdate = series.map(s => s.retrievedAt).filter(Boolean).sort().at(-1);
-  const source = `${monetarySourceLabel(series)}${options.valueMode === 'real' ? ' e IPC nacional INDEC' : ''}. ${series.some(s => s.def.bcraId === 0) ? 'Cálculos propios. ' : ''}${latestUpdate ? `Consulta: ${latestUpdate.slice(0, 10)}.` : ''}`;
+  const source = `${monetarySourceLabel(series)}${options.valueMode === 'real' ? ' e INDEC' : ''}.`;
   return { periods, columns, unit, subtitle, source };
 }
 

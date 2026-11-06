@@ -7,9 +7,14 @@ import { ACTIVIDAD, ACTIVIDAD_NO_DISPONIBLE } from './actividad';
 import { LABORAL, LABORAL_COMPLEMENTARIAS } from './laboral';
 import { PRECIOS } from './precios';
 import { COMEX, COMEX_NO_DISPONIBLE } from './comex';
+import { CUENTAS } from './cuentas';
+import { CABA } from './caba';
+import { FISCAL, FISCAL_CUADRO } from './fiscal';
 import { DATASETS } from '../datasets';
 
-export const SERIES: SeriesDef[] = [...ACTIVIDAD, ...LABORAL, ...PRECIOS, ...COMEX];
+export const SERIES: SeriesDef[] = [...ACTIVIDAD, ...CUENTAS, ...LABORAL, ...PRECIOS, ...COMEX, ...FISCAL, ...CABA];
+
+export { FISCAL_CUADRO };
 
 export { ACTIVIDAD_NO_DISPONIBLE, LABORAL_COMPLEMENTARIAS, COMEX_NO_DISPONIBLE };
 
@@ -27,6 +32,24 @@ export function findSeries(id: string): SeriesDef | undefined {
 
 export function seriesByTopic(topic: Topic): SeriesDef[] {
   return SERIES.filter((s) => s.topic === topic);
+}
+
+/**
+ * Series que se sincronizan con Google Sheets: solo las de la API INDEC y sus derivadas.
+ * Las fuentes externas (datos.gob.ar, IDECBA) y el tema Fiscal son exclusivos del dashboard.
+ */
+export function inSheets(def: SeriesDef, depth = 0): boolean {
+  if (def.topic === 'fiscal') return false;
+  if (def.source.kind === 'api') return true;
+  if (def.source.kind === 'external' || depth > 5) return false;
+  return dependenciesOf(def).every((id) => {
+    const d = BY_ID.get(id);
+    return !!d && inSheets(d, depth + 1);
+  });
+}
+
+export function sheetsSeriesByTopic(topic: Topic): SeriesDef[] {
+  return seriesByTopic(topic).filter((s) => inSheets(s));
 }
 
 export function seriesByDataset(dataset: DatasetId): SeriesDef[] {

@@ -7,7 +7,10 @@
 import path from 'node:path';
 import { cache } from 'react';
 import { DATASETS } from '@/core/datasets';
+import { FEEDS } from '@/core/feeds';
 import { dependenciesOf, findSeries, SERIES } from '@/core/registry';
+import { atConstantPrices } from '@/core/transforms';
+import { formatPeriodLong } from '@/core/periods';
 import { listStoredSeries, readManifest, readRevisions, readSeriesData, storeDir } from '@/core/store';
 import type { DatasetId, Manifest, RevisionRecord, SeriesDef } from '@/core/types';
 import type { ClientSeries, SourceRef } from '@/web/lib/types';
@@ -52,21 +55,26 @@ export const getStoreState = cache((): StoreState => {
   }
 });
 
-function datasetsOf(def: SeriesDef, depth = 0): DatasetId[] {
-  if (def.source.kind === 'api') return [def.source.dataset];
-  if (depth > 3) return [];
+function originsOf(def: SeriesDef, depth = 0): SourceRef[] {
+  if (def.source.kind === 'api') {
+    const ds = DATASETS[def.source.dataset];
+    return [{ title: ds?.title ?? def.source.dataset, org: 'INDEC', producer: ds?.producer, methodologyUrl: ds?.methodologyUrl }];
+  }
+  if (def.source.kind === 'external') {
+    const f = FEEDS[def.source.feed];
+    return [{ title: f?.title ?? def.source.feed, org: f?.producer ?? def.source.feed, producer: f?.sourceLabel, methodologyUrl: f?.methodologyUrl }];
+  }
+  if (depth > 5) return [];
   return dependenciesOf(def).flatMap((id) => {
     const d = findSeries(id);
-    return d ? datasetsOf(d, depth + 1) : [];
+    return d ? originsOf(d, depth + 1) : [];
   });
 }
 
 export function sourcesOf(def: SeriesDef): SourceRef[] {
-  const ids = [...new Set(datasetsOf(def))];
-  return ids.map((id) => {
-    const ds = DATASETS[id];
-    return { title: ds?.title ?? id, producer: ds?.producer, methodologyUrl: ds?.methodologyUrl };
-  });
+  const seen = new Map<string, SourceRef>();
+  for (const s of originsOf(def)) if (!seen.has(s.title)) seen.set(s.title, s);
+  return [...seen.values()];
 }
 
 /** Lee una serie del store y la prepara para el cliente. Nunca lanza: los errores se reflejan en el objeto. */
@@ -129,4 +137,41 @@ export function getRecentRevisions(limit = 60): RevisionRecord[] {
   } catch {
     return [];
   }
+}
+
+export const IPC_DEFLATOR_ID = 'precios.ipc.ng.nacional';
+
+/**
+ * Variantes «a precios de hoy» (deflactadas por IPC nacional, base = último mes con IPC) para
+ * series mensuales en pesos corrientes. Devuelve el pool ampliado y el mapa nominal → real.
+ */
+export function withRealVariants(series: ClientSeries[]): { pool: ClientSeries[]; realOf: Record<string, string>; basePeriod: string | null } {
+  const ipc = getClientSeries(IPC_DEFLATOR_ID);
+  const base = ipc?.observations.filter((o) => o.value !== null).at(-1)?.period ?? null;
+  if (!ipc || !base) return { pool: series, realOf: {}, basePeriod: null };
+  const label = formatPeriodLong(base);
+  const realOf: Record<string, string> = {};
+  const extra: ClientSeries[] = [];
+  for (const s of series) {
+    if (s.def.frequency !== 'M') continue;
+    const id = `${s.def.id}.real`;
+    realOf[s.def.id] = id;
+    extra.push({
+      ...s,
+      def: {
+        ...s.def,
+        id,
+        source: { kind: 'derived', op: { type: 'real_index', nominal: s.def.id, deflator: IPC_DEFLATOR_ID, basePeriod: base } },
+        name: `${s.def.name} — a precios de ${label}`,
+        shortName: `${s.def.shortName} (real)`,
+        unit: s.def.unit.replace(/\$ corrientes/, `$ de ${label}`),
+        currency: `$ constantes de ${label} (deflactado por IPC nacional, INDEC)`,
+        seasonalVariants: undefined,
+        notes: [...(s.def.notes ?? []), `Valores reales: × IPC(${label}) / IPC(mes), IPC nacional nivel general (INDEC). Sin IPC publicado, el valor real queda vacío.`],
+      },
+      observations: atConstantPrices(s.observations, ipc.observations, base),
+      sources: [...s.sources, ...ipc.sources.filter((x) => !s.sources.some((y) => y.title === x.title))],
+    });
+  }
+  return { pool: [...series, ...extra], realOf, basePeriod: base };
 }

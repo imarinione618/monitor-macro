@@ -9,6 +9,7 @@ on:
     paths:
       - 'data/store/**'
       - 'data/monetary/**'
+      - 'data/combustibles/**'
       - 'src/**'
       - 'public/**'
       - 'package.json'

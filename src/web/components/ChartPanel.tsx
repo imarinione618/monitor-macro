@@ -45,6 +45,11 @@ export interface ChartPanelProps {
   callout?: string;
   extraNotes?: string[];
   synthetic?: boolean;
+  /** Variantes a precios constantes: id nominal → id real (en el pool). Activa el selector de valuación. */
+  realOf?: Record<string, string>;
+  /** Rótulo del período base de los valores reales (p.ej. «septiembre de 2026»). */
+  realLabel?: string;
+  defaultValuation?: 'nominal' | 'real';
 }
 
 const RANGE_IDS: RangeId[] = ['12m', '24m', '5y', 'all'];
@@ -66,7 +71,11 @@ export function ChartPanel(props: ChartPanelProps) {
     callout,
     extraNotes = [],
     synthetic = false,
+    realOf,
+    realLabel,
+    defaultValuation = 'nominal',
   } = props;
+  const [valuation, setValuation] = useState<'nominal' | 'real'>(defaultValuation);
 
   const uid = useId();
   const theme = useChartTheme();
@@ -95,7 +104,8 @@ export function ChartPanel(props: ChartPanelProps) {
 
   // Series efectivas (variante según el ajuste elegido) y su ID base (para el color).
   const resolved = selected.map((id) => {
-    const rid = resolveVariant(byId[id]!.def, adj);
+    const nominalId = resolveVariant(byId[id]!.def, adj);
+    const rid = valuation === 'real' && realOf?.[nominalId] ? realOf[nominalId]! : nominalId;
     return { baseId: id, series: byId[rid] ?? byId[id]! };
   });
   const resolvedSeries = resolved.map((r) => r.series);
@@ -155,6 +165,17 @@ export function ChartPanel(props: ChartPanelProps) {
 
       <div className="controls">
         <Segmented label="Rango" value={range} options={RANGE_IDS.map((r) => ({ value: r, label: RANGE_LABELS[r] }))} onChange={setRange} />
+        {realOf && Object.keys(realOf).length > 0 && (
+          <Segmented
+            label="Valores"
+            value={valuation}
+            options={[
+              { value: 'nominal', label: 'Nominales' },
+              { value: 'real', label: realLabel ? `Reales (precios de ${realLabel})` : 'Reales' },
+            ]}
+            onChange={(v) => setValuation(v)}
+          />
+        )}
         {showAdjToggle && adj && (
           <Segmented
             label="Ajuste estacional"

@@ -842,3 +842,11 @@ h3 {
     display: none;
   }
 }
+
+/* Cuadro fiscal: positivos azul, negativos magenta (convención del sitio). */
+.data-table td.pos { color: #1A4CC8; }
+.data-table td.neg { color: #E32D91; }
+.data-table.fiscal td { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.data-table.fiscal tr.indent-0 th, .data-table.fiscal tr.indent-0 td { border-top: 1px solid var(--border-strong); }
+:root[data-theme='dark'] .data-table td.pos { color: #7f9cf0; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme='light']) .data-table td.pos { color: #7f9cf0; } }

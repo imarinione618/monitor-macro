@@ -1,0 +1,16 @@
+.lab { display: grid; gap: 20px; }
+.lab-results { list-style: none; margin: 8px 0 0; padding: 0; max-height: 340px; overflow-y: auto; border-top: 1px solid var(--border-strong); }
+.lab-results li { display: flex; gap: 10px; align-items: flex-start; padding: 7px 4px; border-bottom: 1px solid var(--border, var(--border-strong)); }
+.lab-results li > span { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.lab-results small { color: var(--muted); font-size: .75rem; overflow-wrap: anywhere; }
+.lab-results .btn { flex: 0 0 auto; min-width: 32px; }
+.lab input[type='search'], .lab input[type='date'] { min-height: 34px; padding: 5px 8px; border: 1px solid var(--border-strong); border-radius: 4px; background: var(--surface); color: var(--text); font: inherit; }
+.lab input[type='search'] { width: min(420px, 100%); }
+.lab-title { font: inherit; font-weight: 700; border: 0; border-bottom: 1px dashed var(--border-strong); background: transparent; color: var(--text); width: 100%; }
+.lab-label { font: inherit; font-weight: 600; border: 1px solid var(--border-strong); border-radius: 4px; padding: 3px 6px; background: var(--surface); color: var(--text); width: 100%; min-width: 160px; }
+.lab-items th small, .lab-items td small { display: block; font-weight: 400; font-size: .72rem; margin-top: 3px; }
+.lab-items select { font: inherit; font-size: .85rem; padding: 3px 4px; border: 1px solid var(--border-strong); border-radius: 4px; background: var(--surface); color: var(--text); max-width: 190px; }
+.lab-check { display: inline-flex; gap: 6px; align-items: center; font-size: .85rem; white-space: nowrap; }
+.lab-ratio { margin: 14px 0; border: 1px solid var(--border-strong); border-radius: 6px; padding: 10px 14px; }
+.lab-ratio legend { font-weight: 600; padding: 0 4px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

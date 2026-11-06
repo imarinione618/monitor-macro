@@ -5,6 +5,8 @@ import { PageIntro } from '@/web/components/PageIntro';
 import { SnapshotPanel } from '@/web/components/SnapshotPanel';
 import { StoreProblem } from '@/web/components/StateMessages';
 import { getClientSeriesList, getStoreState } from '@/web/server/store';
+import { readFuelStore } from '@/combustibles/store';
+import { FuelPanel } from '@/web/components/FuelPanel';
 import { buildIpcContributions, contributionId, IPC_CONTRIBUTIONS } from '@/web/lib/ipcContributions';
 
 // Sitio estático: se genera con los datos del store al momento del build (npm run build).
@@ -25,6 +27,13 @@ export default function PreciosPage() {
   const divisiones = [NG, ...ids('ipc_divisiones')];
   const contributions = buildIpcContributions(getClientSeriesList(categorias));
   const contributionIds = IPC_CONTRIBUTIONS.map(({ key }) => contributionId(key));
+
+  const familyIds = (f: string) => SERIES.filter((x) => x.family === f).map((x) => x.id);
+  const ipcbaMain = getClientSeriesList(['precios.ipcba.nivel_general', ...familyIds('ipcba_bs')]);
+  const ipcbaCat = getClientSeriesList(['precios.ipcba.nivel_general', ...familyIds('ipcba_categorias')]);
+  const ipcbaDivs = getClientSeriesList(['precios.ipcba.nivel_general', ...familyIds('ipcba_divisiones')]);
+
+  const fuel = readFuelStore().series;
 
   return (
     <>
@@ -103,6 +112,42 @@ export default function PreciosPage() {
         synthetic={synthetic}
       />
 
+      {ipcbaMain.some((x) => !x.missing) && (
+        <>
+          <ChartPanel
+            title="Inflación CABA (IPCBA) — nivel general, bienes y servicios"
+            description="Índice de Precios al Consumidor de la Ciudad de Buenos Aires (IDECBA), base 2021=100. Alcance CABA: no es comparable con el IPC nacional."
+            pool={ipcbaMain}
+            options={ipcbaMain.map((x) => x.def.id)}
+            defaultSelected={['precios.ipcba.nivel_general', 'precios.ipcba.bienes', 'precios.ipcba.servicios']}
+            defaultTransform="pct_prev"
+            fallbackTransforms={['pct_yoy', 'level']}
+            defaultRange="24m"
+            synthetic={synthetic}
+          />
+          <ChartPanel
+            title="Inflación CABA (IPCBA) — estacionales, regulados y resto"
+            description="Categorías del IPCBA. «Resto IPCBA» no equivale exactamente al núcleo del INDEC."
+            pool={ipcbaCat}
+            options={ipcbaCat.map((x) => x.def.id)}
+            defaultSelected={ipcbaCat.map((x) => x.def.id)}
+            defaultTransform="pct_prev"
+            fallbackTransforms={['pct_yoy', 'level']}
+            defaultRange="24m"
+            synthetic={synthetic}
+          />
+          <SnapshotPanel
+            title="Inflación CABA (IPCBA) — divisiones en el mes"
+            description="Variación de cada división (COICOP 2018) con el nivel general como referencia."
+            series={ipcbaDivs}
+            referenceId="precios.ipcba.nivel_general"
+            transforms={['pct_prev', 'pct_yoy', 'pct_ytd']}
+            defaultTransform="pct_prev"
+            synthetic={synthetic}
+          />
+        </>
+      )}
+
       <ChartPanel
         title="Precios mayoristas (SIPM)"
         description="IPIM, IPIB e IPP — nivel general, y aperturas del IPIM (nacionales, importados, primarios, manufacturados y energía)."
@@ -138,6 +183,8 @@ export default function PreciosPage() {
         pickerLabel="Canastas"
         synthetic={synthetic}
       />
+
+      {fuel.length > 0 && <FuelPanel series={fuel} />}
     </>
   );
 }

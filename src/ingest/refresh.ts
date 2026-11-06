@@ -47,6 +47,8 @@ import { fetchDatasetRows } from './fetch-dataset';
 import { buildApiSeries, buildDerivedSeries, indexRows, validateObservations, type IndexedRow } from './normalize';
 import { countNewPeriods, detectRevisions, mergeWindow } from './revisions';
 import { acquireLock } from './lock';
+import { DEFAULT_LOADERS, feedConfig, type FeedLoader } from './external';
+import type { ExternalSourceSpec, FeedRunStatus } from '../core/types';
 
 export const NOMENCLATURAS_ID: DatasetId = 'comercio_exterior_nomenclaturas';
 
@@ -69,6 +71,14 @@ export interface RefreshOptions {
   lockStaleMs?: number;
   /** En modo completo, una serie que pierde más de esta fracción de valores se rechaza. */
   minRetainRatio?: number;
+  /** No consultar la API INDEC (solo fuentes externas y derivadas). */
+  skipIndec?: boolean;
+  /** Fuentes externas a actualizar (default: todas las del registro, salvo que se filtren datasets INDEC). */
+  feeds?: string[];
+  /** Cargadores por tipo de feed (tests). */
+  feedLoaders?: Partial<Record<string, FeedLoader>>;
+  /** fetch para fuentes externas (tests). */
+  fetch?: typeof fetch;
 }
 
 export interface DatasetOutcome {
@@ -147,10 +157,10 @@ export async function runRefresh(opts: RefreshOptions): Promise<RefreshSummary> 
 
     const apiSeries = allSeries.filter((s) => s.source.kind === 'api');
     const required = [...new Set(apiSeries.map((s) => (s.source as { dataset: DatasetId }).dataset))];
-    const targets = opts.datasets?.length ? required.filter((d) => opts.datasets!.includes(d)) : required;
+    const targets = opts.skipIndec ? [] : opts.datasets?.length ? required.filter((d) => opts.datasets!.includes(d)) : required;
     const unknown = (opts.datasets ?? []).filter((d) => !dsConfigs[d]);
     if (unknown.length) throw new IngestError('config', `Dataset(s) desconocido(s): ${unknown.join(', ')}`);
-    const doNomen = opts.nomenclaturas ?? (!opts.datasets?.length || opts.datasets.includes(NOMENCLATURAS_ID));
+    const doNomen = !opts.skipIndec && (opts.nomenclaturas ?? (!opts.datasets?.length || opts.datasets.includes(NOMENCLATURAS_ID)));
 
     log(`== Ingesta INDEC — corrida ${runId}`);
     log(`   Store: ${dir}${opts.full ? ' · reconciliación completa forzada (--full)' : ''}`);
@@ -376,6 +386,86 @@ export async function runRefresh(opts: RefreshOptions): Promise<RefreshSummary> 
       }
       outcome.durationMs = Date.now() - t0;
       datasetOutcomes.push(outcome);
+    }
+
+    // ---- fuentes externas (datos.gob.ar, IDECBA): solo dashboard
+    const extSeries = allSeries.filter((s) => s.source.kind === 'external');
+    const extFeedIds = [...new Set(extSeries.map((s) => (s.source as ExternalSourceSpec).feed))];
+    const feedTargets = opts.feeds ? extFeedIds.filter((f) => opts.feeds!.includes(f)) : opts.datasets?.length ? [] : extFeedIds;
+    manifest.feeds ??= {};
+    for (const feedId of feedTargets) {
+      const feed = feedConfig(feedId);
+      const defs = extSeries.filter((s) => (s.source as ExternalSourceSpec).feed === feedId);
+      const nowIso = now().toISOString();
+      const status: FeedRunStatus = { ...(manifest.feeds[feedId] ?? { feed: feedId, lastSuccessAt: null, lastRunId: null }), feed: feedId, lastAttemptAt: nowIso, lastRunId: runId, ok: false };
+      log(`
+[fuente externa] ${feed.title} (${feedId})`);
+      const loader = opts.feedLoaders?.[feed.kind] ?? DEFAULT_LOADERS[feed.kind];
+      let loaded;
+      try {
+        loaded = await loader(feed, { fetch: opts.fetch ?? fetch, now });
+      } catch (e) {
+        const err = toIngestError(e);
+        status.error = { kind: err.kind, message: err.message };
+        manifest.feeds[feedId] = status;
+        errors.push(`${feedId}: ${err.message}`);
+        log(`  ERROR (${err.kind}): ${err.message} — se conservan las ${defs.length} series anteriores.`);
+        for (const def of defs) seriesOutcomes.push(markStale(def, `Falla de la fuente ${feedId}: ${err.message}`));
+        continue;
+      }
+      const feedRevisions: RevisionRecord[] = [];
+      let okCount = 0;
+      for (const def of defs) {
+        const src = def.source as ExternalSourceSpec;
+        const raw = loaded.series[src.key];
+        const issues: string[] = [];
+        let obs: Observation[] = [];
+        if (!raw) issues.push(`la fuente no trae la clave/columna "${src.key}"`);
+        else {
+          obs = raw.map((o) => {
+            let value = o.value === null ? null : o.value * (src.scaleFactor ?? 1);
+            if (value === 0 && src.zeroAsNullBefore && comparePeriods(o.period, src.zeroAsNullBefore) < 0) value = null;
+            return { ...o, value };
+          });
+          // Se recortan nulos al inicio y al final (columnas que empiezan después o quedan atrasadas); nunca en el medio.
+          const first = obs.findIndex((o) => o.value !== null);
+          const last = obs.length - 1 - [...obs].reverse().findIndex((o) => o.value !== null);
+          obs = first < 0 ? [] : obs.slice(first, last + 1);
+          issues.push(...validateObservations(def, obs));
+        }
+        const old = readSeriesData(def.id, dir);
+        if (!issues.length && old) {
+          const before = nonNullCount(old.observations), after = nonNullCount(obs);
+          if (before >= 12 && after < before * minRetain) issues.push(`caída abrupta de valores (${before} → ${after}); se rechaza para no perder historia`);
+        }
+        if (issues.length) {
+          const msg = issues.join('; ');
+          log(`  ✗ ${def.id}: ${msg}`);
+          errors.push(`${def.id}: ${msg}`);
+          seriesOutcomes.push(markStale(def, msg));
+          continue;
+        }
+        const revs = detectRevisions(def.id, old?.observations, obs, { runId, detectedAt: loaded.retrievedAt });
+        const data: SeriesData = {
+          id: def.id,
+          observations: obs,
+          meta: { firstPeriod: obs[0]!.period, lastPeriod: obs[obs.length - 1]!.period, retrievedAt: loaded.retrievedAt, runId, query: loaded.url, publishedAt: null, stale: false },
+        };
+        writeSeriesData(data, dir);
+        setSeriesManifest(def.id, data, false);
+        feedRevisions.push(...revs);
+        okCount++;
+        seriesOutcomes.push({ id: def.id, ok: true, stale: false, newPeriods: old ? countNewPeriods(old.observations, obs) : 0, firstLoad: !old, revisions: revs.length, count: obs.length, firstPeriod: data.meta.firstPeriod, lastPeriod: data.meta.lastPeriod });
+      }
+      appendRevisions(feedRevisions, dir);
+      allRevisions.push(...feedRevisions);
+      status.ok = true;
+      status.lastSuccessAt = loaded.retrievedAt;
+      if (okCount < defs.length) status.error = { kind: 'data', message: `${defs.length - okCount} serie(s) con problemas de datos` };
+      else delete status.error;
+      manifest.feeds[feedId] = status;
+      const lastP = defs.map((d) => manifest.series[d.id]?.lastPeriod).filter(Boolean).sort().at(-1);
+      log(`  ${okCount}/${defs.length} series OK${lastP ? ` · último período ${lastP}` : ''}${feedRevisions.length ? ` · ${feedRevisions.length} revisión(es)` : ''}`);
     }
 
     // ---- series derivadas

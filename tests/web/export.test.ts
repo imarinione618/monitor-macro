@@ -60,8 +60,7 @@ describe('opciones de exportación', () => {
 
   it('fuente al pie (y aviso de datos sintéticos)', () => {
     const foot = opt.graphic?.[0]?.style.text ?? '';
-    expect(foot).toContain('Fuente: INDEC');
-    expect(foot).toContain('Datos consultados el 04/11/2026 10:02');
+    expect(foot).toContain('Fuente: one618 en base a INDEC.');
     expect(foot).toContain(SYNTHETIC_WARNING);
   });
 
@@ -78,7 +77,7 @@ describe('opciones de exportación', () => {
     expect(svg).toContain(`height="${EXPORT_SIZE.height}"`);
     expect(svg).toMatch(/IPC — Nivel general por región/);
     expect(svg).toMatch(/Unidad: %/);
-    expect(svg).toMatch(/Fuente: INDEC/);
+    expect(svg).toMatch(/Fuente: one618 en base a INDEC/);
     expect(svg).toMatch(/#ffffff|#fff\b|rgb\(255,\s*255,\s*255\)/i);
     expect(svg).toMatch(/IPC nacional/); // leyenda
     expectWellFormedAttributes(svg);
@@ -110,11 +109,11 @@ describe('opciones de exportación', () => {
     const snap = buildSnapshotModel(sectors, 'pct_yoy', null, 'actividad.emae.total.orig')!;
     const so = exportSnapshotOption({
       snap,
-      meta: { title: 'EMAE por sectores — último mes', subtitle: `${snap.transformLabel} · Unidad: ${snap.unit}`, source: 'Fuente: INDEC.' },
+      meta: { title: 'EMAE por sectores — último mes', subtitle: `${snap.transformLabel} · Unidad: ${snap.unit}`, source: 'Fuente: one618 en base a INDEC.' },
     });
     const ssvg = renderSvgString(so);
     expect(ssvg).toMatch(/EMAE por sectores/);
-    expect(ssvg).toMatch(/Fuente: INDEC/);
+    expect(ssvg).toMatch(/Fuente: one618 en base a INDEC/);
     expectWellFormedAttributes(svg);
     expectWellFormedAttributes(ssvg);
     const dir = process.env.EXPORT_SAMPLE_DIR;

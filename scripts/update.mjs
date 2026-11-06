@@ -3,7 +3,7 @@ import { spawnSync } from 'node:child_process';
 // Fuentes independientes. La integración Sheets existente sigue limitada a INDEC.
 const npm = process.platform === 'win32' ? 'npm.cmd' : 'npm';
 let failed = false;
-for (const task of ['data:refresh', 'monetary:refresh', 'sheets:sync']) {
+for (const task of ['data:refresh', 'monetary:refresh', 'combustibles:refresh', 'sheets:sync']) {
   const args = ['run', task];
   if (process.argv.includes('--full') && task !== 'sheets:sync') args.push('--', '--full');
   const result = spawnSync(npm, args, { stdio: 'inherit', shell: process.platform === 'win32' });

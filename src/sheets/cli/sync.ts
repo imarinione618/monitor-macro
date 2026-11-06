@@ -17,7 +17,7 @@ import { envKey, localConfigPath, resolveSpreadsheetId, saveLocalConfigEntry, TO
 import { previewTopic } from '../preview';
 import { isSyntheticSource, loadStoreSource } from '../source';
 import { createTopicSpreadsheet, syncTopic } from '../writer';
-import { seriesByTopic } from '../../core/registry';
+import { sheetsSeriesByTopic } from '../../core/registry';
 
 interface Args {
   dryRun: boolean;
@@ -67,7 +67,7 @@ export async function main(argv = process.argv.slice(2)): Promise<number> {
   }
 
   const source = loadStoreSource();
-  const allIds = args.topics.flatMap((t) => seriesByTopic(t).map((s) => s.id));
+  const allIds = args.topics.flatMap((t) => sheetsSeriesByTopic(t).map((s) => s.id));
   const synthetic = isSyntheticSource(source, allIds);
   console.log(`Store: ${source.label} — modo de datos: ${synthetic ? 'SINTÉTICO (no son datos reales)' : (source.manifest?.dataMode ?? '?')}`);
 

@@ -233,8 +233,6 @@ export const ACTIVIDAD: SeriesDef[] = [
  * y el catálogo, 2026-11-04). Se documentan en docs/cobertura.md; no generan series.
  */
 export const ACTIVIDAD_NO_DISPONIBLE = [
-  'PIB trimestral (precios corrientes y constantes) y componentes de la demanda agregada',
   'ISAC — Indicador sintético de la actividad de la construcción',
   'Utilización de la capacidad instalada en la industria',
-  'Ventas en supermercados, autoservicios mayoristas y centros de compras',
 ];

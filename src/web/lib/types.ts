@@ -6,8 +6,10 @@
 import type { Observation, Period, SeriesDef } from '@/core/types';
 
 export interface SourceRef {
-  /** Título del dataset del INDEC. */
+  /** Título del dataset o archivo de origen. */
   title: string;
+  /** Organismo para la línea «Fuente: one618 en base a …» (p.ej. INDEC, Secretaría de Hacienda, IDECBA). */
+  org: string;
   producer?: string;
   methodologyUrl?: string;
 }

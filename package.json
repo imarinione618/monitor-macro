@@ -16,6 +16,7 @@
     "test:watch": "vitest",
     "data:refresh": "tsx src/ingest/cli/refresh.ts",
     "monetary:refresh": "tsx src/monetary/cli.ts",
+    "combustibles:refresh": "tsx src/combustibles/cli.ts",
     "data:discover": "tsx src/ingest/cli/discover.ts",
     "data:check": "tsx src/ingest/cli/check-registry.ts",
     "fixtures:generate": "tsx src/core/fixtures/generate.ts",

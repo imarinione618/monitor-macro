@@ -6,6 +6,8 @@ Idioma del proyecto: **español** (UI, docs, mensajes de CLI, nombres de pestañ
 
 ```
 API INDEC (JWT) ─▶ src/ingest (cliente, paginación, normalización, revisiones)
+datos.gob.ar CSV / IDECBA XLSX ─▶ src/ingest/external.ts (feeds de src/core/feeds.ts; solo dashboard)
+BCRA + A3 caución ─▶ src/monetary → data/monetary · Energía ─▶ src/combustibles → data/combustibles (solo dashboard)
                      └─▶ data/store (JSON normalizado + manifest + revisions.jsonl)
                             ├─▶ src/sheets  (4 Google Sheets, escritura por lotes)
                             └─▶ src/app + src/web (dashboard Next.js → sitio estático out/ → GitHub Pages)
@@ -41,7 +43,9 @@ API INDEC (JWT) ─▶ src/ingest (cliente, paginación, normalización, revisio
 
 | Comando | Qué hace |
 |---|---|
-| `npm run data:refresh` | Descarga y normaliza (incremental + revisiones). `-- --full` fuerza reconciliación completa |
+| `npm run data:refresh` | Descarga y normaliza INDEC + fuentes externas (incremental + revisiones). `-- --full` reconciliación completa; `-- --solo-externas`, `-- --feed <id>` |
+| `npm run monetary:refresh` | BCRA + caución A3 (data/monetary) |
+| `npm run combustibles:refresh` | Precios de combustibles, Secretaría de Energía (data/combustibles). `-- --full` reconstruye |
 | `npm run data:discover` | Lista dimensiones reales por endpoint (docs/catalogo-dimensiones.md) |
 | `npm run data:check` | Verifica que cada selector del registro identifique exactamente 1 serie |
 | `npm run sheets:auth` | OAuth de usuario (una vez) |
@@ -54,4 +58,6 @@ API INDEC (JWT) ─▶ src/ingest (cliente, paginación, normalización, revisio
 
 - Estado vivo del proyecto: `docs/estado.md` (avances, bloqueos, próximos pasos). Actualizar al cerrar cada tarea.
 - Cobertura por indicador: `docs/cobertura.md`. Metodología: `docs/metodologia.md`.
-- Agregar una serie: `docs/agregar-serie.md`.
+- Agregar una serie: `docs/agregar-serie.md`. Fuentes externas, Fiscal, agregados/PIB y Laboratorio: `docs/fuentes-externas.md`.
+- **Google Sheets solo recibe series de la API INDEC** (y derivadas de ellas). Todo lo demás es exclusivo del dashboard.
+- Fuente de gráficos: «Fuente: one618 en base a <organismos>.» (`sourceLineFor`).

@@ -7,6 +7,8 @@ import { PageIntro } from '@/web/components/PageIntro';
 import { formatDateTimeAR, formatNumber } from '@/web/lib/format';
 import { getRecentRevisions, getStoreState } from '@/web/server/store';
 import { readMonetaryStore } from '@/monetary/store';
+import { readFuelStore } from '@/combustibles/store';
+import { FEEDS } from '@/core/feeds';
 
 // Sitio estático: se genera con los datos del store al momento del build (npm run build).
 export const dynamic = 'force-static';
@@ -46,15 +48,32 @@ export default function FuentesPage() {
   const topics = Object.keys(TOPIC_LABELS) as Topic[];
   const pendientes = SERIES.filter((s) => s.status === 'no_encontrado' || s.status === 'fuente_complementaria');
   const monetary = readMonetaryStore();
+  const fuel = readFuelStore();
+  const feeds = Object.values(FEEDS);
 
   return (
     <>
       <PageIntro title="Fuentes, metodología y estado de actualización">
         <p>
-          Las series provienen del Catálogo API-INDEC y de Estadísticas Monetarias BCRA v4. El dashboard lee los datos locales normalizados; no consulta la API en cada visita. Período de
+          Las series provienen del Catálogo API-INDEC, de Estadísticas Monetarias BCRA v4 y, solo para el dashboard (no se escriben en Google Sheets), de datos.gob.ar (INDEC y Secretaría de Hacienda), del IDECBA, de A3 Mercados y de la Secretaría de Energía. El dashboard lee los datos locales normalizados; no consulta la API en cada visita. Período de
           referencia, fecha de publicación y fecha de consulta son cosas distintas: acá se informa la fecha de consulta (<em>retrievedAt</em>).
         </p>
       </PageIntro>
+
+      <section className="panel" aria-labelledby="estado-externas">
+        <h2 id="estado-externas">Fuentes externas — solo dashboard</h2>
+        <p>Cuentas nacionales y encuestas de comercio (INDEC) y resultado fiscal (Secretaría de Hacienda, IMIG base caja) se leen de los CSV de distribución de datos.gob.ar: la API de Series de Tiempo devuelve vacías o atrasadas varias series que el CSV trae completas. IPCBA y restaurantes: archivos XLSX del IDECBA. Se actualizan con <code>npm run data:refresh</code>.</p>
+        <div className="table-scroll"><table className="data-table"><caption>Estado por fuente externa</caption><thead><tr><th>Fuente</th><th>Productor</th><th>Última consulta exitosa</th><th>Estado</th></tr></thead><tbody>{feeds.map((f) => {
+          const st = m?.feeds?.[f.id];
+          return <tr key={f.id}><th scope="row"><a href={f.url} target="_blank" rel="noreferrer">{f.title}</a></th><td>{f.producer}</td><td>{st?.lastSuccessAt ? formatDateTimeAR(st.lastSuccessAt) : 'Sin datos'}</td><td>{!st ? 'Sin corridas' : st.error ? `${st.ok ? 'Parcial' : 'Falló'}: ${st.error.message}` : 'Disponible'}</td></tr>;
+        })}</tbody></table></div>
+      </section>
+
+      <section className="panel" aria-labelledby="estado-combustibles">
+        <h2 id="estado-combustibles">Combustibles — Secretaría de Energía</h2>
+        <p>{fuel.series.length} series. Consulta: {formatDateTimeAR(fuel.updatedAt)}. Diaria: mediana de precios vigentes declarados por estación (Res. 314/2016), con quiebre de cobertura desde julio de 2025 (YPF casi no informa). Mensual: promedio ponderado por volumen (Res. 1104/04). Se actualiza con <code>npm run combustibles:refresh</code>; metodología en <code>docs/combustibles.md</code>.</p>
+        {fuel.error && <p className="notice notice-stale">{fuel.error}</p>}
+      </section>
 
       <section className="panel" aria-labelledby="estado-monetario">
         <h2 id="estado-monetario">BCRA — Monetario</h2>
