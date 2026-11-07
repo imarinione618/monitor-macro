@@ -365,8 +365,8 @@
  "meta": {
   "firstPeriod": "2004-Q1",
   "lastPeriod": "2026-Q2",
-  "retrievedAt": "2026-11-06T16:50:30.674Z",
-  "runId": "20261106T165030Z-68f0",
+  "retrievedAt": "2026-11-07T15:00:50.145Z",
+  "runId": "20261107T150007Z-81ef",
   "query": "https://infra.datos.gob.ar/catalog/sspm/dataset/3/distribution/3.2/download/oferta-demanda-globales-datos-desestacionalizados-valores-trimestral-base-2004.csv",
   "publishedAt": null,
   "stale": false

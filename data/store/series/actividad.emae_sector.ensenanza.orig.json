@@ -1093,8 +1093,8 @@
  "meta": {
   "firstPeriod": "2004-01",
   "lastPeriod": "2026-08",
-  "retrievedAt": "2026-11-06T15:00:07.467Z",
-  "runId": "20261106T150006Z-d291",
+  "retrievedAt": "2026-11-07T15:00:08.068Z",
+  "runId": "20261107T150007Z-81ef",
   "dataset": "estimador-mensual-de-actividad-economica-sectores",
   "query": "https://api.indec.gob.ar/v1/estimador-mensual-de-actividad-economica-sectores?order=anio%2Cmes%2Ccodigo%2Cdescripcion%2Cperiodo%2Ctipo_de_indicador",
   "publishedAt": null,

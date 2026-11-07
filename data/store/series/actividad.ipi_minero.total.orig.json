@@ -435,42 +435,46 @@
   },
   {
    "period": "2026-01",
-   "value": 140.68046616461942
+   "value": 140.67954206427515
   },
   {
    "period": "2026-02",
-   "value": 129.48131499718355
+   "value": 129.4842686971785
   },
   {
    "period": "2026-03",
-   "value": 146.99808060497017
+   "value": 147.00208681768694
   },
   {
    "period": "2026-04",
-   "value": 142.90336881338195
+   "value": 142.90693486317517
   },
   {
    "period": "2026-05",
-   "value": 147.0722970781018
+   "value": 147.07839101651373
   },
   {
    "period": "2026-06",
-   "value": 148.9005475443758
+   "value": 149.0491233410349
   },
   {
    "period": "2026-07",
-   "value": 146.34024557986206
+   "value": 146.35353542440873
   },
   {
    "period": "2026-08",
-   "value": 149.56684676487492
+   "value": 149.5546206227392
+  },
+  {
+   "period": "2026-09",
+   "value": 146.16982490802445
   }
  ],
  "meta": {
   "firstPeriod": "2017-01",
-  "lastPeriod": "2026-08",
-  "retrievedAt": "2026-11-06T15:00:13.956Z",
-  "runId": "20261106T150006Z-d291",
+  "lastPeriod": "2026-09",
+  "retrievedAt": "2026-11-07T15:00:15.101Z",
+  "runId": "20261107T150007Z-81ef",
   "dataset": "ipi_minero",
   "query": "https://api.indec.gob.ar/v1/ipi_minero?tipo_de_indicador=eq.%C3%8Dndice&order=periodo%2Canio%2Cmes%2Cindicador%2Ccuadro_web%2Ccodigo_ClaNAE_2010%2Ccodigo_CPC_2_1%2Cserie%2Cdescripcion%2Ctipo_de_indicador%2Cunidad_de_medida",
   "publishedAt": null,

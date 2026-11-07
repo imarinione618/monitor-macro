@@ -511,14 +511,18 @@
   },
   {
    "period": "2026-08",
-   "value": 145.40149306160131
+   "value": 145.34803793422043
+  },
+  {
+   "period": "2026-09",
+   "value": 160.75432066561106
   }
  ],
  "meta": {
   "firstPeriod": "2016-01",
-  "lastPeriod": "2026-08",
-  "retrievedAt": "2026-11-06T15:00:09.721Z",
-  "runId": "20261106T150006Z-d291",
+  "lastPeriod": "2026-09",
+  "retrievedAt": "2026-11-07T15:00:10.469Z",
+  "runId": "20261107T150007Z-81ef",
   "dataset": "ipi_manufacturero",
   "query": "https://api.indec.gob.ar/v1/ipi_manufacturero?tipo_de_indicador=eq.%C3%8Dndice&order=periodo%2Cindicador%2Ccuadro_web%2Ccodigo_CLaNAE_2004%2Cdescripcion%2Cserie%2Ctipo_de_indicador",
   "publishedAt": null,
