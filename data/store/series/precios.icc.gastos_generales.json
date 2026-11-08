@@ -553,8 +553,8 @@
  "meta": {
   "firstPeriod": "2015-11",
   "lastPeriod": "2026-09",
-  "retrievedAt": "2026-11-07T15:00:28.045Z",
-  "runId": "20261107T150007Z-81ef",
+  "retrievedAt": "2026-11-08T15:00:25.891Z",
+  "runId": "20261108T150004Z-5486",
   "dataset": "icc_precios_construccion",
   "query": "https://api.indec.gob.ar/v1/icc_precios_construccion?order=indicador%2Ccodigo_apertura%2Ccodigo_CPC_1%2Cclasificador%2Cnivel%2Cdescripcion%2Cperiodo%2Canio%2Cmes%2Ctipo_de_indicador%2Ctipo_de_indicador_descripcion%2Cregion%2Cunidad_de_medida",
   "publishedAt": null,
