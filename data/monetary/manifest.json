@@ -1,609 +1,609 @@
 {
  "schemaVersion": 1,
- "updatedAt": "2026-11-08T15:01:01.177Z",
- "lastAttemptAt": "2026-11-08T15:01:01.177Z",
+ "updatedAt": "2026-11-09T15:00:58.408Z",
+ "lastAttemptAt": "2026-11-09T15:00:58.408Z",
  "lastFullAt": "2026-11-04T18:27:45.092Z",
  "series": {
   "monetario.bcra.44": {
    "count": 506,
    "firstDate": "2024-10-01",
    "lastDate": "2026-11-04",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.7": {
    "count": 6796,
    "firstDate": "1999-01-04",
    "lastDate": "2026-11-04",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1196": {
    "count": 2146,
    "firstDate": "2018-01-02",
    "lastDate": "2026-11-04",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.12": {
    "count": 9649,
    "firstDate": "1985-08-26",
    "lastDate": "2026-11-04",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.13": {
    "count": 4346,
    "firstDate": "2009-01-02",
    "lastDate": "2026-11-04",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.14": {
    "count": 3978,
    "firstDate": "2010-07-01",
    "lastDate": "2026-11-04",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.11": {
    "count": 6806,
    "firstDate": "1999-01-05",
    "lastDate": "2026-11-04",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.160": {
    "count": 2329,
    "firstDate": "2015-12-16",
    "lastDate": "2025-07-10",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1215": {
    "count": 271,
    "firstDate": "2002-01-31",
    "lastDate": "2026-10-31",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1216": {
    "count": 401,
    "firstDate": "1993-06-30",
    "lastDate": "2026-10-31",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1217": {
    "count": 401,
    "firstDate": "1993-06-30",
    "lastDate": "2026-10-31",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1218": {
    "count": 401,
    "firstDate": "1993-06-30",
    "lastDate": "2026-10-31",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1219": {
    "count": 298,
    "firstDate": "2002-01-31",
    "lastDate": "2026-10-31",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.100": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.94": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.95": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.96": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.97": {
    "count": 5822,
    "firstDate": "2003-01-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.98": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.99": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.108": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1565": {
    "count": 6593,
    "firstDate": "1999-12-30",
    "lastDate": "2026-11-03",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1569": {
    "count": 6593,
    "firstDate": "1999-12-30",
    "lastDate": "2026-11-03",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1571": {
    "count": 6593,
    "firstDate": "1999-12-30",
    "lastDate": "2026-11-03",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1586": {
    "count": 6593,
    "firstDate": "1999-12-30",
    "lastDate": "2026-11-03",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.117": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.110": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.111": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.112": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.113": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.114": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.115": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.116": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.125": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.118": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.119": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.120": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.121": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.122": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.123": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.124": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.91": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.85": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.86": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.87": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.88": {
    "count": 5822,
    "firstDate": "2003-01-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.89": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.107": {
    "count": 5844,
    "firstDate": "2002-12-31",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1229": {
    "count": 5722,
    "firstDate": "2003-01-02",
    "lastDate": "2026-05-07",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1230": {
    "count": 5722,
    "firstDate": "2003-01-02",
    "lastDate": "2026-05-07",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1231": {
    "count": 5722,
    "firstDate": "2003-01-02",
    "lastDate": "2026-05-07",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1457": {
    "count": 7592,
    "firstDate": "1996-01-02",
    "lastDate": "2026-11-03",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1461": {
    "count": 6593,
    "firstDate": "1999-12-30",
    "lastDate": "2026-11-03",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1495": {
    "count": 6593,
    "firstDate": "1999-12-30",
    "lastDate": "2026-11-03",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1499": {
    "count": 6593,
    "firstDate": "1999-12-30",
    "lastDate": "2026-11-03",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1501": {
    "count": 6593,
    "firstDate": "1999-12-30",
    "lastDate": "2026-11-03",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1314": {
    "count": 7528,
    "firstDate": "1996-04-01",
    "lastDate": "2026-11-03",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1328": {
    "count": 7528,
    "firstDate": "1996-04-01",
    "lastDate": "2026-11-03",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1276": {
    "count": 7528,
    "firstDate": "1996-04-01",
    "lastDate": "2026-11-03",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1297": {
    "count": 7528,
    "firstDate": "1996-04-01",
    "lastDate": "2026-11-03",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.15": {
    "count": 7593,
    "firstDate": "1996-01-02",
    "lastDate": "2026-11-03",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.17": {
    "count": 7593,
    "firstDate": "1996-01-02",
    "lastDate": "2026-11-03",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.18": {
    "count": 10527,
    "firstDate": "1984-03-01",
    "lastDate": "2026-11-03",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.19": {
    "count": 6241,
    "firstDate": "2001-06-01",
    "lastDate": "2026-11-03",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.69": {
    "count": 5844,
    "firstDate": "2003-01-02",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1248": {
    "count": 7593,
    "firstDate": "1996-01-02",
    "lastDate": "2026-11-03",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1232": {
    "count": 5722,
    "firstDate": "2003-01-02",
    "lastDate": "2026-05-07",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1233": {
    "count": 5722,
    "firstDate": "2003-01-02",
    "lastDate": "2026-05-07",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1234": {
    "count": 5722,
    "firstDate": "2003-01-02",
    "lastDate": "2026-05-07",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1239": {
    "count": 2280,
    "firstDate": "2017-01-02",
    "lastDate": "2026-05-22",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.197": {
    "count": 1419,
    "firstDate": "2021-01-04",
    "lastDate": "2026-11-02",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.152": {
    "count": 5495,
    "firstDate": "2004-05-28",
    "lastDate": "2026-11-04",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.154": {
    "count": 5495,
    "firstDate": "2004-05-28",
    "lastDate": "2026-11-04",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.155": {
    "count": 2139,
    "firstDate": "2018-01-11",
    "lastDate": "2026-11-04",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.156": {
    "count": 5845,
    "firstDate": "2003-01-02",
    "lastDate": "2026-11-04",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1258": {
    "count": 6043,
    "firstDate": "2002-03-15",
    "lastDate": "2026-11-03",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1260": {
    "count": 2145,
    "firstDate": "2018-01-02",
    "lastDate": "2026-11-03",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1262": {
    "count": 7593,
    "firstDate": "1996-01-02",
    "lastDate": "2026-11-03",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1263": {
    "count": 7591,
    "firstDate": "1996-01-02",
    "lastDate": "2026-11-03",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.196": {
    "count": 240,
    "firstDate": "2024-07-17",
    "lastDate": "2025-07-11",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1606": {
    "count": 1035,
    "firstDate": "1940-06-30",
    "lastDate": "2026-08-31",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1612": {
    "count": 1035,
    "firstDate": "1940-06-30",
    "lastDate": "2026-08-31",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1618": {
    "count": 1035,
    "firstDate": "1940-06-30",
    "lastDate": "2026-08-31",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.1624": {
    "count": 1035,
    "firstDate": "1940-06-30",
    "lastDate": "2026-08-31",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.bcra.198": {
    "count": 319,
    "firstDate": "2025-07-15",
    "lastDate": "2026-11-04",
-   "retrievedAt": "2026-11-08T15:00:50.852Z",
+   "retrievedAt": "2026-11-09T15:00:49.976Z",
    "stale": false
   },
   "monetario.a3.caucion": {
    "count": 482,
    "firstDate": "2024-11-07",
    "lastDate": "2026-11-05",
-   "retrievedAt": "2026-11-08T15:01:01.177Z",
+   "retrievedAt": "2026-11-09T15:00:58.408Z",
    "stale": false
   }
  }

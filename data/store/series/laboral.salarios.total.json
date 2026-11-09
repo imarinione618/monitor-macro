@@ -481,8 +481,8 @@
  "meta": {
   "firstPeriod": "2016-10",
   "lastPeriod": "2026-08",
-  "retrievedAt": "2026-11-08T15:00:13.790Z",
-  "runId": "20261108T150004Z-5486",
+  "retrievedAt": "2026-11-09T15:00:13.890Z",
+  "runId": "20261109T150004Z-f9c2",
   "dataset": "indice_salarios",
   "query": "https://api.indec.gob.ar/v1/indice_salarios?order=clasificador%2Cnivel%2Ccodigo%2Cdescripcion%2Cperiodo%2Canio%2Cmes%2Cindicador%2Ctipo_de_indicador%2Ctipo_de_indicador_descripcion%2Cunidad_de_medida",
   "publishedAt": null,

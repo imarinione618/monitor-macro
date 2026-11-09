@@ -365,8 +365,8 @@
  "meta": {
   "firstPeriod": "2004-Q1",
   "lastPeriod": "2026-Q2",
-  "retrievedAt": "2026-11-08T15:00:48.458Z",
-  "runId": "20261108T150004Z-5486",
+  "retrievedAt": "2026-11-09T15:00:47.488Z",
+  "runId": "20261109T150004Z-f9c2",
   "query": "https://infra.datos.gob.ar/catalog/sspm/dataset/8/distribution/8.2/download/producto-interno-bruto-precios-corrientes-valores-trimestrales-base-2004.csv",
   "publishedAt": null,
   "stale": false
