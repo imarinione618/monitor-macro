@@ -229,6 +229,32 @@ h3 {
   margin: 0;
   font-size: 0.88rem;
   color: var(--text-2);
+  text-align: right;
+}
+.freshness {
+  list-style: none;
+  margin: 2px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: end;
+  gap: 1px 14px;
+  font-size: 0.82rem;
+  text-align: left;
+}
+.freshness li { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  .updated { text-align: left; }
+  .freshness { justify-content: start; grid-template-columns: repeat(2, auto); }
 }
 .nav ul {
   list-style: none;

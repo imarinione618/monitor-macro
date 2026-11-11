@@ -286,7 +286,11 @@ export class IndecClient {
       }
       lastErr = err;
       if (!err.retryable || attempt === this.o.maxRetries) break;
-      const delay = err.retryAfterMs !== undefined ? Math.min(err.retryAfterMs, this.o.maxRetryAfterMs) : this.backoff(attempt);
+      // Retry-After es un piso, no un reemplazo del backoff: PostgREST responde
+      // "Retry-After: 0" en 503 PGRST002 (caché de esquema caída), y respetarlo
+      // literalmente agotaba los reintentos en milisegundos (corrida del 2026-11-11).
+      const backoff = this.backoff(attempt);
+      const delay = err.retryAfterMs !== undefined ? Math.max(backoff, Math.min(err.retryAfterMs, this.o.maxRetryAfterMs)) : backoff;
       this.stats.retries++;
       this.o.log(`  Reintento ${attempt + 1}/${this.o.maxRetries} en ${(delay / 1000).toFixed(1)} s (${err.message})`);
       await this.o.sleep(delay);

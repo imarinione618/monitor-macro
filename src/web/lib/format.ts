@@ -99,6 +99,12 @@ export function formatDateAR(iso: string | null | undefined): string {
   return formatDateTimeAR(iso).split(' ')[0] ?? 's/d';
 }
 
+/** "04/11 12:00" en hora de Buenos Aires (sin año, para espacios chicos). */
+export function formatShortDateTimeAR(iso: string | null | undefined): string {
+  const full = formatDateTimeAR(iso);
+  return full === 's/d' ? full : full.replace(/^(\d{2}\/\d{2})\/\d{4}/, '$1');
+}
+
 /** Slug para nombres de archivo. */
 export function slugify(s: string): string {
   return s

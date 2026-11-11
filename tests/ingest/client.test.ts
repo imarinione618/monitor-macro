@@ -119,6 +119,14 @@ describe('reintentos y errores', () => {
     expect(sleep).toHaveBeenCalledWith(7000);
   });
 
+  it('Retry-After: 0 (PostgREST PGRST002) no anula el backoff', async () => {
+    const s = fakePostgrest({ t: rows(5) });
+    s.override = (_t, _u, i) => (i < 2 ? new Response('{"code":"PGRST002"}', { status: 503, headers: { 'Retry-After': '0' } }) : undefined);
+    const sleep = vi.fn(async () => {});
+    await testClient(s, { sleep, maxRetries: 3, backoffBaseMs: 100, random: () => 0 }).fetchAll('/t', {}, ['id']);
+    expect(sleep.mock.calls.map((x) => (x as unknown[])[0])).toEqual([100, 200]);
+  });
+
   it('agota los reintentos en 500 → error de servidor', async () => {
     const s = fakePostgrest({ t: rows(5) });
     s.override = () => new Response('boom', { status: 500 });

@@ -12,9 +12,14 @@ import { load, REAL_STORE_DIR, requireRealStore } from './helpers';
 const st = requireRealStore('invariantes del store real');
 
 describe.skipIf(!st.ok)('store real — invariantes', () => {
-  it('el manifest declara datos reales y la última corrida terminó bien', () => {
+  it('el manifest declara datos reales', () => {
     expect(st.manifest!.dataMode).toBe('real');
-    expect(st.manifest!.lastRun?.ok).toBe(true);
+    // Una corrida fallida NO frena el build: el store conserva el último dato válido
+    // (marcado stale) y el dashboard informa la fecha por fuente. El aviso en GitHub lo
+    // emite scripts/check-freshness.ts en el workflow de Pages.
+    if (st.manifest!.lastRun && !st.manifest!.lastRun.ok) {
+      console.warn(`Aviso: la última corrida de ingesta (${st.manifest!.lastRun.runId}) terminó con errores; se usan datos conservados.`);
+    }
   });
 
   it('cada serie del registro tiene archivo y no hay archivos huérfanos', () => {

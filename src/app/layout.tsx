@@ -5,7 +5,8 @@ import './globals.css';
 import { Nav } from '@/web/components/Nav';
 import { ThemeToggle } from '@/web/components/ThemeToggle';
 import { SyntheticBanner } from '@/web/components/StateMessages';
-import { formatDateTimeAR } from '@/web/lib/format';
+import { formatDateTimeAR, formatShortDateTimeAR } from '@/web/lib/format';
+import { getSourceFreshness } from '@/web/server/freshness';
 import { getStoreState } from '@/web/server/store';
 
 // Sitio estático: se genera con los datos del store al momento del build (npm run build).
@@ -29,6 +30,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   const state = getStoreState();
   const synthetic = state.dataMode === 'synthetic';
+  const freshness = getSourceFreshness();
   const basePath = (process.env.SITE_BASE_PATH || '').replace(/\/+$/, '');
   return (
     <html lang="es-AR" suppressHydrationWarning>
@@ -49,16 +51,23 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 <span className="brand-sub">Datos oficiales del INDEC y BCRA</span>
               </p>
             </div>
-            <div className="header-actions"><ThemeToggle /><p className="updated">
-              {state.updatedAt ? (
-                <>
-                  Actualización INDEC: <time dateTime={state.updatedAt}>{formatDateTimeAR(state.updatedAt)}</time>{' '}
-                  <span className="muted">(hora de Buenos Aires)</span>
-                </>
+            <div className="header-actions"><ThemeToggle />
+              {freshness.length ? (
+                <div className="updated">
+                  <span className="muted">Consultado por fuente (hora de Buenos Aires):</span>
+                  <ul className="freshness">
+                    {freshness.map((f) => (
+                      <li key={f.key} className={f.ok ? undefined : 'warn-text'} title={f.ok ? `Última consulta exitosa: ${formatDateTimeAR(f.updatedAt)}` : `Falló la última consulta (${f.failed.length} de ${f.total}); se muestran datos de la consulta exitosa anterior.`}>
+                        {f.label} <time dateTime={f.updatedAt ?? undefined}>{formatShortDateTimeAR(f.updatedAt)}</time>
+                        {!f.ok && <> <span aria-hidden="true">⚠</span><span className="sr-only"> (falló la última consulta; datos anteriores)</span></>}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ) : (
-                <span className="muted">Sin actualización registrada</span>
+                <p className="updated"><span className="muted">Sin actualización registrada</span></p>
               )}
-            </p></div>
+            </div>
           </div>
           <div className="wrap">
             <Nav />

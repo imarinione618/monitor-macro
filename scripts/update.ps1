@@ -38,6 +38,15 @@ $refreshCmd = 'npm.cmd run data:refresh' + $(if ($Full) { ' -- --full' } else { 
 cmd.exe /d /c "$refreshCmd >> `"$log`" 2>&1"
 $refreshCode = $LASTEXITCODE
 Log "data:refresh terminó con código $refreshCode"
+# Caídas transitorias de la API (p. ej. HTTP 503 PGRST002, 2026-11-11) o un crash del
+# proceso (2026-11-10): un segundo intento a los 10 minutos suele alcanzar.
+if ($refreshCode -ne 0) {
+  Log "data:refresh: se reintenta en 10 minutos"
+  Start-Sleep -Seconds 600
+  cmd.exe /d /c "$refreshCmd >> `"$log`" 2>&1"
+  $refreshCode = $LASTEXITCODE
+  Log "data:refresh (segundo intento) terminó con código $refreshCode"
+}
 
 $monetaryCmd = 'npm.cmd run monetary:refresh' + $(if ($Full) { ' -- --full' } else { '' })
 cmd.exe /d /c "$monetaryCmd >> `"$log`" 2>&1"

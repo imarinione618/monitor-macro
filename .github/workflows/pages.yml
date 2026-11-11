@@ -40,6 +40,8 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
+      - name: Estado por fuente (avisa, no frena la publicación)
+        run: npx tsx scripts/check-freshness.ts
       - name: Pruebas
         run: npm test
       - id: pages

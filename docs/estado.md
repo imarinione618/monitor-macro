@@ -72,6 +72,17 @@ Publicación inicial completada el 2026-11-04:
   - Si un push falla, la siguiente corrida vuelve a intentar los commits pendientes aunque no haya datos nuevos. Los errores de preparación del commit no se ocultan con un push exitoso. Se verificaron 5 escenarios simulados de publicación y fallo sin modificar datos ni Sheets reales.
   - Log en `data/runs/update-AAAA-MM-DD.log`. Estado: `scripts/schedule-windows.ps1 -Status`.
   - **Solo corre con el equipo encendido.** Si estaba apagado a las 12:00, corre al encenderlo.
+- **Incidente 2026-11-10/11:**
+  - 10/11: la ingesta INDEC terminó con un crash nativo de Node (código -1073740791) al arrancar. Quedó un lock vencido, que la corrida siguiente reemplazó sola.
+  - 11/11: la API respondió HTTP 503 PGRST002 (caché de esquema de PostgREST caída) con `Retry-After: 0`. El cliente tomaba ese 0 literal y agotaba los 4 reintentos en milisegundos.
+    - Corregido: `Retry-After` ahora es un piso del backoff (`src/ingest/client.ts`, con test).
+    - `scripts/update.ps1` reintenta la ingesta una vez a los 10 minutos si falla.
+    - Ingesta manual el 11/11 por la tarde: 14/14 OK.
+  - 11/11: Sheets devolvió `invalid_grant` en los 4 documentos. El refresh token de OAuth se creó el 04/11 y falló a los 7 días, lo que coincide con una app de OAuth en modo "Prueba" de Google Cloud. **Requiere `npm run sheets:auth`.** Para que no vuelva a vencer, publicar la app ("En producción") en la pantalla de consentimiento de OAuth.
+- **Publicación tolerante a fallas (2026-11-11):**
+  - Una ingesta fallida ya no frena el deploy de GitHub Pages. El test de invariantes solo avisa.
+  - En el workflow, `scripts/check-freshness.ts` emite un `::warning::` por cada fuente con fallas.
+  - El encabezado del dashboard muestra la última consulta exitosa **por fuente**: INDEC, datos.gob.ar, IDECBA, BCRA, A3 Mercados y Combustibles. Si el último intento falló, la fuente aparece en rojo con ⚠ (`src/web/server/freshness.ts`).
 - **Lista para activar (no activa):** GitHub Actions (`deploy/github-actions/update.yml`) para actualizar con el equipo apagado. Ver `docs/despliegue.md`.
 
 ## Cambios del dashboard — 2026-11-04
