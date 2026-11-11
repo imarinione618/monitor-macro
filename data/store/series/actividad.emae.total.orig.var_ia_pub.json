@@ -1050,6 +1050,6 @@
   "dataset": "estimador-mensual-de-actividad-economica-nivel-general",
   "query": "https://api.indec.gob.ar/v1/estimador-mensual-de-actividad-economica-nivel-general?order=tipo_de_indicador_descripcion%2Canio%2Cmes%2Cperiodo%2Ctipo_de_indicador",
   "publishedAt": null,
-  "stale": false
+  "stale": true
  }
 }

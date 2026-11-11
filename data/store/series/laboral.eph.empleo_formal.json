@@ -59,6 +59,6 @@
   "dataset": "mercado_trabajo_eph",
   "query": "https://api.indec.gob.ar/v1/mercado_trabajo_eph?order=area_geografica_nom%2Cperiodo",
   "publishedAt": null,
-  "stale": false
+  "stale": true
  }
 }

@@ -514,6 +514,6 @@
   "dataset": "valorizacion_canastas_cba_cbt",
   "query": "https://api.indec.gob.ar/v1/valorizacion_canastas_cba_cbt?order=clasificador%2Cnivel%2Ccodigo%2Cdescripcion%2Cperiodo%2Canio%2Cmes%2Cindicador%2Ctipo_de_indicador%2Ctipo_de_indicador_descripcion%2Cregion%2Cunidad_de_medida",
   "publishedAt": null,
-  "stale": false
+  "stale": true
  }
 }

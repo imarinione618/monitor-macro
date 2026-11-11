@@ -1967,6 +1967,6 @@
   "query": "https://api.indec.gob.ar/v1/comercio_exterior_exportacion_bienes?select=Anio%2CMes%2CPeriodo%2Crubro_cod%2Csubrubro_cod%2Cpais_cod%2Cvalor_FOB%2Cvalor_FOB_null&Periodo=gte.202411&order=Anio%2CMes%2CPeriodo%2Crubro_cod%2Csubrubro_cod%2Cpais_cod",
   "publishedAt": null,
   "suppressedRows": 118,
-  "stale": false
+  "stale": true
  }
 }

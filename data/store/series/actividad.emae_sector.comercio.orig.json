@@ -1098,6 +1098,6 @@
   "dataset": "estimador-mensual-de-actividad-economica-sectores",
   "query": "https://api.indec.gob.ar/v1/estimador-mensual-de-actividad-economica-sectores?order=anio%2Cmes%2Ccodigo%2Cdescripcion%2Cperiodo%2Ctipo_de_indicador",
   "publishedAt": null,
-  "stale": false
+  "stale": true
  }
 }

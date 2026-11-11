@@ -534,6 +534,6 @@
   "dataset": "sipm_precios_mayoristas",
   "query": "https://api.indec.gob.ar/v1/sipm_precios_mayoristas?nivel=in.(%22Nivel%20general%22%2C%22Origen%22%2C%22Sector%22)&tipo_de_indicador=in.(Indice%2Cv_m)&order=operativo%2Cindicador%2Cclasificador%2Cnivel%2Ccodigo_apertura%2Cdescripcion%2Cperiodo%2Canio%2Cmes%2Ctipo_de_indicador%2Ctipo_de_indicador_descripcion%2Cregion%2Cunidad_de_medida",
   "publishedAt": null,
-  "stale": false
+  "stale": true
  }
 }
