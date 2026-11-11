@@ -529,11 +529,11 @@
  "meta": {
   "firstPeriod": "2015-12",
   "lastPeriod": "2026-09",
-  "retrievedAt": "2026-11-09T15:00:23.818Z",
-  "runId": "20261109T150004Z-f9c2",
+  "retrievedAt": "2026-11-11T16:33:50.154Z",
+  "runId": "20261111T163329Z-0bd4",
   "dataset": "sipm_precios_mayoristas",
   "query": "https://api.indec.gob.ar/v1/sipm_precios_mayoristas?nivel=in.(%22Nivel%20general%22%2C%22Origen%22%2C%22Sector%22)&tipo_de_indicador=in.(Indice%2Cv_m)&order=operativo%2Cindicador%2Cclasificador%2Cnivel%2Ccodigo_apertura%2Cdescripcion%2Cperiodo%2Canio%2Cmes%2Ctipo_de_indicador%2Ctipo_de_indicador_descripcion%2Cregion%2Cunidad_de_medida",
   "publishedAt": null,
-  "stale": true
+  "stale": false
  }
 }
