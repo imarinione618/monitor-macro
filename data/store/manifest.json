@@ -1,130 +1,130 @@
 {
  "schemaVersion": 1,
  "dataMode": "real",
- "generatedAt": "2026-11-13T12:24:02.843Z",
+ "generatedAt": "2026-11-13T17:07:31.502Z",
  "lastRun": {
-  "runId": "20261113T122256Z-42c1",
-  "startedAt": "2026-11-13T12:22:56.968Z",
-  "finishedAt": "2026-11-13T12:24:02.843Z",
+  "runId": "20261113T170724Z-9606",
+  "startedAt": "2026-11-13T17:07:24.765Z",
+  "finishedAt": "2026-11-13T17:07:31.502Z",
   "ok": true,
   "partial": false
  },
  "datasets": {
   "estimador-mensual-de-actividad-economica-nivel-general": {
    "dataset": "estimador-mensual-de-actividad-economica-nivel-general",
-   "lastSuccessAt": "2026-11-13T12:22:57.001Z",
-   "lastAttemptAt": "2026-11-13T12:22:57.001Z",
-   "lastRunId": "20261113T122256Z-42c1",
+   "lastSuccessAt": "2026-11-13T17:07:24.789Z",
+   "lastAttemptAt": "2026-11-13T17:07:24.789Z",
+   "lastRunId": "20261113T170724Z-9606",
    "ok": true,
-   "lastFullReconcileAt": "2026-11-13T12:22:57.001Z",
+   "lastFullReconcileAt": "2026-11-13T17:07:24.789Z",
    "mode": "full",
    "rowsFetched": 1632,
    "totalRows": 1632
   },
   "estimador-mensual-de-actividad-economica-sectores": {
    "dataset": "estimador-mensual-de-actividad-economica-sectores",
-   "lastSuccessAt": "2026-11-13T12:22:59.274Z",
-   "lastAttemptAt": "2026-11-13T12:22:59.274Z",
-   "lastRunId": "20261113T122256Z-42c1",
+   "lastSuccessAt": "2026-11-13T17:07:25.281Z",
+   "lastAttemptAt": "2026-11-13T17:07:25.281Z",
+   "lastRunId": "20261113T170724Z-9606",
    "ok": true,
-   "lastFullReconcileAt": "2026-11-13T12:22:59.274Z",
+   "lastFullReconcileAt": "2026-11-13T17:07:25.281Z",
    "mode": "full",
    "rowsFetched": 8512,
    "totalRows": 8512
   },
   "ipi_manufacturero": {
    "dataset": "ipi_manufacturero",
-   "lastSuccessAt": "2026-11-13T12:23:02.493Z",
-   "lastAttemptAt": "2026-11-13T12:23:02.493Z",
-   "lastRunId": "20261113T122256Z-42c1",
+   "lastSuccessAt": "2026-11-13T17:07:25.550Z",
+   "lastAttemptAt": "2026-11-13T17:07:25.550Z",
+   "lastRunId": "20261113T170724Z-9606",
    "ok": true,
-   "lastFullReconcileAt": "2026-11-13T12:23:02.493Z",
+   "lastFullReconcileAt": "2026-11-13T17:07:25.550Z",
    "mode": "full",
    "rowsFetched": 15351,
    "totalRows": 15351
   },
   "indice_salarios": {
    "dataset": "indice_salarios",
-   "lastSuccessAt": "2026-11-13T12:23:14.428Z",
-   "lastAttemptAt": "2026-11-13T12:23:14.428Z",
-   "lastRunId": "20261113T122256Z-42c1",
+   "lastSuccessAt": "2026-11-13T17:07:26.254Z",
+   "lastAttemptAt": "2026-11-13T17:07:26.254Z",
+   "lastRunId": "20261113T170724Z-9606",
    "ok": true,
-   "lastFullReconcileAt": "2026-11-13T12:23:14.428Z",
+   "lastFullReconcileAt": "2026-11-13T17:07:26.254Z",
    "mode": "full",
    "rowsFetched": 3406,
    "totalRows": 3406
   },
   "mercado_trabajo_eph": {
    "dataset": "mercado_trabajo_eph",
-   "lastSuccessAt": "2026-11-13T12:23:15.728Z",
-   "lastAttemptAt": "2026-11-13T12:23:15.728Z",
-   "lastRunId": "20261113T122256Z-42c1",
+   "lastSuccessAt": "2026-11-13T17:07:26.302Z",
+   "lastAttemptAt": "2026-11-13T17:07:26.302Z",
+   "lastRunId": "20261113T170724Z-9606",
    "ok": true,
-   "lastFullReconcileAt": "2026-11-13T12:23:15.728Z",
+   "lastFullReconcileAt": "2026-11-13T17:07:26.302Z",
    "mode": "full",
    "rowsFetched": 41,
    "totalRows": 41
   },
   "pobreza_eph": {
    "dataset": "pobreza_eph",
-   "lastSuccessAt": "2026-11-13T12:23:15.931Z",
-   "lastAttemptAt": "2026-11-13T12:23:15.931Z",
-   "lastRunId": "20261113T122256Z-42c1",
+   "lastSuccessAt": "2026-11-13T17:07:26.458Z",
+   "lastAttemptAt": "2026-11-13T17:07:26.458Z",
+   "lastRunId": "20261113T170724Z-9606",
    "ok": true,
-   "lastFullReconcileAt": "2026-11-13T12:23:15.931Z",
+   "lastFullReconcileAt": "2026-11-13T17:07:26.458Z",
    "mode": "full",
    "rowsFetched": 20,
    "totalRows": 20
   },
   "ipc_nacional": {
    "dataset": "ipc_nacional",
-   "lastSuccessAt": "2026-11-13T12:23:16.267Z",
-   "lastAttemptAt": "2026-11-13T12:23:16.267Z",
-   "lastRunId": "20261113T122256Z-42c1",
+   "lastSuccessAt": "2026-11-13T17:07:26.521Z",
+   "lastAttemptAt": "2026-11-13T17:07:26.521Z",
+   "lastRunId": "20261113T170724Z-9606",
    "ok": true,
-   "lastFullReconcileAt": "2026-11-13T12:23:16.267Z",
+   "lastFullReconcileAt": "2026-11-13T17:07:26.521Z",
    "mode": "full",
    "rowsFetched": 29862,
    "totalRows": 29862
   },
   "sipm_precios_mayoristas": {
    "dataset": "sipm_precios_mayoristas",
-   "lastSuccessAt": "2026-11-13T12:23:31.706Z",
-   "lastAttemptAt": "2026-11-13T12:23:31.706Z",
-   "lastRunId": "20261113T122256Z-42c1",
+   "lastSuccessAt": "2026-11-13T17:07:27.583Z",
+   "lastAttemptAt": "2026-11-13T17:07:27.583Z",
+   "lastRunId": "20261113T170724Z-9606",
    "ok": true,
-   "lastFullReconcileAt": "2026-11-13T12:23:31.706Z",
+   "lastFullReconcileAt": "2026-11-13T17:07:27.583Z",
    "mode": "full",
    "rowsFetched": 4160,
    "totalRows": 4160
   },
   "icc_precios_construccion": {
    "dataset": "icc_precios_construccion",
-   "lastSuccessAt": "2026-11-13T12:23:33.412Z",
-   "lastAttemptAt": "2026-11-13T12:23:33.412Z",
-   "lastRunId": "20261113T122256Z-42c1",
+   "lastSuccessAt": "2026-11-13T17:07:27.707Z",
+   "lastAttemptAt": "2026-11-13T17:07:27.707Z",
+   "lastRunId": "20261113T170724Z-9606",
    "ok": true,
-   "lastFullReconcileAt": "2026-11-13T12:23:33.412Z",
+   "lastFullReconcileAt": "2026-11-13T17:07:27.707Z",
    "mode": "full",
    "rowsFetched": 14017,
    "totalRows": 14017
   },
   "valorizacion_canastas_cba_cbt": {
    "dataset": "valorizacion_canastas_cba_cbt",
-   "lastSuccessAt": "2026-11-13T12:23:40.025Z",
-   "lastAttemptAt": "2026-11-13T12:23:40.025Z",
-   "lastRunId": "20261113T122256Z-42c1",
+   "lastSuccessAt": "2026-11-13T17:07:27.885Z",
+   "lastAttemptAt": "2026-11-13T17:07:27.885Z",
+   "lastRunId": "20261113T170724Z-9606",
    "ok": true,
-   "lastFullReconcileAt": "2026-11-13T12:23:40.025Z",
+   "lastFullReconcileAt": "2026-11-13T17:07:27.885Z",
    "mode": "full",
    "rowsFetched": 1651,
    "totalRows": 1651
   },
   "comercio_exterior_exportacion_bienes": {
    "dataset": "comercio_exterior_exportacion_bienes",
-   "lastSuccessAt": "2026-11-13T12:23:40.811Z",
-   "lastAttemptAt": "2026-11-13T12:23:40.811Z",
-   "lastRunId": "20261113T122256Z-42c1",
+   "lastSuccessAt": "2026-11-13T17:07:27.915Z",
+   "lastAttemptAt": "2026-11-13T17:07:27.915Z",
+   "lastRunId": "20261113T170724Z-9606",
    "ok": true,
    "lastFullReconcileAt": "2026-11-04T13:19:05.148Z",
    "mode": "windowed",
@@ -133,9 +133,9 @@
   },
   "comercio_exterior_importacion_bienes": {
    "dataset": "comercio_exterior_importacion_bienes",
-   "lastSuccessAt": "2026-11-13T12:23:52.726Z",
-   "lastAttemptAt": "2026-11-13T12:23:52.726Z",
-   "lastRunId": "20261113T122256Z-42c1",
+   "lastSuccessAt": "2026-11-13T17:07:28.467Z",
+   "lastAttemptAt": "2026-11-13T17:07:28.467Z",
+   "lastRunId": "20261113T170724Z-9606",
    "ok": true,
    "lastFullReconcileAt": "2026-11-04T13:22:44.709Z",
    "mode": "windowed",
@@ -144,22 +144,22 @@
   },
   "comercio_exterior_nomenclaturas": {
    "dataset": "comercio_exterior_nomenclaturas",
-   "lastSuccessAt": "2026-11-13T12:23:58.996Z",
-   "lastAttemptAt": "2026-11-13T12:23:58.996Z",
-   "lastRunId": "20261113T122256Z-42c1",
+   "lastSuccessAt": "2026-11-13T17:07:28.789Z",
+   "lastAttemptAt": "2026-11-13T17:07:28.789Z",
+   "lastRunId": "20261113T170724Z-9606",
    "ok": true,
    "rowsFetched": 325,
    "totalRows": 325,
-   "lastFullReconcileAt": "2026-11-13T12:23:58.996Z",
+   "lastFullReconcileAt": "2026-11-13T17:07:28.789Z",
    "mode": "full"
   },
   "ipi_minero": {
    "dataset": "ipi_minero",
-   "lastSuccessAt": "2026-11-13T12:23:11.709Z",
-   "lastAttemptAt": "2026-11-13T12:23:11.709Z",
-   "lastRunId": "20261113T122256Z-42c1",
+   "lastSuccessAt": "2026-11-13T17:07:26.146Z",
+   "lastAttemptAt": "2026-11-13T17:07:26.146Z",
+   "lastRunId": "20261113T170724Z-9606",
    "ok": true,
-   "lastFullReconcileAt": "2026-11-13T12:23:11.709Z",
+   "lastFullReconcileAt": "2026-11-13T17:07:26.146Z",
    "mode": "full",
    "rowsFetched": 5733,
    "totalRows": 5733
@@ -170,2235 +170,2235 @@
    "firstPeriod": "2004-01",
    "lastPeriod": "2026-08",
    "count": 272,
-   "retrievedAt": "2026-11-13T12:22:57.001Z",
+   "retrievedAt": "2026-11-13T17:07:24.789Z",
    "stale": false
   },
   "actividad.emae.total.sa": {
    "firstPeriod": "2004-01",
    "lastPeriod": "2026-08",
    "count": 272,
-   "retrievedAt": "2026-11-13T12:22:57.001Z",
+   "retrievedAt": "2026-11-13T17:07:24.789Z",
    "stale": false
   },
   "actividad.emae.total.tc": {
    "firstPeriod": "2004-01",
    "lastPeriod": "2026-08",
    "count": 272,
-   "retrievedAt": "2026-11-13T12:22:57.001Z",
+   "retrievedAt": "2026-11-13T17:07:24.789Z",
    "stale": false
   },
   "actividad.emae.total.orig.var_ia_pub": {
    "firstPeriod": "2005-01",
    "lastPeriod": "2026-08",
    "count": 260,
-   "retrievedAt": "2026-11-13T12:22:57.001Z",
+   "retrievedAt": "2026-11-13T17:07:24.789Z",
    "stale": false
   },
   "actividad.emae.total.sa.var_m_pub": {
    "firstPeriod": "2004-02",
    "lastPeriod": "2026-08",
    "count": 271,
-   "retrievedAt": "2026-11-13T12:22:57.001Z",
+   "retrievedAt": "2026-11-13T17:07:24.789Z",
    "stale": false
   },
   "actividad.emae_sector.agro.orig": {
    "firstPeriod": "2004-01",
    "lastPeriod": "2026-08",
    "count": 272,
-   "retrievedAt": "2026-11-13T12:22:59.274Z",
+   "retrievedAt": "2026-11-13T17:07:25.281Z",
    "stale": false
   },
   "actividad.emae_sector.pesca.orig": {
    "firstPeriod": "2004-01",
    "lastPeriod": "2026-08",
    "count": 272,
-   "retrievedAt": "2026-11-13T12:22:59.274Z",
+   "retrievedAt": "2026-11-13T17:07:25.281Z",
    "stale": false
   },
   "actividad.emae_sector.mineria.orig": {
    "firstPeriod": "2004-01",
    "lastPeriod": "2026-08",
    "count": 272,
-   "retrievedAt": "2026-11-13T12:22:59.274Z",
+   "retrievedAt": "2026-11-13T17:07:25.281Z",
    "stale": false
   },
   "actividad.emae_sector.industria.orig": {
    "firstPeriod": "2004-01",
    "lastPeriod": "2026-08",
    "count": 272,
-   "retrievedAt": "2026-11-13T12:22:59.274Z",
+   "retrievedAt": "2026-11-13T17:07:25.281Z",
    "stale": false
   },
   "actividad.emae_sector.ega.orig": {
    "firstPeriod": "2004-01",
    "lastPeriod": "2026-08",
    "count": 272,
-   "retrievedAt": "2026-11-13T12:22:59.274Z",
+   "retrievedAt": "2026-11-13T17:07:25.281Z",
    "stale": false
   },
   "actividad.emae_sector.construccion.orig": {
    "firstPeriod": "2004-01",
    "lastPeriod": "2026-08",
    "count": 272,
-   "retrievedAt": "2026-11-13T12:22:59.274Z",
+   "retrievedAt": "2026-11-13T17:07:25.281Z",
    "stale": false
   },
   "actividad.emae_sector.comercio.orig": {
    "firstPeriod": "2004-01",
    "lastPeriod": "2026-08",
    "count": 272,
-   "retrievedAt": "2026-11-13T12:22:59.274Z",
+   "retrievedAt": "2026-11-13T17:07:25.281Z",
    "stale": false
   },
   "actividad.emae_sector.hoteles.orig": {
    "firstPeriod": "2004-01",
    "lastPeriod": "2026-08",
    "count": 272,
-   "retrievedAt": "2026-11-13T12:22:59.274Z",
+   "retrievedAt": "2026-11-13T17:07:25.281Z",
    "stale": false
   },
   "actividad.emae_sector.transporte.orig": {
    "firstPeriod": "2004-01",
    "lastPeriod": "2026-08",
    "count": 272,
-   "retrievedAt": "2026-11-13T12:22:59.274Z",
+   "retrievedAt": "2026-11-13T17:07:25.281Z",
    "stale": false
   },
   "actividad.emae_sector.financiero.orig": {
    "firstPeriod": "2004-01",
    "lastPeriod": "2026-08",
    "count": 272,
-   "retrievedAt": "2026-11-13T12:22:59.274Z",
+   "retrievedAt": "2026-11-13T17:07:25.281Z",
    "stale": false
   },
   "actividad.emae_sector.inmobiliarias.orig": {
    "firstPeriod": "2004-01",
    "lastPeriod": "2026-08",
    "count": 272,
-   "retrievedAt": "2026-11-13T12:22:59.274Z",
+   "retrievedAt": "2026-11-13T17:07:25.281Z",
    "stale": false
   },
   "actividad.emae_sector.adm_publica.orig": {
    "firstPeriod": "2004-01",
    "lastPeriod": "2026-08",
    "count": 272,
-   "retrievedAt": "2026-11-13T12:22:59.274Z",
+   "retrievedAt": "2026-11-13T17:07:25.281Z",
    "stale": false
   },
   "actividad.emae_sector.ensenanza.orig": {
    "firstPeriod": "2004-01",
    "lastPeriod": "2026-08",
    "count": 272,
-   "retrievedAt": "2026-11-13T12:22:59.274Z",
+   "retrievedAt": "2026-11-13T17:07:25.281Z",
    "stale": false
   },
   "actividad.emae_sector.salud.orig": {
    "firstPeriod": "2004-01",
    "lastPeriod": "2026-08",
    "count": 272,
-   "retrievedAt": "2026-11-13T12:22:59.274Z",
+   "retrievedAt": "2026-11-13T17:07:25.281Z",
    "stale": false
   },
   "actividad.emae_sector.otros_servicios.orig": {
    "firstPeriod": "2004-01",
    "lastPeriod": "2026-08",
    "count": 272,
-   "retrievedAt": "2026-11-13T12:22:59.274Z",
+   "retrievedAt": "2026-11-13T17:07:25.281Z",
    "stale": false
   },
   "actividad.emae_sector.impuestos.orig": {
    "firstPeriod": "2004-01",
    "lastPeriod": "2026-08",
    "count": 272,
-   "retrievedAt": "2026-11-13T12:22:59.274Z",
+   "retrievedAt": "2026-11-13T17:07:25.281Z",
    "stale": false
   },
   "actividad.ipi_manuf.total.orig": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.total.sa": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.total.tc": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.alimentos.orig": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.alimentos.sa": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.tabaco.orig": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.tabaco.sa": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.textiles.orig": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.textiles.sa": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.prendas_cuero.orig": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.prendas_cuero.sa": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.madera_papel.orig": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.madera_papel.sa": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.refinacion.orig": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.refinacion.sa": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.quimicos.orig": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.quimicos.sa": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.caucho_plastico.orig": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.caucho_plastico.sa": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.minerales_no_metalicos.orig": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.minerales_no_metalicos.sa": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.metalicas_basicas.orig": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.metalicas_basicas.sa": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.productos_metal.orig": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.productos_metal.sa": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.maquinaria.orig": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.maquinaria.sa": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.equipos_instrumentos.orig": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.equipos_instrumentos.sa": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.automotores.orig": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.automotores.sa": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.otro_transporte.orig": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.otro_transporte.sa": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.muebles_otras.orig": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "actividad.ipi_manuf.muebles_otras.sa": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:23:02.493Z",
+   "retrievedAt": "2026-11-13T17:07:25.550Z",
    "stale": false
   },
   "laboral.salarios.total": {
    "firstPeriod": "2016-10",
    "lastPeriod": "2026-08",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:14.428Z",
+   "retrievedAt": "2026-11-13T17:07:26.254Z",
    "stale": false
   },
   "laboral.salarios.registrado": {
    "firstPeriod": "2015-10",
    "lastPeriod": "2026-08",
    "count": 131,
-   "retrievedAt": "2026-11-13T12:23:14.428Z",
+   "retrievedAt": "2026-11-13T17:07:26.254Z",
    "stale": false
   },
   "laboral.salarios.privado_registrado": {
    "firstPeriod": "2015-10",
    "lastPeriod": "2026-08",
    "count": 131,
-   "retrievedAt": "2026-11-13T12:23:14.428Z",
+   "retrievedAt": "2026-11-13T17:07:26.254Z",
    "stale": false
   },
   "laboral.salarios.publico": {
    "firstPeriod": "2015-10",
    "lastPeriod": "2026-08",
    "count": 131,
-   "retrievedAt": "2026-11-13T12:23:14.428Z",
+   "retrievedAt": "2026-11-13T17:07:26.254Z",
    "stale": false
   },
   "laboral.salarios.no_registrado": {
    "firstPeriod": "2016-10",
    "lastPeriod": "2026-08",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:14.428Z",
+   "retrievedAt": "2026-11-13T17:07:26.254Z",
    "stale": false
   },
   "laboral.eph.actividad": {
    "firstPeriod": "2016-Q2",
    "lastPeriod": "2026-Q2",
    "count": 41,
-   "retrievedAt": "2026-11-13T12:23:15.728Z",
+   "retrievedAt": "2026-11-13T17:07:26.302Z",
    "stale": false
   },
   "laboral.eph.empleo": {
    "firstPeriod": "2016-Q2",
    "lastPeriod": "2026-Q2",
    "count": 41,
-   "retrievedAt": "2026-11-13T12:23:15.728Z",
+   "retrievedAt": "2026-11-13T17:07:26.302Z",
    "stale": false
   },
   "laboral.eph.desocupacion": {
    "firstPeriod": "2016-Q2",
    "lastPeriod": "2026-Q2",
    "count": 41,
-   "retrievedAt": "2026-11-13T12:23:15.728Z",
+   "retrievedAt": "2026-11-13T17:07:26.302Z",
    "stale": false
   },
   "laboral.eph.subocupacion": {
    "firstPeriod": "2016-Q2",
    "lastPeriod": "2026-Q2",
    "count": 41,
-   "retrievedAt": "2026-11-13T12:23:15.728Z",
+   "retrievedAt": "2026-11-13T17:07:26.302Z",
    "stale": false
   },
   "laboral.eph.subocupacion_demandante": {
    "firstPeriod": "2016-Q2",
    "lastPeriod": "2026-Q2",
    "count": 41,
-   "retrievedAt": "2026-11-13T12:23:15.728Z",
+   "retrievedAt": "2026-11-13T17:07:26.302Z",
    "stale": false
   },
   "laboral.eph.subocupacion_no_demandante": {
    "firstPeriod": "2016-Q2",
    "lastPeriod": "2026-Q2",
    "count": 41,
-   "retrievedAt": "2026-11-13T12:23:15.728Z",
+   "retrievedAt": "2026-11-13T17:07:26.302Z",
    "stale": false
   },
   "laboral.eph.ocupados_demandantes": {
    "firstPeriod": "2016-Q2",
    "lastPeriod": "2026-Q2",
    "count": 41,
-   "retrievedAt": "2026-11-13T12:23:15.728Z",
+   "retrievedAt": "2026-11-13T17:07:26.302Z",
    "stale": false
   },
   "laboral.eph.empleo_formal": {
    "firstPeriod": "2023-Q4",
    "lastPeriod": "2026-Q2",
    "count": 11,
-   "retrievedAt": "2026-11-13T12:23:15.728Z",
+   "retrievedAt": "2026-11-13T17:07:26.302Z",
    "stale": false
   },
   "laboral.eph.empleo_informal": {
    "firstPeriod": "2023-Q4",
    "lastPeriod": "2026-Q2",
    "count": 11,
-   "retrievedAt": "2026-11-13T12:23:15.728Z",
+   "retrievedAt": "2026-11-13T17:07:26.302Z",
    "stale": false
   },
   "laboral.pobreza.pobreza_personas": {
    "firstPeriod": "2016-S2",
    "lastPeriod": "2026-S1",
    "count": 20,
-   "retrievedAt": "2026-11-13T12:23:15.931Z",
+   "retrievedAt": "2026-11-13T17:07:26.458Z",
    "stale": false
   },
   "laboral.pobreza.indigencia_personas": {
    "firstPeriod": "2016-S2",
    "lastPeriod": "2026-S1",
    "count": 20,
-   "retrievedAt": "2026-11-13T12:23:15.931Z",
+   "retrievedAt": "2026-11-13T17:07:26.458Z",
    "stale": false
   },
   "laboral.pobreza.pobreza_hogares": {
    "firstPeriod": "2016-S2",
    "lastPeriod": "2026-S1",
    "count": 20,
-   "retrievedAt": "2026-11-13T12:23:15.931Z",
+   "retrievedAt": "2026-11-13T17:07:26.458Z",
    "stale": false
   },
   "laboral.pobreza.indigencia_hogares": {
    "firstPeriod": "2016-S2",
    "lastPeriod": "2026-S1",
    "count": 20,
-   "retrievedAt": "2026-11-13T12:23:15.931Z",
+   "retrievedAt": "2026-11-13T17:07:26.458Z",
    "stale": false
   },
   "precios.ipc.ng.nacional": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-10",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.ipc.ng.gba": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-10",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.ipc.ng.pampeana": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-10",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.ipc.ng.noreste": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-10",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.ipc.ng.noroeste": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-10",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.ipc.ng.cuyo": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-10",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.ipc.ng.patagonia": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-10",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.ipc.ng.nacional.var_m_pub": {
    "firstPeriod": "2017-01",
    "lastPeriod": "2026-10",
    "count": 118,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.ipc.cat.nucleo.nacional": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-10",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.ipc.cat.regulados.nacional": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-10",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.ipc.cat.estacionales.nacional": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-10",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.ipc.cat.bienes.nacional": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-10",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.ipc.cat.servicios.nacional": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-10",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.ipc.div.alimentos.nacional": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-10",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.ipc.div.alcohol_tabaco.nacional": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-10",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.ipc.div.vestimenta.nacional": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-10",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.ipc.div.vivienda.nacional": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-10",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.ipc.div.equipamiento.nacional": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-10",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.ipc.div.salud.nacional": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-10",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.ipc.div.transporte.nacional": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-10",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.ipc.div.comunicacion.nacional": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-10",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.ipc.div.recreacion.nacional": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-10",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.ipc.div.educacion.nacional": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-10",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.ipc.div.restaurantes.nacional": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-10",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.ipc.div.otros.nacional": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-10",
    "count": 119,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "precios.sipm.ipim.ng": {
    "firstPeriod": "2015-12",
    "lastPeriod": "2026-09",
    "count": 130,
-   "retrievedAt": "2026-11-13T12:23:31.706Z",
+   "retrievedAt": "2026-11-13T17:07:27.583Z",
    "stale": false
   },
   "precios.sipm.ipib.ng": {
    "firstPeriod": "2015-12",
    "lastPeriod": "2026-09",
    "count": 130,
-   "retrievedAt": "2026-11-13T12:23:31.706Z",
+   "retrievedAt": "2026-11-13T17:07:27.583Z",
    "stale": false
   },
   "precios.sipm.ipp.ng": {
    "firstPeriod": "2015-12",
    "lastPeriod": "2026-09",
    "count": 130,
-   "retrievedAt": "2026-11-13T12:23:31.706Z",
+   "retrievedAt": "2026-11-13T17:07:27.583Z",
    "stale": false
   },
   "precios.sipm.ipim.nacional": {
    "firstPeriod": "2015-12",
    "lastPeriod": "2026-09",
    "count": 130,
-   "retrievedAt": "2026-11-13T12:23:31.706Z",
+   "retrievedAt": "2026-11-13T17:07:27.583Z",
    "stale": false
   },
   "precios.sipm.ipim.importado": {
    "firstPeriod": "2015-12",
    "lastPeriod": "2026-09",
    "count": 130,
-   "retrievedAt": "2026-11-13T12:23:31.706Z",
+   "retrievedAt": "2026-11-13T17:07:27.583Z",
    "stale": false
   },
   "precios.sipm.ipim.primarios": {
    "firstPeriod": "2015-12",
    "lastPeriod": "2026-09",
    "count": 130,
-   "retrievedAt": "2026-11-13T12:23:31.706Z",
+   "retrievedAt": "2026-11-13T17:07:27.583Z",
    "stale": false
   },
   "precios.sipm.ipim.manuf_energia": {
    "firstPeriod": "2015-12",
    "lastPeriod": "2026-09",
    "count": 130,
-   "retrievedAt": "2026-11-13T12:23:31.706Z",
+   "retrievedAt": "2026-11-13T17:07:27.583Z",
    "stale": false
   },
   "precios.icc.ng": {
    "firstPeriod": "2015-11",
    "lastPeriod": "2026-09",
    "count": 131,
-   "retrievedAt": "2026-11-13T12:23:33.412Z",
+   "retrievedAt": "2026-11-13T17:07:27.707Z",
    "stale": false
   },
   "precios.icc.materiales": {
    "firstPeriod": "2015-11",
    "lastPeriod": "2026-09",
    "count": 131,
-   "retrievedAt": "2026-11-13T12:23:33.412Z",
+   "retrievedAt": "2026-11-13T17:07:27.707Z",
    "stale": false
   },
   "precios.icc.mano_obra": {
    "firstPeriod": "2015-11",
    "lastPeriod": "2026-09",
    "count": 131,
-   "retrievedAt": "2026-11-13T12:23:33.412Z",
+   "retrievedAt": "2026-11-13T17:07:27.707Z",
    "stale": false
   },
   "precios.icc.gastos_generales": {
    "firstPeriod": "2015-11",
    "lastPeriod": "2026-09",
    "count": 131,
-   "retrievedAt": "2026-11-13T12:23:33.412Z",
+   "retrievedAt": "2026-11-13T17:07:27.707Z",
    "stale": false
   },
   "precios.canastas.cba_adulto": {
    "firstPeriod": "2016-04",
    "lastPeriod": "2026-10",
    "count": 127,
-   "retrievedAt": "2026-11-13T12:23:40.025Z",
+   "retrievedAt": "2026-11-13T17:07:27.885Z",
    "stale": false
   },
   "precios.canastas.cbt_adulto": {
    "firstPeriod": "2016-04",
    "lastPeriod": "2026-10",
    "count": 127,
-   "retrievedAt": "2026-11-13T12:23:40.025Z",
+   "retrievedAt": "2026-11-13T17:07:27.885Z",
    "stale": false
   },
   "precios.canastas.cbt_hogar2": {
    "firstPeriod": "2016-04",
    "lastPeriod": "2026-10",
    "count": 127,
-   "retrievedAt": "2026-11-13T12:23:40.025Z",
+   "retrievedAt": "2026-11-13T17:07:27.885Z",
    "stale": false
   },
   "precios.canastas.cba_hogar2": {
    "firstPeriod": "2016-04",
    "lastPeriod": "2026-10",
    "count": 127,
-   "retrievedAt": "2026-11-13T12:23:40.025Z",
+   "retrievedAt": "2026-11-13T17:07:27.885Z",
    "stale": false
   },
   "comex.expo.total": {
    "firstPeriod": "1986-01",
    "lastPeriod": "2026-09",
    "count": 489,
-   "retrievedAt": "2026-11-13T12:23:40.811Z",
+   "retrievedAt": "2026-11-13T17:07:27.915Z",
    "stale": false
   },
   "comex.expo.rubro.pp": {
    "firstPeriod": "1986-01",
    "lastPeriod": "2026-09",
    "count": 489,
-   "retrievedAt": "2026-11-13T12:23:40.811Z",
+   "retrievedAt": "2026-11-13T17:07:27.915Z",
    "stale": false
   },
   "comex.expo.rubro.moa": {
    "firstPeriod": "1986-01",
    "lastPeriod": "2026-09",
    "count": 489,
-   "retrievedAt": "2026-11-13T12:23:40.811Z",
+   "retrievedAt": "2026-11-13T17:07:27.915Z",
    "stale": false
   },
   "comex.expo.rubro.moi": {
    "firstPeriod": "1986-01",
    "lastPeriod": "2026-09",
    "count": 489,
-   "retrievedAt": "2026-11-13T12:23:40.811Z",
+   "retrievedAt": "2026-11-13T17:07:27.915Z",
    "stale": false
   },
   "comex.expo.rubro.cye": {
    "firstPeriod": "1986-01",
    "lastPeriod": "2026-09",
    "count": 489,
-   "retrievedAt": "2026-11-13T12:23:40.811Z",
+   "retrievedAt": "2026-11-13T17:07:27.915Z",
    "stale": false
   },
   "comex.expo.rubro.confidencial": {
    "firstPeriod": "2018-01",
    "lastPeriod": "2026-09",
    "count": 105,
-   "retrievedAt": "2026-11-13T12:23:40.811Z",
+   "retrievedAt": "2026-11-13T17:07:27.915Z",
    "stale": false
   },
   "comex.expo.pais.brasil": {
    "firstPeriod": "1986-01",
    "lastPeriod": "2026-09",
    "count": 489,
-   "retrievedAt": "2026-11-13T12:23:40.811Z",
+   "retrievedAt": "2026-11-13T17:07:27.915Z",
    "stale": false
   },
   "comex.expo.pais.china": {
    "firstPeriod": "1986-01",
    "lastPeriod": "2026-09",
    "count": 489,
-   "retrievedAt": "2026-11-13T12:23:40.811Z",
+   "retrievedAt": "2026-11-13T17:07:27.915Z",
    "stale": false
   },
   "comex.expo.pais.eeuu": {
    "firstPeriod": "1986-01",
    "lastPeriod": "2026-09",
    "count": 489,
-   "retrievedAt": "2026-11-13T12:23:40.811Z",
+   "retrievedAt": "2026-11-13T17:07:27.915Z",
    "stale": false
   },
   "comex.impo.total": {
    "firstPeriod": "1986-01",
    "lastPeriod": "2026-09",
    "count": 489,
-   "retrievedAt": "2026-11-13T12:23:52.726Z",
+   "retrievedAt": "2026-11-13T17:07:28.467Z",
    "stale": false
   },
   "comex.impo.uso.bk": {
    "firstPeriod": "1986-01",
    "lastPeriod": "2026-09",
    "count": 489,
-   "retrievedAt": "2026-11-13T12:23:52.726Z",
+   "retrievedAt": "2026-11-13T17:07:28.467Z",
    "stale": false
   },
   "comex.impo.uso.bi": {
    "firstPeriod": "1986-01",
    "lastPeriod": "2026-09",
    "count": 489,
-   "retrievedAt": "2026-11-13T12:23:52.726Z",
+   "retrievedAt": "2026-11-13T17:07:28.467Z",
    "stale": false
   },
   "comex.impo.uso.cyl": {
    "firstPeriod": "1986-01",
    "lastPeriod": "2026-09",
    "count": 489,
-   "retrievedAt": "2026-11-13T12:23:52.726Z",
+   "retrievedAt": "2026-11-13T17:07:28.467Z",
    "stale": false
   },
   "comex.impo.uso.pyabk": {
    "firstPeriod": "1986-01",
    "lastPeriod": "2026-09",
    "count": 489,
-   "retrievedAt": "2026-11-13T12:23:52.726Z",
+   "retrievedAt": "2026-11-13T17:07:28.467Z",
    "stale": false
   },
   "comex.impo.uso.bc": {
    "firstPeriod": "1986-01",
    "lastPeriod": "2026-09",
    "count": 489,
-   "retrievedAt": "2026-11-13T12:23:52.726Z",
+   "retrievedAt": "2026-11-13T17:07:28.467Z",
    "stale": false
   },
   "comex.impo.uso.vap": {
    "firstPeriod": "1986-01",
    "lastPeriod": "2026-09",
    "count": 489,
-   "retrievedAt": "2026-11-13T12:23:52.726Z",
+   "retrievedAt": "2026-11-13T17:07:28.467Z",
    "stale": false
   },
   "comex.impo.uso.resto": {
    "firstPeriod": "1986-01",
    "lastPeriod": "2026-09",
    "count": 489,
-   "retrievedAt": "2026-11-13T12:23:52.726Z",
+   "retrievedAt": "2026-11-13T17:07:28.467Z",
    "stale": false
   },
   "comex.impo.pais.brasil": {
    "firstPeriod": "1986-01",
    "lastPeriod": "2026-09",
    "count": 489,
-   "retrievedAt": "2026-11-13T12:23:52.726Z",
+   "retrievedAt": "2026-11-13T17:07:28.467Z",
    "stale": false
   },
   "comex.impo.pais.china": {
    "firstPeriod": "1986-01",
    "lastPeriod": "2026-09",
    "count": 489,
-   "retrievedAt": "2026-11-13T12:23:52.726Z",
+   "retrievedAt": "2026-11-13T17:07:28.467Z",
    "stale": false
   },
   "comex.impo.pais.eeuu": {
    "firstPeriod": "1986-01",
    "lastPeriod": "2026-09",
    "count": 489,
-   "retrievedAt": "2026-11-13T12:23:52.726Z",
+   "retrievedAt": "2026-11-13T17:07:28.467Z",
    "stale": false
   },
   "laboral.salarios.registrado_real": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-08",
    "count": 117,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "laboral.salarios.total_real": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-08",
    "count": 117,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "laboral.salarios.privado_registrado_real": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-08",
    "count": 117,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "laboral.salarios.publico_real": {
    "firstPeriod": "2016-12",
    "lastPeriod": "2026-08",
    "count": 117,
-   "retrievedAt": "2026-11-13T12:23:16.267Z",
+   "retrievedAt": "2026-11-13T17:07:26.521Z",
    "stale": false
   },
   "comex.saldo": {
    "firstPeriod": "1986-01",
    "lastPeriod": "2026-09",
    "count": 489,
-   "retrievedAt": "2026-11-13T12:23:52.726Z",
+   "retrievedAt": "2026-11-13T17:07:28.467Z",
    "stale": false
   },
   "actividad.ipi_minero.total.orig": {
    "firstPeriod": "2017-01",
    "lastPeriod": "2026-09",
    "count": 117,
-   "retrievedAt": "2026-11-13T12:23:11.709Z",
+   "retrievedAt": "2026-11-13T17:07:26.146Z",
    "stale": false
   },
   "actividad.ipi_minero.total.sa": {
    "firstPeriod": "2017-01",
    "lastPeriod": "2026-09",
    "count": 117,
-   "retrievedAt": "2026-11-13T12:23:11.709Z",
+   "retrievedAt": "2026-11-13T17:07:26.146Z",
    "stale": false
   },
   "actividad.ipi_minero.total.tc": {
    "firstPeriod": "2017-01",
    "lastPeriod": "2026-09",
    "count": 117,
-   "retrievedAt": "2026-11-13T12:23:11.709Z",
+   "retrievedAt": "2026-11-13T17:07:26.146Z",
    "stale": false
   },
   "actividad.pib.total.orig": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:23:59.480Z",
+   "retrievedAt": "2026-11-13T17:07:29.142Z",
    "stale": false
   },
   "actividad.oyd.consumo_privado.orig": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:23:59.480Z",
+   "retrievedAt": "2026-11-13T17:07:29.142Z",
    "stale": false
   },
   "actividad.oyd.consumo_publico.orig": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:23:59.480Z",
+   "retrievedAt": "2026-11-13T17:07:29.142Z",
    "stale": false
   },
   "actividad.oyd.inversion.orig": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:23:59.480Z",
+   "retrievedAt": "2026-11-13T17:07:29.142Z",
    "stale": false
   },
   "actividad.oyd.inversion_construccion.orig": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:23:59.480Z",
+   "retrievedAt": "2026-11-13T17:07:29.142Z",
    "stale": false
   },
   "actividad.oyd.inversion_equipo.orig": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:23:59.480Z",
+   "retrievedAt": "2026-11-13T17:07:29.142Z",
    "stale": false
   },
   "actividad.oyd.exportaciones.orig": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:23:59.480Z",
+   "retrievedAt": "2026-11-13T17:07:29.142Z",
    "stale": false
   },
   "actividad.oyd.importaciones.orig": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:23:59.480Z",
+   "retrievedAt": "2026-11-13T17:07:29.142Z",
    "stale": false
   },
   "actividad.oyd.variacion_existencias.orig": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:23:59.480Z",
+   "retrievedAt": "2026-11-13T17:07:29.142Z",
    "stale": false
   },
   "actividad.oyd.discrepancia.orig": {
    "firstPeriod": "2024-Q1",
    "lastPeriod": "2026-Q2",
    "count": 10,
-   "retrievedAt": "2026-11-13T12:23:59.480Z",
+   "retrievedAt": "2026-11-13T17:07:29.142Z",
    "stale": false
   },
   "actividad.pib.total.sa": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:23:59.753Z",
+   "retrievedAt": "2026-11-13T17:07:29.279Z",
    "stale": false
   },
   "actividad.oyd.consumo_privado.sa": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:23:59.753Z",
+   "retrievedAt": "2026-11-13T17:07:29.279Z",
    "stale": false
   },
   "actividad.oyd.consumo_publico.sa": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:23:59.753Z",
+   "retrievedAt": "2026-11-13T17:07:29.279Z",
    "stale": false
   },
   "actividad.oyd.inversion.sa": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:23:59.753Z",
+   "retrievedAt": "2026-11-13T17:07:29.279Z",
    "stale": false
   },
   "actividad.oyd.exportaciones.sa": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:23:59.753Z",
+   "retrievedAt": "2026-11-13T17:07:29.279Z",
    "stale": false
   },
   "actividad.oyd.importaciones.sa": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:23:59.753Z",
+   "retrievedAt": "2026-11-13T17:07:29.279Z",
    "stale": false
   },
   "actividad.pib.corriente": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:23:59.871Z",
+   "retrievedAt": "2026-11-13T17:07:29.363Z",
    "stale": false
   },
   "actividad.oyd_corriente.consumo_privado": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:23:59.871Z",
+   "retrievedAt": "2026-11-13T17:07:29.363Z",
    "stale": false
   },
   "actividad.oyd_corriente.consumo_publico": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:23:59.871Z",
+   "retrievedAt": "2026-11-13T17:07:29.363Z",
    "stale": false
   },
   "actividad.oyd_corriente.inversion": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:23:59.871Z",
+   "retrievedAt": "2026-11-13T17:07:29.363Z",
    "stale": false
   },
   "actividad.oyd_corriente.inversion_construccion": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:23:59.871Z",
+   "retrievedAt": "2026-11-13T17:07:29.363Z",
    "stale": false
   },
   "actividad.oyd_corriente.inversion_equipo": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:23:59.871Z",
+   "retrievedAt": "2026-11-13T17:07:29.363Z",
    "stale": false
   },
   "actividad.oyd_corriente.exportaciones": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:23:59.871Z",
+   "retrievedAt": "2026-11-13T17:07:29.363Z",
    "stale": false
   },
   "actividad.oyd_corriente.importaciones": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:23:59.871Z",
+   "retrievedAt": "2026-11-13T17:07:29.363Z",
    "stale": false
   },
   "actividad.oyd_corriente.variacion_existencias": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:23:59.871Z",
+   "retrievedAt": "2026-11-13T17:07:29.363Z",
    "stale": false
   },
   "actividad.oyd_corriente.discrepancia": {
    "firstPeriod": "2024-Q1",
    "lastPeriod": "2026-Q2",
    "count": 10,
-   "retrievedAt": "2026-11-13T12:23:59.871Z",
+   "retrievedAt": "2026-11-13T17:07:29.363Z",
    "stale": false
   },
   "actividad.pib.deflactor": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.007Z",
+   "retrievedAt": "2026-11-13T17:07:29.456Z",
    "stale": false
   },
   "actividad.vab.agro": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.105Z",
+   "retrievedAt": "2026-11-13T17:07:29.503Z",
    "stale": false
   },
   "actividad.vab.pesca": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.105Z",
+   "retrievedAt": "2026-11-13T17:07:29.503Z",
    "stale": false
   },
   "actividad.vab.mineria": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.105Z",
+   "retrievedAt": "2026-11-13T17:07:29.503Z",
    "stale": false
   },
   "actividad.vab.industria": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.105Z",
+   "retrievedAt": "2026-11-13T17:07:29.503Z",
    "stale": false
   },
   "actividad.vab.egas": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.105Z",
+   "retrievedAt": "2026-11-13T17:07:29.503Z",
    "stale": false
   },
   "actividad.vab.construccion": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.105Z",
+   "retrievedAt": "2026-11-13T17:07:29.503Z",
    "stale": false
   },
   "actividad.vab.comercio": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.105Z",
+   "retrievedAt": "2026-11-13T17:07:29.503Z",
    "stale": false
   },
   "actividad.vab.hoteles_restaurantes": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.105Z",
+   "retrievedAt": "2026-11-13T17:07:29.503Z",
    "stale": false
   },
   "actividad.vab.transporte": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.105Z",
+   "retrievedAt": "2026-11-13T17:07:29.503Z",
    "stale": false
   },
   "actividad.vab.financiero": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.105Z",
+   "retrievedAt": "2026-11-13T17:07:29.503Z",
    "stale": false
   },
   "actividad.vab.inmobiliarias": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.105Z",
+   "retrievedAt": "2026-11-13T17:07:29.503Z",
    "stale": false
   },
   "actividad.vab.adm_publica": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.105Z",
+   "retrievedAt": "2026-11-13T17:07:29.503Z",
    "stale": false
   },
   "actividad.vab.ensenanza": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.105Z",
+   "retrievedAt": "2026-11-13T17:07:29.503Z",
    "stale": false
   },
   "actividad.vab.salud": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.105Z",
+   "retrievedAt": "2026-11-13T17:07:29.503Z",
    "stale": false
   },
   "actividad.vab.otros_servicios": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.105Z",
+   "retrievedAt": "2026-11-13T17:07:29.503Z",
    "stale": false
   },
   "actividad.vab.hogares": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.105Z",
+   "retrievedAt": "2026-11-13T17:07:29.503Z",
    "stale": false
   },
   "actividad.vab.bienes": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.105Z",
+   "retrievedAt": "2026-11-13T17:07:29.503Z",
    "stale": false
   },
   "actividad.vab.servicios": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.105Z",
+   "retrievedAt": "2026-11-13T17:07:29.503Z",
    "stale": false
   },
   "actividad.vab.vab_total": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.105Z",
+   "retrievedAt": "2026-11-13T17:07:29.503Z",
    "stale": false
   },
   "actividad.vab.impuestos_netos": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.105Z",
+   "retrievedAt": "2026-11-13T17:07:29.503Z",
    "stale": false
   },
   "actividad.vab_corriente.agro": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.361Z",
+   "retrievedAt": "2026-11-13T17:07:29.665Z",
    "stale": false
   },
   "actividad.vab_corriente.pesca": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.361Z",
+   "retrievedAt": "2026-11-13T17:07:29.665Z",
    "stale": false
   },
   "actividad.vab_corriente.mineria": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.361Z",
+   "retrievedAt": "2026-11-13T17:07:29.665Z",
    "stale": false
   },
   "actividad.vab_corriente.industria": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.361Z",
+   "retrievedAt": "2026-11-13T17:07:29.665Z",
    "stale": false
   },
   "actividad.vab_corriente.egas": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.361Z",
+   "retrievedAt": "2026-11-13T17:07:29.665Z",
    "stale": false
   },
   "actividad.vab_corriente.construccion": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.361Z",
+   "retrievedAt": "2026-11-13T17:07:29.665Z",
    "stale": false
   },
   "actividad.vab_corriente.comercio": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.361Z",
+   "retrievedAt": "2026-11-13T17:07:29.665Z",
    "stale": false
   },
   "actividad.vab_corriente.hoteles_restaurantes": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.361Z",
+   "retrievedAt": "2026-11-13T17:07:29.665Z",
    "stale": false
   },
   "actividad.vab_corriente.transporte": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.361Z",
+   "retrievedAt": "2026-11-13T17:07:29.665Z",
    "stale": false
   },
   "actividad.vab_corriente.financiero": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.361Z",
+   "retrievedAt": "2026-11-13T17:07:29.665Z",
    "stale": false
   },
   "actividad.vab_corriente.inmobiliarias": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.361Z",
+   "retrievedAt": "2026-11-13T17:07:29.665Z",
    "stale": false
   },
   "actividad.vab_corriente.adm_publica": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.361Z",
+   "retrievedAt": "2026-11-13T17:07:29.665Z",
    "stale": false
   },
   "actividad.vab_corriente.ensenanza": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.361Z",
+   "retrievedAt": "2026-11-13T17:07:29.665Z",
    "stale": false
   },
   "actividad.vab_corriente.salud": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.361Z",
+   "retrievedAt": "2026-11-13T17:07:29.665Z",
    "stale": false
   },
   "actividad.vab_corriente.otros_servicios": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.361Z",
+   "retrievedAt": "2026-11-13T17:07:29.665Z",
    "stale": false
   },
   "actividad.vab_corriente.hogares": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.361Z",
+   "retrievedAt": "2026-11-13T17:07:29.665Z",
    "stale": false
   },
   "actividad.vab_corriente.bienes": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.361Z",
+   "retrievedAt": "2026-11-13T17:07:29.665Z",
    "stale": false
   },
   "actividad.vab_corriente.servicios": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.361Z",
+   "retrievedAt": "2026-11-13T17:07:29.665Z",
    "stale": false
   },
   "actividad.vab_corriente.vab_total": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.361Z",
+   "retrievedAt": "2026-11-13T17:07:29.665Z",
    "stale": false
   },
   "actividad.vab_corriente.impuestos_netos": {
    "firstPeriod": "2004-Q1",
    "lastPeriod": "2026-Q2",
    "count": 90,
-   "retrievedAt": "2026-11-13T12:24:00.361Z",
+   "retrievedAt": "2026-11-13T17:07:29.665Z",
    "stale": false
   },
   "actividad.consumo.supermercados.orig": {
    "firstPeriod": "2017-01",
    "lastPeriod": "2026-08",
    "count": 116,
-   "retrievedAt": "2026-11-13T12:24:00.528Z",
+   "retrievedAt": "2026-11-13T17:07:29.784Z",
    "stale": false
   },
   "actividad.consumo.supermercados.sa": {
    "firstPeriod": "2017-01",
    "lastPeriod": "2026-08",
    "count": 116,
-   "retrievedAt": "2026-11-13T12:24:00.528Z",
+   "retrievedAt": "2026-11-13T17:07:29.784Z",
    "stale": false
   },
   "actividad.consumo.supermercados.tc": {
    "firstPeriod": "2017-01",
    "lastPeriod": "2026-08",
    "count": 116,
-   "retrievedAt": "2026-11-13T12:24:00.528Z",
+   "retrievedAt": "2026-11-13T17:07:29.784Z",
    "stale": false
   },
   "actividad.consumo_nominal.supermercados": {
    "firstPeriod": "2017-01",
    "lastPeriod": "2026-08",
    "count": 116,
-   "retrievedAt": "2026-11-13T12:24:00.528Z",
+   "retrievedAt": "2026-11-13T17:07:29.784Z",
    "stale": false
   },
   "actividad.consumo_constante.supermercados": {
    "firstPeriod": "2017-01",
    "lastPeriod": "2026-08",
    "count": 116,
-   "retrievedAt": "2026-11-13T12:24:00.528Z",
+   "retrievedAt": "2026-11-13T17:07:29.784Z",
    "stale": false
   },
   "actividad.consumo.mayoristas.orig": {
    "firstPeriod": "2017-01",
    "lastPeriod": "2026-08",
    "count": 116,
-   "retrievedAt": "2026-11-13T12:24:00.639Z",
+   "retrievedAt": "2026-11-13T17:07:29.835Z",
    "stale": false
   },
   "actividad.consumo.mayoristas.sa": {
    "firstPeriod": "2017-01",
    "lastPeriod": "2026-08",
    "count": 116,
-   "retrievedAt": "2026-11-13T12:24:00.639Z",
+   "retrievedAt": "2026-11-13T17:07:29.835Z",
    "stale": false
   },
   "actividad.consumo.mayoristas.tc": {
    "firstPeriod": "2017-01",
    "lastPeriod": "2026-08",
    "count": 116,
-   "retrievedAt": "2026-11-13T12:24:00.639Z",
+   "retrievedAt": "2026-11-13T17:07:29.835Z",
    "stale": false
   },
   "actividad.consumo_nominal.mayoristas": {
    "firstPeriod": "2017-01",
    "lastPeriod": "2026-08",
    "count": 116,
-   "retrievedAt": "2026-11-13T12:24:00.639Z",
+   "retrievedAt": "2026-11-13T17:07:29.835Z",
    "stale": false
   },
   "actividad.consumo_constante.mayoristas": {
    "firstPeriod": "2017-01",
    "lastPeriod": "2026-08",
    "count": 116,
-   "retrievedAt": "2026-11-13T12:24:00.639Z",
+   "retrievedAt": "2026-11-13T17:07:29.835Z",
    "stale": false
   },
   "actividad.consumo.shoppings.orig": {
    "firstPeriod": "2017-01",
    "lastPeriod": "2026-08",
    "count": 116,
-   "retrievedAt": "2026-11-13T12:24:00.773Z",
+   "retrievedAt": "2026-11-13T17:07:29.897Z",
    "stale": false
   },
   "actividad.consumo.shoppings.sa": {
    "firstPeriod": "2017-01",
    "lastPeriod": "2026-08",
    "count": 116,
-   "retrievedAt": "2026-11-13T12:24:00.773Z",
+   "retrievedAt": "2026-11-13T17:07:29.897Z",
    "stale": false
   },
   "actividad.consumo.shoppings.tc": {
    "firstPeriod": "2017-01",
    "lastPeriod": "2026-08",
    "count": 116,
-   "retrievedAt": "2026-11-13T12:24:00.773Z",
+   "retrievedAt": "2026-11-13T17:07:29.897Z",
    "stale": false
   },
   "actividad.consumo_nominal.shoppings": {
    "firstPeriod": "2017-01",
    "lastPeriod": "2026-08",
    "count": 116,
-   "retrievedAt": "2026-11-13T12:24:00.773Z",
+   "retrievedAt": "2026-11-13T17:07:29.897Z",
    "stale": false
   },
   "actividad.consumo_constante.shoppings": {
    "firstPeriod": "2017-01",
    "lastPeriod": "2026-08",
    "count": 116,
-   "retrievedAt": "2026-11-13T12:24:00.773Z",
+   "retrievedAt": "2026-11-13T17:07:29.897Z",
    "stale": false
   },
   "fiscal.ingresos.iva": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.ingresos.ganancias": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.ingresos.seguridad_social": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.ingresos.debitos_creditos": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.ingresos.bienes_personales": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.ingresos.internos": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.ingresos.combustibles": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.ingresos.derechos_exportacion": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.ingresos.derechos_importacion": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.ingresos.resto_tributarios": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.ingresos.rentas_fgs": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.ingresos.rentas_resto": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.ingresos.no_tributarios": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.ingresos.transferencias": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.ingresos.resto_corrientes": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.ingresos.capital": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.jubilaciones": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.asignaciones": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.pensiones_no_contributivas": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.inssjp": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.otros_programas": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.subsidios_energia": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.subsidios_transporte": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.subsidios_otros": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.salarios": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.otros_funcionamiento": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.transf_prov_educacion": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.transf_prov_seguridad_social": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.transf_prov_desarrollo_social": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.transf_prov_salud": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.transf_prov_otras": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.universidades": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.deficit_empresas": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.otros_corrientes_resto": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.capital_energia_nacion": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.capital_energia_provincias": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.capital_transporte_nacion": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.capital_transporte_provincias": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.capital_educacion_nacion": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.capital_educacion_provincias": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.capital_vivienda_nacion": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.capital_vivienda_provincias": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.capital_agua_nacion": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.capital_agua_provincias": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.capital_otros_nacion": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.capital_otros_provincias": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.fondo_federal_solidario": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.intereses": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.resultado.primario": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.resultado.financiero": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.ingresos.tributarios": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.ingresos.rentas": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.ingresos.otros_corrientes": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.ingresos.total": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.prestaciones_sociales": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.subsidios": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.funcionamiento": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.transf_provincias": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.otros_corrientes": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.capital": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.primario": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "fiscal.gastos.total": {
    "firstPeriod": "2016-01",
    "lastPeriod": "2026-09",
    "count": 129,
-   "retrievedAt": "2026-11-13T12:24:00.908Z",
+   "retrievedAt": "2026-11-13T17:07:29.950Z",
    "stale": false
   },
   "precios.ipcba.nivel_general": {
    "firstPeriod": "2012-07",
    "lastPeriod": "2026-10",
    "count": 172,
-   "retrievedAt": "2026-11-13T12:24:02.136Z",
+   "retrievedAt": "2026-11-13T17:07:30.954Z",
    "stale": false
   },
   "precios.ipcba.bienes": {
    "firstPeriod": "2022-02",
    "lastPeriod": "2026-10",
    "count": 57,
-   "retrievedAt": "2026-11-13T12:24:02.136Z",
+   "retrievedAt": "2026-11-13T17:07:30.954Z",
    "stale": false
   },
   "precios.ipcba.servicios": {
    "firstPeriod": "2022-02",
    "lastPeriod": "2026-10",
    "count": 57,
-   "retrievedAt": "2026-11-13T12:24:02.136Z",
+   "retrievedAt": "2026-11-13T17:07:30.954Z",
    "stale": false
   },
   "precios.ipcba.estacionales": {
    "firstPeriod": "2022-02",
    "lastPeriod": "2026-10",
    "count": 57,
-   "retrievedAt": "2026-11-13T12:24:02.136Z",
+   "retrievedAt": "2026-11-13T17:07:30.954Z",
    "stale": false
   },
   "precios.ipcba.regulados": {
    "firstPeriod": "2022-02",
    "lastPeriod": "2026-10",
    "count": 57,
-   "retrievedAt": "2026-11-13T12:24:02.136Z",
+   "retrievedAt": "2026-11-13T17:07:30.954Z",
    "stale": false
   },
   "precios.ipcba.resto_ipcba": {
    "firstPeriod": "2022-02",
    "lastPeriod": "2026-10",
    "count": 57,
-   "retrievedAt": "2026-11-13T12:24:02.136Z",
+   "retrievedAt": "2026-11-13T17:07:30.954Z",
    "stale": false
   },
   "precios.ipcba.alimentos_bebidas_no_alcoholicas": {
    "firstPeriod": "2022-02",
    "lastPeriod": "2026-10",
    "count": 57,
-   "retrievedAt": "2026-11-13T12:24:02.136Z",
+   "retrievedAt": "2026-11-13T17:07:30.954Z",
    "stale": false
   },
   "precios.ipcba.bebidas_alcoholicas_tabaco": {
    "firstPeriod": "2022-02",
    "lastPeriod": "2026-10",
    "count": 57,
-   "retrievedAt": "2026-11-13T12:24:02.136Z",
+   "retrievedAt": "2026-11-13T17:07:30.954Z",
    "stale": false
   },
   "precios.ipcba.prendas_vestir_calzado": {
    "firstPeriod": "2022-02",
    "lastPeriod": "2026-10",
    "count": 57,
-   "retrievedAt": "2026-11-13T12:24:02.136Z",
+   "retrievedAt": "2026-11-13T17:07:30.954Z",
    "stale": false
   },
   "precios.ipcba.vivienda_agua_electricidad_gas": {
    "firstPeriod": "2022-02",
    "lastPeriod": "2026-10",
    "count": 57,
-   "retrievedAt": "2026-11-13T12:24:02.136Z",
+   "retrievedAt": "2026-11-13T17:07:30.954Z",
    "stale": false
   },
   "precios.ipcba.equipamiento_mantenimiento_hogar": {
    "firstPeriod": "2022-02",
    "lastPeriod": "2026-10",
    "count": 57,
-   "retrievedAt": "2026-11-13T12:24:02.136Z",
+   "retrievedAt": "2026-11-13T17:07:30.954Z",
    "stale": false
   },
   "precios.ipcba.salud": {
    "firstPeriod": "2022-02",
    "lastPeriod": "2026-10",
    "count": 57,
-   "retrievedAt": "2026-11-13T12:24:02.136Z",
+   "retrievedAt": "2026-11-13T17:07:30.954Z",
    "stale": false
   },
   "precios.ipcba.transporte": {
    "firstPeriod": "2022-02",
    "lastPeriod": "2026-10",
    "count": 57,
-   "retrievedAt": "2026-11-13T12:24:02.136Z",
+   "retrievedAt": "2026-11-13T17:07:30.954Z",
    "stale": false
   },
   "precios.ipcba.informacion_comunicacion": {
    "firstPeriod": "2022-02",
    "lastPeriod": "2026-10",
    "count": 57,
-   "retrievedAt": "2026-11-13T12:24:02.136Z",
+   "retrievedAt": "2026-11-13T17:07:30.954Z",
    "stale": false
   },
   "precios.ipcba.recreacion_cultura": {
    "firstPeriod": "2022-02",
    "lastPeriod": "2026-10",
    "count": 57,
-   "retrievedAt": "2026-11-13T12:24:02.136Z",
+   "retrievedAt": "2026-11-13T17:07:30.954Z",
    "stale": false
   },
   "precios.ipcba.educacion": {
    "firstPeriod": "2022-02",
    "lastPeriod": "2026-10",
    "count": 57,
-   "retrievedAt": "2026-11-13T12:24:02.136Z",
+   "retrievedAt": "2026-11-13T17:07:30.954Z",
    "stale": false
   },
   "precios.ipcba.restaurantes_hoteles": {
    "firstPeriod": "2022-02",
    "lastPeriod": "2026-10",
    "count": 57,
-   "retrievedAt": "2026-11-13T12:24:02.136Z",
+   "retrievedAt": "2026-11-13T17:07:30.954Z",
    "stale": false
   },
   "precios.ipcba.seguros_servicios_financieros": {
    "firstPeriod": "2022-02",
    "lastPeriod": "2026-10",
    "count": 57,
-   "retrievedAt": "2026-11-13T12:24:02.136Z",
+   "retrievedAt": "2026-11-13T17:07:30.954Z",
    "stale": false
   },
   "precios.ipcba.cuidado_personal_proteccion_social": {
    "firstPeriod": "2022-02",
    "lastPeriod": "2026-10",
    "count": 57,
-   "retrievedAt": "2026-11-13T12:24:02.136Z",
+   "retrievedAt": "2026-11-13T17:07:30.954Z",
    "stale": false
   },
   "precios.ipcba.servicios_alimentos_bebidas_fuera_hogar": {
    "firstPeriod": "2022-02",
    "lastPeriod": "2026-10",
    "count": 57,
-   "retrievedAt": "2026-11-13T12:24:02.136Z",
+   "retrievedAt": "2026-11-13T17:07:30.954Z",
    "stale": false
   },
   "actividad.caba.restaurantes": {
    "firstPeriod": "2015-03",
-   "lastPeriod": "2026-09",
-   "count": 139,
-   "retrievedAt": "2026-11-13T12:24:02.714Z",
+   "lastPeriod": "2026-10",
+   "count": 140,
+   "retrievedAt": "2026-11-13T17:07:31.342Z",
    "stale": false
   }
  },
  "feeds": {
   "sspm.oyd_constantes": {
    "feed": "sspm.oyd_constantes",
-   "lastSuccessAt": "2026-11-13T12:23:59.480Z",
-   "lastRunId": "20261113T122256Z-42c1",
-   "lastAttemptAt": "2026-11-13T12:23:59.156Z",
+   "lastSuccessAt": "2026-11-13T17:07:29.142Z",
+   "lastRunId": "20261113T170724Z-9606",
+   "lastAttemptAt": "2026-11-13T17:07:28.795Z",
    "ok": true
   },
   "sspm.oyd_desest": {
    "feed": "sspm.oyd_desest",
-   "lastSuccessAt": "2026-11-13T12:23:59.753Z",
-   "lastRunId": "20261113T122256Z-42c1",
-   "lastAttemptAt": "2026-11-13T12:23:59.518Z",
+   "lastSuccessAt": "2026-11-13T17:07:29.279Z",
+   "lastRunId": "20261113T170724Z-9606",
+   "lastAttemptAt": "2026-11-13T17:07:29.196Z",
    "ok": true
   },
   "sspm.oyd_corrientes": {
    "feed": "sspm.oyd_corrientes",
-   "lastSuccessAt": "2026-11-13T12:23:59.871Z",
-   "lastRunId": "20261113T122256Z-42c1",
-   "lastAttemptAt": "2026-11-13T12:23:59.795Z",
+   "lastSuccessAt": "2026-11-13T17:07:29.363Z",
+   "lastRunId": "20261113T170724Z-9606",
+   "lastAttemptAt": "2026-11-13T17:07:29.320Z",
    "ok": true
   },
   "sspm.oyd_deflactores": {
    "feed": "sspm.oyd_deflactores",
-   "lastSuccessAt": "2026-11-13T12:24:00.007Z",
-   "lastRunId": "20261113T122256Z-42c1",
-   "lastAttemptAt": "2026-11-13T12:23:59.909Z",
+   "lastSuccessAt": "2026-11-13T17:07:29.456Z",
+   "lastRunId": "20261113T170724Z-9606",
+   "lastAttemptAt": "2026-11-13T17:07:29.404Z",
    "ok": true
   },
   "sspm.vab_constantes": {
    "feed": "sspm.vab_constantes",
-   "lastSuccessAt": "2026-11-13T12:24:00.105Z",
-   "lastRunId": "20261113T122256Z-42c1",
-   "lastAttemptAt": "2026-11-13T12:24:00.012Z",
+   "lastSuccessAt": "2026-11-13T17:07:29.503Z",
+   "lastRunId": "20261113T170724Z-9606",
+   "lastAttemptAt": "2026-11-13T17:07:29.461Z",
    "ok": true
   },
   "sspm.vab_corrientes": {
    "feed": "sspm.vab_corrientes",
-   "lastSuccessAt": "2026-11-13T12:24:00.361Z",
-   "lastRunId": "20261113T122256Z-42c1",
-   "lastAttemptAt": "2026-11-13T12:24:00.248Z",
+   "lastSuccessAt": "2026-11-13T17:07:29.665Z",
+   "lastRunId": "20261113T170724Z-9606",
+   "lastAttemptAt": "2026-11-13T17:07:29.628Z",
    "ok": true
   },
   "sspm.supermercados": {
    "feed": "sspm.supermercados",
-   "lastSuccessAt": "2026-11-13T12:24:00.528Z",
-   "lastRunId": "20261113T122256Z-42c1",
-   "lastAttemptAt": "2026-11-13T12:24:00.436Z",
+   "lastSuccessAt": "2026-11-13T17:07:29.784Z",
+   "lastRunId": "20261113T170724Z-9606",
+   "lastAttemptAt": "2026-11-13T17:07:29.748Z",
    "ok": true
   },
   "sspm.mayoristas": {
    "feed": "sspm.mayoristas",
-   "lastSuccessAt": "2026-11-13T12:24:00.639Z",
-   "lastRunId": "20261113T122256Z-42c1",
-   "lastAttemptAt": "2026-11-13T12:24:00.550Z",
+   "lastSuccessAt": "2026-11-13T17:07:29.835Z",
+   "lastRunId": "20261113T170724Z-9606",
+   "lastAttemptAt": "2026-11-13T17:07:29.808Z",
    "ok": true
   },
   "sspm.shoppings": {
    "feed": "sspm.shoppings",
-   "lastSuccessAt": "2026-11-13T12:24:00.773Z",
-   "lastRunId": "20261113T122256Z-42c1",
-   "lastAttemptAt": "2026-11-13T12:24:00.663Z",
+   "lastSuccessAt": "2026-11-13T17:07:29.897Z",
+   "lastRunId": "20261113T170724Z-9606",
+   "lastAttemptAt": "2026-11-13T17:07:29.859Z",
    "ok": true
   },
   "sspm.imig": {
    "feed": "sspm.imig",
-   "lastSuccessAt": "2026-11-13T12:24:00.908Z",
-   "lastRunId": "20261113T122256Z-42c1",
-   "lastAttemptAt": "2026-11-13T12:24:00.794Z",
+   "lastSuccessAt": "2026-11-13T17:07:29.950Z",
+   "lastRunId": "20261113T170724Z-9606",
+   "lastAttemptAt": "2026-11-13T17:07:29.919Z",
    "ok": true
   },
   "idecba.ipcba": {
    "feed": "idecba.ipcba",
-   "lastSuccessAt": "2026-11-13T12:24:02.136Z",
-   "lastRunId": "20261113T122256Z-42c1",
-   "lastAttemptAt": "2026-11-13T12:24:01.145Z",
+   "lastSuccessAt": "2026-11-13T17:07:30.954Z",
+   "lastRunId": "20261113T170724Z-9606",
+   "lastAttemptAt": "2026-11-13T17:07:30.159Z",
    "ok": true
   },
   "idecba.restaurantes": {
    "feed": "idecba.restaurantes",
-   "lastSuccessAt": "2026-11-13T12:24:02.714Z",
-   "lastRunId": "20261113T122256Z-42c1",
-   "lastAttemptAt": "2026-11-13T12:24:02.230Z",
+   "lastSuccessAt": "2026-11-13T17:07:31.342Z",
+   "lastRunId": "20261113T170724Z-9606",
+   "lastAttemptAt": "2026-11-13T17:07:31.040Z",
    "ok": true
   }
  }

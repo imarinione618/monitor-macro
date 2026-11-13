@@ -576,10 +576,7 @@
   },
   {
    "period": "2026-08",
-   "value": 158.8967780703408,
-   "flags": [
-    "provisorio"
-   ]
+   "value": 158.8967780703408
   },
   {
    "period": "2026-09",
@@ -587,14 +584,21 @@
    "flags": [
     "provisorio"
    ]
+  },
+  {
+   "period": "2026-10",
+   "value": 159.9587091046589,
+   "flags": [
+    "provisorio"
+   ]
   }
  ],
  "meta": {
   "firstPeriod": "2015-03",
-  "lastPeriod": "2026-09",
-  "retrievedAt": "2026-11-13T12:24:02.714Z",
-  "runId": "20261113T122256Z-42c1",
-  "query": "https://www.estadisticaciudad.gob.ar/eyc/wp-content/uploads/2026/08/EE_indice_actividad_restaurante.xlsx",
+  "lastPeriod": "2026-10",
+  "retrievedAt": "2026-11-13T17:07:31.342Z",
+  "runId": "20261113T170724Z-9606",
+  "query": "https://www.estadisticaciudad.gob.ar/eyc/wp-content/uploads/2026/09/EE_indice_actividad_restaurante.xlsx",
   "publishedAt": null,
   "stale": false
  }
