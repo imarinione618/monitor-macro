@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/108",
   "methodology": "Cta. Cte+Caja de Ahorro+Plazo Fijo+Inv. A plazo constante+Inv. con opción de canc. ant.+Inv. a plazo determinado+Saldo inmobilizado+Cuenta a la vista+Ordenes de Pago+Dep. en garantia+Dep. vinc. Con op. Cambiarias+Otros depositos",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-02"
+  "lastDate": "2026-11-04"
  },
  "observations": [
   {
@@ -23380,7 +23380,7 @@
   },
   {
    "date": "2026-10-27",
-   "value": 42799
+   "value": 42798
   },
   {
    "date": "2026-10-28",
@@ -23396,9 +23396,17 @@
   },
   {
    "date": "2026-11-02",
-   "value": 42884
+   "value": 42885
+  },
+  {
+   "date": "2026-11-03",
+   "value": 42920
+  },
+  {
+   "date": "2026-11-04",
+   "value": 43020
   }
  ],
- "retrievedAt": "2026-11-11T15:00:34.653Z",
+ "retrievedAt": "2026-11-13T12:24:04.755Z",
  "stale": false
 }

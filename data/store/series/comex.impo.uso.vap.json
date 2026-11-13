@@ -1961,8 +1961,8 @@
  "meta": {
   "firstPeriod": "1986-01",
   "lastPeriod": "2026-09",
-  "retrievedAt": "2026-11-11T16:34:08.156Z",
-  "runId": "20261111T163329Z-0bd4",
+  "retrievedAt": "2026-11-13T12:23:52.726Z",
+  "runId": "20261113T122256Z-42c1",
   "dataset": "comercio_exterior_importacion_bienes",
   "query": "https://api.indec.gob.ar/v1/comercio_exterior_importacion_bienes?select=Anio%2CMes%2CPeriodo%2Cuso_economico_cod%2Cgce_cod%2Cpais_cod%2Cvalor_CIF%2Cvalor_CIF_null&Periodo=gte.202411&order=Anio%2CMes%2CPeriodo%2Cuso_economico_cod%2Cgce_cod%2Cpais_cod",
   "publishedAt": null,

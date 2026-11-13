@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/114",
   "methodology": "Préstamos de efectivo acordados a personas físicas sin garantía hipotecaria o prendaria. No incluye los derivados de adelantos en cuenta (corriente u otras a la vista) o de la compra de documentos, ni los instrumentados bajo la modalidad de documentos a sola firma, o documentos descontados o créditos documentarios, ni los saldos deudores por el uso de tarjetas de crédito.",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-02"
+  "lastDate": "2026-11-04"
  },
  "observations": [
   {
@@ -23308,7 +23308,7 @@
   },
   {
    "date": "2026-09-30",
-   "value": 22109211
+   "value": 22109206
   },
   {
    "date": "2026-10-01",
@@ -23388,17 +23388,25 @@
   },
   {
    "date": "2026-10-29",
-   "value": 22578958
+   "value": 22578936
   },
   {
    "date": "2026-10-30",
-   "value": 22540234
+   "value": 22540041
   },
   {
    "date": "2026-11-02",
-   "value": 22526910
+   "value": 22526970
+  },
+  {
+   "date": "2026-11-03",
+   "value": 22541710
+  },
+  {
+   "date": "2026-11-04",
+   "value": 22559582
   }
  ],
- "retrievedAt": "2026-11-11T15:00:34.653Z",
+ "retrievedAt": "2026-11-13T12:24:04.755Z",
  "stale": false
 }

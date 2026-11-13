@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/17",
   "methodology": "Circulación monetaria que no está en poder de las entidades financieras. Se obtiene calculando la diferencia entre la circulación monetaria total difundida diariamente por el BCRA mediante Comunicación “C” y el efectivo en pesos en poder de las entidades financieras",
   "firstDate": "1996-01-02",
-  "lastDate": "2026-11-03"
+  "lastDate": "2026-11-05"
  },
  "observations": [
   {
@@ -30300,7 +30300,7 @@
   },
   {
    "date": "2026-09-30",
-   "value": 26623048
+   "value": 26622832
   },
   {
    "date": "2026-10-01",
@@ -30368,11 +30368,11 @@
   },
   {
    "date": "2026-10-26",
-   "value": 26603460
+   "value": 26606832
   },
   {
    "date": "2026-10-27",
-   "value": 26596999
+   "value": 26596628
   },
   {
    "date": "2026-10-28",
@@ -30380,21 +30380,29 @@
   },
   {
    "date": "2026-10-29",
-   "value": 26787894
+   "value": 26786152
   },
   {
    "date": "2026-10-30",
-   "value": 26859169
+   "value": 26855617
   },
   {
    "date": "2026-11-02",
-   "value": 27025309
+   "value": 27025360
   },
   {
    "date": "2026-11-03",
-   "value": 26971999
+   "value": 26966782
+  },
+  {
+   "date": "2026-11-04",
+   "value": 27001969
+  },
+  {
+   "date": "2026-11-05",
+   "value": 27071349
   }
  ],
- "retrievedAt": "2026-11-11T15:00:34.653Z",
+ "retrievedAt": "2026-11-13T12:24:04.755Z",
  "stale": false
 }

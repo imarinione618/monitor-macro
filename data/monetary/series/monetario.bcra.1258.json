@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/1258",
   "methodology": "Letras y notas emitidas por el BCRA. No se computan las letras del BCRA (LEBAC) emitidas para ser afectadas a operaciones de pases pasivos ni las entregadas en garantía. Incluye LEGAR (Referencia normativa: Comunicación \"A\" 7220) y LEMIN (Referencia normativa: Comunicación \"A\" 7191). No incluye LELIQ ni NOTALIQ.",
   "firstDate": "2002-03-15",
-  "lastDate": "2026-11-03",
+  "lastDate": "2026-11-05",
   "eligibleInstrument": true,
   "balanceSide": "liability",
   "issuer": "BCRA",
@@ -24199,8 +24199,16 @@
   {
    "date": "2026-11-03",
    "value": 246091
+  },
+  {
+   "date": "2026-11-04",
+   "value": 246935
+  },
+  {
+   "date": "2026-11-05",
+   "value": 247010
   }
  ],
- "retrievedAt": "2026-11-11T15:00:34.653Z",
+ "retrievedAt": "2026-11-13T12:24:04.755Z",
  "stale": false
 }

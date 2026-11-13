@@ -472,13 +472,17 @@
   {
    "period": "2026-09",
    "value": 10389.768
+  },
+  {
+   "period": "2026-10",
+   "value": 10963.0007
   }
  ],
  "meta": {
   "firstPeriod": "2016-12",
-  "lastPeriod": "2026-09",
-  "retrievedAt": "2026-11-11T16:33:40.766Z",
-  "runId": "20261111T163329Z-0bd4",
+  "lastPeriod": "2026-10",
+  "retrievedAt": "2026-11-13T12:23:16.267Z",
+  "runId": "20261113T122256Z-42c1",
   "dataset": "ipc_nacional",
   "query": "https://api.indec.gob.ar/v1/ipc_nacional?nivel=in.(%22Nivel%20General%22%2C%22Categor%C3%ADa%22%2C%22Divisi%C3%B3n%22)&tipo_de_indicador=in.(Indice%2Cv_m)&order=clasificador%2Cnivel%2Ccodigo%2Cdescripcion%2Cperiodo%2Canio%2Cmes%2Cindicador%2Ctipo_de_indicador%2Ctipo_de_indicador_descripcion%2Cregion%2Cunidad_de_medida",
   "publishedAt": null,
