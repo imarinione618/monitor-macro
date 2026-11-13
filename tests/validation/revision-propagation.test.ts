@@ -89,8 +89,15 @@ describe.skipIf(!st.ok)('revisión simulada en una copia del store real', () => 
   };
 
   it('la revisión se detecta y queda en revisions.jsonl de la copia', () => {
-    // IPC: se revisa el anteúltimo mes (+0,5 %) → cambian su nivel, su var. m/m y la del mes siguiente.
-    const r1 = revise(IPC, (d) => d.observations.length - 2, 1.005);
+    // IPC: se revisa (+0,5 %) el último mes que también tiene salario real (los salarios
+    // se publican con más rezago que el IPC, así que suele no ser el anteúltimo) → cambian
+    // su nivel, su var. m/m y la del mes siguiente.
+    const lastRealPeriod = readSeriesData('laboral.salarios.registrado_real', tmp)!.observations.at(-1)!.period;
+    const r1 = revise(IPC, (d) => {
+      const i = d.observations.findIndex((o) => o.period === lastRealPeriod);
+      expect(i).toBeGreaterThan(0);
+      return Math.min(i, d.observations.length - 2);
+    }, 1.005);
     ipcPeriod = r1.period;
     ipcOld = r1.old;
     ipcNew = r1.neu;
