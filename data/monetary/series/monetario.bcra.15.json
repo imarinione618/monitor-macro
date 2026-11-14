@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/15",
   "methodology": "Es la suma de la circulación monetaria total  y los depósitos en cuenta corriente en pesos de las entidades financieras en el BCRA. Es difundida diariamente por el BCRA mediante Comunicación C.",
   "firstDate": "1996-01-02",
-  "lastDate": "2026-11-05",
+  "lastDate": "2026-11-11",
   "monthlyCompanionId": "monetario.bcra.1606"
  },
  "observations": [
@@ -30402,8 +30402,12 @@
   {
    "date": "2026-11-05",
    "value": 49662576
+  },
+  {
+   "date": "2026-11-11",
+   "value": 51603144
   }
  ],
- "retrievedAt": "2026-11-13T17:07:32.626Z",
+ "retrievedAt": "2026-11-14T15:00:51.036Z",
  "stale": false
 }

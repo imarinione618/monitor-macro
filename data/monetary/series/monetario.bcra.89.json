@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/89",
   "methodology": "Depósitos de efectivo en entidades financieras no incluidos en otros rubros. ",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-04"
+  "lastDate": "2026-11-05"
  },
  "observations": [
   {
@@ -23396,7 +23396,7 @@
   },
   {
    "date": "2026-11-02",
-   "value": 3286885
+   "value": 3281543
   },
   {
    "date": "2026-11-03",
@@ -23404,9 +23404,13 @@
   },
   {
    "date": "2026-11-04",
-   "value": 3271815
+   "value": 3271523
+  },
+  {
+   "date": "2026-11-05",
+   "value": 3353908
   }
  ],
- "retrievedAt": "2026-11-13T17:07:32.626Z",
+ "retrievedAt": "2026-11-14T15:00:51.036Z",
  "stale": false
 }

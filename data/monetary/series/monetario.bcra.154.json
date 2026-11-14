@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/154",
   "methodology": "Stock de pases concertados por el BCRA hasta el 14 de julio de 2025.",
   "firstDate": "2004-05-28",
-  "lastDate": "2026-11-11",
+  "lastDate": "2026-11-12",
   "eligibleInstrument": false,
   "balanceSide": "asset",
   "issuer": "BCRA",
@@ -22015,8 +22015,12 @@
   {
    "date": "2026-11-11",
    "value": 0
+  },
+  {
+   "date": "2026-11-12",
+   "value": 0
   }
  ],
- "retrievedAt": "2026-11-13T17:07:32.626Z",
+ "retrievedAt": "2026-11-14T15:00:51.036Z",
  "stale": false
 }

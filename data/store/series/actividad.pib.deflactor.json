@@ -365,8 +365,8 @@
  "meta": {
   "firstPeriod": "2004-Q1",
   "lastPeriod": "2026-Q2",
-  "retrievedAt": "2026-11-13T17:07:29.456Z",
-  "runId": "20261113T170724Z-9606",
+  "retrievedAt": "2026-11-14T15:00:47.618Z",
+  "runId": "20261114T150005Z-1fcf",
   "query": "https://infra.datos.gob.ar/catalog/sspm/dataset/25/distribution/25.2/download/indice-precios-implicitos-oferta-demanda-globales-valores-trimestrales-base-2004.csv",
   "publishedAt": null,
   "stale": false

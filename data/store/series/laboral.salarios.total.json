@@ -476,13 +476,17 @@
   {
    "period": "2026-08",
    "value": 9973.55
+  },
+  {
+   "period": "2026-09",
+   "value": 10098.36
   }
  ],
  "meta": {
   "firstPeriod": "2016-10",
-  "lastPeriod": "2026-08",
-  "retrievedAt": "2026-11-13T17:07:26.254Z",
-  "runId": "20261113T170724Z-9606",
+  "lastPeriod": "2026-09",
+  "retrievedAt": "2026-11-14T15:00:14.327Z",
+  "runId": "20261114T150005Z-1fcf",
   "dataset": "indice_salarios",
   "query": "https://api.indec.gob.ar/v1/indice_salarios?order=clasificador%2Cnivel%2Ccodigo%2Cdescripcion%2Cperiodo%2Canio%2Cmes%2Cindicador%2Ctipo_de_indicador%2Ctipo_de_indicador_descripcion%2Cunidad_de_medida",
   "publishedAt": null,

@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/197",
   "methodology": "Circulacion monetaria total - Efectivo en bancos en pesos-vista remunerada de personas jurídicas +Cuentas corrientes en pesos+ Cajas de ahorro en pesos",
   "firstDate": "2021-01-04",
-  "lastDate": "2026-11-04"
+  "lastDate": "2026-11-05"
  },
  "observations": [
   {
@@ -5684,7 +5684,7 @@
   },
   {
    "date": "2026-10-28",
-   "value": 64078620.062
+   "value": 64075296.062
   },
   {
    "date": "2026-10-29",
@@ -5692,11 +5692,11 @@
   },
   {
    "date": "2026-10-30",
-   "value": 69227903.654
+   "value": 69227883.654
   },
   {
    "date": "2026-11-02",
-   "value": 68885162.507
+   "value": 68886433.484
   },
   {
    "date": "2026-11-03",
@@ -5704,9 +5704,13 @@
   },
   {
    "date": "2026-11-04",
-   "value": 69299551.566
+   "value": 69302520.566
+  },
+  {
+   "date": "2026-11-05",
+   "value": 70644311.578
   }
  ],
- "retrievedAt": "2026-11-13T17:07:32.626Z",
+ "retrievedAt": "2026-11-14T15:00:51.036Z",
  "stale": false
 }

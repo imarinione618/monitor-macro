@@ -477,8 +477,8 @@
  "meta": {
   "firstPeriod": "2017-01",
   "lastPeriod": "2026-10",
-  "retrievedAt": "2026-11-13T17:07:26.521Z",
-  "runId": "20261113T170724Z-9606",
+  "retrievedAt": "2026-11-14T15:00:15.799Z",
+  "runId": "20261114T150005Z-1fcf",
   "dataset": "ipc_nacional",
   "query": "https://api.indec.gob.ar/v1/ipc_nacional?nivel=in.(%22Nivel%20General%22%2C%22Categor%C3%ADa%22%2C%22Divisi%C3%B3n%22)&tipo_de_indicador=in.(Indice%2Cv_m)&order=clasificador%2Cnivel%2Ccodigo%2Cdescripcion%2Cperiodo%2Canio%2Cmes%2Cindicador%2Ctipo_de_indicador%2Ctipo_de_indicador_descripcion%2Cregion%2Cunidad_de_medida",
   "publishedAt": null,

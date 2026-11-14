@@ -469,8 +469,8 @@
  "meta": {
   "firstPeriod": "2017-01",
   "lastPeriod": "2026-08",
-  "retrievedAt": "2026-11-13T17:07:29.897Z",
-  "runId": "20261113T170724Z-9606",
+  "retrievedAt": "2026-11-14T15:00:47.998Z",
+  "runId": "20261114T150005Z-1fcf",
   "query": "https://infra.datos.gob.ar/catalog/sspm/dataset/458/distribution/458.1/download/ventas-totales-nacionales-centros-compras-valores-mensuales.csv",
   "publishedAt": null,
   "stale": false

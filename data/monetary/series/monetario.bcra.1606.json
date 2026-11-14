@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/1606",
   "methodology": "Sumatoria de la circulación monetaria (billetes y monedas emitidos por el BCRA y puestos en circulación), del Fondo de Liquidez Bancaria (vigente durante el período 28.12.2001 – 09.05.2002) y de los depósitos en pesos de las entidades financieras en el BCRA. Desde enero de 1995 hasta mayo de 2001, se dispuso la unificación de las cuentas corrientes en pesos y a la vista en dólares en una única cuenta corriente en dólares (durante ese período, la base monetaria equivalía exclusivamente a la cuenta circulación monetaria). A partir de junio de 2001, se habilitaron nuevamente las cuentas corrientes en pesos. A partir del 23 de noviembre de 2010 incluye los cheques cancelatorios en moneda nacional. Saldos a fin de mes.",
   "firstDate": "1940-06-30",
-  "lastDate": "2026-08-31",
+  "lastDate": "2026-09-30",
   "monthlyConvention": "close"
  },
  "observations": [
@@ -4162,8 +4162,12 @@
   {
    "date": "2026-08-31",
    "value": 47451536.857
+  },
+  {
+   "date": "2026-09-30",
+   "value": 46909418.69
   }
  ],
- "retrievedAt": "2026-11-13T17:07:32.626Z",
+ "retrievedAt": "2026-11-14T15:00:51.036Z",
  "stale": false
 }

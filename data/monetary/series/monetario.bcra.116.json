@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/116",
   "methodology": "Préstamos de efectivo no comprendidos en las definiciones de las cuentas: adelantos en cuenta corriente, otros adelantos, documentos a sola firma, documentos descontados, documentos comprados, hipotecarios, prendarios, personales, o a titulares del sistema de tarjetas de crédito. Incluye créditos documentarios. Neto de intereses documentados.",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-04"
+  "lastDate": "2026-11-05"
  },
  "observations": [
   {
@@ -23308,7 +23308,7 @@
   },
   {
    "date": "2026-09-30",
-   "value": 7493950
+   "value": 7493382
   },
   {
    "date": "2026-10-01",
@@ -23384,7 +23384,7 @@
   },
   {
    "date": "2026-10-28",
-   "value": 7645953
+   "value": 7646093
   },
   {
    "date": "2026-10-29",
@@ -23392,7 +23392,7 @@
   },
   {
    "date": "2026-10-30",
-   "value": 7701514
+   "value": 7699678
   },
   {
    "date": "2026-11-02",
@@ -23404,9 +23404,13 @@
   },
   {
    "date": "2026-11-04",
-   "value": 7765709
+   "value": 7854809
+  },
+  {
+   "date": "2026-11-05",
+   "value": 7767004
   }
  ],
- "retrievedAt": "2026-11-13T17:07:32.626Z",
+ "retrievedAt": "2026-11-14T15:00:51.036Z",
  "stale": false
 }
