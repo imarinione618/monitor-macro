@@ -237,6 +237,6 @@
   "runId": "20261115T150005Z-e93b",
   "query": "https://www.estadisticaciudad.gob.ar/eyc/wp-content/uploads/2026/09/IPCBA_base_2021100-Nivel_general_empalme.xlsx",
   "publishedAt": null,
-  "stale": false
+  "stale": true
  }
 }

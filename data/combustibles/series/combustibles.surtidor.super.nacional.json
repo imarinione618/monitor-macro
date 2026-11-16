@@ -16215,5 +16215,6 @@
   }
  ],
  "retrievedAt": "2026-11-15T15:01:02.565Z",
- "stale": false
+ "stale": true,
+ "error": "fetch failed"
 }

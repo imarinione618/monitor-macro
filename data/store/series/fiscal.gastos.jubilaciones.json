@@ -521,8 +521,8 @@
  "meta": {
   "firstPeriod": "2016-01",
   "lastPeriod": "2026-09",
-  "retrievedAt": "2026-11-15T15:00:49.478Z",
-  "runId": "20261115T150005Z-e93b",
+  "retrievedAt": "2026-11-16T15:12:24.842Z",
+  "runId": "20261116T151221Z-3690",
   "query": "https://infra.datos.gob.ar/catalog/sspm/dataset/452/distribution/452.3/download/imig-mensual.csv",
   "publishedAt": null,
   "stale": false

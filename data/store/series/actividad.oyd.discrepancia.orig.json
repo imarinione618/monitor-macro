@@ -45,8 +45,8 @@
  "meta": {
   "firstPeriod": "2024-Q1",
   "lastPeriod": "2026-Q2",
-  "retrievedAt": "2026-11-15T15:00:48.769Z",
-  "runId": "20261115T150005Z-e93b",
+  "retrievedAt": "2026-11-16T15:12:23.923Z",
+  "runId": "20261116T151221Z-3690",
   "query": "https://infra.datos.gob.ar/catalog/sspm/dataset/4/distribution/4.2/download/oferta-demanda-globales-precios-2004-valores-trimestrales-base-2004.csv",
   "publishedAt": null,
   "stale": false
