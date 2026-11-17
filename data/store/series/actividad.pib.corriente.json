@@ -365,8 +365,8 @@
  "meta": {
   "firstPeriod": "2004-Q1",
   "lastPeriod": "2026-Q2",
-  "retrievedAt": "2026-11-16T15:12:24.113Z",
-  "runId": "20261116T151221Z-3690",
+  "retrievedAt": "2026-11-17T12:41:55.651Z",
+  "runId": "20261117T124108Z-7239",
   "query": "https://infra.datos.gob.ar/catalog/sspm/dataset/4/distribution/4.4/download/oferta-demanda-globales-precios-corrientes-valores-trimestrales-base-2004.csv",
   "publishedAt": null,
   "stale": false

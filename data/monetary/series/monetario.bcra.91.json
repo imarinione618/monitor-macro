@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/91",
   "methodology": "Suma de total depósitos en efectivo (incluye Certificados de depósitos reprogramados), neto del Uso de Fondo Unificado de Cuentas Oficiales.",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-05"
+  "lastDate": "2026-11-11"
  },
  "observations": [
   {
@@ -23388,7 +23388,7 @@
   },
   {
    "date": "2026-10-29",
-   "value": 170047650
+   "value": 170043902
   },
   {
    "date": "2026-10-30",
@@ -23396,21 +23396,25 @@
   },
   {
    "date": "2026-11-02",
-   "value": 168754954
+   "value": 168954138
   },
   {
    "date": "2026-11-03",
-   "value": 168531008
+   "value": 168710870
   },
   {
    "date": "2026-11-04",
-   "value": 168630314
+   "value": 168827744
   },
   {
    "date": "2026-11-05",
-   "value": 169758335
+   "value": 169911540
+  },
+  {
+   "date": "2026-11-11",
+   "value": 167261165
   }
  ],
- "retrievedAt": "2026-11-16T15:13:55.689Z",
+ "retrievedAt": "2026-11-17T12:42:02.102Z",
  "stale": false
 }
