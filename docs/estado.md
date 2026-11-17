@@ -89,7 +89,7 @@ Publicación inicial completada el 2026-11-04:
 
 ### Incidencia en la inflación por división (IPC) — 2026-11-17
 
-- Precios incorpora barras horizontales «Incidencia en la inflación general por división»: aporte en p.p. de las 12 divisiones COICOP a la variación mensual del IPC nacional, con la inflación del mes como primera barra y selector de mes.
+- Precios incorpora un gráfico **cascada** «Incidencia en la inflación general por división»: aporte en p.p. de las 12 divisiones COICOP a la variación mensual del IPC nacional, de mayor a menor, cada una desde el acumulado previo, cerrando en la inflación del mes; selector de mes y 2 decimales (`src/web/lib/ipcWaterfall.ts`, `IpcWaterfallPanel`).
 - Fórmula pedida por el usuario: `100 × ponderación × (IPCdivisión_t − IPCdivisión_t−1) / IPCgeneral_t−1`. Ponderaciones nacionales de dic-2016 (archivo del usuario `ponderadores_ipc.xls`, columna Nacional = ponderaciones regionales × peso de cada región; suman 0,9999955). Estimación propia, no incidencia publicada.
 - Verificado con el store real: la suma de las 12 incidencias reproduce la variación mensual del nivel general con diferencias ≤ 0,08 p.p. desde 2017 (≤ 0,02 p.p. en los últimos 12 meses) (`tests/web/ipc-division-incidence.test.ts`). Se calcula al generar el dashboard: sin nueva ingesta ni cambios en Sheets.
 - Pendiente opcional: la API publica `Incidencia_m` del IPC; comparar con las publicadas si están para el total nacional por división.

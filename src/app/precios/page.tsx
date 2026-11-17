@@ -7,6 +7,7 @@ import { StoreProblem } from '@/web/components/StateMessages';
 import { getClientSeriesList, getStoreState } from '@/web/server/store';
 import { readFuelStore } from '@/combustibles/store';
 import { FuelPanel } from '@/web/components/FuelPanel';
+import { IpcWaterfallPanel } from '@/web/components/IpcWaterfallPanel';
 import { buildIpcContributions, buildIpcDivisionContributions, contributionId, DIVISION_TOTAL_ID, IPC_CONTRIBUTIONS } from '@/web/lib/ipcContributions';
 
 // Sitio estático: se genera con los datos del store al momento del build (npm run build).
@@ -92,13 +93,11 @@ export default function PreciosPage() {
         synthetic={synthetic}
       />
 
-      <SnapshotPanel
+      <IpcWaterfallPanel
         title="Incidencia en la inflación general por división"
-        description="Aporte de cada división (COICOP) a la variación mensual del IPC nacional, en puntos porcentuales. La suma de las divisiones es la inflación del mes (primera barra). Elegí el mes en el selector."
+        description="Aporte de cada división (COICOP) a la variación mensual del IPC nacional, en puntos porcentuales. Cascada: cada división se suma a las anteriores (de mayor a menor) hasta llegar a la inflación del mes (última barra)."
         series={divisionIncidences}
-        referenceId={DIVISION_TOTAL_ID}
-        transforms={['level']}
-        defaultTransform="level"
+        totalId={DIVISION_TOTAL_ID}
         synthetic={synthetic}
       />
 

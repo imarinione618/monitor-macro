@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { readSeriesData } from '@/core/store';
-import { buildSnapshotModel } from '@/web/lib/chartModel';
+import { renderSvgString } from '@/web/lib/exportRender';
+import { buildWaterfallModel, exportWaterfallOption, waterfallCsv } from '@/web/lib/ipcWaterfall';
 import { buildIpcDivisionContributions, DIVISION_TOTAL_ID, divisionContributionId, IPC_DIVISION_WEIGHTS, IPC_GENERAL } from '@/web/lib/ipcContributions';
 import { buildSourceLine } from '@/web/lib/meta';
 import type { ClientSeries } from '@/web/lib/types';
@@ -32,14 +33,29 @@ describe('incidencias del IPC por división', () => {
     expect(buildSourceLine(out, 'level')).toBe('Fuente: one618 en base a INDEC.');
   });
 
-  it('el gráfico de barras pone la inflación del mes primero y ordena las divisiones de mayor a menor', () => {
-    const subs = IPC_DIVISION_WEIGHTS.map(({ key }, i) => fakeSeries(divId(key), '2026-01', '2026-02', (t) => 100 + t * i));
-    const ng = fakeSeries(IPC_GENERAL, '2026-01', '2026-02', (t) => IPC_DIVISION_WEIGHTS.reduce((a, d, i) => a + d.weight * (100 + t * i), 0));
-    const snap = buildSnapshotModel(buildIpcDivisionContributions([ng, ...subs]), 'level', null, DIVISION_TOTAL_ID)!;
-    expect(snap.period).toBe('2026-02');
-    expect(snap.rows[0]!.id).toBe(DIVISION_TOTAL_ID);
-    const rest = snap.rows.slice(1).map((r) => r.value!);
-    expect(rest).toEqual([...rest].sort((a, b) => b - a));
+  it('cascada: divisiones de mayor a menor, cada una parte del acumulado previo y cierra en la inflación del mes', () => {
+    // Una división con caída de precios (i = 0 → −1 por mes) para probar incidencias negativas.
+    const subs = IPC_DIVISION_WEIGHTS.map(({ key }, i) => fakeSeries(divId(key), '2026-01', '2026-02', (t) => 100 + t * (i - 1)));
+    const ng = fakeSeries(IPC_GENERAL, '2026-01', '2026-02', (t) => IPC_DIVISION_WEIGHTS.reduce((a, d, i) => a + d.weight * (100 + t * (i - 1)), 0));
+    const model = buildWaterfallModel(buildIpcDivisionContributions([ng, ...subs]), DIVISION_TOTAL_ID, null)!;
+    expect(model.period).toBe('2026-02');
+    expect(model.steps).toHaveLength(13);
+    const last = model.steps.at(-1)!;
+    expect(last.isTotal && last.start === 0 && last.id === DIVISION_TOTAL_ID).toBe(true);
+    const parts = model.steps.slice(0, -1);
+    expect(parts.map((s) => s.value!)).toEqual(parts.map((s) => s.value!).sort((a, b) => b - a));
+    let cum = 0;
+    for (const s of parts) {
+      expect(s.start).toBeCloseTo(cum, 12);
+      cum += s.value!;
+    }
+    expect(parts.at(-1)!.value!).toBeLessThan(0);
+    expect(model.residual!).toBeCloseTo(0, 10);
+    expect(last.value!).toBeCloseTo(cum, 10);
+    const csv = waterfallCsv(model);
+    expect(csv).toContain('Inflación del mes;2026-02;');
+    const svg = renderSvgString(exportWaterfallOption({ model, exportMeta: { title: 'Incidencia', subtitle: 'p.p.', source: 'Fuente: one618 en base a INDEC.' } }));
+    expect(svg).toContain('Inflación del mes');
   });
 
   it('sin nivel general no se calcula nada', () => {
