@@ -81,6 +81,8 @@ describe('opciones de exportación', () => {
     expect(t.textStyle.fontSize).toBeCloseTo(pt(12));
     expect(t.subtextStyle.fontSize).toBeCloseTo(pt(10));
     expect(t.textStyle.fontFamily).toMatch(/^Arial/);
+    expect(t.textStyle.fontWeight).toBe('normal'); // título sin negrita
+    expect(t.subtextStyle.fontWeight ?? 'normal').toBe('normal');
     const o = opt as Record<string, any>;
     expect(o.textStyle.fontFamily).toMatch(/^Arial/);
     expect(o.textStyle.fontSize).toBeCloseTo(pt(7));

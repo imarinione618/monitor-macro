@@ -57,7 +57,7 @@ export function exportHeaderHeight(title: string, subtitle: string): number {
   return EXPORT_PAD + estimateLines(title, w, EXPORT_FONT.title) * LINE.title + sub + 6;
 }
 
-/** Título y subtítulo centrados (12 pt / 10 pt). */
+/** Título y subtítulo centrados (12 pt / 10 pt), sin negrita. */
 export function exportTitle(title: string, subtitle: string, theme: ChartTheme) {
   const width = innerWidth();
   return {
@@ -68,7 +68,7 @@ export function exportTitle(title: string, subtitle: string, theme: ChartTheme) 
     top: EXPORT_PAD,
     textAlign: 'center',
     itemGap: TITLE_GAP,
-    textStyle: { color: theme.text, fontSize: EXPORT_FONT.title, lineHeight: LINE.title, fontWeight: 'bold', fontFamily: EXPORT_FONT_FAMILY, width, overflow: 'break', align: 'center' },
+    textStyle: { color: theme.text, fontSize: EXPORT_FONT.title, lineHeight: LINE.title, fontWeight: 'normal', fontFamily: EXPORT_FONT_FAMILY, width, overflow: 'break', align: 'center' },
     subtextStyle: { color: theme.textSecondary, fontSize: EXPORT_FONT.subtitle, lineHeight: LINE.subtitle, fontFamily: EXPORT_FONT_FAMILY, width, overflow: 'break', align: 'center' },
   };
 }
