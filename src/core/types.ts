@@ -13,13 +13,14 @@
 
 // ---------------------------------------------------------------- Básicos
 
-export type Topic = 'actividad' | 'laboral' | 'precios' | 'comex' | 'fiscal';
+export type Topic = 'actividad' | 'laboral' | 'precios' | 'comex' | 'cambiario' | 'fiscal';
 
 export const TOPIC_LABELS: Record<Topic, string> = {
   actividad: 'Actividad',
   laboral: 'Mercado laboral',
   precios: 'Precios',
   comex: 'Comercio exterior',
+  cambiario: 'Balance cambiario',
   fiscal: 'Fiscal',
 };
 

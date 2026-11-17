@@ -20,7 +20,7 @@ import { buildSourceLine, collectNotes, lastPeriodsLine, seriesNotices } from '@
 import { assignColorSlots, MAX_SERIES } from '@/web/lib/palette';
 import { RANGE_LABELS, type ChartKind, type ClientSeries, type RangeId } from '@/web/lib/types';
 import { ChartToolbar, Notices, SourceFooter } from './ChartParts';
-import { Segmented, Select } from './controls';
+import { PeriodRange, Segmented, Select } from './controls';
 import { EChart, useChartTheme, useElementWidth } from './EChart';
 
 export interface ChartPanelProps {
@@ -52,7 +52,7 @@ export interface ChartPanelProps {
   defaultValuation?: 'nominal' | 'real';
 }
 
-const RANGE_IDS: RangeId[] = ['12m', '24m', '5y', 'all'];
+const RANGE_IDS: RangeId[] = ['12m', '24m', '5y', 'all', 'custom'];
 
 export function ChartPanel(props: ChartPanelProps) {
   const {
@@ -89,6 +89,7 @@ export function ChartPanel(props: ChartPanelProps) {
   const [adjustment, setAdjustment] = useState<SeasonalAdjustment | null>(defaultAdjustment ?? null);
   const [transform, setTransform] = useState<TransformId>(defaultTransform);
   const [range, setRange] = useState<RangeId>(defaultRange);
+  const [custom, setCustom] = useState<{ from: Period | null; to: Period | null }>({ from: null, to: null });
   const [basePeriod, setBasePeriod] = useState<Period | null>(null);
   const [showTable, setShowTable] = useState(false);
 
@@ -116,10 +117,19 @@ export function ChartPanel(props: ChartPanelProps) {
   const transformSwapped = effTransform !== null && effTransform !== transform;
 
   const model = useMemo(
-    () => (effTransform ? buildChartModel({ series: resolvedSeries, transform: effTransform, range, basePeriod }) : null),
+    () => (effTransform ? buildChartModel({ series: resolvedSeries, transform: effTransform, range, custom, basePeriod }) : null),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [resolvedSeries.map((s) => s.def.id).join(','), effTransform, range, basePeriod, pool],
+    [resolvedSeries.map((s) => s.def.id).join(','), effTransform, range, custom, basePeriod, pool],
   );
+  // Desde / Hasta: muestran el tramo visible; al cambiarlos el rango pasa a «Personalizado».
+  const avail = model?.availablePeriods ?? [];
+  const clampTo = (p: Period | null | undefined, fallback: Period | undefined) => (p && avail.includes(p) ? p : fallback) ?? '';
+  const shownFrom = range === 'custom' ? clampTo(custom.from, avail[0]) : (model?.periods[0] ?? avail[0] ?? '');
+  const shownTo = range === 'custom' ? clampTo(custom.to, avail.at(-1)) : (model?.periods.at(-1) ?? avail.at(-1) ?? '');
+  const chooseRange = (r: RangeId) => {
+    if (r === 'custom') setCustom({ from: shownFrom || null, to: shownTo || null });
+    setRange(r);
+  };
 
   const colorSlots = useMemo(() => {
     const out: Record<string, number> = {};
@@ -165,7 +175,17 @@ export function ChartPanel(props: ChartPanelProps) {
       </header>
 
       <div className="controls">
-        <Segmented label="Rango" value={range} options={RANGE_IDS.map((r) => ({ value: r, label: RANGE_LABELS[r] }))} onChange={setRange} />
+        <Segmented label="Rango" value={range} options={RANGE_IDS.map((r) => ({ value: r, label: RANGE_LABELS[r] }))} onChange={chooseRange} />
+        <PeriodRange
+          periods={avail}
+          from={shownFrom}
+          to={shownTo}
+          format={formatPeriodLong}
+          onChange={(from, to) => {
+            setCustom({ from, to });
+            setRange('custom');
+          }}
+        />
         {realOf && Object.keys(realOf).length > 0 && (
           <Segmented
             label="Valores"

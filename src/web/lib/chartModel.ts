@@ -180,6 +180,8 @@ export interface ChartModel {
   unit: string;
   /** Períodos visibles (rango aplicado, continuos). */
   periods: Period[];
+  /** Toda la historia con datos para esta transformación (opciones de Desde / Hasta). */
+  availablePeriods: Period[];
   columns: ChartColumn[];
   /** Períodos elegibles como base 100 (todas las series con dato positivo). */
   baseCandidates: Period[];
@@ -201,8 +203,14 @@ export function toSeriesData(s: ClientSeries): SeriesData {
   };
 }
 
-/** Índices [start, end] del rango visible sobre una grilla continua de períodos. */
-export function visibleWindow(values: (number | null)[][], frequency: Frequency, range: RangeId): [number, number] | null {
+/** Fechas elegidas para el rango 'custom' (períodos canónicos; null = sin límite). */
+export interface CustomRange {
+  from?: Period | null;
+  to?: Period | null;
+}
+
+/** Índices [first, last] de la grilla con algún valor (toda la historia disponible). */
+function dataBounds(values: (number | null)[][]): [number, number] | null {
   const n = values[0]?.length ?? 0;
   const has = (i: number) => values.some((col) => col[i] !== null && col[i] !== undefined);
   let last = -1;
@@ -210,6 +218,30 @@ export function visibleWindow(values: (number | null)[][], frequency: Frequency,
   if (last < 0) return null;
   let first = 0;
   while (first < last && !has(first)) first++;
+  return [first, last];
+}
+
+/**
+ * Índices [start, end] del rango visible sobre una grilla continua de períodos.
+ * 'custom' recorta a [from, to] dentro de los datos disponibles (comparación por calendario).
+ */
+export function visibleWindow(
+  values: (number | null)[][],
+  frequency: Frequency,
+  range: RangeId,
+  periods: Period[] = [],
+  custom: CustomRange = {},
+): [number, number] | null {
+  const bounds = dataBounds(values);
+  if (!bounds) return null;
+  const [first, last] = bounds;
+  if (range === 'custom') {
+    let start = first;
+    let end = last;
+    if (custom.from) while (start <= end && periods[start]! < custom.from) start++;
+    if (custom.to) while (end >= start && periods[end]! > custom.to) end--;
+    return start <= end ? [start, end] : null;
+  }
   const years = RANGE_YEARS[range];
   const start = years === null ? first : Math.max(first, last - years * PERIODS_PER_YEAR[frequency] + 1);
   return [start, last];
@@ -219,11 +251,13 @@ export interface BuildChartModelInput {
   series: ClientSeries[];
   transform: TransformId;
   range: RangeId;
+  /** Desde / Hasta para range = 'custom'. */
+  custom?: CustomRange;
   /** Para rebase_100. null = primer período visible. */
   basePeriod?: Period | null;
 }
 
-export function buildChartModel({ series, transform, range, basePeriod = null }: BuildChartModelInput): ChartModel | null {
+export function buildChartModel({ series, transform, range, custom = {}, basePeriod = null }: BuildChartModelInput): ChartModel | null {
   const usable = series.filter((s) => !s.missing);
   if (!usable.length) return null;
   const defs = new Map(usable.map((s) => [s.def.id, s.def]));
@@ -239,8 +273,8 @@ export function buildChartModel({ series, transform, range, basePeriod = null }:
   if (transform === 'rebase_100') {
     const lvl = buildWideTable(usable.map((s) => ({ seriesId: s.def.id, transform: 'level' })), getDef, getData);
     baseCandidates = lvl.periods.filter((_, i) => lvl.values.every((col) => (col[i] ?? null) !== null && col[i]! > 0));
-    const win = visibleWindow(lvl.values, freq, range);
-    if (!win || !baseCandidates.length) return emptyModel(freq, transform, usable);
+    const win = visibleWindow(lvl.values, freq, range, lvl.periods, custom);
+    if (!win || !baseCandidates.length) return emptyModel(freq, transform, usable, availablePeriods(lvl.periods, lvl.values));
     const visible = new Set(lvl.periods.slice(win[0], win[1] + 1));
     chosenBase =
       basePeriod && baseCandidates.includes(basePeriod) ? basePeriod : (baseCandidates.find((p) => visible.has(p)) ?? baseCandidates[0]!);
@@ -250,8 +284,9 @@ export function buildChartModel({ series, transform, range, basePeriod = null }:
     table = buildWideTable(usable.map((s) => ({ seriesId: s.def.id, transform })), getDef, getData);
   }
 
-  const win = visibleWindow(table.values, freq, range);
-  if (!win) return emptyModel(freq, transform, usable);
+  const available = availablePeriods(table.periods, table.values);
+  const win = visibleWindow(table.values, freq, range, table.periods, custom);
+  if (!win) return emptyModel(freq, transform, usable, available);
   const [a, b] = win;
   const unit = table.columns[0]!.unit;
   return {
@@ -260,6 +295,7 @@ export function buildChartModel({ series, transform, range, basePeriod = null }:
     transformLabel: transformLabel(transform, freq),
     unit,
     periods: table.periods.slice(a, b + 1),
+    availablePeriods: available,
     columns: table.columns.map((c, i) => {
       const def = getDef(c.seriesId);
       return {
@@ -276,13 +312,20 @@ export function buildChartModel({ series, transform, range, basePeriod = null }:
   };
 }
 
-function emptyModel(freq: Frequency, transform: TransformId, usable: ClientSeries[]): ChartModel {
+/** Períodos entre el primero y el último con algún valor (opciones de Desde / Hasta). */
+function availablePeriods(periods: Period[], values: (number | null)[][]): Period[] {
+  const b = dataBounds(values);
+  return b ? periods.slice(b[0], b[1] + 1) : [];
+}
+
+function emptyModel(freq: Frequency, transform: TransformId, usable: ClientSeries[], available: Period[] = []): ChartModel {
   return {
     frequency: freq,
     transform,
     transformLabel: transformLabel(transform, freq),
     unit: transformedUnit(usable[0]!.def, transform),
     periods: [],
+    availablePeriods: available,
     columns: [],
     baseCandidates: [],
     basePeriod: null,

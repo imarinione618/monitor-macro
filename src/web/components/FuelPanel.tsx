@@ -21,8 +21,10 @@ const PRODUCTS: { value: FuelProduct; label: string }[] = [
 ];
 type Kind = 'surtidor' | 'eess';
 type Measure = 'level' | 'pct_yoy';
-type Range = '1y' | '3y' | 'all';
+type Range = '1y' | '3y' | 'all' | 'custom';
 const SOURCE = 'Fuente: one618 en base a Secretaría de Energía.';
+/** Período (AAAA-MM-DD o AAAA-MM) → valor de <input type="date">. */
+const toIso = (p: string | undefined) => (!p ? '' : p.length === 7 ? `${p}-01` : p);
 const toTime = (d: string) => Date.UTC(Number(d.slice(0, 4)), Number(d.slice(5, 7)) - 1, Number(d.length > 7 ? d.slice(8, 10) : 1));
 
 interface Col { product: FuelProduct; label: string; series: FuelSeries; points: Point[]; n: Map<string, number | undefined> }
@@ -72,6 +74,8 @@ export function FuelPanel({ series }: { series: FuelSeries[] }) {
   const [products, setProducts] = useState<FuelProduct[]>(['super', 'gasoil_g2']);
   const [measure, setMeasure] = useState<Measure>('level');
   const [range, setRange] = useState<Range>('3y');
+  const [customFrom, setCustomFrom] = useState('');
+  const [customTo, setCustomTo] = useState('');
   const [showTable, setShowTable] = useState(false);
   const daily = kind === 'surtidor';
 
@@ -81,9 +85,11 @@ export function FuelPanel({ series }: { series: FuelSeries[] }) {
     const raw: Point[] = s.observations.map((o) => [o.date, o.value]);
     const tr = measure === 'level' ? raw : transform(raw, daily ? 'D' : 'M', 'pct_yoy');
     const last = s.observations.at(-1)?.date ?? '';
-    const from = range === 'all' || !last ? '' : `${Number(last.slice(0, 4)) - (range === '1y' ? 1 : 3)}${last.slice(4)}`;
-    return [{ product, label: PRODUCTS.find((p) => p.value === product)!.label, series: s, points: tr.filter(([p]) => !from || p > from), n: new Map(s.observations.map((o) => [o.date, o.n])) }];
-  }), [series, products, kind, scope, measure, range, daily]);
+    const from = range === 'all' || range === 'custom' || !last ? '' : `${Number(last.slice(0, 4)) - (range === '1y' ? 1 : 3)}${last.slice(4)}`;
+    // Personalizado: fechas AAAA-MM-DD; en la serie mensual se compara el mes (AAAA-MM).
+    const inCustom = (p: string) => range !== 'custom' || ((!customFrom || p >= customFrom.slice(0, p.length)) && (!customTo || p <= customTo.slice(0, p.length)));
+    return [{ product, label: PRODUCTS.find((p) => p.value === product)!.label, series: s, points: tr.filter(([p]) => (!from || p > from) && inCustom(p)), n: new Map(s.observations.map((o) => [o.date, o.n])) }];
+  }), [series, products, kind, scope, measure, range, daily, customFrom, customTo]);
 
   const unit = measure === 'level' ? '$ por litro' : '%';
   const all = cols.flatMap((c) => c.points.map(([p]) => p)).sort();
@@ -111,7 +117,14 @@ export function FuelPanel({ series }: { series: FuelSeries[] }) {
         <Segmented label="Serie" value={kind} options={[{ value: 'surtidor', label: 'Diaria' }, { value: 'eess', label: 'Mensual ponderada' }]} onChange={setKind} />
         <Segmented label="Ámbito" value={scope} options={[{ value: 'nacional', label: 'Total país' }, { value: 'caba', label: 'CABA' }]} onChange={setScope} />
         <Segmented label="Medida" value={measure} options={[{ value: 'level', label: '$ por litro' }, { value: 'pct_yoy', label: 'Var. % i.a.' }]} onChange={setMeasure} />
-        <Segmented label="Rango" value={range} options={[{ value: '1y', label: '1 año' }, { value: '3y', label: '3 años' }, { value: 'all', label: 'Toda la historia' }]} onChange={setRange} />
+        <Segmented label="Rango" value={range} options={[{ value: '1y', label: '1 año' }, { value: '3y', label: '3 años' }, { value: 'all', label: 'Toda la historia' }, { value: 'custom', label: 'Personalizado' }]} onChange={(r) => {
+          if (r === 'custom' && !customFrom && !customTo) { setCustomFrom(toIso(all[0])); setCustomTo(toIso(all.at(-1))); }
+          setRange(r);
+        }} />
+        <div className="ctl-pair">
+          <div className="ctl"><label className="ctl-label" htmlFor={`${uid}-from`}>Desde</label><input id={`${uid}-from`} type="date" value={range === 'custom' ? customFrom : toIso(all[0])} max={customTo || undefined} onChange={(e) => { setCustomFrom(e.target.value); if (range !== 'custom') setCustomTo(toIso(all.at(-1))); setRange('custom'); }} /></div>
+          <div className="ctl"><label className="ctl-label" htmlFor={`${uid}-to`}>Hasta</label><input id={`${uid}-to`} type="date" value={range === 'custom' ? customTo : toIso(all.at(-1))} min={customFrom || undefined} onChange={(e) => { setCustomTo(e.target.value); if (range !== 'custom') setCustomFrom(toIso(all[0])); setRange('custom'); }} /></div>
+        </div>
       </div>
       <fieldset className="ctl picker"><legend>Productos</legend><div className="picker-row">{PRODUCTS.map((p) => {
         const on = products.includes(p.value);

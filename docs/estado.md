@@ -74,6 +74,18 @@ Publicación inicial completada el 2026-11-04:
 - Margen derecho de 28 px en el área de trazado: la última fecha del eje X ya no se corta.
 - La vista en pantalla no cambia. Validación: 1280 pruebas aprobadas, TypeScript y build estático OK; exportaciones renderizadas e inspeccionadas visualmente (líneas, apiladas, corte, doble eje, título largo en dos líneas).
 
+### Rango de fechas personalizado — 2026-11-17
+
+- Todos los gráficos de series (INDEC, Fiscal, consumo, Balance cambiario…) suman «Personalizado» a los botones de rango y dos selectores **Desde / Hasta** con cualquier período de la historia disponible para la transformación elegida. Muestran el tramo visible; al cambiarlos el rango pasa a «Personalizado». Lo mismo en Agregados/PIB (trimestres) y Combustibles (fechas).
+- Solo cambia la ventana: los valores son los de «Todo» (las transformaciones se calculan sobre la serie completa, p. ej. la suma de 12 meses del primer mes visible usa los 11 anteriores). Implementación: `visibleWindow`/`availablePeriods` en `src/web/lib/chartModel.ts`, control `PeriodRange` en `src/web/components/controls.tsx`. Pruebas en `tests/web/custom-range.test.ts`.
+
+### Balance cambiario (BCRA vía datos.gob.ar) — 2026-11-17
+
+- Nueva sección `/cambiario` (menú «Balance cambiario»). Fuente: CSV del catálogo SSPM de datos.gob.ar, datasets **182.1** (balance cambiario), **184.1** (cobros y pagos por bienes por sector) y **185.1** (cobros y pagos por tipo de servicio). Mensual, millones de USD, desde enero de 2003; último dato publicado en datos.gob.ar: agosto de 2026. 127 series (`src/core/registry/cambiario.ts`, tema `cambiario`), dentro de `npm run data:refresh` como las demás fuentes externas. **Solo dashboard** (no va a Sheets).
+- Contenido: cuadro de mes / acumulado / 12 meses con diferencia interanual; resultado (cuenta corriente + capital y financiera + no informado = variación de reservas por transacciones, apiladas); variación de reservas (transacciones, ajuste por pase y valuación, contable); cuenta corriente por componente; cobros y pagos brutos; cuenta capital y financiera por concepto; FAE de personas humanas y empresas (compras, ventas y neto); intereses, utilidades y dividendos; cortes por sector (bienes) y por tipo (servicios) con evolución.
+- Signos publicados por el BCRA (positivo = ingreso neto de divisas). Ceros publicados (meses sin operaciones) se conservan como dato; «Concepto no informado» existe desde jul-2017 y «Otros servicios» desde sep-2016 (antes, vacío).
+- Identidades verificadas en toda la historia (`tests/validation/cambiario-identities.test.ts`). El total de la apertura por sector (184.1) difiere levemente del cobro/pago del balance (182.1) en 2003–2012 y en oct-2025: se aclara en la nota de la serie.
+
 ## Actualización programada
 - **Manual 2026-11-17:** el 16/11 fallaron IDECBA (IPCBA y restaurantes, `fetch failed` en ambos intentos) y Combustibles (surtidor Res. 314, `fetch failed`); se conservaron los últimos datos. Corrida manual completa (`scripts/update.ps1`) el 17/11 a las 09:41: 307/307 series OK, BCRA 85/85, surtidor actualizado hasta 13/11, Sheets OK, push OK — **Fin OK**.
 - **Activa y verificada:** tarea de Windows "MonitorMacroAR - Actualizacion", diaria a las **12:00** (hora de Buenos Aires).

@@ -461,6 +461,12 @@ h3 {
   color: var(--text);
   max-width: 100%;
 }
+.ctl-pair {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-start;
+}
 .ctl-hint {
   font-size: 0.8rem;
   color: var(--muted);

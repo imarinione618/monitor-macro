@@ -32,16 +32,18 @@ export interface ClientSeries {
   sources: SourceRef[];
 }
 
-export type RangeId = '12m' | '24m' | '5y' | 'all';
+/** 'custom' = fechas elegidas por el usuario (Desde / Hasta). */
+export type RangeId = '12m' | '24m' | '5y' | 'all' | 'custom';
 
 export const RANGE_LABELS: Record<RangeId, string> = {
   '12m': '12 meses',
   '24m': '24 meses',
   '5y': '5 años',
   all: 'Todo',
+  custom: 'Personalizado',
 };
 
-/** Años cubiertos por cada rango (null = todo). */
-export const RANGE_YEARS: Record<RangeId, number | null> = { '12m': 1, '24m': 2, '5y': 5, all: null };
+/** Años cubiertos por cada rango (null = todo, o fechas elegidas en 'custom'). */
+export const RANGE_YEARS: Record<RangeId, number | null> = { '12m': 1, '24m': 2, '5y': 5, all: null, custom: null };
 
 export type ChartKind = 'line' | 'bar' | 'stacked';

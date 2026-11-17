@@ -27,6 +27,50 @@ export function Segmented<T extends string>({ label, value, options, onChange }:
   );
 }
 
+interface PeriodRangeProps {
+  /** Períodos disponibles, ascendentes (formato canónico: se comparan como texto). */
+  periods: string[];
+  from: string;
+  to: string;
+  format: (p: string) => string;
+  onChange: (from: string, to: string) => void;
+}
+
+/** Desde / Hasta sobre una lista de períodos: cualquier tramo de la historia disponible. */
+export function PeriodRange({ periods, from, to, format, onChange }: PeriodRangeProps) {
+  const id = useId();
+  if (!periods.length) return null;
+  const desc = [...periods].reverse();
+  return (
+    <div className="ctl-pair">
+      <div className="ctl">
+        <label htmlFor={`${id}-d`} className="ctl-label">
+          Desde
+        </label>
+        <select id={`${id}-d`} value={from} onChange={(e) => onChange(e.target.value, to < e.target.value ? e.target.value : to)}>
+          {desc.map((p) => (
+            <option key={p} value={p} disabled={p > to}>
+              {format(p)}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div className="ctl">
+        <label htmlFor={`${id}-h`} className="ctl-label">
+          Hasta
+        </label>
+        <select id={`${id}-h`} value={to} onChange={(e) => onChange(from > e.target.value ? e.target.value : from, e.target.value)}>
+          {desc.map((p) => (
+            <option key={p} value={p} disabled={p < from}>
+              {format(p)}
+            </option>
+          ))}
+        </select>
+      </div>
+    </div>
+  );
+}
+
 interface SelectProps<T extends string> {
   label: string;
   value: T;

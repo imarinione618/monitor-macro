@@ -71,9 +71,10 @@ describe.skipIf(!st.ok)('store real — invariantes', () => {
 
       it('rango económico plausible según la naturaleza de la serie', () => {
         const vals = load(def.id).observations.map((o) => o.value).filter((v): v is number => v !== null);
-        // Partidas fiscales (IMIG): la fuente publica ceros (sin ejecución en el mes) y netos negativos.
-        if (def.topic === 'fiscal') {
-          expect(vals.every((v) => Number.isFinite(v)), 'valores fiscales finitos').toBe(true);
+        // Partidas fiscales (IMIG) y balance cambiario (BCRA): la fuente publica ceros (sin operaciones en el mes)
+        // y netos o correcciones negativas; son datos publicados, no faltantes.
+        if (def.topic === 'fiscal' || def.topic === 'cambiario') {
+          expect(vals.every((v) => Number.isFinite(v)), 'valores finitos').toBe(true);
         } else if (def.measure === 'index' || def.measure === 'flow' || def.measure === 'price_level') {
           expect(vals.filter((v) => v <= 0), 'índices, flujos y canastas deben ser > 0 (sin ceros espurios)').toEqual([]);
         }

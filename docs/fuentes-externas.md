@@ -1,4 +1,4 @@
-# Fuentes externas, Fiscal, agregados/PIB y Laboratorio
+# Fuentes externas, Fiscal, Balance cambiario, agregados/PIB y Laboratorio
 
 _Incorporado el 2026-11-06. Todo lo de este documento es **solo dashboard**: nada se escribe en Google Sheets._
 
@@ -11,6 +11,7 @@ _Incorporado el 2026-11-06. Todo lo de este documento es **solo dashboard**: nad
 | `sspm.supermercados` / `mayoristas` / `shoppings` | INDEC | CSV 455.1, 456.1, 458.1 | Mensual | Actividad (consumo) |
 | `sspm.imig` | Secretaría de Hacienda | CSV 452.3 (IMIG) | Mensual | Fiscal |
 | `sspm.aif` | Secretaría de Hacienda | CSV 379.9 (AIF, metodología 2017) | Mensual | Reservado (no usado aún) |
+| `sspm.balance_cambiario` / `bc_bienes_sector` / `bc_servicios_tipo` | BCRA | CSV 182.1, 184.1, 185.1 | Mensual | Balance cambiario |
 | `idecba.ipcba` | IDECBA | XLSX del banco de datos (URL resuelta por slug) | Mensual | Precios (IPCBA) |
 | `idecba.restaurantes` | IDECBA | XLSX `EE_indice_actividad_restaurante` | Mensual | Actividad (restaurantes CABA) |
 | Combustibles (`src/combustibles/`) | Secretaría de Energía | Res. 314/2016 (diaria) y Res. 1104/04 (mensual) | Diaria / mensual | Precios — ver [combustibles.md](combustibles.md) |
@@ -25,6 +26,15 @@ _Incorporado el 2026-11-06. Todo lo de este documento es **solo dashboard**: nad
 - **PIB y componentes:** niveles trimestrales **anualizados** (el anual es el promedio de 4 trimestres, no la suma). t/t solo sobre desestacionalizada. Discrepancia estadística: ceros previos a 2024-T1 → null. Shoppings: la metadata dice «miles», los valores están en millones.
 - **IPCBA:** base 2021=100; nivel general empalmado desde 2012-07; 13 divisiones COICOP 2018 (no 1:1 con el IPC INDEC).
 - **Restaurantes CABA:** índice de volumen (cubiertos), solo restaurantes tradicionales, sin desestacionalizar (usar i.a.), sin dato abr–oct 2020.
+
+## Balance cambiario (BCRA)
+
+- **Fuente:** «Evolución del mercado de cambios y balance cambiario» del BCRA, publicado en datos.gob.ar (datasets 182, 184 y 185 del catálogo SSPM). [Metodología del BCRA](https://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Metodologia-del-balance-cambiario.pdf).
+- **Qué mide:** operaciones cursadas en el mercado de cambios y movimientos de reservas, base caja. **No es la balanza de pagos del INDEC** (devengado, todas las transacciones con el exterior); en particular, cobros/pagos de bienes ≠ exportaciones/importaciones.
+- **Signos:** los publicados (positivo = ingreso neto de divisas). Saldos → `measure: 'balance'` (diferencias absolutas); cobros y pagos brutos → `flow`.
+- **Identidades** (verificadas en toda la historia): cuenta corriente + cuenta capital y financiera + concepto no informado = variación de reservas por transacciones; + ajuste por tipo de pase y valuación = variación contable; bienes + servicios + ingreso primario + ingreso secundario = cuenta corriente; los 12 conceptos financieros + cuenta de capital = cuenta capital y financiera (redondeo ≤ 1 millón).
+- **Ceros:** son datos publicados (meses sin operaciones, p. ej. FMI), no faltantes. «Concepto no informado» empieza en jul-2017 y «Otros servicios» en sep-2016: los ceros previos se tratan como vacío (`zeroAsNullBefore`).
+- **Sectores:** actividad principal del cliente declarada ante ARCA, no el producto.
 
 ## Fiscal
 

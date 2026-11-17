@@ -36,6 +36,8 @@ const sspm = (id: string, distribution: string, file: string, title: string, pro
 
 const INDEC_SSPM = 'INDEC (vía datos.gob.ar, Series de Tiempo)';
 const HACIENDA_SSPM = 'Secretaría de Hacienda (vía datos.gob.ar, Series de Tiempo)';
+const BCRA_SSPM = 'BCRA (vía datos.gob.ar, Series de Tiempo)';
+const BC_METHOD = 'https://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Metodologia-del-balance-cambiario.pdf';
 
 export const FEEDS: Record<string, FeedConfig> = Object.fromEntries(([
   sspm('sspm.oyd_constantes', '4.2', 'oferta-demanda-globales-precios-2004-valores-trimestrales-base-2004.csv', 'Oferta y demanda globales, precios de 2004', 'INDEC', INDEC_SSPM, 'Q', 'https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-9-47'),
@@ -48,6 +50,9 @@ export const FEEDS: Record<string, FeedConfig> = Object.fromEntries(([
   sspm('sspm.mayoristas', '456.1', 'ventas-totales-autoservicios-mayoristas.csv', 'Encuesta de autoservicios mayoristas', 'INDEC', INDEC_SSPM, 'M', 'https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-1-34'),
   sspm('sspm.shoppings', '458.1', 'ventas-totales-nacionales-centros-compras-valores-mensuales.csv', 'Encuesta de centros de compras', 'INDEC', INDEC_SSPM, 'M', 'https://www.indec.gob.ar/indec/web/Nivel4-Tema-3-1-34'),
   sspm('sspm.imig', '452.3', 'imig-mensual.csv', 'Informe mensual de ingresos y gastos del SPN (IMIG), base caja', 'Secretaría de Hacienda', HACIENDA_SSPM, 'M', 'https://www.argentina.gob.ar/economia/sechacienda/informemensual'),
+  sspm('sspm.balance_cambiario', '182.1', 'balance-cambiario.csv', 'Balance cambiario', 'BCRA', BCRA_SSPM, 'M', BC_METHOD),
+  sspm('sspm.bc_bienes_sector', '184.1', 'cobros-pagos-bienes-sectorial.csv', 'Balance cambiario: cobros y pagos por bienes por sector', 'BCRA', BCRA_SSPM, 'M', BC_METHOD),
+  sspm('sspm.bc_servicios_tipo', '185.1', 'cobros-pagos-bienes-servicios.csv', 'Balance cambiario: cobros y pagos por tipo de servicio', 'BCRA', BCRA_SSPM, 'M', BC_METHOD),
   sspm('sspm.aif', '379.9', 'sector-publico-nacional-valores-mensuales-17.csv', 'Esquema Ahorro-Inversión-Financiamiento del SPN, base caja (metodología 2017)', 'Secretaría de Hacienda', HACIENDA_SSPM, 'M', 'https://www.mecon.gob.ar/onp/html/'),
   { id: 'idecba.ipcba', kind: 'idecba_ipcba', title: 'Índice de Precios al Consumidor de la Ciudad de Buenos Aires (IPCBA)', producer: 'IDECBA', sourceLabel: 'IDECBA', frequency: 'M', url: 'https://www.estadisticaciudad.gob.ar/eyc/?cat=93', methodologyUrl: 'https://www.estadisticaciudad.gob.ar/eyc/?cat=93' },
   { id: 'idecba.restaurantes', kind: 'idecba_restaurantes', title: 'Actividad en restaurantes tradicionales de la Ciudad de Buenos Aires (EREST)', producer: 'IDECBA', sourceLabel: 'IDECBA', frequency: 'M', url: 'https://www.estadisticaciudad.gob.ar/eyc/' },

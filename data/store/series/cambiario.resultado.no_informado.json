@@ -1,0 +1,454 @@
+{
+ "id": "cambiario.resultado.no_informado",
+ "observations": [
+  {
+   "period": "2017-07",
+   "value": 446.1289
+  },
+  {
+   "period": "2017-08",
+   "value": 467.1523
+  },
+  {
+   "period": "2017-09",
+   "value": 426.7143
+  },
+  {
+   "period": "2017-10",
+   "value": 513.8829
+  },
+  {
+   "period": "2017-11",
+   "value": 588.7575
+  },
+  {
+   "period": "2017-12",
+   "value": 776.4531
+  },
+  {
+   "period": "2018-01",
+   "value": 465.6745
+  },
+  {
+   "period": "2018-02",
+   "value": 414.1571
+  },
+  {
+   "period": "2018-03",
+   "value": 543.3117
+  },
+  {
+   "period": "2018-04",
+   "value": 510.2151
+  },
+  {
+   "period": "2018-05",
+   "value": 471.1272
+  },
+  {
+   "period": "2018-06",
+   "value": 440.2491
+  },
+  {
+   "period": "2018-07",
+   "value": 507.1915
+  },
+  {
+   "period": "2018-08",
+   "value": 489.2902
+  },
+  {
+   "period": "2018-09",
+   "value": 469.9321
+  },
+  {
+   "period": "2018-10",
+   "value": 578.7671
+  },
+  {
+   "period": "2018-11",
+   "value": 563.4763
+  },
+  {
+   "period": "2018-12",
+   "value": 700.9829
+  },
+  {
+   "period": "2019-01",
+   "value": 622.9933
+  },
+  {
+   "period": "2019-02",
+   "value": 495.1119
+  },
+  {
+   "period": "2019-03",
+   "value": 441.6335
+  },
+  {
+   "period": "2019-04",
+   "value": 438.6262
+  },
+  {
+   "period": "2019-05",
+   "value": 483.0828
+  },
+  {
+   "period": "2019-06",
+   "value": 611.5802
+  },
+  {
+   "period": "2019-07",
+   "value": 715.5545
+  },
+  {
+   "period": "2019-08",
+   "value": 517.8947
+  },
+  {
+   "period": "2019-09",
+   "value": 0.8682
+  },
+  {
+   "period": "2019-10",
+   "value": 0
+  },
+  {
+   "period": "2019-11",
+   "value": 0
+  },
+  {
+   "period": "2019-12",
+   "value": 0
+  },
+  {
+   "period": "2020-01",
+   "value": 0
+  },
+  {
+   "period": "2020-02",
+   "value": 0
+  },
+  {
+   "period": "2020-03",
+   "value": 0
+  },
+  {
+   "period": "2020-04",
+   "value": 0
+  },
+  {
+   "period": "2020-05",
+   "value": 0
+  },
+  {
+   "period": "2020-06",
+   "value": 0
+  },
+  {
+   "period": "2020-07",
+   "value": 0
+  },
+  {
+   "period": "2020-08",
+   "value": 0
+  },
+  {
+   "period": "2020-09",
+   "value": 0
+  },
+  {
+   "period": "2020-10",
+   "value": 0
+  },
+  {
+   "period": "2020-11",
+   "value": 0
+  },
+  {
+   "period": "2020-12",
+   "value": 0
+  },
+  {
+   "period": "2021-01",
+   "value": 0
+  },
+  {
+   "period": "2021-02",
+   "value": 0
+  },
+  {
+   "period": "2021-03",
+   "value": 0
+  },
+  {
+   "period": "2021-04",
+   "value": 0
+  },
+  {
+   "period": "2021-05",
+   "value": 0
+  },
+  {
+   "period": "2021-06",
+   "value": 0
+  },
+  {
+   "period": "2021-07",
+   "value": 0
+  },
+  {
+   "period": "2021-08",
+   "value": 0
+  },
+  {
+   "period": "2021-09",
+   "value": 0
+  },
+  {
+   "period": "2021-10",
+   "value": 0
+  },
+  {
+   "period": "2021-11",
+   "value": 0
+  },
+  {
+   "period": "2021-12",
+   "value": 0
+  },
+  {
+   "period": "2022-01",
+   "value": 0
+  },
+  {
+   "period": "2022-02",
+   "value": 0
+  },
+  {
+   "period": "2022-03",
+   "value": 0
+  },
+  {
+   "period": "2022-04",
+   "value": 0
+  },
+  {
+   "period": "2022-05",
+   "value": 0
+  },
+  {
+   "period": "2022-06",
+   "value": 0
+  },
+  {
+   "period": "2022-07",
+   "value": 0
+  },
+  {
+   "period": "2022-08",
+   "value": 0
+  },
+  {
+   "period": "2022-09",
+   "value": 0
+  },
+  {
+   "period": "2022-10",
+   "value": 0
+  },
+  {
+   "period": "2022-11",
+   "value": 0
+  },
+  {
+   "period": "2022-12",
+   "value": 0
+  },
+  {
+   "period": "2023-01",
+   "value": 0
+  },
+  {
+   "period": "2023-02",
+   "value": 0
+  },
+  {
+   "period": "2023-03",
+   "value": 0
+  },
+  {
+   "period": "2023-04",
+   "value": 0
+  },
+  {
+   "period": "2023-05",
+   "value": 0
+  },
+  {
+   "period": "2023-06",
+   "value": 0
+  },
+  {
+   "period": "2023-07",
+   "value": 0
+  },
+  {
+   "period": "2023-08",
+   "value": 0
+  },
+  {
+   "period": "2023-09",
+   "value": 0
+  },
+  {
+   "period": "2023-10",
+   "value": 0
+  },
+  {
+   "period": "2023-11",
+   "value": 0
+  },
+  {
+   "period": "2023-12",
+   "value": 0
+  },
+  {
+   "period": "2024-01",
+   "value": 0
+  },
+  {
+   "period": "2024-02",
+   "value": 0
+  },
+  {
+   "period": "2024-03",
+   "value": 0
+  },
+  {
+   "period": "2024-04",
+   "value": 0
+  },
+  {
+   "period": "2024-05",
+   "value": 0
+  },
+  {
+   "period": "2024-06",
+   "value": 0
+  },
+  {
+   "period": "2024-07",
+   "value": 0
+  },
+  {
+   "period": "2024-08",
+   "value": 0
+  },
+  {
+   "period": "2024-09",
+   "value": 0
+  },
+  {
+   "period": "2024-10",
+   "value": 0
+  },
+  {
+   "period": "2024-11",
+   "value": 0
+  },
+  {
+   "period": "2024-12",
+   "value": 0
+  },
+  {
+   "period": "2025-01",
+   "value": 0
+  },
+  {
+   "period": "2025-02",
+   "value": 0
+  },
+  {
+   "period": "2025-03",
+   "value": 0
+  },
+  {
+   "period": "2025-04",
+   "value": 0
+  },
+  {
+   "period": "2025-05",
+   "value": 0
+  },
+  {
+   "period": "2025-06",
+   "value": 0
+  },
+  {
+   "period": "2025-07",
+   "value": 0
+  },
+  {
+   "period": "2025-08",
+   "value": 0
+  },
+  {
+   "period": "2025-09",
+   "value": 0
+  },
+  {
+   "period": "2025-10",
+   "value": 0
+  },
+  {
+   "period": "2025-11",
+   "value": 0
+  },
+  {
+   "period": "2025-12",
+   "value": 0
+  },
+  {
+   "period": "2026-01",
+   "value": 0
+  },
+  {
+   "period": "2026-02",
+   "value": 0
+  },
+  {
+   "period": "2026-03",
+   "value": 0
+  },
+  {
+   "period": "2026-04",
+   "value": 0
+  },
+  {
+   "period": "2026-05",
+   "value": 0
+  },
+  {
+   "period": "2026-06",
+   "value": 0
+  },
+  {
+   "period": "2026-07",
+   "value": 0
+  },
+  {
+   "period": "2026-08",
+   "value": 0
+  }
+ ],
+ "meta": {
+  "firstPeriod": "2017-07",
+  "lastPeriod": "2026-08",
+  "retrievedAt": "2026-11-17T15:38:57.961Z",
+  "runId": "20261117T153857Z-eaa5",
+  "query": "https://infra.datos.gob.ar/catalog/sspm/dataset/182/distribution/182.1/download/balance-cambiario.csv",
+  "publishedAt": null,
+  "stale": false
+ }
+}

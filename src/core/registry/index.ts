@@ -10,9 +10,10 @@ import { COMEX, COMEX_NO_DISPONIBLE } from './comex';
 import { CUENTAS } from './cuentas';
 import { CABA } from './caba';
 import { FISCAL, FISCAL_CUADRO } from './fiscal';
+import { CAMBIARIO } from './cambiario';
 import { DATASETS } from '../datasets';
 
-export const SERIES: SeriesDef[] = [...ACTIVIDAD, ...CUENTAS, ...LABORAL, ...PRECIOS, ...COMEX, ...FISCAL, ...CABA];
+export const SERIES: SeriesDef[] = [...ACTIVIDAD, ...CUENTAS, ...LABORAL, ...PRECIOS, ...COMEX, ...FISCAL, ...CABA, ...CAMBIARIO];
 
 export { FISCAL_CUADRO };
 

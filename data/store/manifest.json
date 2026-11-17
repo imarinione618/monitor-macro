@@ -1,11 +1,11 @@
 {
  "schemaVersion": 1,
  "dataMode": "real",
- "generatedAt": "2026-11-17T15:00:13.749Z",
+ "generatedAt": "2026-11-17T15:38:58.850Z",
  "lastRun": {
-  "runId": "20261117T150007Z-dbac",
-  "startedAt": "2026-11-17T15:00:07.148Z",
-  "finishedAt": "2026-11-17T15:00:13.749Z",
+  "runId": "20261117T153857Z-eaa5",
+  "startedAt": "2026-11-17T15:38:57.551Z",
+  "finishedAt": "2026-11-17T15:38:58.850Z",
   "ok": true,
   "partial": false
  },
@@ -2314,6 +2314,895 @@
    "count": 140,
    "retrievedAt": "2026-11-17T15:00:13.548Z",
    "stale": false
+  },
+  "cambiario.resultado.cuenta_corriente": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.resultado.capital_financiera": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.resultado.no_informado": {
+   "firstPeriod": "2017-07",
+   "lastPeriod": "2026-08",
+   "count": 110,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.reservas.transacciones": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.reservas.ajuste": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.reservas.contable": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.cc.bienes": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.cc.servicios": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.cc.ingreso_primario": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.cc.ingreso_secundario": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.bienes.cobros": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.bienes.pagos": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.servicios.ingresos": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.servicios.egresos": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.ip.intereses": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.ip.utilidades": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.ip.intereses_fmi": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.ip.intereses_org_int": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.ip.intereses_gobierno": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.ip.intereses_otros": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.cf.fae_spnf": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.cf.inversion_directa": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.cf.portafolio": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.cf.prestamos": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.cf.fmi": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.cf.org_int": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.cf.sector_publico": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.cf.fae_financiero": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.cf.fae_publico": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.cf.titulos": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.cf.canje": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.cf.otros": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.cf.cuenta_capital": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.fae.egresos": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.fae.ingresos": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:57.961Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.total": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.oleaginosos_cerealeros": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.agro": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.alimentos": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.petroleo": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.gas": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.mineria": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.automotriz": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.quimica": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.metales": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.maquinarias": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.otras_manufacturas": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.textil": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.papel": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.minerales_no_metalicos": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.comercio": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.electricidad": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.construccion": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.transporte": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.comunicaciones": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.informatica": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.entidades_financieras": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.seguros": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.turismo": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.gastronomia": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.entretenimiento": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.agua": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.sector_publico": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.cobros.otros_spnf": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.total": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.oleaginosos_cerealeros": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.agro": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.alimentos": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.petroleo": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.gas": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.mineria": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.automotriz": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.quimica": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.metales": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.maquinarias": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.otras_manufacturas": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.textil": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.papel": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.minerales_no_metalicos": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.comercio": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.electricidad": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.construccion": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.transporte": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.comunicaciones": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.informatica": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.entidades_financieras": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.seguros": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.turismo": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.gastronomia": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.entretenimiento": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.agua": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.sector_publico": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.bienes_sector.pagos.otros_spnf": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.336Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.cobros.total": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.cobros.turismo_viajes": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.cobros.empresariales": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.cobros.fletes": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.cobros.pasajeros": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.cobros.otros_transporte": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.cobros.informatica": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.cobros.propiedad_intelectual": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.cobros.comunicaciones": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.cobros.financieros": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.cobros.seguros": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.cobros.comercio": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.cobros.personales": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.cobros.gobierno": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.cobros.construccion": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.cobros.arrendamiento": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.cobros.otros": {
+   "firstPeriod": "2016-09",
+   "lastPeriod": "2026-08",
+   "count": 120,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.pagos.total": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.pagos.turismo_viajes": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.pagos.empresariales": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.pagos.fletes": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.pagos.pasajeros": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.pagos.otros_transporte": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.pagos.informatica": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.pagos.propiedad_intelectual": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.pagos.comunicaciones": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.pagos.financieros": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.pagos.seguros": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.pagos.comercio": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.pagos.personales": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.pagos.gobierno": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.pagos.construccion": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.pagos.arrendamiento": {
+   "firstPeriod": "2003-01",
+   "lastPeriod": "2026-08",
+   "count": 284,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
+  },
+  "cambiario.servicios_tipo.pagos.otros": {
+   "firstPeriod": "2016-09",
+   "lastPeriod": "2026-08",
+   "count": 120,
+   "retrievedAt": "2026-11-17T15:38:58.600Z",
+   "stale": false
   }
  },
  "feeds": {
@@ -2399,6 +3288,27 @@
    "lastSuccessAt": "2026-11-17T15:00:13.548Z",
    "lastRunId": "20261117T150007Z-dbac",
    "lastAttemptAt": "2026-11-17T15:00:13.261Z",
+   "ok": true
+  },
+  "sspm.balance_cambiario": {
+   "feed": "sspm.balance_cambiario",
+   "lastSuccessAt": "2026-11-17T15:38:57.961Z",
+   "lastRunId": "20261117T153857Z-eaa5",
+   "lastAttemptAt": "2026-11-17T15:38:57.565Z",
+   "ok": true
+  },
+  "sspm.bc_bienes_sector": {
+   "feed": "sspm.bc_bienes_sector",
+   "lastSuccessAt": "2026-11-17T15:38:58.336Z",
+   "lastRunId": "20261117T153857Z-eaa5",
+   "lastAttemptAt": "2026-11-17T15:38:58.111Z",
+   "ok": true
+  },
+  "sspm.bc_servicios_tipo": {
+   "feed": "sspm.bc_servicios_tipo",
+   "lastSuccessAt": "2026-11-17T15:38:58.600Z",
+   "lastRunId": "20261117T153857Z-eaa5",
+   "lastAttemptAt": "2026-11-17T15:38:58.531Z",
    "ok": true
   }
  }

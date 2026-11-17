@@ -1,0 +1,494 @@
+{
+ "id": "cambiario.servicios_tipo.cobros.otros",
+ "observations": [
+  {
+   "period": "2016-09",
+   "value": 0.10119600000000001
+  },
+  {
+   "period": "2016-10",
+   "value": 0.014982
+  },
+  {
+   "period": "2016-11",
+   "value": 0.011022
+  },
+  {
+   "period": "2016-12",
+   "value": 0.021907
+  },
+  {
+   "period": "2017-01",
+   "value": 0.048170000000000004
+  },
+  {
+   "period": "2017-02",
+   "value": 0.10209599999999999
+  },
+  {
+   "period": "2017-03",
+   "value": 0.006203
+  },
+  {
+   "period": "2017-04",
+   "value": 0.00797
+  },
+  {
+   "period": "2017-05",
+   "value": 0.06819399999999999
+  },
+  {
+   "period": "2017-06",
+   "value": 0.034931
+  },
+  {
+   "period": "2017-07",
+   "value": 0
+  },
+  {
+   "period": "2017-08",
+   "value": 0
+  },
+  {
+   "period": "2017-09",
+   "value": 0
+  },
+  {
+   "period": "2017-10",
+   "value": 0
+  },
+  {
+   "period": "2017-11",
+   "value": 0
+  },
+  {
+   "period": "2017-12",
+   "value": 0
+  },
+  {
+   "period": "2018-01",
+   "value": 0
+  },
+  {
+   "period": "2018-02",
+   "value": 0
+  },
+  {
+   "period": "2018-03",
+   "value": 0
+  },
+  {
+   "period": "2018-04",
+   "value": 0
+  },
+  {
+   "period": "2018-05",
+   "value": 0
+  },
+  {
+   "period": "2018-06",
+   "value": 0
+  },
+  {
+   "period": "2018-07",
+   "value": 0
+  },
+  {
+   "period": "2018-08",
+   "value": 0
+  },
+  {
+   "period": "2018-09",
+   "value": 0
+  },
+  {
+   "period": "2018-10",
+   "value": 0
+  },
+  {
+   "period": "2018-11",
+   "value": 0
+  },
+  {
+   "period": "2018-12",
+   "value": 0
+  },
+  {
+   "period": "2019-01",
+   "value": 0
+  },
+  {
+   "period": "2019-02",
+   "value": 0
+  },
+  {
+   "period": "2019-03",
+   "value": 0
+  },
+  {
+   "period": "2019-04",
+   "value": 0
+  },
+  {
+   "period": "2019-05",
+   "value": 0
+  },
+  {
+   "period": "2019-06",
+   "value": 0
+  },
+  {
+   "period": "2019-07",
+   "value": 0
+  },
+  {
+   "period": "2019-08",
+   "value": 0
+  },
+  {
+   "period": "2019-09",
+   "value": 0
+  },
+  {
+   "period": "2019-10",
+   "value": 0
+  },
+  {
+   "period": "2019-11",
+   "value": 0
+  },
+  {
+   "period": "2019-12",
+   "value": 0
+  },
+  {
+   "period": "2020-01",
+   "value": 1
+  },
+  {
+   "period": "2020-02",
+   "value": 1
+  },
+  {
+   "period": "2020-03",
+   "value": 0
+  },
+  {
+   "period": "2020-04",
+   "value": 0
+  },
+  {
+   "period": "2020-05",
+   "value": 0
+  },
+  {
+   "period": "2020-06",
+   "value": 0
+  },
+  {
+   "period": "2020-07",
+   "value": 0
+  },
+  {
+   "period": "2020-08",
+   "value": 0
+  },
+  {
+   "period": "2020-09",
+   "value": 0
+  },
+  {
+   "period": "2020-10",
+   "value": 0
+  },
+  {
+   "period": "2020-11",
+   "value": 0.025757000000000002
+  },
+  {
+   "period": "2020-12",
+   "value": 0.054593
+  },
+  {
+   "period": "2021-01",
+   "value": 0.05824
+  },
+  {
+   "period": "2021-02",
+   "value": 0.024448
+  },
+  {
+   "period": "2021-03",
+   "value": 0.033150000000000006
+  },
+  {
+   "period": "2021-04",
+   "value": 0.036248999999999997
+  },
+  {
+   "period": "2021-05",
+   "value": 0.046512
+  },
+  {
+   "period": "2021-06",
+   "value": 0.0023
+  },
+  {
+   "period": "2021-07",
+   "value": 0.0018
+  },
+  {
+   "period": "2021-08",
+   "value": 0.0069
+  },
+  {
+   "period": "2021-09",
+   "value": 0.0358
+  },
+  {
+   "period": "2021-10",
+   "value": 0.0625
+  },
+  {
+   "period": "2021-11",
+   "value": 0.0476
+  },
+  {
+   "period": "2021-12",
+   "value": 0.0019
+  },
+  {
+   "period": "2022-01",
+   "value": 0.0131
+  },
+  {
+   "period": "2022-02",
+   "value": 0.0239
+  },
+  {
+   "period": "2022-03",
+   "value": 0.0353
+  },
+  {
+   "period": "2022-04",
+   "value": 0.0423
+  },
+  {
+   "period": "2022-05",
+   "value": 0.0113
+  },
+  {
+   "period": "2022-06",
+   "value": 0.016
+  },
+  {
+   "period": "2022-07",
+   "value": 0.007
+  },
+  {
+   "period": "2022-08",
+   "value": 0.0696
+  },
+  {
+   "period": "2022-09",
+   "value": 0.0044
+  },
+  {
+   "period": "2022-10",
+   "value": 0.0102
+  },
+  {
+   "period": "2022-11",
+   "value": 0.0608
+  },
+  {
+   "period": "2022-12",
+   "value": 0.0158
+  },
+  {
+   "period": "2023-01",
+   "value": 0.0256
+  },
+  {
+   "period": "2023-02",
+   "value": 0.0634
+  },
+  {
+   "period": "2023-03",
+   "value": 0.0189
+  },
+  {
+   "period": "2023-04",
+   "value": 0.1062
+  },
+  {
+   "period": "2023-05",
+   "value": 0.0422
+  },
+  {
+   "period": "2023-06",
+   "value": 0.0283
+  },
+  {
+   "period": "2023-07",
+   "value": 0.0862
+  },
+  {
+   "period": "2023-08",
+   "value": 0.0078
+  },
+  {
+   "period": "2023-09",
+   "value": 0.0664
+  },
+  {
+   "period": "2023-10",
+   "value": 0.0355
+  },
+  {
+   "period": "2023-11",
+   "value": 0.0009
+  },
+  {
+   "period": "2023-12",
+   "value": 0.0449
+  },
+  {
+   "period": "2024-01",
+   "value": 0.004
+  },
+  {
+   "period": "2024-02",
+   "value": 0.0647
+  },
+  {
+   "period": "2024-03",
+   "value": 0.026
+  },
+  {
+   "period": "2024-04",
+   "value": 0.027
+  },
+  {
+   "period": "2024-05",
+   "value": 0.0399
+  },
+  {
+   "period": "2024-06",
+   "value": 0.0046
+  },
+  {
+   "period": "2024-07",
+   "value": 0.1379
+  },
+  {
+   "period": "2024-08",
+   "value": 0.0824
+  },
+  {
+   "period": "2024-09",
+   "value": 0.0469
+  },
+  {
+   "period": "2024-10",
+   "value": 0.0215
+  },
+  {
+   "period": "2024-11",
+   "value": 0.079
+  },
+  {
+   "period": "2024-12",
+   "value": 0.0103
+  },
+  {
+   "period": "2025-01",
+   "value": 0.0671
+  },
+  {
+   "period": "2025-02",
+   "value": 0.0777
+  },
+  {
+   "period": "2025-03",
+   "value": 0.107
+  },
+  {
+   "period": "2025-04",
+   "value": 0.0015
+  },
+  {
+   "period": "2025-05",
+   "value": 0.0283
+  },
+  {
+   "period": "2025-06",
+   "value": 0.0293
+  },
+  {
+   "period": "2025-07",
+   "value": 0.0087
+  },
+  {
+   "period": "2025-08",
+   "value": 0.0998
+  },
+  {
+   "period": "2025-09",
+   "value": 0.2451
+  },
+  {
+   "period": "2025-10",
+   "value": 0.9959
+  },
+  {
+   "period": "2025-11",
+   "value": 0.4685
+  },
+  {
+   "period": "2025-12",
+   "value": 0.7869
+  },
+  {
+   "period": "2026-01",
+   "value": 0.4452
+  },
+  {
+   "period": "2026-02",
+   "value": 0.3882
+  },
+  {
+   "period": "2026-03",
+   "value": 0.4381
+  },
+  {
+   "period": "2026-04",
+   "value": 0.502
+  },
+  {
+   "period": "2026-05",
+   "value": 0.654
+  },
+  {
+   "period": "2026-06",
+   "value": 0.6462
+  },
+  {
+   "period": "2026-07",
+   "value": 0.5687
+  },
+  {
+   "period": "2026-08",
+   "value": 0.4817
+  }
+ ],
+ "meta": {
+  "firstPeriod": "2016-09",
+  "lastPeriod": "2026-08",
+  "retrievedAt": "2026-11-17T15:38:58.600Z",
+  "runId": "20261117T153857Z-eaa5",
+  "query": "https://infra.datos.gob.ar/catalog/sspm/dataset/185/distribution/185.1/download/cobros-pagos-bienes-servicios.csv",
+  "publishedAt": null,
+  "stale": false
+ }
+}

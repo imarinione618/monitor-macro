@@ -12,17 +12,22 @@ import { formatNumber } from '@/web/lib/format';
 import type { AggregateGdpModel } from '@/web/lib/aggregatesGdp';
 import { EXPORT_THEME, type ChartTheme } from '@/web/lib/palette';
 import { ChartToolbar, SourceFooter } from './ChartParts';
-import { Segmented } from './controls';
+import { PeriodRange, Segmented } from './controls';
 import { EChart, useChartTheme } from './EChart';
 
 const qLabel = (p: string) => `T${p.slice(6)} ${p.slice(0, 4)}`;
-type Range = '5y' | '10y' | 'all';
+type Range = '5y' | '10y' | 'all' | 'custom';
 
-export function filterRange(model: AggregateGdpModel, range: Range): AggregateGdpModel {
+/** 'custom': trimestres entre `custom.from` y `custom.to` inclusive. */
+export function filterRange(model: AggregateGdpModel, range: Range, custom: { from?: string; to?: string } = {}): AggregateGdpModel {
   if (range === 'all' || !model.periods.length) return model;
-  const last = model.periods.at(-1)!;
-  const from = `${Number(last.slice(0, 4)) - (range === '5y' ? 5 : 10)}-${last.slice(5)}`;
-  const keep = (p: string) => p > from;
+  let keep: (p: string) => boolean;
+  if (range === 'custom') keep = (p) => (!custom.from || p >= custom.from) && (!custom.to || p <= custom.to);
+  else {
+    const last = model.periods.at(-1)!;
+    const from = `${Number(last.slice(0, 4)) - (range === '5y' ? 5 : 10)}-${last.slice(5)}`;
+    keep = (p) => p > from;
+  }
   return { ...model, periods: model.periods.filter(keep), columns: model.columns.map((c) => ({ ...c, points: c.points.filter((p) => keep(p.period)) })) };
 }
 
@@ -86,8 +91,15 @@ export function AggregatesGdpPanel({ title, description, model, source }: { titl
   const uid = useId();
   const theme = useChartTheme();
   const [range, setRange] = useState<Range>('10y');
+  const [custom, setCustom] = useState<{ from?: string; to?: string }>({});
   const [showTable, setShowTable] = useState(false);
-  const visible = useMemo(() => filterRange(model, range), [model, range]);
+  const visible = useMemo(() => filterRange(model, range, custom), [model, range, custom]);
+  const shownFrom = visible.periods[0] ?? model.periods[0] ?? '';
+  const shownTo = visible.periods.at(-1) ?? model.periods.at(-1) ?? '';
+  const chooseRange = (r: Range) => {
+    if (r === 'custom') setCustom({ from: shownFrom, to: shownTo });
+    setRange(r);
+  };
   const span = visible.periods.length ? `${qLabel(visible.periods[0]!)}–${qLabel(visible.periods.at(-1)!)}` : 'Sin datos';
   const subtitle = `Promedio trimestral de saldos ÷ PIB corriente anual móvil · % · Línea punteada: estimación con el último PIB disponible · ${span}`;
   const exportNote = `Promedio trimestral de saldos ÷ PIB corriente anual móvil · Línea punteada: estimación con el último PIB disponible · ${span}`;
@@ -96,7 +108,10 @@ export function AggregatesGdpPanel({ title, description, model, source }: { titl
 
   return <section className="panel monetary-panel" aria-labelledby={`${uid}-t`}>
     <header className="panel-head"><h2 id={`${uid}-t`}>{title}</h2>{description && <p className="panel-desc">{description}</p>}</header>
-    <div className="controls"><Segmented label="Rango" value={range} options={[{ value: '5y', label: '5 años' }, { value: '10y', label: '10 años' }, { value: 'all', label: 'Toda la historia' }]} onChange={setRange} /></div>
+    <div className="controls">
+      <Segmented label="Rango" value={range} options={[{ value: '5y', label: '5 años' }, { value: '10y', label: '10 años' }, { value: 'all', label: 'Toda la historia' }, { value: 'custom', label: 'Personalizado' }]} onChange={chooseRange} />
+      <PeriodRange periods={model.periods} from={shownFrom} to={shownTo} format={qLabel} onChange={(from, to) => { setCustom({ from, to }); setRange('custom'); }} />
+    </div>
     <div className="chart-meta"><p className="chart-subtitle">{subtitle}</p></div>
     <div className="chart-box">{has ? <EChart option={option} ariaLabel={`${title}. ${subtitle}. Tabla de datos disponible.`} /> : <div className="chart-empty" role="status">Faltan datos de PIB o de agregados.</div>}</div>
     <div className="monetary-last-values">{visible.columns.map((c) => {
