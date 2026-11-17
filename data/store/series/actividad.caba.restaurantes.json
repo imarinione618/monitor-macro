@@ -596,8 +596,8 @@
  "meta": {
   "firstPeriod": "2015-03",
   "lastPeriod": "2026-10",
-  "retrievedAt": "2026-11-17T12:41:58.417Z",
-  "runId": "20261117T124108Z-7239",
+  "retrievedAt": "2026-11-17T15:00:13.548Z",
+  "runId": "20261117T150007Z-dbac",
   "query": "https://www.estadisticaciudad.gob.ar/eyc/wp-content/uploads/2026/09/EE_indice_actividad_restaurante.xlsx",
   "publishedAt": null,
   "stale": false

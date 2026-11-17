@@ -469,8 +469,8 @@
  "meta": {
   "firstPeriod": "2017-01",
   "lastPeriod": "2026-08",
-  "retrievedAt": "2026-11-17T12:41:56.587Z",
-  "runId": "20261117T124108Z-7239",
+  "retrievedAt": "2026-11-17T15:00:11.740Z",
+  "runId": "20261117T150007Z-dbac",
   "query": "https://infra.datos.gob.ar/catalog/sspm/dataset/455/distribution/455.1/download/ventas-totales-supermercados-2.csv",
   "publishedAt": null,
   "stale": false
