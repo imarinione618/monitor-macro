@@ -59,6 +59,20 @@ export default function CambiarioPage() {
   const servPagos = pool(['bc_servicios_pagos']);
   // En los gráficos que mezclan cobros y pagos, el nombre corto aclara cuál es cuál.
   const tag = (list: ClientSeries[], label: string) => list.map((s) => ({ ...s, def: { ...s.def, shortName: `${s.def.shortName} (${label})` } }));
+  // Solo visualización: en los gráficos que mezclan ingresos y egresos, los egresos (publicados como montos positivos) se grafican con signo negativo.
+  // El store no se modifica; los rankings por sector siguen en positivo.
+  const OUTFLOW_NOTE = 'En los gráficos, pagos y egresos se muestran con signo negativo (el BCRA los publica como montos positivos).';
+  const asOutflow = (list: ClientSeries[], which: (id: string) => boolean = () => true) =>
+    list.map((s) =>
+      which(s.def.id)
+        ? {
+            ...s,
+            observations: s.observations.map((o) => (o.value === null ? o : { ...o, value: -o.value })),
+            def: { ...s.def, notes: [...(s.def.notes ?? []), OUTFLOW_NOTE] },
+          }
+        : s,
+    );
+  const isOutflow = (id: string) => /\.(pagos|egresos)(\.|$)/.test(id);
 
   return (
     <>
@@ -159,8 +173,8 @@ export default function CambiarioPage() {
 
       <ChartPanel
         title="Cobros y pagos de bienes y servicios"
-        description="Montos brutos ingresados y egresados por el mercado de cambios. No son las exportaciones e importaciones registradas por el INDEC: difieren en el momento del pago y la financiación."
-        pool={pool(['bc_cc_brutos'])}
+        description="Montos brutos ingresados y egresados por el mercado de cambios (pagos y egresos con signo negativo). No son las exportaciones e importaciones registradas por el INDEC: difieren en el momento del pago y la financiación."
+        pool={asOutflow(pool(['bc_cc_brutos']), isOutflow)}
         options={ids('bc_cc_brutos')}
         defaultSelected={[C('bienes.cobros'), C('bienes.pagos')]}
         defaultTransform="level"
@@ -184,8 +198,8 @@ export default function CambiarioPage() {
 
       <ChartPanel
         title="Formación de activos externos de personas humanas y empresas"
-        description="Sector privado no financiero. Egresos: compras de activos externos (billetes, depósitos y otros activos); ingresos: ventas. El neto negativo indica compras netas."
-        pool={getClientSeriesList([...ids('bc_fae'), C('cf.fae_spnf')])}
+        description="Sector privado no financiero. Egresos (con signo negativo): compras de activos externos (billetes, depósitos y otros activos); ingresos: ventas. El neto negativo indica compras netas."
+        pool={asOutflow(getClientSeriesList([...ids('bc_fae'), C('cf.fae_spnf')]), isOutflow)}
         options={[...ids('bc_fae'), C('cf.fae_spnf')]}
         defaultSelected={[...ids('bc_fae'), C('cf.fae_spnf')]}
         defaultTransform="level"
@@ -230,7 +244,7 @@ export default function CambiarioPage() {
       <ChartPanel
         title="Cobros y pagos de bienes por sector: evolución"
         description="Elegí hasta 8 sectores (cobros de exportaciones o pagos de importaciones)."
-        pool={[...tag(cobrosSector, 'cobros'), ...tag(pagosSector, 'pagos')]}
+        pool={[...tag(cobrosSector, 'cobros'), ...asOutflow(tag(pagosSector, 'pagos'))]}
         options={[...ids('bc_cobros_sector'), ...ids('bc_pagos_sector')]}
         defaultSelected={[C('bienes_sector.cobros.oleaginosos_cerealeros'), C('bienes_sector.cobros.petroleo'), C('bienes_sector.cobros.mineria'), C('bienes_sector.cobros.automotriz')]}
         defaultTransform="sum_12m"
@@ -262,7 +276,7 @@ export default function CambiarioPage() {
       <ChartPanel
         title="Cobros y pagos de servicios por tipo: evolución"
         description="Elegí hasta 8 tipos de servicio (cobros o pagos)."
-        pool={[...tag(servCobros, 'cobros'), ...tag(servPagos, 'pagos')]}
+        pool={[...tag(servCobros, 'cobros'), ...asOutflow(tag(servPagos, 'pagos'))]}
         options={[...ids('bc_servicios_cobros'), ...ids('bc_servicios_pagos')]}
         defaultSelected={[C('servicios_tipo.pagos.turismo_viajes'), C('servicios_tipo.cobros.turismo_viajes'), C('servicios_tipo.cobros.empresariales'), C('servicios_tipo.pagos.fletes')]}
         defaultTransform="level"
