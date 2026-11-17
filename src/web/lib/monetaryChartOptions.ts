@@ -1,5 +1,5 @@
 import type { EChartsCoreOption } from 'echarts/core';
-import { FONT_FAMILY } from './chartOptions';
+import { FONT_FAMILY, noteLine } from './chartOptions';
 import {
   EXPORT_FONT, EXPORT_FONT_FAMILY, EXPORT_LEGEND_H, EXPORT_LEGEND_OVERRIDES, EXPORT_MARKS, EXPORT_PAD,
   exportFooter, exportGrid, exportHeaderHeight, exportTitle, NO_SPLIT_LINE,
@@ -14,8 +14,8 @@ export function buildMonetaryChartOption({ model, title, theme, exportMode = fal
   const t = exportMode ? EXPORT_THEME : theme;
   const pad = exportMode ? EXPORT_PAD : 8;
   const fs = exportMode ? EXPORT_FONT.text : 12;
-  const top = exportMode ? exportHeaderHeight(title, model.subtitle) : 8;
-  const foot = exportMode ? exportFooter([model.source], t) : null;
+  const top = exportMode ? exportHeaderHeight(title, model.exportSubtitle) : 8;
+  const foot = exportMode ? exportFooter([noteLine(model.exportNote), model.source], t) : null;
   const multi = model.columns.length > 1;
   const stacked = kind === 'stacked';
   return {
@@ -24,7 +24,7 @@ export function buildMonetaryChartOption({ model, title, theme, exportMode = fal
     textStyle: { fontFamily: exportMode ? EXPORT_FONT_FAMILY : FONT_FAMILY, color: t.text, fontSize: fs },
     color: model.columns.map((_, i) => t.series[i % t.series.length]!),
     grid: foot ? exportGrid(top + (multi ? EXPORT_LEGEND_H : 0) + 4, foot.height) : { left: pad, right: pad, top: top + (multi ? 48 : 12), bottom: 12, containLabel: true },
-    title: exportMode ? exportTitle(title, model.subtitle, t) : undefined,
+    title: exportMode ? exportTitle(title, model.exportSubtitle, t) : undefined,
     legend: { show: multi, type: exportMode ? 'plain' : 'scroll', top, left: pad, right: pad, textStyle: { color: t.text, fontSize: fs }, selectedMode: false, ...(exportMode ? EXPORT_LEGEND_OVERRIDES : {}) },
     xAxis: { type: 'category', data: model.periods.map(monetaryDate), boundaryGap: stacked, axisLine: { lineStyle: { color: t.axis } }, axisTick: { show: false }, axisLabel: { color: t.muted, fontSize: fs, hideOverlap: true } },
     yAxis: { type: 'value', scale: !stacked, axisLabel: { color: t.muted, fontSize: fs, formatter: (v: number) => formatNumber(v, Math.abs(v) < 10 ? 1 : 0) }, splitLine: exportMode ? NO_SPLIT_LINE : { lineStyle: { color: t.grid } } },

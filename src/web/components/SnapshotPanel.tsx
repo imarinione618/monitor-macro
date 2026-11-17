@@ -4,7 +4,7 @@ import { useId, useMemo, useState } from 'react';
 import { formatPeriodLong, periodStartDate } from '@/core/periods';
 import type { Period, TransformId } from '@/core/types';
 import { buildSnapshotModel, transformLabel } from '@/web/lib/chartModel';
-import { buildSnapshotOption, exportSnapshotOption, type ChartTextMeta } from '@/web/lib/chartOptions';
+import { buildExportSubtitle, buildSnapshotOption, exportSnapshotOption, joinParts, type ChartTextMeta } from '@/web/lib/chartOptions';
 import { CSV_BOM, csvNumber } from '@/web/lib/csv';
 import { decimalsForUnit, formatNumber } from '@/web/lib/format';
 import { buildSourceLine, collectNotes, seriesNotices } from '@/web/lib/meta';
@@ -39,7 +39,9 @@ export function SnapshotPanel({ title, description, series, referenceId, transfo
   const subtitle = snap ? `${snap.transformLabel} · Unidad: ${snap.unit} · ${formatPeriodLong(snap.period)}` : '';
   const sourceLine = buildSourceLine(series, transform);
   const notes = collectNotes(series, extraNotes);
-  const meta: ChartTextMeta = { title, subtitle, source: sourceLine, notes, synthetic };
+  // Exportación: medida y unidad corta + el período del corte (sin él no se sabe qué mes muestra).
+  const short = snap ? buildExportSubtitle({ transform: snap.transform, transformLabel: snap.transformLabel, unit: snap.unit, periods: [], basePeriod: null }).subtitle : '';
+  const meta: ChartTextMeta = { title, subtitle: snap ? joinParts([short, formatPeriodLong(snap.period)]) : '', source: sourceLine, notes, synthetic };
   const option = useMemo(() => (snap ? buildSnapshotOption({ snap, theme, mode: 'screen' }) : null), [snap, theme]);
   const tableId = `${uid}-tabla`;
   const rows = snap?.rows.length ?? 0;

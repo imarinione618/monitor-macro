@@ -14,6 +14,7 @@ import {
   EXPORT_LEGEND_H,
   EXPORT_MARKS,
   EXPORT_PAD,
+  EXPORT_RIGHT,
   exportBase,
   exportFooter,
   exportGrid,
@@ -36,8 +37,10 @@ export type RenderMode = 'screen' | 'export';
 
 export interface ChartTextMeta {
   title: string;
-  /** Transformación, unidad, ajuste y período cubierto. */
+  /** En la exportación: corto (medida y unidad). Ver `buildExportSubtitle`. */
   subtitle: string;
+  /** Detalles (ajuste, base, período cubierto…): en la exportación van al pie, antes de la fuente. */
+  note?: string;
   /** Línea de fuente (siempre visible en la exportación). */
   source: string;
   notes?: string[];
@@ -53,6 +56,31 @@ export function buildSubtitle(model: Pick<ChartModel, 'transformLabel' | 'unit' 
   if (first && last) parts.push(first === last ? formatPeriodLong(first) : `${formatPeriodShort(first)} a ${formatPeriodShort(last)}`);
   return parts.join(' · ');
 }
+
+/** Une partes no vacías con « · ». */
+export const joinParts = (parts: (string | null | undefined | false)[]) => parts.filter(Boolean).join(' · ');
+
+/**
+ * Subtítulo de exportación corto (medida y unidad: «Var. % interanual», «Millones de USD») y nota con
+ * los detalles (ajuste estacional, base, período cubierto) que va al pie, antes de la fuente.
+ */
+export function buildExportSubtitle(model: Pick<ChartModel, 'transformLabel' | 'unit' | 'periods' | 'transform' | 'basePeriod'>, extra: string[] = []): { subtitle: string; note: string } {
+  const isLevel = model.transform === 'level';
+  // «%» y «p.p.» ya están en la etiqueta de la transformación («Var. % interanual», «Dif. interanual (p.p.)»).
+  const unitRedundant = !isLevel && (model.unit === '%' || model.unit === 'p.p.' || model.transform === 'rebase_100');
+  const subtitle = joinParts([!isLevel && model.transformLabel, !unitRedundant && model.unit]);
+  const first = model.periods[0];
+  const last = model.periods[model.periods.length - 1];
+  const note = joinParts([
+    ...extra,
+    model.transform === 'rebase_100' && model.basePeriod ? `Base ${formatPeriodShort(model.basePeriod)} = 100` : '',
+    first && last ? (first === last ? formatPeriodLong(first) : `${formatPeriodShort(first)} a ${formatPeriodShort(last)}`) : '',
+  ]);
+  return { subtitle, note };
+}
+
+/** Nota al pie con prefijo. */
+export const noteLine = (note: string | undefined) => (note ? `Nota: ${note}.` : '');
 
 function esc(s: string): string {
   return s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
@@ -75,7 +103,7 @@ function headerHeight(meta: ChartTextMeta | undefined): number {
 
 /** Pie de exportación: fuente y, si corresponde, aviso de datos sintéticos. */
 function footer(meta: ChartTextMeta, theme: ChartTheme) {
-  return exportFooter([meta.source, meta.synthetic ? SYNTHETIC_WARNING : ''], theme);
+  return exportFooter([noteLine(meta.note), meta.source, meta.synthetic ? SYNTHETIC_WARNING : ''], theme);
 }
 
 export interface TimeSeriesOptionInput {
@@ -164,7 +192,7 @@ export function buildTimeSeriesOption({ model, kind, theme, colorSlots, mode, me
     : 0;
   const right = directLabels
     ? Math.min(exp ? 70 : 160, Math.round(longestEnd * fs * 0.6) + (exp ? 6 : 14))
-    : exp ? pad : 12;
+    : exp ? EXPORT_RIGHT : 12;
 
   const lineIcon = k === 'line';
   const option: Record<string, unknown> = {

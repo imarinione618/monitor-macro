@@ -24,6 +24,16 @@ describe('monetary chart/table/download shared model', () => {
     expect(model.subtitle).toContain('% TNA');
   });
 
+  it('exportación: subtítulo corto (unidad y moneda) y detalles en la nota', () => {
+    const model = buildMonetaryChartModel([tamar, badlar], daily, [], []);
+    expect(model.exportSubtitle).toBe('% TNA · ARS');
+    expect(model.exportNote).toContain('Datos diarios');
+    expect(model.exportNote).toContain('29/10/2026–02/11/2026');
+    const option = buildMonetaryChartOption({ model, title: 'Tasas', theme: LIGHT_THEME, exportMode: true }) as { title: { subtext: string }; graphic: { style: { text: string } }[] };
+    expect(option.title.subtext).toBe('% TNA · ARS');
+    expect(option.graphic[0]!.style.text).toMatch(/^Nota: .*Datos diarios.*\.\n.*BCRA/);
+  });
+
   it('exports exactly the visible values without rounding, with actual dates and missing values left blank', () => {
     const model = buildMonetaryChartModel([tamar, badlar], { ...daily, from: '2026-10-30' }, [], []);
     const csv = monetaryChartCsv(model);

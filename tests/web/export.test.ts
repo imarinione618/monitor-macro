@@ -5,6 +5,7 @@ import { describe, expect, it } from 'vitest';
 import { buildChartModel, buildSnapshotModel } from '@/web/lib/chartModel';
 import { EXPORT_PIXEL_RATIO, pt, setPngDpi } from '@/web/lib/exportStyle';
 import {
+  buildExportSubtitle,
   buildSubtitle,
   buildTimeSeriesOption,
   EXPORT_SIZE,
@@ -23,7 +24,7 @@ const gba = fakeSeries('precios.ipc.ng.gba', '2016-12', '2026-08', (i) => 100 * 
 const model = buildChartModel({ series: [ipc, gba], transform: 'pct_yoy', range: '5y' })!;
 const meta: ChartTextMeta = {
   title: 'IPC — Nivel general por región',
-  subtitle: buildSubtitle(model),
+  ...buildExportSubtitle(model, ['Desestacionalizada']),
   source: buildSourceLine([ipc, gba], 'pct_yoy'),
   notes: collectNotes([ipc, gba]),
   synthetic: true,
@@ -53,17 +54,26 @@ describe('opciones de exportación', () => {
     expect(opt.dataZoom).toBeUndefined();
   });
 
-  it('título, subtítulo con transformación, unidad y período', () => {
+  it('subtítulo corto (solo la medida); ajuste y período van a la nota al pie', () => {
     expect(opt.title?.[0]?.text).toBe(meta.title);
-    expect(opt.title?.[0]?.subtext).toContain('Var. % interanual');
-    expect(opt.title?.[0]?.subtext).toContain('Unidad: %');
-    expect(opt.title?.[0]?.subtext).toMatch(/sep-21 a ago-26/);
+    expect(opt.title?.[0]?.subtext).toBe('Var. % interanual');
+    expect(meta.note).toBe('Desestacionalizada · sep-21 a ago-26');
+    // La pantalla conserva el subtítulo completo.
+    expect(buildSubtitle(model)).toMatch(/Unidad: %.*sep-21 a ago-26/);
   });
 
-  it('fuente al pie (y aviso de datos sintéticos)', () => {
+  it('subtítulo de nivel: la unidad; base 100: sin repetir la unidad', () => {
+    const lvl = buildChartModel({ series: [ipc], transform: 'level', range: '24m' })!;
+    expect(buildExportSubtitle(lvl).subtitle).toBe(lvl.unit);
+    const b = buildChartModel({ series: [ipc], transform: 'rebase_100', range: '24m' })!;
+    const parts = buildExportSubtitle(b);
+    expect(parts.subtitle).toBe('Base 100');
+    expect(parts.note).toMatch(/^Base .* = 100 · /);
+  });
+
+  it('nota, fuente (y aviso de datos sintéticos) al pie, en ese orden', () => {
     const foot = opt.graphic?.[0]?.style.text ?? '';
-    expect(foot).toContain('Fuente: one618 en base a INDEC.');
-    expect(foot).toContain(SYNTHETIC_WARNING);
+    expect(foot.split('\n')).toEqual(['Nota: Desestacionalizada · sep-21 a ago-26.', 'Fuente: one618 en base a INDEC.', SYNTHETIC_WARNING]);
   });
 
   it('la opción de pantalla no lleva título (lo pone el HTML) y sí tooltip', () => {
@@ -121,7 +131,8 @@ describe('opciones de exportación', () => {
     expect(svg).toContain(`width="${EXPORT_SIZE.width}"`);
     expect(svg).toContain(`height="${EXPORT_SIZE.height}"`);
     expect(svg).toMatch(/IPC — Nivel general por región/);
-    expect(svg).toMatch(/Unidad: %/);
+    expect(svg).toMatch(/Var\. % interanual/);
+    expect(svg).toMatch(/Nota: Desestacionalizada/);
     expect(svg).toMatch(/Fuente: one618 en base a INDEC/);
     expect(svg).toMatch(/#ffffff|#fff\b|rgb\(255,\s*255,\s*255\)/i);
     expect(svg).toMatch(/IPC nacional/); // leyenda

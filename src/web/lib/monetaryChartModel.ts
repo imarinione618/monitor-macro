@@ -6,7 +6,14 @@ export type MonetaryOptions = Parameters<typeof prepareSeries>[1];
 export type MonetaryPoint = ReturnType<typeof prepareSeries>[number];
 export type IpcPoint = { period: string; value: number | null };
 export interface MonetaryChartColumn { series: MonetarySeries; points: MonetaryPoint[]; values: (number | null)[] }
-export interface MonetaryChartModel { periods: string[]; columns: MonetaryChartColumn[]; unit: string; subtitle: string; source: string }
+export interface MonetaryChartModel {
+  periods: string[]; columns: MonetaryChartColumn[]; unit: string;
+  /** Completo: pantalla, tabla y CSV. */
+  subtitle: string;
+  /** Exportación: subtítulo corto y nota al pie con los detalles. */
+  exportSubtitle: string; exportNote: string;
+  source: string;
+}
 
 export const SECTOR_LABELS = { private: 'Sector privado', public: 'Sector público', total: 'Total', bcra: 'BCRA', other: 'Otra cobertura' };
 export const TRANSFORM_LABELS = { level: 'Nivel', pct_mom: 'Variación mensual (%)', pct_yoy: 'Variación interanual (%)', absolute_mom: 'Cambio mensual de saldo', change_pp: 'Cambio en puntos porcentuales', change_bp: 'Cambio en puntos básicos', base100: 'Índice base 100' };
@@ -46,7 +53,13 @@ export function buildMonetaryChartModel(series: MonetarySeries[], options: Monet
   const comparison = rateChange ? options.frequency === 'D' ? 'Contra observación previa' : 'Contra mes anterior' : '';
   const subtitle = [TRANSFORM_LABELS[options.transform], comparison, unit, currencies, sectors, frequency, price, options.transform === 'base100' && options.basePeriod ? `Base ${monetaryDate(options.basePeriod)} = 100` : '', options.transform === 'pct_mom' ? 'Sin ajuste estacional' : '', range, partialLabel].filter(Boolean).join(' · ');
   const source = `${monetarySourceLabel(series)}${options.valueMode === 'real' ? ' e INDEC' : ''}.`;
-  return { periods, columns, unit, subtitle, source };
+  // Exportación: arriba solo medida, unidad y moneda («% TNA · ARS»); el resto va como nota al pie.
+  const isLevel = options.transform === 'level';
+  const unitRedundant = !isLevel && options.transform !== 'absolute_mom';
+  const real = options.valueMode === 'real' ? price : '';
+  const exportSubtitle = [isLevel ? '' : TRANSFORM_LABELS[options.transform], unitRedundant ? '' : unit, currencies, real].filter(Boolean).join(' · ');
+  const exportNote = [comparison, sectors, frequency === 'Diaria' ? 'Datos diarios' : frequency, real ? '' : price, options.transform === 'base100' && options.basePeriod ? `Base ${monetaryDate(options.basePeriod)} = 100` : '', options.transform === 'pct_mom' ? 'Sin ajuste estacional' : '', range, partialLabel].filter(Boolean).join(' · ');
+  return { periods, columns, unit, subtitle, exportSubtitle, exportNote, source };
 }
 
 function quote(value: string): string { return /[";\r\n]/.test(value) ? `"${value.replace(/"/g, '""')}"` : value; }

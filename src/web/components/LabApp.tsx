@@ -2,7 +2,7 @@
 
 import { useEffect, useId, useMemo, useState } from 'react';
 import type { EChartsCoreOption } from 'echarts/core';
-import { FONT_FAMILY } from '@/web/lib/chartOptions';
+import { FONT_FAMILY, noteLine } from '@/web/lib/chartOptions';
 import {
   EXPORT_AXIS_NAME_H, EXPORT_FONT, EXPORT_FONT_FAMILY, EXPORT_LEGEND_H, EXPORT_LEGEND_OVERRIDES, EXPORT_MARKS, EXPORT_PAD,
   exportFooter, exportGrid, exportHeaderHeight, exportTitle,
@@ -28,12 +28,12 @@ const toTime = (d: string) => Date.UTC(Number(d.slice(0, 4)), Number(d.slice(5, 
 interface State { items: LabItem[]; frequency: LabFrequency | null; from: string; to: string; logLeft: boolean; logRight: boolean }
 const EMPTY: State = { items: [], frequency: null, from: '', to: '', logLeft: false, logRight: false };
 
-export function buildLabOption({ model, title, subtitle, source, theme, exportMode = false, logLeft, logRight }: { model: LabModel; title: string; subtitle: string; source: string; theme: ChartTheme; exportMode?: boolean; logLeft: boolean; logRight: boolean }): EChartsCoreOption {
+export function buildLabOption({ model, title, subtitle, note = '', source, theme, exportMode = false, logLeft, logRight }: { model: LabModel; title: string; subtitle: string; note?: string; source: string; theme: ChartTheme; exportMode?: boolean; logLeft: boolean; logRight: boolean }): EChartsCoreOption {
   const t = exportMode ? EXPORT_THEME : theme;
   const pad = exportMode ? EXPORT_PAD : 8;
   const fs = exportMode ? EXPORT_FONT.text : 12;
   const top = exportMode ? exportHeaderHeight(title, subtitle) : 8;
-  const foot = exportMode ? exportFooter([source], t) : null;
+  const foot = exportMode ? exportFooter([noteLine(note), source], t) : null;
   const daily = model.frequency === 'D';
   const cols = model.columns.filter((c) => c.points.length);
   const hasRight = cols.some((c) => c.item.axis === 'right');
@@ -143,6 +143,9 @@ export function LabApp({ catalog, basePath }: { catalog: LabSeriesMeta[]; basePa
   const colMaps = useMemo(() => new Map(model.columns.map((c) => [c.item.key, new Map(c.points)])), [model]);
   const span = model.periods.length ? `${periodLabel(model.periods[0]!)}–${periodLabel(model.periods.at(-1)!)}` : '';
   const subtitle = [LAB_FREQUENCY_LABELS[frequency], ...model.columns.map((c) => `${c.label}: ${c.unit}${c.item.transform !== 'level' ? `, ${LAB_TRANSFORM_LABELS[c.item.transform].toLowerCase()}` : ''}`), span].filter(Boolean).join(' · ');
+  // Exportación: arriba solo las unidades (sin repetir); frecuencia y período, a la nota.
+  const exportSubtitle = [...new Set(model.columns.map((c) => `${c.unit}${c.item.transform !== 'level' ? `, ${LAB_TRANSFORM_LABELS[c.item.transform].toLowerCase()}` : ''}`))].join(' · ');
+  const exportNote = [LAB_FREQUENCY_LABELS[frequency], span].filter(Boolean).join(' · ');
   const option = useMemo(() => buildLabOption({ model, title, subtitle, source, theme, logLeft: state.logLeft, logRight: state.logRight }), [model, title, subtitle, source, theme, state.logLeft, state.logRight]);
 
   const update = (key: string, patch: Partial<LabItem>) => setState((s) => ({ ...s, items: s.items.map((i) => (i.key === key ? ({ ...i, ...patch } as LabItem) : i)) }));
@@ -242,7 +245,7 @@ export function LabApp({ catalog, basePath }: { catalog: LabSeriesMeta[]; basePa
             <div className="chart-meta"><p className="chart-subtitle">{subtitle}</p></div>
             {model.columns.some((c) => c.partial.size > 0) && frequency !== 'D' && <p className="monetary-status">El último período de las series diarias convertidas puede estar incompleto (promedio, último o suma de los días publicados hasta la fecha).</p>}
             <div className="chart-box">{has ? <EChart option={option} ariaLabel={`${title}. ${subtitle}. Tabla de datos disponible.`} /> : <div className="chart-empty" role="status">Cargando datos o sin observaciones para la selección.</div>}</div>
-            <ChartToolbar title={title} showTable={showTable} onToggleTable={() => setShowTable((v) => !v)} tableId={`${uid}-table`} disabled={!has} getCsv={() => labCsv(model, CSV_BOM, CSV_SEP, csvNumber)} getExportOption={() => (has ? buildLabOption({ model, title, subtitle, source, theme, exportMode: true, logLeft: state.logLeft, logRight: state.logRight }) : null)} />
+            <ChartToolbar title={title} showTable={showTable} onToggleTable={() => setShowTable((v) => !v)} tableId={`${uid}-table`} disabled={!has} getCsv={() => labCsv(model, CSV_BOM, CSV_SEP, csvNumber)} getExportOption={() => (has ? buildLabOption({ model, title, subtitle: exportSubtitle, note: exportNote, source, theme, exportMode: true, logLeft: state.logLeft, logRight: state.logRight }) : null)} />
             <div id={`${uid}-table`} hidden={!showTable}>{showTable && (
               <div className="table-scroll" tabIndex={0} role="region" aria-label={`Tabla: ${title}`}><table className="data-table"><caption>{title}. {subtitle}</caption>
                 <thead><tr><th scope="col">Período</th>{model.columns.map((c) => <th scope="col" key={c.item.key}>{c.label} ({c.unit})</th>)}</tr></thead>

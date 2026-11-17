@@ -36,6 +36,11 @@ const LINE = { title: Math.round(pt(12) * 1.2), subtitle: Math.round(pt(10) * 1.
 
 /** Margen exterior (px). */
 export const EXPORT_PAD = 8;
+/**
+ * Margen derecho del área de trazado: la última etiqueta del eje X queda centrada en el borde
+ * y `containLabel` no la contempla (p. ej. «02/11/2026» se cortaba). Media etiqueta de fecha a 7 pt.
+ */
+export const EXPORT_RIGHT = 28;
 /** Alto reservado para una fila de leyenda. */
 export const EXPORT_LEGEND_H = LINE.text + 6;
 /** Trazos y marcadores proporcionales al tamaño chico (líneas de 1,5 pt como Excel). */
@@ -132,7 +137,7 @@ export const EXPORT_AXIS_NAME_H = LINE.text + 15;
 
 /** Grilla del área de trazado: márgenes del formato y lugar para título, leyenda y pie. */
 export function exportGrid(top: number, footerHeight: number, extra: { left?: number; right?: number } = {}) {
-  return { left: extra.left ?? EXPORT_PAD, right: extra.right ?? EXPORT_PAD, top, bottom: footerHeight + 4, containLabel: true };
+  return { left: extra.left ?? EXPORT_PAD, right: extra.right ?? EXPORT_RIGHT, top, bottom: footerHeight + 4, containLabel: true };
 }
 
 /** Etiquetas de ejes en 7 pt Arial. */

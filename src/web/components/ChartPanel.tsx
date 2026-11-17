@@ -13,7 +13,7 @@ import {
   resolveVariant,
   transformChoices,
 } from '@/web/lib/chartModel';
-import { buildSubtitle, buildTimeSeriesOption, effectiveKind, exportTimeSeriesOption, type ChartTextMeta } from '@/web/lib/chartOptions';
+import { buildExportSubtitle, buildSubtitle, buildTimeSeriesOption, effectiveKind, exportTimeSeriesOption, type ChartTextMeta } from '@/web/lib/chartOptions';
 import { toCsv } from '@/web/lib/csv';
 import { decimalsForUnit, formatNumber } from '@/web/lib/format';
 import { buildSourceLine, collectNotes, lastPeriodsLine, seriesNotices } from '@/web/lib/meta';
@@ -141,7 +141,8 @@ export function ChartPanel(props: ChartPanelProps) {
     [model, kind, theme, colorSlots, width],
   );
 
-  const meta: ChartTextMeta = { title, subtitle, source: sourceLine, notes, synthetic };
+  const exportText = model && !model.empty ? buildExportSubtitle(model, adjExtra) : { subtitle: '', note: '' };
+  const meta: ChartTextMeta = { title, ...exportText, source: sourceLine, notes, synthetic };
 
   const toggleSeries = (id: string) => {
     let next: string[];

@@ -3,7 +3,7 @@
 import { useId, useMemo, useState } from 'react';
 import type { EChartsCoreOption } from 'echarts/core';
 import type { FuelProduct, FuelScope, FuelSeries } from '@/combustibles/types';
-import { FONT_FAMILY } from '@/web/lib/chartOptions';
+import { FONT_FAMILY, noteLine } from '@/web/lib/chartOptions';
 import {
   EXPORT_AXIS_NAME_H, EXPORT_FONT, EXPORT_FONT_FAMILY, EXPORT_LEGEND_H, EXPORT_LEGEND_OVERRIDES, EXPORT_MARKS, EXPORT_PAD,
   exportFooter, exportGrid, exportHeaderHeight, exportTitle, NO_SPLIT_LINE,
@@ -27,12 +27,12 @@ const toTime = (d: string) => Date.UTC(Number(d.slice(0, 4)), Number(d.slice(5, 
 
 interface Col { product: FuelProduct; label: string; series: FuelSeries; points: Point[]; n: Map<string, number | undefined> }
 
-function buildOption({ cols, title, subtitle, unit, daily, breakDate, theme, exportMode = false }: { cols: Col[]; title: string; subtitle: string; unit: string; daily: boolean; breakDate: string | null; theme: ChartTheme; exportMode?: boolean }): EChartsCoreOption {
+function buildOption({ cols, title, subtitle, note = '', unit, daily, breakDate, theme, exportMode = false }: { cols: Col[]; title: string; subtitle: string; note?: string; unit: string; daily: boolean; breakDate: string | null; theme: ChartTheme; exportMode?: boolean }): EChartsCoreOption {
   const t = exportMode ? EXPORT_THEME : theme;
   const pad = exportMode ? EXPORT_PAD : 8;
   const fs = exportMode ? EXPORT_FONT.text : 12;
   const top = exportMode ? exportHeaderHeight(title, subtitle) : 8;
-  const foot = exportMode ? exportFooter([SOURCE], t) : null;
+  const foot = exportMode ? exportFooter([noteLine(note), SOURCE], t) : null;
   const colors: Record<FuelProduct, string> = { super: t.series[0]!, premium: t.series[3]!, gasoil_g2: t.series[1]!, gasoil_g3: t.series[2]! };
   return {
     animation: !exportMode, useUTC: true, backgroundColor: exportMode ? '#ffffff' : 'transparent',
@@ -92,6 +92,9 @@ export function FuelPanel({ series }: { series: FuelSeries[] }) {
   const visibleBreak = breakDate && all.length && breakDate >= all[0]! ? breakDate : null;
   const title = daily ? 'Combustibles: precio diario en surtidor' : 'Combustibles: precio mensual ponderado por volumen';
   const subtitle = [daily ? 'Mediana diaria entre estaciones (Res. 314/2016)' : 'Promedio mensual ponderado por volumen, canal al público (Res. 1104/04)', scope === 'caba' ? 'Ciudad de Buenos Aires' : 'Total país', measure === 'level' ? '$ por litro, precio final' : 'Var. % interanual', span].filter(Boolean).join(' · ');
+  // Exportación: medida y alcance arriba; método y período, a la nota.
+  const exportSubtitle = [measure === 'level' ? '$ por litro' : 'Var. % interanual', scope === 'caba' ? 'Ciudad de Buenos Aires' : 'Total país'].join(' · ');
+  const exportNote = [daily ? 'Mediana diaria entre estaciones (Res. 314/2016)' : 'Promedio mensual ponderado por volumen, canal al público (Res. 1104/04)', measure === 'level' ? 'Precio final' : '', span].filter(Boolean).join(' · ');
   const option = useMemo(() => buildOption({ cols, title, subtitle, unit, daily, breakDate: visibleBreak, theme }), [cols, title, subtitle, unit, daily, visibleBreak, theme]);
   const has = cols.some((c) => c.points.some(([, v]) => v !== null));
   const periods = [...new Set(all)].reverse();
@@ -121,7 +124,7 @@ export function FuelPanel({ series }: { series: FuelSeries[] }) {
         const last = c.series.observations.filter((o) => o.value !== null).at(-1);
         return <div className="monetary-last" key={c.product}><strong>{c.label}</strong><span>{formatNumber(last?.value, 0)} <small>$ por litro</small></span><small>{last ? `${periodLabel(last.date)}${last.n ? ` · ${last.n} ${daily ? 'estaciones' : 'registros'}` : ''}` : 'Sin datos'}</small></div>;
       })}</div>
-      <ChartToolbar title={title} showTable={showTable} onToggleTable={() => setShowTable((v) => !v)} tableId={`${uid}-table`} disabled={!has} getCsv={csv} getExportOption={() => (has ? buildOption({ cols, title, subtitle, unit, daily, breakDate: visibleBreak, theme, exportMode: true }) : null)} />
+      <ChartToolbar title={title} showTable={showTable} onToggleTable={() => setShowTable((v) => !v)} tableId={`${uid}-table`} disabled={!has} getCsv={csv} getExportOption={() => (has ? buildOption({ cols, title, subtitle: exportSubtitle, note: exportNote, unit, daily, breakDate: visibleBreak, theme, exportMode: true }) : null)} />
       <div id={`${uid}-table`} hidden={!showTable}>{showTable && (
         <div className="table-scroll" tabIndex={0} role="region" aria-label={`Tabla: ${title}`}><table className="data-table"><caption>{title}. {subtitle}</caption>
           <thead><tr><th scope="col">Fecha</th>{cols.map((c) => <th scope="col" key={c.product}>{c.label} ({unit})</th>)}</tr></thead>

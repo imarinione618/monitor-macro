@@ -7,7 +7,7 @@
  */
 import type { EChartsCoreOption } from 'echarts/core';
 import type { MonetarySeries } from '@/monetary/types';
-import { FONT_FAMILY } from './chartOptions';
+import { FONT_FAMILY, noteLine } from './chartOptions';
 import {
   EXPORT_AXIS_NAME_H, EXPORT_FONT, EXPORT_FONT_FAMILY, EXPORT_LEGEND_H, EXPORT_LEGEND_OVERRIDES, EXPORT_MARKS, EXPORT_PAD,
   exportFooter, exportGrid, exportHeaderHeight, exportTitle, NO_SPLIT_LINE,
@@ -28,7 +28,7 @@ export const REPO_RATES_LABELS: Record<RepoRatesKey, string> = { repo: 'Repo BCR
 export const REPO_RATES_UNITS: Record<RepoRatesKey, string> = { repo: 'billones de ARS', caucion: '% TNA', tamar: '% TNA' };
 
 export interface RepoRatesSeries { key: RepoRatesKey; series: MonetarySeries; points: { date: string; value: number | null }[] }
-export interface RepoRatesModel { dates: string[]; columns: RepoRatesSeries[]; subtitle: string; source: string }
+export interface RepoRatesModel { dates: string[]; columns: RepoRatesSeries[]; subtitle: string; exportSubtitle: string; exportNote: string; source: string }
 
 export function pickRepoRatesSeries(all: MonetarySeries[]): Partial<Record<RepoRatesKey, MonetarySeries>> {
   return {
@@ -57,7 +57,10 @@ export function buildRepoRatesModel(all: MonetarySeries[], range: { from?: strin
   const span = dates.length ? `${monetaryDate(dates[0]!)}–${monetaryDate(dates.at(-1)!)}` : 'Sin observaciones';
   const subtitle = ['Diaria', 'Repo BCRA: saldo en billones de ARS (eje izq.)', 'Caución 1 día y TAMAR: % TNA (eje der.)', 'Valores nominales', span].join(' · ');
   const source = `${monetarySourceLabel(columns.map(c => c.series))}.`;
-  return { dates, columns, subtitle, source };
+  // Exportación: los ejes ya están en la leyenda; frecuencia y período van a la nota.
+  const exportSubtitle = 'Saldo en billones de ARS y tasas en % TNA';
+  const exportNote = ['Datos diarios', 'Valores nominales', span].join(' · ');
+  return { dates, columns, subtitle, exportSubtitle, exportNote, source };
 }
 
 /** Valor de cada serie en una fecha exacta (sin buscar la observación más cercana). */
@@ -96,8 +99,8 @@ export function buildRepoRatesOption({ model, title, theme, exportMode = false }
   const colors = repoRatesColors(t);
   const pad = exportMode ? EXPORT_PAD : 8;
   const fs = exportMode ? EXPORT_FONT.text : 12;
-  const top = exportMode ? exportHeaderHeight(title, model.subtitle) : 8;
-  const foot = exportMode ? exportFooter([model.source], t) : null;
+  const top = exportMode ? exportHeaderHeight(title, model.exportSubtitle) : 8;
+  const foot = exportMode ? exportFooter([noteLine(model.exportNote), model.source], t) : null;
   const axisName = { color: t.muted, fontSize: fs };
   return {
     animation: !exportMode,
@@ -105,7 +108,7 @@ export function buildRepoRatesOption({ model, title, theme, exportMode = false }
     backgroundColor: exportMode ? '#ffffff' : 'transparent',
     textStyle: { fontFamily: exportMode ? EXPORT_FONT_FAMILY : FONT_FAMILY, color: t.text, fontSize: fs },
     grid: foot ? exportGrid(top + EXPORT_LEGEND_H + EXPORT_AXIS_NAME_H, foot.height) : { left: pad, right: pad, top: top + 72, bottom: 12, containLabel: true },
-    title: exportMode ? exportTitle(title, model.subtitle, t) : undefined,
+    title: exportMode ? exportTitle(title, model.exportSubtitle, t) : undefined,
     legend: { show: true, type: 'plain', top, left: pad, right: pad, textStyle: { color: t.text, fontSize: fs }, selectedMode: false,
       data: model.columns.map(c => ({ name: `${REPO_RATES_LABELS[c.key]}${c.key === 'repo' ? ' (eje izq.)' : ' (eje der.)'}`, icon: c.key === 'repo' ? 'rect' : 'roundRect' })),
       ...(exportMode ? EXPORT_LEGEND_OVERRIDES : {}) },

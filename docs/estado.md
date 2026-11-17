@@ -70,6 +70,8 @@ Publicación inicial completada el 2026-11-04:
 - Pedido del usuario, «como si estuviera armado en Excel»: **12,7 × 7,62 cm**, sin bordes ni líneas internas (sin grilla; en apiladas, sin separador blanco), **Arial**, título 12 pt (sin negrita), subtítulo 10 pt, resto 7 pt (ejes, leyenda, etiquetas, fuente), títulos centrados. Leyenda centrada; trazos de 1,5 pt.
 - Implementación única en `src/web/lib/exportStyle.ts`, usada por los 6 constructores (series INDEC, cortes, Monetario, Repo/caución/TAMAR, Laboratorio, Combustibles, Agregados/PIB). Lienzo 480 × 288 px a 96 px/pulg. → los pt coinciden con Office.
 - PNG a 300 dpi (1500 × 900 px) con la resolución grabada en el archivo (chunk pHYs): se inserta en Word/PowerPoint directo con 12,7 × 7,62 cm. SVG de 480 × 288 px (mismo tamaño en Office).
+- Subtítulo corto en la descarga (pedido del usuario): solo medida, unidad y moneda (p. ej. «% TNA · ARS»; Repo/tasas: «Saldo en billones de ARS y tasas en % TNA»; INDEC: «Var. % interanual» o la unidad si es nivel). Los detalles (ajuste estacional, base, frecuencia, sector, nominal, período cubierto, método) van al pie como «Nota: …», antes de la fuente. No se aclara el eje: ya está en la leyenda. En cortes por período el mes queda en el subtítulo. Pantalla, tabla y CSV conservan el subtítulo completo.
+- Margen derecho de 28 px en el área de trazado: la última fecha del eje X ya no se corta.
 - La vista en pantalla no cambia. Validación: 1280 pruebas aprobadas, TypeScript y build estático OK; exportaciones renderizadas e inspeccionadas visualmente (líneas, apiladas, corte, doble eje, título largo en dos líneas).
 
 ## Actualización programada

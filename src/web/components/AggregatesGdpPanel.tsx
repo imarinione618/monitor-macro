@@ -2,7 +2,7 @@
 
 import { useId, useMemo, useState } from 'react';
 import type { EChartsCoreOption } from 'echarts/core';
-import { FONT_FAMILY } from '@/web/lib/chartOptions';
+import { FONT_FAMILY, noteLine } from '@/web/lib/chartOptions';
 import {
   EXPORT_FONT, EXPORT_FONT_FAMILY, EXPORT_LEGEND_H, EXPORT_LEGEND_OVERRIDES, EXPORT_MARKS, EXPORT_PAD,
   exportFooter, exportGrid, exportHeaderHeight, exportTitle, NO_SPLIT_LINE,
@@ -36,12 +36,12 @@ export function aggregatesGdpCsv(model: AggregateGdpModel): string {
   return CSV_BOM + [head.join(CSV_SEP), ...lines].join('\r\n') + '\r\n';
 }
 
-export function buildAggregatesGdpOption({ model, title, subtitle, source, theme, exportMode = false }: { model: AggregateGdpModel; title: string; subtitle: string; source: string; theme: ChartTheme; exportMode?: boolean }): EChartsCoreOption {
+export function buildAggregatesGdpOption({ model, title, subtitle, note = '', source, theme, exportMode = false }: { model: AggregateGdpModel; title: string; subtitle: string; note?: string; source: string; theme: ChartTheme; exportMode?: boolean }): EChartsCoreOption {
   const t = exportMode ? EXPORT_THEME : theme;
   const pad = exportMode ? EXPORT_PAD : 8;
   const fs = exportMode ? EXPORT_FONT.text : 12;
   const top = exportMode ? exportHeaderHeight(title, subtitle) : 8;
-  const foot = exportMode ? exportFooter([source], t) : null;
+  const foot = exportMode ? exportFooter([noteLine(note), source], t) : null;
   const lw = exportMode ? EXPORT_MARKS.line : 2;
   const idx = new Map(model.periods.map((p, i) => [p, i]));
   const series = model.columns.flatMap((c, i) => {
@@ -90,6 +90,7 @@ export function AggregatesGdpPanel({ title, description, model, source }: { titl
   const visible = useMemo(() => filterRange(model, range), [model, range]);
   const span = visible.periods.length ? `${qLabel(visible.periods[0]!)}–${qLabel(visible.periods.at(-1)!)}` : 'Sin datos';
   const subtitle = `Promedio trimestral de saldos ÷ PIB corriente anual móvil · % · Línea punteada: estimación con el último PIB disponible · ${span}`;
+  const exportNote = `Promedio trimestral de saldos ÷ PIB corriente anual móvil · Línea punteada: estimación con el último PIB disponible · ${span}`;
   const option = useMemo(() => buildAggregatesGdpOption({ model: visible, title, subtitle, source, theme }), [visible, title, subtitle, source, theme]);
   const has = visible.columns.some((c) => c.points.length);
 
@@ -103,7 +104,7 @@ export function AggregatesGdpPanel({ title, description, model, source }: { titl
       const est = c.points.filter((p) => p.estimated).at(-1);
       return <div className="monetary-last" key={c.id}><strong>{c.label}</strong><span>{formatNumber(off?.value, 1)} <small>% PIB · {off ? qLabel(off.period) : '—'}</small></span>{est && <small>Estimado {qLabel(est.period)}{est.partial ? ' (en curso)' : ''}: {formatNumber(est.value, 1)} %</small>}</div>;
     })}</div>
-    <ChartToolbar title={title} showTable={showTable} onToggleTable={() => setShowTable((v) => !v)} tableId={`${uid}-table`} disabled={!has} getCsv={() => aggregatesGdpCsv(visible)} getExportOption={() => has ? buildAggregatesGdpOption({ model: visible, title, subtitle, source, theme, exportMode: true }) : null} />
+    <ChartToolbar title={title} showTable={showTable} onToggleTable={() => setShowTable((v) => !v)} tableId={`${uid}-table`} disabled={!has} getCsv={() => aggregatesGdpCsv(visible)} getExportOption={() => has ? buildAggregatesGdpOption({ model: visible, title, subtitle: '% del PIB', note: exportNote, source, theme, exportMode: true }) : null} />
     <div id={`${uid}-table`} hidden={!showTable}>{showTable && <div className="table-scroll" tabIndex={0} role="region" aria-label={`Tabla: ${title}`}><table className="data-table"><caption>{title}. {subtitle}</caption><thead><tr><th scope="col">Trimestre</th>{visible.columns.map((c) => <th scope="col" key={c.id}>{c.label} (% PIB)</th>)}</tr></thead><tbody>{[...visible.periods].reverse().map((p) => <tr key={p}><th scope="row">{qLabel(p)}</th>{visible.columns.map((c) => {
       const x = c.points.find((y) => y.period === p);
       return <td key={c.id}>{formatNumber(x?.value, 2)}{x?.estimated && <small className="monetary-cell-meta">estimado{x.partial ? ' · en curso' : ''} · {x.days} días</small>}</td>;
