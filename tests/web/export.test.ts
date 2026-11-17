@@ -1,7 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import sharp from 'sharp';
 import { describe, expect, it } from 'vitest';
 import { buildChartModel, buildSnapshotModel } from '@/web/lib/chartModel';
+import { EXPORT_PIXEL_RATIO, pt, setPngDpi } from '@/web/lib/exportStyle';
 import {
   buildSubtitle,
   buildTimeSeriesOption,
@@ -70,7 +72,48 @@ describe('opciones de exportación', () => {
     expect(scr.tooltip).toBeDefined();
   });
 
-  it('render SSR a SVG 1600×900 con título, unidad y fuente', () => {
+  it('formato de descarga: 12,7 × 7,62 cm, Arial, título 12 pt, subtítulo 10 pt, resto 7 pt, centrado y sin grilla', () => {
+    expect(EXPORT_SIZE).toEqual({ width: 480, height: 288 }); // 5 × 3 pulgadas a 96 px/pulg.
+    expect(Math.round(EXPORT_SIZE.width * EXPORT_PIXEL_RATIO)).toBe(1500); // PNG a 300 dpi
+    const t = (opt.title as unknown as Record<string, any>[])[0]!;
+    expect(t.left).toBe(EXPORT_SIZE.width / 2);
+    expect(t.textAlign).toBe('center');
+    expect(t.textStyle.fontSize).toBeCloseTo(pt(12));
+    expect(t.subtextStyle.fontSize).toBeCloseTo(pt(10));
+    expect(t.textStyle.fontFamily).toMatch(/^Arial/);
+    const o = opt as Record<string, any>;
+    expect(o.textStyle.fontFamily).toMatch(/^Arial/);
+    expect(o.textStyle.fontSize).toBeCloseTo(pt(7));
+    expect(o.xAxis.axisLabel.fontSize).toBeCloseTo(pt(7));
+    expect(o.legend.textStyle.fontSize).toBeCloseTo(pt(7));
+    expect(o.yAxis.splitLine.show).toBe(false);
+    const svg = renderSvgString(opt as never);
+    expect(svg).toMatch(/font-family:Arial/);
+    expect(svg).not.toMatch(/Segoe UI/);
+  });
+
+  it('PNG con 300 dpi grabados (chunk pHYs válido)', async () => {
+    // PNG mínimo 1×1 (firma + IHDR + IDAT + IEND).
+    const png = Uint8Array.from(
+      Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==', 'base64'),
+    );
+    const out = setPngDpi(png, 300);
+    const buf = Buffer.from(out);
+    const i = buf.indexOf('pHYs');
+    expect(i).toBe(37); // inmediatamente después de IHDR
+    expect(buf.readUInt32BE(i + 4)).toBe(11811); // 300 dpi = 11811 px/m
+    expect(buf.readUInt32BE(i + 8)).toBe(11811);
+    expect(buf[i + 12]).toBe(1);
+    // Un decodificador real (libpng vía sharp) acepta el archivo y lee 300 dpi.
+    const meta = await sharp(buf).metadata();
+    expect(meta.density).toBe(300);
+    // Idempotente: no duplica el chunk.
+    const again = Buffer.from(setPngDpi(out, 300));
+    expect(again.length).toBe(buf.length);
+    expect(again.indexOf('pHYs', i + 1)).toBe(-1);
+  });
+
+  it('render SSR a SVG 12,7 × 7,62 cm con título, unidad y fuente', () => {
     const svg = renderSvgString(opt as never);
     expect(svg.startsWith('<svg')).toBe(true);
     expect(svg).toContain(`width="${EXPORT_SIZE.width}"`);

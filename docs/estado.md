@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-_Última actualización: 2026-11-06_
+_Última actualización: 2026-11-17_
 
 ## Operativo y verificado contra servicios reales
 
@@ -65,7 +65,15 @@ Publicación inicial completada el 2026-11-04:
 - Tasas → nuevo segundo gráfico «Repo BCRA, tasa de caución y TAMAR»: Repo 198 en área (eje izq., billones de ARS = millones ÷ 10⁶), caución y TAMAR en líneas (eje der., % TNA). Eje temporal: cada serie en sus propias fechas, sin completar días. Vista inicial: desde el 1/1 del año del último dato; CSV/PNG/SVG y tabla con el mismo modelo.
 - Validación: 682 pruebas aprobadas (incluye las nuevas de caución y del gráfico combinado), TypeScript y build estático OK; exportación con datos reales inspeccionada visualmente. No se tocó Google Sheets.
 
+### Formato de gráficos descargados (PNG/SVG) — 2026-11-17
+
+- Pedido del usuario, «como si estuviera armado en Excel»: **12,7 × 7,62 cm**, sin bordes ni líneas internas (sin grilla; en apiladas, sin separador blanco), **Arial**, título 12 pt, subtítulo 10 pt, resto 7 pt (ejes, leyenda, etiquetas, fuente), títulos centrados. Leyenda centrada; trazos de 1,5 pt.
+- Implementación única en `src/web/lib/exportStyle.ts`, usada por los 6 constructores (series INDEC, cortes, Monetario, Repo/caución/TAMAR, Laboratorio, Combustibles, Agregados/PIB). Lienzo 480 × 288 px a 96 px/pulg. → los pt coinciden con Office.
+- PNG a 300 dpi (1500 × 900 px) con la resolución grabada en el archivo (chunk pHYs): se inserta en Word/PowerPoint directo con 12,7 × 7,62 cm. SVG de 480 × 288 px (mismo tamaño en Office).
+- La vista en pantalla no cambia. Validación: 1280 pruebas aprobadas, TypeScript y build estático OK; exportaciones renderizadas e inspeccionadas visualmente (líneas, apiladas, corte, doble eje, título largo en dos líneas).
+
 ## Actualización programada
+- **Manual 2026-11-17:** el 16/11 fallaron IDECBA (IPCBA y restaurantes, `fetch failed` en ambos intentos) y Combustibles (surtidor Res. 314, `fetch failed`); se conservaron los últimos datos. Corrida manual completa (`scripts/update.ps1`) el 17/11 a las 09:41: 307/307 series OK, BCRA 85/85, surtidor actualizado hasta 13/11, Sheets OK, push OK — **Fin OK**.
 - **Activa y verificada:** tarea de Windows "MonitorMacroAR - Actualizacion", diaria a las **12:00** (hora de Buenos Aires).
   - Hace ingesta, sincroniza Sheets y publica: commit y push de `data/store`, y GitHub Actions regenera el dashboard. La ingesta y Sheets se probaron con un disparo manual el 2026-11-04 a las 11:49: 13/13 datasets, 139/139 series, Sheets OK, resultado 0. La publicación se verificó por separado con el primer despliegue enlazado arriba.
   - La tarea apunta a la nueva carpeta local. Próxima ejecución confirmada al finalizar la publicación: 2026-11-05 a las 12:00.

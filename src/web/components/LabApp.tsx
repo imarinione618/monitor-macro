@@ -2,7 +2,11 @@
 
 import { useEffect, useId, useMemo, useState } from 'react';
 import type { EChartsCoreOption } from 'echarts/core';
-import { EXPORT_SIZE, FONT_FAMILY, headerHeight } from '@/web/lib/chartOptions';
+import { FONT_FAMILY } from '@/web/lib/chartOptions';
+import {
+  EXPORT_AXIS_NAME_H, EXPORT_FONT, EXPORT_FONT_FAMILY, EXPORT_LEGEND_H, EXPORT_LEGEND_OVERRIDES, EXPORT_MARKS, EXPORT_PAD,
+  exportFooter, exportGrid, exportHeaderHeight, exportTitle,
+} from '@/web/lib/exportStyle';
 import { CSV_BOM, CSV_SEP, csvNumber } from '@/web/lib/csv';
 import { formatNumber } from '@/web/lib/format';
 import {
@@ -26,9 +30,10 @@ const EMPTY: State = { items: [], frequency: null, from: '', to: '', logLeft: fa
 
 export function buildLabOption({ model, title, subtitle, source, theme, exportMode = false, logLeft, logRight }: { model: LabModel; title: string; subtitle: string; source: string; theme: ChartTheme; exportMode?: boolean; logLeft: boolean; logRight: boolean }): EChartsCoreOption {
   const t = exportMode ? EXPORT_THEME : theme;
-  const pad = exportMode ? 56 : 8;
-  const fs = exportMode ? 17 : 12;
-  const top = exportMode ? headerHeight({ title, subtitle, source }, EXPORT_SIZE.width, pad) : 8;
+  const pad = exportMode ? EXPORT_PAD : 8;
+  const fs = exportMode ? EXPORT_FONT.text : 12;
+  const top = exportMode ? exportHeaderHeight(title, subtitle) : 8;
+  const foot = exportMode ? exportFooter([source], t) : null;
   const daily = model.frequency === 'D';
   const cols = model.columns.filter((c) => c.points.length);
   const hasRight = cols.some((c) => c.item.axis === 'right');
@@ -36,16 +41,16 @@ export function buildLabOption({ model, title, subtitle, source, theme, exportMo
   const maps = new Map(cols.map((c) => [c.item.key, new Map(c.points)]));
   const yAxis = (axis: Axis, log: boolean) => ({
     type: log ? 'log' : 'value', scale: !log, position: axis, name: unitsOf(axis), nameTextStyle: { color: t.muted, fontSize: fs, align: axis === 'left' ? 'left' : 'right' },
-    axisLabel: { color: t.muted, fontSize: fs, formatter: (v: number) => formatNumber(v, Math.abs(v) < 10 ? 1 : 0) }, splitLine: { show: axis === 'left', lineStyle: { color: t.grid } },
+    axisLabel: { color: t.muted, fontSize: fs, formatter: (v: number) => formatNumber(v, Math.abs(v) < 10 ? 1 : 0) }, splitLine: { show: axis === 'left' && !exportMode, lineStyle: { color: t.grid } },
   });
   return {
     animation: !exportMode,
     useUTC: true,
     backgroundColor: exportMode ? '#ffffff' : 'transparent',
-    textStyle: { fontFamily: FONT_FAMILY, color: t.text, fontSize: fs },
-    grid: { left: pad, right: pad, top: top + 64, bottom: exportMode ? 100 : 12, containLabel: true },
-    title: exportMode ? { text: title, subtext: subtitle, left: pad, top: 30, itemGap: 12, textStyle: { color: t.text, fontSize: 32, width: EXPORT_SIZE.width - pad * 2, overflow: 'break' }, subtextStyle: { color: t.textSecondary, fontSize: 19, width: EXPORT_SIZE.width - pad * 2, overflow: 'break' } } : undefined,
-    legend: { show: true, type: exportMode ? 'plain' : 'scroll', top, left: pad, right: pad, selectedMode: false, textStyle: { color: t.text, fontSize: fs } },
+    textStyle: { fontFamily: exportMode ? EXPORT_FONT_FAMILY : FONT_FAMILY, color: t.text, fontSize: fs },
+    grid: foot ? exportGrid(top + EXPORT_LEGEND_H + EXPORT_AXIS_NAME_H, foot.height) : { left: pad, right: pad, top: top + 64, bottom: 12, containLabel: true },
+    title: exportMode ? exportTitle(title, subtitle, t) : undefined,
+    legend: { show: true, type: exportMode ? 'plain' : 'scroll', top, left: pad, right: pad, selectedMode: false, textStyle: { color: t.text, fontSize: fs }, ...(exportMode ? EXPORT_LEGEND_OVERRIDES : {}) },
     xAxis: daily
       ? { type: 'time', axisLine: { lineStyle: { color: t.axis } }, axisTick: { show: false }, splitLine: { show: false }, axisLabel: { color: t.muted, fontSize: fs, hideOverlap: true, formatter: (v: number) => { const d = new Date(v); return `${String(d.getUTCDate()).padStart(2, '0')}/${String(d.getUTCMonth() + 1).padStart(2, '0')}/${String(d.getUTCFullYear()).slice(2)}`; } } }
       : { type: 'category', data: model.periods.map(periodLabel), boundaryGap: cols.some((c) => c.item.type === 'bar'), axisLine: { lineStyle: { color: t.axis } }, axisTick: { show: false }, axisLabel: { color: t.muted, fontSize: fs, hideOverlap: true } },
@@ -57,8 +62,8 @@ export function buildLabOption({ model, title, subtitle, source, theme, exportMo
       return {
         name: `${c.label}${hasRight ? (c.item.axis === 'left' ? ' (eje izq.)' : ' (eje der.)') : ''}`,
         type: c.item.type === 'bar' ? 'bar' : 'line', yAxisIndex: hasRight && c.item.axis === 'right' ? 1 : 0, data, connectNulls: false,
-        showSymbol: !daily && model.periods.length <= 36, symbolSize: exportMode ? 7 : 4, barMaxWidth: exportMode ? 30 : 18,
-        lineStyle: { width: c.item.type === 'area' ? 0 : exportMode ? 3.5 : 2, color }, itemStyle: { color },
+        showSymbol: !daily && model.periods.length <= 36, symbolSize: exportMode ? EXPORT_MARKS.symbol : 4, barMaxWidth: exportMode ? EXPORT_MARKS.barMaxWidth : 18,
+        lineStyle: { width: c.item.type === 'area' ? 0 : exportMode ? EXPORT_MARKS.line : 2, color }, itemStyle: { color },
         areaStyle: c.item.type === 'area' ? { color, opacity: 0.85 } : undefined, z: c.item.type === 'area' ? 1 : 3,
       };
     }),
@@ -75,7 +80,7 @@ export function buildLabOption({ model, title, subtitle, source, theme, exportMo
         }).join('<br/>');
       },
     },
-    graphic: exportMode ? [{ type: 'text', left: pad, bottom: 30, style: { text: source, width: EXPORT_SIZE.width - pad * 2, overflow: 'break', fill: t.muted, font: `15px ${FONT_FAMILY}`, lineHeight: 21 } }] : [],
+    graphic: foot?.graphic ?? [],
   };
 }
 

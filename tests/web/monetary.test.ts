@@ -4,6 +4,7 @@ import type { MonetarySeries } from '@/monetary/types';
 import { buildMonetaryChartModel, monetaryChartCsv, monetaryDate, type MonetaryOptions } from '@/web/lib/monetaryChartModel';
 import { buildMonetaryChartOption } from '@/web/lib/monetaryChartOptions';
 import { renderSvgString } from '@/web/lib/exportRender';
+import { EXPORT_SIZE } from '@/web/lib/exportStyle';
 import { DARK_THEME, LIGHT_THEME } from '@/web/lib/palette';
 
 function fake(id: number, observations: MonetarySeries['observations']): MonetarySeries {
@@ -67,8 +68,8 @@ describe('monetary presentation export', () => {
     expect(option.animation).toBe(false);
     expect(option.tooltip).toBeUndefined();
     const svg = renderSvgString(option);
-    expect(svg).toContain('width="1600"');
-    expect(svg).toContain('height="900"');
+    expect(svg).toContain(`width="${EXPORT_SIZE.width}"`);
+    expect(svg).toContain(`height="${EXPORT_SIZE.height}"`);
     expect(svg).toContain('TAMAR y BADLAR');
     expect(svg).toContain('% TNA');
     expect(svg).toContain('Fuente: one618 en base a BCRA');

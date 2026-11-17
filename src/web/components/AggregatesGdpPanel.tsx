@@ -2,7 +2,11 @@
 
 import { useId, useMemo, useState } from 'react';
 import type { EChartsCoreOption } from 'echarts/core';
-import { EXPORT_SIZE, FONT_FAMILY, headerHeight } from '@/web/lib/chartOptions';
+import { FONT_FAMILY } from '@/web/lib/chartOptions';
+import {
+  EXPORT_FONT, EXPORT_FONT_FAMILY, EXPORT_LEGEND_H, EXPORT_LEGEND_OVERRIDES, EXPORT_MARKS, EXPORT_PAD,
+  exportFooter, exportGrid, exportHeaderHeight, exportTitle, NO_SPLIT_LINE,
+} from '@/web/lib/exportStyle';
 import { CSV_BOM, CSV_SEP, csvNumber } from '@/web/lib/csv';
 import { formatNumber } from '@/web/lib/format';
 import type { AggregateGdpModel } from '@/web/lib/aggregatesGdp';
@@ -34,9 +38,11 @@ export function aggregatesGdpCsv(model: AggregateGdpModel): string {
 
 export function buildAggregatesGdpOption({ model, title, subtitle, source, theme, exportMode = false }: { model: AggregateGdpModel; title: string; subtitle: string; source: string; theme: ChartTheme; exportMode?: boolean }): EChartsCoreOption {
   const t = exportMode ? EXPORT_THEME : theme;
-  const pad = exportMode ? 56 : 8;
-  const fs = exportMode ? 17 : 12;
-  const top = exportMode ? headerHeight({ title, subtitle, source }, EXPORT_SIZE.width, pad) : 8;
+  const pad = exportMode ? EXPORT_PAD : 8;
+  const fs = exportMode ? EXPORT_FONT.text : 12;
+  const top = exportMode ? exportHeaderHeight(title, subtitle) : 8;
+  const foot = exportMode ? exportFooter([source], t) : null;
+  const lw = exportMode ? EXPORT_MARKS.line : 2;
   const idx = new Map(model.periods.map((p, i) => [p, i]));
   const series = model.columns.flatMap((c, i) => {
     const color = t.series[i % t.series.length]!;
@@ -46,19 +52,19 @@ export function buildAggregatesGdpOption({ model, title, subtitle, source, theme
     for (const p of c.points) (p.estimated ? estimated : official)[idx.get(p.period)!] = p.value;
     if (lastOfficial && c.points.some((p) => p.estimated)) estimated[idx.get(lastOfficial.period)!] = lastOfficial.value; // une la punteada con el último oficial
     return [
-      { name: c.label, type: 'line', data: official, showSymbol: false, connectNulls: false, lineStyle: { width: exportMode ? 3.5 : 2, color }, itemStyle: { color } },
-      { name: `${c.label} (estimado)`, type: 'line', data: estimated, showSymbol: true, symbolSize: exportMode ? 7 : 5, connectNulls: false, lineStyle: { width: exportMode ? 3.5 : 2, color, type: 'dashed' }, itemStyle: { color } },
+      { name: c.label, type: 'line', data: official, showSymbol: false, connectNulls: false, lineStyle: { width: lw, color }, itemStyle: { color } },
+      { name: `${c.label} (estimado)`, type: 'line', data: estimated, showSymbol: true, symbolSize: exportMode ? EXPORT_MARKS.symbol : 5, connectNulls: false, lineStyle: { width: lw, color, type: 'dashed' }, itemStyle: { color } },
     ];
   });
   return {
     animation: !exportMode,
     backgroundColor: exportMode ? '#ffffff' : 'transparent',
-    textStyle: { fontFamily: FONT_FAMILY, color: t.text, fontSize: fs },
-    grid: { left: pad, right: pad, top: top + 48, bottom: exportMode ? 100 : 12, containLabel: true },
-    title: exportMode ? { text: title, subtext: subtitle, left: pad, top: 30, itemGap: 12, textStyle: { color: t.text, fontSize: 32, width: EXPORT_SIZE.width - pad * 2, overflow: 'break' }, subtextStyle: { color: t.textSecondary, fontSize: 19, width: EXPORT_SIZE.width - pad * 2, overflow: 'break' } } : undefined,
-    legend: { show: true, top, left: pad, right: pad, selectedMode: false, textStyle: { color: t.text, fontSize: fs }, data: model.columns.map((c) => c.label) },
+    textStyle: { fontFamily: exportMode ? EXPORT_FONT_FAMILY : FONT_FAMILY, color: t.text, fontSize: fs },
+    grid: foot ? exportGrid(top + EXPORT_LEGEND_H + 4, foot.height) : { left: pad, right: pad, top: top + 48, bottom: 12, containLabel: true },
+    title: exportMode ? exportTitle(title, subtitle, t) : undefined,
+    legend: { show: true, top, left: pad, right: pad, selectedMode: false, textStyle: { color: t.text, fontSize: fs }, data: model.columns.map((c) => c.label), ...(exportMode ? EXPORT_LEGEND_OVERRIDES : {}) },
     xAxis: { type: 'category', data: model.periods.map(qLabel), boundaryGap: false, axisLine: { lineStyle: { color: t.axis } }, axisTick: { show: false }, axisLabel: { color: t.muted, fontSize: fs, hideOverlap: true } },
-    yAxis: { type: 'value', scale: true, axisLabel: { color: t.muted, fontSize: fs, formatter: (v: number) => `${formatNumber(v, 0)} %` }, splitLine: { lineStyle: { color: t.grid } } },
+    yAxis: { type: 'value', scale: true, axisLabel: { color: t.muted, fontSize: fs, formatter: (v: number) => `${formatNumber(v, 0)} %` }, splitLine: exportMode ? NO_SPLIT_LINE : { lineStyle: { color: t.grid } } },
     series,
     tooltip: exportMode ? undefined : {
       trigger: 'axis', confine: true, backgroundColor: t.surface, borderColor: t.axis, textStyle: { color: t.text },
@@ -72,7 +78,7 @@ export function buildAggregatesGdpOption({ model, title, subtitle, source, theme
         }).join('<br/>');
       },
     },
-    graphic: exportMode ? [{ type: 'text', left: pad, bottom: 30, style: { text: source, width: EXPORT_SIZE.width - pad * 2, overflow: 'break', fill: t.muted, font: `15px ${FONT_FAMILY}`, lineHeight: 21 } }] : [],
+    graphic: foot?.graphic ?? [],
   };
 }
 

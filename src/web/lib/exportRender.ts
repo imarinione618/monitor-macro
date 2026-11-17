@@ -1,12 +1,13 @@
 /**
- * Render de exportación: instancia ECharts fuera de pantalla con tamaño fijo
- * (1600×900), fondo blanco y opciones propias de exportación (sin controles).
+ * Render de exportación: instancia ECharts fuera de pantalla con el tamaño del formato de descarga
+ * (12,7 × 7,62 cm = 480 × 288 px CSS; ver exportStyle.ts), fondo blanco y opciones propias de
+ * exportación (sin controles).
  */
 import type { EChartsCoreOption } from 'echarts/core';
-import { EXPORT_PIXEL_RATIO, EXPORT_SIZE } from './chartOptions';
+import { EXPORT_DPI, EXPORT_PIXEL_RATIO, EXPORT_SIZE, setPngDpi } from './exportStyle';
 import { echarts } from './echarts';
 
-/** SVG como texto. Funciona en Node (ssr) y en el navegador. */
+/** SVG como texto. Funciona en Node (ssr) y en el navegador. 480 × 288 px = 12,7 × 7,62 cm en Office. */
 export function renderSvgString(option: EChartsCoreOption, size: { width: number; height: number } = EXPORT_SIZE): string {
   const chart = echarts.init(null, null, { renderer: 'svg', ssr: true, width: size.width, height: size.height });
   try {
@@ -17,7 +18,7 @@ export function renderSvgString(option: EChartsCoreOption, size: { width: number
   }
 }
 
-/** PNG (data URL) en alta resolución. Solo navegador: usa un <div> fuera de pantalla con renderer canvas. */
+/** PNG (data URL) a 300 dpi (1500 × 900 px). Solo navegador: usa un <div> fuera de pantalla con renderer canvas. */
 export function renderPngDataUrl(option: EChartsCoreOption, size: { width: number; height: number } = EXPORT_SIZE, pixelRatio = EXPORT_PIXEL_RATIO): string {
   const div = document.createElement('div');
   div.style.cssText = `position:fixed;left:-30000px;top:0;width:${size.width}px;height:${size.height}px;pointer-events:none;`;
@@ -31,6 +32,15 @@ export function renderPngDataUrl(option: EChartsCoreOption, size: { width: numbe
     chart.dispose();
     div.remove();
   }
+}
+
+/** PNG listo para Office: resolución de 300 dpi grabada, se inserta con 12,7 × 7,62 cm. */
+export function renderPngBytes(option: EChartsCoreOption): Uint8Array {
+  const dataUrl = renderPngDataUrl(option);
+  const bin = atob(dataUrl.slice(dataUrl.indexOf(',') + 1));
+  const bytes = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+  return setPngDpi(bytes, EXPORT_DPI);
 }
 
 export function downloadBlob(content: BlobPart, mime: string, filename: string): void {

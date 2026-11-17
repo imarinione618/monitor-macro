@@ -39,7 +39,10 @@ SITE_BASE_PATH=/monitor-macro npm run build   # build con subruta (lo hace el wo
     compatibilidad de series (misma frecuencia y unidad resultante), variantes de ajuste estacional,
     rango (12m / 24m / 5 años / Todo), base 100 con período elegible, corte transversal. Usa
     `buildWideTable` de `src/core/views.ts`: mismos números que Sheets.
-  - `chartOptions.ts`: opciones ECharts de pantalla y de exportación (1600×900, fondo blanco, título,
+  - `exportStyle.ts`: formato único de descarga — 12,7 × 7,62 cm (480 × 288 px a 96 px/pulg.), Arial,
+    título 12 pt / subtítulo 10 pt / resto 7 pt, títulos y leyenda centrados, sin grilla ni bordes; PNG a
+    300 dpi con resolución grabada (pHYs). Lo usan todos los constructores de opciones de exportación.
+  - `chartOptions.ts`: opciones ECharts de pantalla y de exportación (formato de `exportStyle.ts`, fondo blanco, título,
     subtítulo con transformación/unidad/ajuste/período/base, fuente al pie sin notas metodológicas, aviso de
     datos sintéticos, sin tooltip ni controles, sin animación).
   - `csv.ts`: UTF-8 con BOM, `;`, coma decimal, fecha ISO + período canónico, valores sin redondear, faltante vacío.
@@ -47,7 +50,7 @@ SITE_BASE_PATH=/monitor-macro npm run build   # build con subruta (lo hace el wo
   - `meta.ts`: línea de fuente, notas, avisos por serie (stale, sin datos, error, supresión).
   - `palette.ts`: paleta violeta-rojo con prioridad a `#E32D91`, `#1A4CC8` y `#969696` (máx. 8 series; el color sigue a la serie). Se conserva en pantalla y exportaciones. En categorías del IPC: núcleo azul, estacionales gris y regulados magenta.
   - `exportRender.ts`: render fuera de pantalla — SVG (`renderer:'svg'`, también SSR en Node) y PNG
-    (`renderer:'canvas'`, `pixelRatio` 3 → 4800×2700 px).
+    (`renderer:'canvas'`, `pixelRatio` 300/96 → 1500×900 px a 300 dpi).
 - `components/` — `ChartPanel` (gráfico reutilizable con selectores, tabla accesible alternable, CSV/PNG/SVG,
   fuente al pie), `SnapshotPanel` (barras horizontales del período elegido), `KpiCard`, `EChart`,
   `Nav`, `StateMessages` (banner sintético, store vacío/ilegible), `PageIntro`.

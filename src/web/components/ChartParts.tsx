@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import type { EChartsCoreOption } from 'echarts/core';
-import { downloadBlob, downloadUrl, renderPngDataUrl, renderSvgString } from '@/web/lib/exportRender';
+import { downloadBlob, renderPngBytes, renderSvgString } from '@/web/lib/exportRender';
 import { slugify } from '@/web/lib/format';
 import type { SeriesNotice } from '@/web/lib/meta';
 
@@ -21,7 +21,7 @@ interface ToolbarProps {
   disabled?: boolean;
 }
 
-/** Tabla, CSV, PNG y SVG. La exportación renderiza una instancia aparte (1600×900, fondo blanco). */
+/** Tabla, CSV, PNG y SVG. La exportación renderiza una instancia aparte (12,7 × 7,62 cm, fondo blanco; ver exportStyle.ts). */
 export function ChartToolbar({ title, showTable, onToggleTable, tableId, getCsv, getExportOption, disabled }: ToolbarProps) {
   const [busy, setBusy] = useState<string | null>(null);
   const [err, setErr] = useState<string | null>(null);
@@ -38,7 +38,7 @@ export function ChartToolbar({ title, showTable, onToggleTable, tableId, getCsv,
           const opt = getExportOption();
           if (!opt) throw new Error('No hay datos para exportar.');
           if (kind === 'svg') downloadBlob(renderSvgString(opt), 'image/svg+xml;charset=utf-8', `${base}.svg`);
-          else downloadUrl(renderPngDataUrl(opt), `${base}.png`);
+          else downloadBlob(renderPngBytes(opt) as BlobPart, 'image/png', `${base}.png`);
         }
       } catch (e) {
         setErr(`No se pudo exportar: ${(e as Error).message}`);
@@ -56,10 +56,10 @@ export function ChartToolbar({ title, showTable, onToggleTable, tableId, getCsv,
       <button type="button" className="btn" onClick={() => run('csv')} disabled={disabled || !!busy}>
         {busy === 'csv' ? 'Generando…' : 'CSV'}
       </button>
-      <button type="button" className="btn" onClick={() => run('png')} disabled={disabled || !!busy} title="Imagen PNG 4800×2700 px para presentaciones">
+      <button type="button" className="btn" onClick={() => run('png')} disabled={disabled || !!busy} title="Imagen PNG 12,7 × 7,62 cm a 300 dpi (1500 × 900 px)">
         {busy === 'png' ? 'Generando…' : 'PNG'}
       </button>
-      <button type="button" className="btn" onClick={() => run('svg')} disabled={disabled || !!busy} title="Imagen vectorial SVG 1600×900">
+      <button type="button" className="btn" onClick={() => run('svg')} disabled={disabled || !!busy} title="Imagen vectorial SVG 12,7 × 7,62 cm">
         {busy === 'svg' ? 'Generando…' : 'SVG'}
       </button>
       {err && (

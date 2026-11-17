@@ -3,7 +3,11 @@
 import { useId, useMemo, useState } from 'react';
 import type { EChartsCoreOption } from 'echarts/core';
 import type { FuelProduct, FuelScope, FuelSeries } from '@/combustibles/types';
-import { EXPORT_SIZE, FONT_FAMILY, headerHeight } from '@/web/lib/chartOptions';
+import { FONT_FAMILY } from '@/web/lib/chartOptions';
+import {
+  EXPORT_AXIS_NAME_H, EXPORT_FONT, EXPORT_FONT_FAMILY, EXPORT_LEGEND_H, EXPORT_LEGEND_OVERRIDES, EXPORT_MARKS, EXPORT_PAD,
+  exportFooter, exportGrid, exportHeaderHeight, exportTitle, NO_SPLIT_LINE,
+} from '@/web/lib/exportStyle';
 import { CSV_BOM, CSV_SEP, csvNumber } from '@/web/lib/csv';
 import { formatNumber } from '@/web/lib/format';
 import { periodLabel, transform, type Point } from '@/web/lib/lab';
@@ -25,22 +29,23 @@ interface Col { product: FuelProduct; label: string; series: FuelSeries; points:
 
 function buildOption({ cols, title, subtitle, unit, daily, breakDate, theme, exportMode = false }: { cols: Col[]; title: string; subtitle: string; unit: string; daily: boolean; breakDate: string | null; theme: ChartTheme; exportMode?: boolean }): EChartsCoreOption {
   const t = exportMode ? EXPORT_THEME : theme;
-  const pad = exportMode ? 56 : 8;
-  const fs = exportMode ? 17 : 12;
-  const top = exportMode ? headerHeight({ title, subtitle, source: SOURCE }, EXPORT_SIZE.width, pad) : 8;
+  const pad = exportMode ? EXPORT_PAD : 8;
+  const fs = exportMode ? EXPORT_FONT.text : 12;
+  const top = exportMode ? exportHeaderHeight(title, subtitle) : 8;
+  const foot = exportMode ? exportFooter([SOURCE], t) : null;
   const colors: Record<FuelProduct, string> = { super: t.series[0]!, premium: t.series[3]!, gasoil_g2: t.series[1]!, gasoil_g3: t.series[2]! };
   return {
     animation: !exportMode, useUTC: true, backgroundColor: exportMode ? '#ffffff' : 'transparent',
-    textStyle: { fontFamily: FONT_FAMILY, color: t.text, fontSize: fs },
-    grid: { left: pad, right: pad, top: top + 48, bottom: exportMode ? 100 : 12, containLabel: true },
-    title: exportMode ? { text: title, subtext: subtitle, left: pad, top: 30, itemGap: 12, textStyle: { color: t.text, fontSize: 32, width: EXPORT_SIZE.width - pad * 2, overflow: 'break' }, subtextStyle: { color: t.textSecondary, fontSize: 19, width: EXPORT_SIZE.width - pad * 2, overflow: 'break' } } : undefined,
-    legend: { show: true, top, left: pad, right: pad, selectedMode: false, textStyle: { color: t.text, fontSize: fs } },
+    textStyle: { fontFamily: exportMode ? EXPORT_FONT_FAMILY : FONT_FAMILY, color: t.text, fontSize: fs },
+    grid: foot ? exportGrid(top + EXPORT_LEGEND_H + EXPORT_AXIS_NAME_H, foot.height) : { left: pad, right: pad, top: top + 48, bottom: 12, containLabel: true },
+    title: exportMode ? exportTitle(title, subtitle, t) : undefined,
+    legend: { show: true, top, left: pad, right: pad, selectedMode: false, textStyle: { color: t.text, fontSize: fs }, ...(exportMode ? EXPORT_LEGEND_OVERRIDES : {}) },
     xAxis: { type: 'time', axisLine: { lineStyle: { color: t.axis } }, axisTick: { show: false }, splitLine: { show: false }, axisLabel: { color: t.muted, fontSize: fs, hideOverlap: true, formatter: (v: number) => { const d = new Date(v); return daily ? `${String(d.getUTCDate()).padStart(2, '0')}/${String(d.getUTCMonth() + 1).padStart(2, '0')}/${String(d.getUTCFullYear()).slice(2)}` : `${String(d.getUTCMonth() + 1).padStart(2, '0')}/${d.getUTCFullYear()}`; } } },
-    yAxis: { type: 'value', scale: true, name: unit, nameTextStyle: { color: t.muted, fontSize: fs, align: 'left' }, axisLabel: { color: t.muted, fontSize: fs, formatter: (v: number) => formatNumber(v, 0) }, splitLine: { lineStyle: { color: t.grid } } },
+    yAxis: { type: 'value', scale: true, name: unit, nameTextStyle: { color: t.muted, fontSize: fs, align: 'left' }, axisLabel: { color: t.muted, fontSize: fs, formatter: (v: number) => formatNumber(v, 0) }, splitLine: exportMode ? NO_SPLIT_LINE : { lineStyle: { color: t.grid } } },
     series: cols.map((c, i) => ({
       name: c.label, type: 'line', showSymbol: !daily && c.points.length <= 36, symbolSize: 4, connectNulls: false, data: c.points.map(([p, v]) => [toTime(p), v]),
-      lineStyle: { width: exportMode ? 3.5 : 2, color: colors[c.product] }, itemStyle: { color: colors[c.product] },
-      markLine: i === 0 && breakDate ? { symbol: 'none', silent: true, lineStyle: { color: t.muted, type: 'dashed' }, label: { formatter: 'Quiebre: YPF deja de informar', color: t.muted, fontSize: exportMode ? 15 : 11, position: 'insideEndTop' }, data: [{ xAxis: toTime(breakDate) }] } : undefined,
+      lineStyle: { width: exportMode ? EXPORT_MARKS.line : 2, color: colors[c.product] }, itemStyle: { color: colors[c.product] },
+      markLine: i === 0 && breakDate ? { symbol: 'none', silent: true, lineStyle: { color: t.muted, type: 'dashed' }, label: { formatter: 'Quiebre: YPF deja de informar', color: t.muted, fontSize: exportMode ? EXPORT_FONT.text : 11, position: 'insideEndTop' }, data: [{ xAxis: toTime(breakDate) }] } : undefined,
     })),
     tooltip: exportMode ? undefined : {
       trigger: 'axis', confine: true, backgroundColor: t.surface, borderColor: t.axis, textStyle: { color: t.text },
@@ -55,7 +60,7 @@ function buildOption({ cols, title, subtitle, unit, daily, breakDate, theme, exp
         }).join('<br/>');
       },
     },
-    graphic: exportMode ? [{ type: 'text', left: pad, bottom: 30, style: { text: SOURCE, width: EXPORT_SIZE.width - pad * 2, overflow: 'break', fill: t.muted, font: `15px ${FONT_FAMILY}`, lineHeight: 21 } }] : [],
+    graphic: foot?.graphic ?? [],
   };
 }
 

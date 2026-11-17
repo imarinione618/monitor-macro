@@ -1,20 +1,33 @@
 /**
  * Opciones de ECharts (funciones puras): una versión "pantalla" (con tooltip, sin título:
- * el título lo pone el HTML) y una versión "exportación" para PowerPoint
- * (fondo blanco, título, subtítulo con período y unidad, fuente al pie, sin controles,
- * tamaño fijo 1600×900, sin animación).
+ * el título lo pone el HTML) y una versión "exportación" para Word/PowerPoint con el formato
+ * de `exportStyle.ts` (12,7 × 7,62 cm, Arial, títulos centrados, sin grilla, fondo blanco,
+ * subtítulo con período y unidad, fuente al pie, sin controles ni animación).
  */
 import type { EChartsCoreOption } from 'echarts/core';
 import { formatPeriodLong, formatPeriodShort } from '@/core/periods';
 import type { TransformId } from '@/core/types';
 import { ADDITIVE_TRANSFORMS, type ChartModel, type SnapshotModel } from './chartModel';
+import {
+  EXPORT_FONT,
+  EXPORT_FONT_FAMILY,
+  EXPORT_LEGEND_H,
+  EXPORT_MARKS,
+  EXPORT_PAD,
+  exportBase,
+  exportFooter,
+  exportGrid,
+  exportHeaderHeight,
+  exportLegend,
+  exportTitle,
+  NO_SPLIT_LINE,
+} from './exportStyle';
 import { formatAxis, formatWithUnit } from './format';
 import { EXPORT_THEME, type ChartTheme } from './palette';
 import type { ChartKind } from './types';
 import { snapshotValueColor } from './snapshotColors';
 
-export const EXPORT_SIZE = { width: 1600, height: 900 } as const;
-export const EXPORT_PIXEL_RATIO = 3;
+export { EXPORT_PIXEL_RATIO, EXPORT_SIZE, estimateLines } from './exportStyle';
 // Comillas simples: ECharts no escapa comillas dobles dentro del atributo style del SVG exportado.
 export const FONT_FAMILY = "'Segoe UI', system-ui, -apple-system, Arial, Helvetica, sans-serif";
 export const SYNTHETIC_WARNING = 'DATOS SINTÉTICOS DE PRUEBA — NO SON DATOS REALES';
@@ -45,12 +58,6 @@ function esc(s: string): string {
   return s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
 }
 
-/** Líneas aproximadas que ocupa un texto con ancho y tamaño de fuente dados. */
-export function estimateLines(text: string, widthPx: number, fontSize: number): number {
-  const charsPerLine = Math.max(10, Math.floor(widthPx / (fontSize * 0.52)));
-  return Math.max(1, Math.ceil(text.length / charsPerLine));
-}
-
 function isLevelLike(t: TransformId): boolean {
   return t === 'level' || t === 'rebase_100' || t === 'ytd_sum' || t === 'sum_12m';
 }
@@ -62,46 +69,13 @@ export function effectiveKind(kind: ChartKind, t: TransformId): ChartKind {
 }
 
 /** Alto (px) que ocupan título y subtítulo en la exportación, según su largo. */
-export function headerHeight(meta: ChartTextMeta | undefined, width: number, pad: number): number {
-  if (!meta) return 24;
-  const w = width - pad * 2;
-  return 32 + estimateLines(meta.title, w, 32) * 40 + 12 + estimateLines(meta.subtitle, w, 19) * 26 + 24;
+function headerHeight(meta: ChartTextMeta | undefined): number {
+  return meta ? exportHeaderHeight(meta.title, meta.subtitle) : EXPORT_PAD;
 }
 
-interface FooterLayout {
-  graphic: unknown[];
-  height: number;
-}
-
-function footer(meta: ChartTextMeta, theme: ChartTheme, width: number, height: number, left: number): FooterLayout {
-  const fontSize = 15;
-  const lineH = 21;
-  const maxWidth = width - left * 2;
-  const blocks: string[] = [];
-  blocks.push(meta.source);
-  if (meta.synthetic) blocks.push(SYNTHETIC_WARNING);
-  const lines = blocks.reduce((acc, b) => acc + estimateLines(b, maxWidth, fontSize), 0);
-  const blockH = lines * lineH;
-  const top = height - 28 - blockH;
-  return {
-    height: blockH + 28,
-    graphic: [
-      {
-        type: 'text',
-        left,
-        top,
-        silent: true,
-        style: {
-          text: blocks.join('\n'),
-          width: maxWidth,
-          overflow: 'break',
-          fill: theme.muted,
-          font: `${fontSize}px ${FONT_FAMILY}`,
-          lineHeight: lineH,
-        },
-      },
-    ],
-  };
+/** Pie de exportación: fuente y, si corresponde, aviso de datos sintéticos. */
+function footer(meta: ChartTextMeta, theme: ChartTheme) {
+  return exportFooter([meta.source, meta.synthetic ? SYNTHETIC_WARNING : ''], theme);
 }
 
 export interface TimeSeriesOptionInput {
@@ -122,10 +96,10 @@ export function buildTimeSeriesOption({ model, kind, theme, colorSlots, mode, me
   const k = effectiveKind(kind, model.transform);
   const cols = model.columns;
   const multi = cols.length > 1;
-  const W = exp ? EXPORT_SIZE.width : (width ?? 800);
-  const H = EXPORT_SIZE.height;
-  const pad = exp ? 56 : 8;
-  const fs = exp ? 17 : 12;
+  const W = width ?? 800;
+  const pad = exp ? EXPORT_PAD : 8;
+  const fs = exp ? EXPORT_FONT.text : 12;
+  const ff = exp ? EXPORT_FONT_FAMILY : FONT_FAMILY;
   const color = (id: string) => theme.series[(colorSlots[id] ?? 0) % theme.series.length]!;
   const directLabels = k === 'line' && cols.length <= 4 && (exp || W >= 560);
   const crossesZero = cols.some((c) => c.values.some((v) => v !== null && v < 0)) && cols.some((c) => c.values.some((v) => v !== null && v > 0));
@@ -134,10 +108,10 @@ export function buildTimeSeriesOption({ model, kind, theme, colorSlots, mode, me
 
   const fmt = (v: unknown) => formatWithUnit(typeof v === 'number' ? v : null, unit);
 
-  let top = exp ? headerHeight(meta, W, pad) : 12;
+  let top = exp ? headerHeight(meta) : 12;
   const legendTop = top;
-  if (multi) top += exp ? 44 : 30;
-  const foot = exp && meta ? footer(meta, theme, W, H, pad) : null;
+  if (multi) top += exp ? EXPORT_LEGEND_H : 30;
+  const foot = exp && meta ? footer(meta, theme) : null;
 
   const series = cols.map((c, i) => {
     const base = {
@@ -154,9 +128,9 @@ export function buildTimeSeriesOption({ model, kind, theme, colorSlots, mode, me
         type: 'line',
         showSymbol: periods.length <= 24,
         symbol: 'circle',
-        symbolSize: exp ? 9 : 7,
+        symbolSize: exp ? EXPORT_MARKS.symbol : 7,
         connectNulls: false,
-        lineStyle: { width: exp ? 3 : 2 },
+        lineStyle: { width: exp ? EXPORT_MARKS.line : 2 },
         // Evita que las etiquetas finales de series cercanas se superpongan.
         labelLayout: { moveOverlap: 'shiftY' },
         endLabel: directLabels
@@ -165,8 +139,8 @@ export function buildTimeSeriesOption({ model, kind, theme, colorSlots, mode, me
               formatter: (p: { value: unknown }) => formatWithUnit(typeof p.value === 'number' ? p.value : null, unit),
               color: theme.text,
               fontSize: fs,
-              fontFamily: FONT_FAMILY,
-              distance: 6,
+              fontFamily: ff,
+              distance: exp ? 3 : 6,
             }
           : { show: false },
         markLine:
@@ -179,57 +153,62 @@ export function buildTimeSeriesOption({ model, kind, theme, colorSlots, mode, me
       ...base,
       type: 'bar',
       stack: k === 'stacked' ? 'total' : undefined,
-      barMaxWidth: exp ? 42 : 28,
-      itemStyle: { borderColor: k === 'stacked' ? (exp ? '#ffffff' : theme.surface) : undefined, borderWidth: k === 'stacked' ? 1 : 0 },
+      barMaxWidth: exp ? EXPORT_MARKS.barMaxWidth : 28,
+      // Exportación sin bordes: las barras apiladas no llevan separador blanco.
+      itemStyle: { borderColor: k === 'stacked' && !exp ? theme.surface : undefined, borderWidth: k === 'stacked' && !exp ? 1 : 0 },
     };
   });
 
   const longestEnd = directLabels
     ? Math.max(...cols.map((c) => fmt([...c.values].reverse().find((v) => v !== null) ?? null).length))
     : 0;
-  const right = directLabels ? Math.min(160, Math.round(longestEnd * fs * 0.6) + 14) : exp ? pad : 12;
+  const right = directLabels
+    ? Math.min(exp ? 70 : 160, Math.round(longestEnd * fs * 0.6) + (exp ? 6 : 14))
+    : exp ? pad : 12;
 
+  const lineIcon = k === 'line';
   const option: Record<string, unknown> = {
-    animation: !exp,
-    backgroundColor: exp ? '#ffffff' : 'transparent',
-    textStyle: { fontFamily: FONT_FAMILY, color: theme.textSecondary, fontSize: fs },
+    ...(exp ? exportBase(theme) : { animation: true, backgroundColor: 'transparent', textStyle: { fontFamily: FONT_FAMILY, color: theme.textSecondary, fontSize: fs } }),
     color: cols.map((c) => color(c.id)),
-    grid: {
-      left: pad,
-      right,
-      top: top + (exp ? 8 : 6),
-      bottom: foot ? foot.height + 16 : 8,
-      containLabel: true,
-    },
-    legend: multi
-      ? {
-          show: true,
-          type: exp ? 'plain' : 'scroll',
-          top: legendTop,
-          left: pad,
-          right: pad,
-          icon: k === 'line' ? 'roundRect' : 'rect',
-          itemWidth: k === 'line' ? (exp ? 22 : 16) : exp ? 16 : 12,
-          itemHeight: k === 'line' ? (exp ? 4 : 3) : exp ? 16 : 12,
-          itemGap: exp ? 26 : 14,
-          textStyle: { color: theme.text, fontSize: fs, fontFamily: FONT_FAMILY },
-          inactiveColor: theme.axis,
-          selectedMode: !exp,
-        }
-      : { show: false },
+    grid: exp
+      ? exportGrid(top + 4, foot?.height ?? EXPORT_PAD, { right })
+      : { left: pad, right, top: top + 6, bottom: 8, containLabel: true },
+    legend: !multi
+      ? { show: false }
+      : exp
+        ? {
+            ...exportLegend(legendTop, theme),
+            icon: lineIcon ? 'roundRect' : 'rect',
+            itemWidth: lineIcon ? EXPORT_MARKS.legendLine.w : EXPORT_MARKS.legendBox,
+            itemHeight: lineIcon ? EXPORT_MARKS.legendLine.h : EXPORT_MARKS.legendBox,
+          }
+        : {
+            show: true,
+            type: 'scroll',
+            top: legendTop,
+            left: pad,
+            right: pad,
+            icon: lineIcon ? 'roundRect' : 'rect',
+            itemWidth: lineIcon ? 16 : 12,
+            itemHeight: lineIcon ? 3 : 12,
+            itemGap: 14,
+            textStyle: { color: theme.text, fontSize: fs, fontFamily: FONT_FAMILY },
+            inactiveColor: theme.axis,
+            selectedMode: true,
+          },
     xAxis: {
       type: 'category',
       data: periods.map(formatPeriodShort),
       boundaryGap: k !== 'line',
       axisLine: { lineStyle: { color: theme.axis } },
       axisTick: { show: false },
-      axisLabel: { color: theme.muted, fontSize: fs, hideOverlap: true, fontFamily: FONT_FAMILY },
+      axisLabel: { color: theme.muted, fontSize: fs, hideOverlap: true, fontFamily: ff },
     },
     yAxis: {
       type: 'value',
       scale: k === 'line' && isLevelLike(model.transform) && !crossesZero,
-      axisLabel: { color: theme.muted, fontSize: fs, formatter: (v: number) => formatAxis(v), fontFamily: FONT_FAMILY },
-      splitLine: { lineStyle: { color: theme.grid, width: 1, type: 'solid' } },
+      axisLabel: { color: theme.muted, fontSize: fs, formatter: (v: number) => formatAxis(v), fontFamily: ff },
+      splitLine: exp ? NO_SPLIT_LINE : { lineStyle: { color: theme.grid, width: 1, type: 'solid' } },
       axisLine: { show: false },
     },
     series,
@@ -268,17 +247,7 @@ export function buildTimeSeriesOption({ model, kind, theme, colorSlots, mode, me
   }
 
   if (exp && meta) {
-    option.title = [
-      {
-        text: meta.title,
-        subtext: meta.subtitle,
-        left: pad,
-        top: 32,
-        itemGap: 12,
-        textStyle: { color: theme.text, fontSize: 32, fontWeight: 600, fontFamily: FONT_FAMILY, width: W - pad * 2, overflow: 'break' },
-        subtextStyle: { color: theme.textSecondary, fontSize: 19, fontFamily: FONT_FAMILY, width: W - pad * 2, overflow: 'break' },
-      },
-    ];
+    option.title = [exportTitle(meta.title, meta.subtitle, theme)];
     option.graphic = foot?.graphic ?? [];
   }
   return option as EChartsCoreOption;
@@ -294,23 +263,19 @@ export interface SnapshotOptionInput {
 /** Barras horizontales para un corte en un período (p.ej. sectores del EMAE, último mes). */
 export function buildSnapshotOption({ snap, theme, mode, meta }: SnapshotOptionInput): EChartsCoreOption {
   const exp = mode === 'export';
-  const W = EXPORT_SIZE.width;
-  const H = EXPORT_SIZE.height;
-  const pad = exp ? 56 : 8;
-  const fs = exp ? 17 : 12;
+  const fs = exp ? EXPORT_FONT.text : 12;
+  const ff = exp ? EXPORT_FONT_FAMILY : FONT_FAMILY;
   const rows = snap.rows;
-  const foot = exp && meta ? footer(meta, theme, W, H, pad) : null;
+  const foot = exp && meta ? footer(meta, theme) : null;
   const fmt = (v: number | null) => formatWithUnit(v, snap.unit);
 
   const option: Record<string, unknown> = {
-    animation: !exp,
-    backgroundColor: exp ? '#ffffff' : 'transparent',
-    textStyle: { fontFamily: FONT_FAMILY, color: theme.textSecondary, fontSize: fs },
-    grid: { left: pad, right: exp ? 120 : 64, top: exp ? headerHeight(meta, W, pad) : 8, bottom: foot ? foot.height + 16 : 8, containLabel: true },
+    ...(exp ? exportBase(theme) : { animation: true, backgroundColor: 'transparent', textStyle: { fontFamily: FONT_FAMILY, color: theme.textSecondary, fontSize: fs } }),
+    grid: exp ? exportGrid(headerHeight(meta), foot?.height ?? EXPORT_PAD, { right: 40 }) : { left: 8, right: 64, top: 8, bottom: 8, containLabel: true },
     xAxis: {
       type: 'value',
-      axisLabel: { color: theme.muted, fontSize: fs, formatter: (v: number) => formatAxis(v), fontFamily: FONT_FAMILY },
-      splitLine: { lineStyle: { color: theme.grid, width: 1 } },
+      axisLabel: { color: theme.muted, fontSize: fs, formatter: (v: number) => formatAxis(v), fontFamily: ff },
+      splitLine: exp ? NO_SPLIT_LINE : { lineStyle: { color: theme.grid, width: 1 } },
     },
     yAxis: {
       type: 'category',
@@ -321,7 +286,7 @@ export function buildSnapshotOption({ snap, theme, mode, meta }: SnapshotOptionI
       axisLabel: {
         color: theme.text,
         fontSize: fs,
-        fontFamily: FONT_FAMILY,
+        fontFamily: ff,
         fontWeight: (v: string) => (rows.find((r) => r.name === v)?.isReference ? 600 : 400),
       },
     },
@@ -329,7 +294,7 @@ export function buildSnapshotOption({ snap, theme, mode, meta }: SnapshotOptionI
       {
         type: 'bar',
         name: snap.transformLabel,
-        barMaxWidth: exp ? 28 : 18,
+        barMaxWidth: exp ? EXPORT_MARKS.barMaxWidth : 18,
         animation: !exp,
         data: rows.map((r) => ({
           value: r.value,
@@ -340,7 +305,7 @@ export function buildSnapshotOption({ snap, theme, mode, meta }: SnapshotOptionI
           position: 'right',
           color: theme.text,
           fontSize: fs,
-          fontFamily: FONT_FAMILY,
+          fontFamily: ff,
           formatter: (p: { value: unknown }) => fmt(typeof p.value === 'number' ? p.value : null),
         },
       },
@@ -362,17 +327,7 @@ export function buildSnapshotOption({ snap, theme, mode, meta }: SnapshotOptionI
     };
   }
   if (exp && meta) {
-    option.title = [
-      {
-        text: meta.title,
-        subtext: meta.subtitle,
-        left: pad,
-        top: 32,
-        itemGap: 12,
-        textStyle: { color: theme.text, fontSize: 32, fontWeight: 600, fontFamily: FONT_FAMILY, width: W - pad * 2, overflow: 'break' },
-        subtextStyle: { color: theme.textSecondary, fontSize: 19, fontFamily: FONT_FAMILY, width: W - pad * 2, overflow: 'break' },
-      },
-    ];
+    option.title = [exportTitle(meta.title, meta.subtitle, theme)];
     option.graphic = foot?.graphic ?? [];
   }
   return option as EChartsCoreOption;

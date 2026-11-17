@@ -7,7 +7,11 @@
  */
 import type { EChartsCoreOption } from 'echarts/core';
 import type { MonetarySeries } from '@/monetary/types';
-import { EXPORT_SIZE, FONT_FAMILY, headerHeight } from './chartOptions';
+import { FONT_FAMILY } from './chartOptions';
+import {
+  EXPORT_AXIS_NAME_H, EXPORT_FONT, EXPORT_FONT_FAMILY, EXPORT_LEGEND_H, EXPORT_LEGEND_OVERRIDES, EXPORT_MARKS, EXPORT_PAD,
+  exportFooter, exportGrid, exportHeaderHeight, exportTitle, NO_SPLIT_LINE,
+} from './exportStyle';
 import { CSV_BOM, CSV_SEP, csvNumber } from './csv';
 import { formatNumber } from './format';
 import { monetaryDate, monetarySourceLabel } from './monetaryChartModel';
@@ -90,22 +94,24 @@ export function repoRatesColors(t: ChartTheme): Record<RepoRatesKey, string> {
 export function buildRepoRatesOption({ model, title, theme, exportMode = false }: { model: RepoRatesModel; title: string; theme: ChartTheme; exportMode?: boolean }): EChartsCoreOption {
   const t = exportMode ? EXPORT_THEME : theme;
   const colors = repoRatesColors(t);
-  const pad = exportMode ? 56 : 8;
-  const fs = exportMode ? 17 : 12;
-  const top = exportMode ? headerHeight({ title, subtitle: model.subtitle, source: model.source }, EXPORT_SIZE.width, pad) : 8;
+  const pad = exportMode ? EXPORT_PAD : 8;
+  const fs = exportMode ? EXPORT_FONT.text : 12;
+  const top = exportMode ? exportHeaderHeight(title, model.subtitle) : 8;
+  const foot = exportMode ? exportFooter([model.source], t) : null;
   const axisName = { color: t.muted, fontSize: fs };
   return {
     animation: !exportMode,
     useUTC: true,
     backgroundColor: exportMode ? '#ffffff' : 'transparent',
-    textStyle: { fontFamily: FONT_FAMILY, color: t.text, fontSize: fs },
-    grid: { left: pad, right: pad, top: top + 72, bottom: exportMode ? 100 : 12, containLabel: true },
-    title: exportMode ? { text: title, subtext: model.subtitle, left: pad, top: 30, itemGap: 12, textStyle: { color: t.text, fontSize: 32, width: EXPORT_SIZE.width - pad * 2, overflow: 'break' }, subtextStyle: { color: t.textSecondary, fontSize: 19, width: EXPORT_SIZE.width - pad * 2, overflow: 'break' } } : undefined,
+    textStyle: { fontFamily: exportMode ? EXPORT_FONT_FAMILY : FONT_FAMILY, color: t.text, fontSize: fs },
+    grid: foot ? exportGrid(top + EXPORT_LEGEND_H + EXPORT_AXIS_NAME_H, foot.height) : { left: pad, right: pad, top: top + 72, bottom: 12, containLabel: true },
+    title: exportMode ? exportTitle(title, model.subtitle, t) : undefined,
     legend: { show: true, type: 'plain', top, left: pad, right: pad, textStyle: { color: t.text, fontSize: fs }, selectedMode: false,
-      data: model.columns.map(c => ({ name: `${REPO_RATES_LABELS[c.key]}${c.key === 'repo' ? ' (eje izq.)' : ' (eje der.)'}`, icon: c.key === 'repo' ? 'rect' : 'roundRect' })) },
+      data: model.columns.map(c => ({ name: `${REPO_RATES_LABELS[c.key]}${c.key === 'repo' ? ' (eje izq.)' : ' (eje der.)'}`, icon: c.key === 'repo' ? 'rect' : 'roundRect' })),
+      ...(exportMode ? EXPORT_LEGEND_OVERRIDES : {}) },
     xAxis: { type: 'time', axisLine: { lineStyle: { color: t.axis } }, axisTick: { show: false }, splitLine: { show: false }, axisLabel: { color: t.muted, fontSize: fs, hideOverlap: true, formatter: (v: number) => shortDate(v) } },
     yAxis: [
-      { type: 'value', name: 'Billones de ARS', nameTextStyle: { ...axisName, align: 'left' }, min: repoAxisMin, position: 'left', axisLabel: { color: t.muted, fontSize: fs, formatter: (v: number) => formatNumber(v, 1) }, splitLine: { lineStyle: { color: t.grid } } },
+      { type: 'value', name: 'Billones de ARS', nameTextStyle: { ...axisName, align: 'left' }, min: repoAxisMin, position: 'left', axisLabel: { color: t.muted, fontSize: fs, formatter: (v: number) => formatNumber(v, 1) }, splitLine: exportMode ? NO_SPLIT_LINE : { lineStyle: { color: t.grid } } },
       { type: 'value', name: '% TNA', nameTextStyle: { ...axisName, align: 'right' }, scale: true, position: 'right', axisLabel: { color: t.muted, fontSize: fs, formatter: (v: number) => formatNumber(v, 0) }, splitLine: { show: false } },
     ],
     series: model.columns.map(c => {
@@ -113,7 +119,7 @@ export function buildRepoRatesOption({ model, title, theme, exportMode = false }
       return {
         id: c.series.def.id, name: `${REPO_RATES_LABELS[c.key]}${repo ? ' (eje izq.)' : ' (eje der.)'}`, type: 'line', yAxisIndex: repo ? 0 : 1, z: repo ? 1 : 3,
         data: c.points.map(p => [toTime(p.date), p.value]), showSymbol: false, connectNulls: false,
-        lineStyle: { width: repo ? 0 : exportMode ? 3.5 : 2, color: colors[c.key] },
+        lineStyle: { width: repo ? 0 : exportMode ? EXPORT_MARKS.line : 2, color: colors[c.key] },
         itemStyle: { color: colors[c.key] },
         areaStyle: repo ? { color: colors.repo, opacity: 0.9 } : undefined,
       };
@@ -132,6 +138,6 @@ export function buildRepoRatesOption({ model, title, theme, exportMode = false }
         }).join('<br/>');
       },
     },
-    graphic: exportMode ? [{ type: 'text', left: pad, bottom: 30, style: { text: model.source, width: EXPORT_SIZE.width - pad * 2, overflow: 'break', fill: t.muted, font: `15px ${FONT_FAMILY}`, lineHeight: 21 } }] : [],
+    graphic: foot?.graphic ?? [],
   };
 }
