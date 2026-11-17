@@ -94,7 +94,7 @@ Las variaciones que publica la fuente (por ejemplo, la var. m/m del IPC con 1 de
 ### Precios
 - **IPC:** base dic-2016=100, nacional y 6 regiones. Incluye categorías (núcleo, regulados, estacionales; bienes y servicios) y divisiones COICOP.
   - Se distinguen índices, variaciones (calculadas y publicadas), ponderaciones e incidencias.
-  - Las **contribuciones** a la inflación no se calculan como ponderador × variación: los ponderadores son de la canasta base y cambian con los precios relativos. Si hacen falta, se usan las incidencias publicadas (`Incidencia_m`, etc., disponibles en la API).
+  - Las **contribuciones** a la inflación no se calculan como ponderador × variación: los ponderadores son de la canasta base y cambian con los precios relativos. Si hacen falta, se usan las incidencias publicadas (`Incidencia_m`, etc., disponibles en la API) o la descomposición aditiva 100 × ponderación base × (subíndice_t − subíndice_t−1) / nivel general_t−1, que incorpora los precios relativos a través de los índices (Precios → «Incidencia en la inflación general por división» y por categoría, identificadas como estimación propia; ver `src/web/lib/ipcContributions.ts`).
 - **SIPM (IPIM, IPIB, IPP):** base 1993, nivel reexpresado por la API con dic-2015=100.
 - **ICC:** Gran Buenos Aires, no total país.
 - **Canastas CBA y CBT:** GBA, en **pesos corrientes por mes**. No son índices.

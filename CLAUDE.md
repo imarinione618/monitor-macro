@@ -27,7 +27,7 @@ BCRA + A3 caución ─▶ src/monetary → data/monetary · Energía ─▶ src/
 - Variación m/m o t/t de **actividad** solo sobre serie desestacionalizada (`allowedTransforms`).
 - Ventas/valores nominales no son volumen. Comercio exterior: USD corrientes, X FOB, M CIF.
 - EPH = 31 aglomerados urbanos, no total nacional.
-- Incidencias: usar las publicadas; no ponderador × variación.
+- Incidencias: usar las publicadas o la descomposición 100 × ponderación × Δsubíndice / nivel general_t−1 (identificada como estimación propia); nunca ponderador × variación.
 
 ## Convenciones
 

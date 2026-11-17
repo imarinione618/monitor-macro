@@ -7,7 +7,7 @@ import { StoreProblem } from '@/web/components/StateMessages';
 import { getClientSeriesList, getStoreState } from '@/web/server/store';
 import { readFuelStore } from '@/combustibles/store';
 import { FuelPanel } from '@/web/components/FuelPanel';
-import { buildIpcContributions, contributionId, IPC_CONTRIBUTIONS } from '@/web/lib/ipcContributions';
+import { buildIpcContributions, buildIpcDivisionContributions, contributionId, DIVISION_TOTAL_ID, IPC_CONTRIBUTIONS } from '@/web/lib/ipcContributions';
 
 // Sitio estático: se genera con los datos del store al momento del build (npm run build).
 export const dynamic = 'force-static';
@@ -27,6 +27,7 @@ export default function PreciosPage() {
   const divisiones = [NG, ...ids('ipc_divisiones')];
   const contributions = buildIpcContributions(getClientSeriesList(categorias));
   const contributionIds = IPC_CONTRIBUTIONS.map(({ key }) => contributionId(key));
+  const divisionIncidences = buildIpcDivisionContributions(getClientSeriesList(divisiones));
 
   const familyIds = (f: string) => SERIES.filter((x) => x.family === f).map((x) => x.id);
   const ipcbaMain = getClientSeriesList(['precios.ipcba.nivel_general', ...familyIds('ipcba_bs')]);
@@ -88,6 +89,16 @@ export default function PreciosPage() {
         defaultRange="24m"
         kind="stacked"
         pickerLabel="Categorías"
+        synthetic={synthetic}
+      />
+
+      <SnapshotPanel
+        title="Incidencia en la inflación general por división"
+        description="Aporte de cada división (COICOP) a la variación mensual del IPC nacional, en puntos porcentuales. La suma de las divisiones es la inflación del mes (primera barra). Elegí el mes en el selector."
+        series={divisionIncidences}
+        referenceId={DIVISION_TOTAL_ID}
+        transforms={['level']}
+        defaultTransform="level"
         synthetic={synthetic}
       />
 

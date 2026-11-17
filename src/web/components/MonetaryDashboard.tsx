@@ -8,6 +8,7 @@ import { SECTOR_LABELS } from '@/web/lib/monetaryChartModel';
 import { selectableMonetarySeries } from '@/web/lib/monetarySelection';
 import { MonetaryChartPanel } from './MonetaryChartPanel';
 import { RepoRatesPanel } from './RepoRatesPanel';
+import { MoneySeasonalityPanel } from './MoneySeasonalityPanel';
 import { AggregatesGdpPanel } from './AggregatesGdpPanel';
 import type { AggregateGdpModel } from '@/web/lib/aggregatesGdp';
 import { Segmented } from './controls';
@@ -80,6 +81,7 @@ export function MonetaryDashboard({ series, ipc, updatedAt, error, aggregatesGdp
       {panel('Composición de base monetaria e instrumentos elegibles', aggregateComponents, undefined, 'Incluye Repo BCRA (serie 198) desde el 15/07/2025. Antes se conserva la composición histórica sin Repo; su aporte cero indica exclusión de la cobertura, no un saldo oficial cero.', 'composition')}
       {aggregatesGdp && aggregatesGdp.periods.length > 0 && <AggregatesGdpPanel title="Agregados monetarios como % del PIB" description="Base monetaria, M1, M2 y M3 (totales) sobre el PIB a precios corrientes. Línea punteada: estimación con el último PIB publicado." model={aggregatesGdp} source="Fuente: one618 en base a BCRA e INDEC." />}
       {panel('Agregados monetarios privados', aggregates.filter(s => s.def.sector === 'private'), ['m1', 'm2', 'm3'], 'M1, M2 y M3 privados: cálculos propios con componentes de la API BCRA desde 2005. M2 transaccional: serie oficial.')}
+      <MoneySeasonalityPanel title="Estacionalidad de la demanda de dinero" description="Variación mensual real promedio del M2 privado por mes calendario. Elegí la ventana de años y, si querés, un año para comparar." allSeries={series} ipc={ipc} asOf={updatedAt ?? undefined} />
       {panel('Agregados monetarios totales', aggregates.filter(s => s.def.sector === 'total'), ['m1', 'm2', 'm3'], 'M1, M2 y M3: cálculos propios con componentes de la API BCRA desde 2005. Para cierres mensuales se prioriza la serie oficial compatible; promedio y cierre no se intercambian.')}
     </div>}
   </div>;

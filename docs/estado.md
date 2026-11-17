@@ -85,6 +85,20 @@ Publicación inicial completada el 2026-11-04:
 - Contenido: cuadro de mes / acumulado / 12 meses con diferencia interanual; resultado (cuenta corriente + capital y financiera + no informado = variación de reservas por transacciones, apiladas); variación de reservas (transacciones, ajuste por pase y valuación, contable); cuenta corriente por componente; cobros y pagos brutos; cuenta capital y financiera por concepto; FAE de personas humanas y empresas (compras, ventas y neto); intereses, utilidades y dividendos; cortes por sector (bienes) y por tipo (servicios) con evolución.
 - Signos publicados por el BCRA (positivo = ingreso neto de divisas). Ceros publicados (meses sin operaciones) se conservan como dato; «Concepto no informado» existe desde jul-2017 y «Otros servicios» desde sep-2016 (antes, vacío).
 - Identidades verificadas en toda la historia (`tests/validation/cambiario-identities.test.ts`). El total de la apertura por sector (184.1) difiere levemente del cobro/pago del balance (182.1) en 2003–2012 y en oct-2025: se aclara en la nota de la serie.
+- Gráficos que mezclan ingresos y egresos (FAE, cobros y pagos, evolución por sector/tipo): pagos y egresos con signo negativo, solo en la visualización.
+
+### Incidencia en la inflación por división (IPC) — 2026-11-17
+
+- Precios incorpora barras horizontales «Incidencia en la inflación general por división»: aporte en p.p. de las 12 divisiones COICOP a la variación mensual del IPC nacional, con la inflación del mes como primera barra y selector de mes.
+- Fórmula pedida por el usuario: `100 × ponderación × (IPCdivisión_t − IPCdivisión_t−1) / IPCgeneral_t−1`. Ponderaciones nacionales de dic-2016 (archivo del usuario `ponderadores_ipc.xls`, columna Nacional = ponderaciones regionales × peso de cada región; suman 0,9999955). Estimación propia, no incidencia publicada.
+- Verificado con el store real: la suma de las 12 incidencias reproduce la variación mensual del nivel general con diferencias ≤ 0,08 p.p. desde 2017 (≤ 0,02 p.p. en los últimos 12 meses) (`tests/web/ipc-division-incidence.test.ts`). Se calcula al generar el dashboard: sin nueva ingesta ni cambios en Sheets.
+- Pendiente opcional: la API publica `Incidencia_m` del IPC; comparar con las publicadas si están para el total nacional por división.
+
+### Estacionalidad de la demanda de dinero (Monetario) — 2026-11-17
+
+- Monetario → Variables Monetarias: «Estacionalidad de la demanda de dinero». Barras por mes calendario con la **variación % mensual real promedio del M2 privado** (cálculo propio BCRA 17 + 69 + 94 + 95), deflactado por el IPC nacional del INDEC.
+- Controles: últimos 3 / 5 / 10 años (los N valores más recientes de cada mes), todos, o rango de años Desde/Hasta; saldo promedio mensual o de fin de mes; año de comparación (por defecto el último). Tabla, CSV, PNG y SVG.
+- Usa `prepareSeries` (misma lógica de Monetario: meses parciales excluidos, sin imputar). Historia real desde ene-2017 (el IPC base dic-2016 no permite antes): nov y dic promedian 9 años con «últimos 10». Implementación: `src/web/lib/moneySeasonality.ts`, `src/web/components/MoneySeasonalityPanel.tsx`; pruebas en `tests/web/money-seasonality.test.ts`.
 
 ## Actualización programada
 - **Manual 2026-11-17:** el 16/11 fallaron IDECBA (IPCBA y restaurantes, `fetch failed` en ambos intentos) y Combustibles (surtidor Res. 314, `fetch failed`); se conservaron los últimos datos. Corrida manual completa (`scripts/update.ps1`) el 17/11 a las 09:41: 307/307 series OK, BCRA 85/85, surtidor actualizado hasta 13/11, Sheets OK, push OK — **Fin OK**.
@@ -136,7 +150,7 @@ El proyecto vive en una carpeta local fuera de OneDrive desde el 2026-11-04. La 
 - **Tamaño de páginas:** el HTML de `/comercio` y `/actividad` pesa ~600 KB porque envía la historia completa.
 
 ## Próximos pasos sugeridos
-- **Series disponibles todavía no incorporadas:** aperturas del IPI minero, tendencia-ciclo por bloque del IPI manufacturero, subsectores públicos de salarios (121/122), incidencias del IPC, hogares 1 y 3 de las canastas.
+- **Series disponibles todavía no incorporadas:** aperturas del IPI minero, tendencia-ciclo por bloque del IPI manufacturero, subsectores públicos de salarios (121/122), incidencias publicadas del IPC (hoy se estiman), hogares 1 y 3 de las canastas.
 - **Fuentes complementarias:** SIPA y RIPTE (datos.gob.ar / MTEySS), como módulo separado.
 - **Dashboard:** recortar del lado del servidor la historia enviada al navegador según el rango.
 - **Pendientes de baja severidad de la validación:** B3, B4 y B5.
