@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/7",
   "methodology": "Tasa de interés promedio ponderada por montos operados de los depósitos a plazo fijo de un millón de pesos o más, de 30 hasta 35 días de plazo, según lo informado por los bancos privados a través del SISCEN-0002, en las cuentas SISCEN 149 y 152 (plazos fijos transferibles e intransferibles con retribución fija).",
   "firstDate": "1999-01-04",
-  "lastDate": "2026-11-13"
+  "lastDate": "2026-11-16"
  },
  "observations": [
   {
@@ -27221,8 +27221,12 @@
   {
    "date": "2026-11-13",
    "value": 22.4375
+  },
+  {
+   "date": "2026-11-16",
+   "value": 22.6875
   }
  ],
- "retrievedAt": "2026-11-17T15:00:15.224Z",
+ "retrievedAt": "2026-11-18T15:01:04.500Z",
  "stale": false
 }

@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/1457",
   "methodology": "Depósitos de efectivo constituidos bajo la forma de cuenta corriente bancaria. . Los depósitos son en moneda local y corresponden al sector público no financiero . Cuentas SISCEN asociadas: 140 . Para conocer la correspondencia conceptual entre las cuentas y atributos del sistema SISCEN y las definidas en el plan de cuentas de las entidades financieras se recomienda consultar la tabla SISCEN-T0010 CORRESPONDENCIA DE CUENTAS, disponible en http://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Tabt0010.xlshttp://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Tabt0010.xls",
   "firstDate": "1996-01-02",
-  "lastDate": "2026-11-12"
+  "lastDate": "2026-11-13"
  },
  "observations": [
   {
@@ -30132,7 +30132,7 @@
   },
   {
    "date": "2026-08-03",
-   "value": 20696333
+   "value": 20696380
   },
   {
    "date": "2026-08-04",
@@ -30140,7 +30140,7 @@
   },
   {
    "date": "2026-08-05",
-   "value": 20403389
+   "value": 20404120
   },
   {
    "date": "2026-08-06",
@@ -30152,27 +30152,27 @@
   },
   {
    "date": "2026-08-10",
-   "value": 20457506
+   "value": 20457517
   },
   {
    "date": "2026-08-11",
-   "value": 22138976
+   "value": 22139084
   },
   {
    "date": "2026-08-12",
-   "value": 22995602
+   "value": 22995700
   },
   {
    "date": "2026-08-13",
-   "value": 23325879
+   "value": 23325952
   },
   {
    "date": "2026-08-14",
-   "value": 21856222
+   "value": 21856230
   },
   {
    "date": "2026-08-18",
-   "value": 23427295
+   "value": 23427332
   },
   {
    "date": "2026-08-19",
@@ -30180,19 +30180,19 @@
   },
   {
    "date": "2026-08-20",
-   "value": 24698036
+   "value": 24698094
   },
   {
    "date": "2026-08-21",
-   "value": 25359016
+   "value": 25359100
   },
   {
    "date": "2026-08-24",
-   "value": 25343334
+   "value": 25343723
   },
   {
    "date": "2026-08-25",
-   "value": 26319647
+   "value": 26319667
   },
   {
    "date": "2026-08-26",
@@ -30200,7 +30200,7 @@
   },
   {
    "date": "2026-08-27",
-   "value": 25364610
+   "value": 25364611
   },
   {
    "date": "2026-08-28",
@@ -30392,7 +30392,7 @@
   },
   {
    "date": "2026-11-04",
-   "value": 23761088
+   "value": 23761066
   },
   {
    "date": "2026-11-05",
@@ -30400,13 +30400,17 @@
   },
   {
    "date": "2026-11-11",
-   "value": 23297938
+   "value": 23286337
   },
   {
    "date": "2026-11-12",
-   "value": 25105320
+   "value": 25085110
+  },
+  {
+   "date": "2026-11-13",
+   "value": 26254032
   }
  ],
- "retrievedAt": "2026-11-17T15:00:15.224Z",
+ "retrievedAt": "2026-11-18T15:01:04.500Z",
  "stale": false
 }

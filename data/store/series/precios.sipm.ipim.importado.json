@@ -519,7 +519,11 @@
   },
   {
    "period": "2026-09",
-   "value": 14684.6507,
+   "value": 14684.6507
+  },
+  {
+   "period": "2026-10",
+   "value": 14815.7257,
    "flags": [
     "provisorio"
    ],
@@ -528,9 +532,9 @@
  ],
  "meta": {
   "firstPeriod": "2015-12",
-  "lastPeriod": "2026-09",
-  "retrievedAt": "2026-11-17T15:00:08.703Z",
-  "runId": "20261117T150007Z-dbac",
+  "lastPeriod": "2026-10",
+  "retrievedAt": "2026-11-18T15:00:28.687Z",
+  "runId": "20261118T150008Z-85ea",
   "dataset": "sipm_precios_mayoristas",
   "query": "https://api.indec.gob.ar/v1/sipm_precios_mayoristas?nivel=in.(%22Nivel%20general%22%2C%22Origen%22%2C%22Sector%22)&tipo_de_indicador=in.(Indice%2Cv_m)&order=operativo%2Cindicador%2Cclasificador%2Cnivel%2Ccodigo_apertura%2Cdescripcion%2Cperiodo%2Canio%2Cmes%2Ctipo_de_indicador%2Ctipo_de_indicador_descripcion%2Cregion%2Cunidad_de_medida",
   "publishedAt": null,

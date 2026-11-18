@@ -503,11 +503,7 @@
   },
   {
    "period": "2026-04",
-   "value": 1439.0038,
-   "flags": [
-    "provisorio"
-   ],
-   "rawNote": "* Dato provisorio"
+   "value": 1439.0038
   },
   {
    "period": "2026-05",
@@ -548,13 +544,21 @@
     "provisorio"
    ],
    "rawNote": "* Dato provisorio"
+  },
+  {
+   "period": "2026-10",
+   "value": 1581.7717,
+   "flags": [
+    "provisorio"
+   ],
+   "rawNote": "* Dato provisorio"
   }
  ],
  "meta": {
   "firstPeriod": "2015-11",
-  "lastPeriod": "2026-09",
-  "retrievedAt": "2026-11-17T15:00:08.792Z",
-  "runId": "20261117T150007Z-dbac",
+  "lastPeriod": "2026-10",
+  "retrievedAt": "2026-11-18T15:00:29.847Z",
+  "runId": "20261118T150008Z-85ea",
   "dataset": "icc_precios_construccion",
   "query": "https://api.indec.gob.ar/v1/icc_precios_construccion?order=indicador%2Ccodigo_apertura%2Ccodigo_CPC_1%2Cclasificador%2Cnivel%2Cdescripcion%2Cperiodo%2Canio%2Cmes%2Ctipo_de_indicador%2Ctipo_de_indicador_descripcion%2Cregion%2Cunidad_de_medida",
   "publishedAt": null,

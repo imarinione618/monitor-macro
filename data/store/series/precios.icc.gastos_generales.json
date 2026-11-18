@@ -503,11 +503,7 @@
   },
   {
    "period": "2026-04",
-   "value": 1722.1894,
-   "flags": [
-    "provisorio"
-   ],
-   "rawNote": "* Dato provisorio"
+   "value": 1722.1894
   },
   {
    "period": "2026-05",
@@ -519,7 +515,7 @@
   },
   {
    "period": "2026-06",
-   "value": 1836.0392,
+   "value": 1836.0295,
    "flags": [
     "provisorio"
    ],
@@ -527,7 +523,7 @@
   },
   {
    "period": "2026-07",
-   "value": 1878.2594,
+   "value": 1878.102,
    "flags": [
     "provisorio"
    ],
@@ -535,7 +531,7 @@
   },
   {
    "period": "2026-08",
-   "value": 1924.7976,
+   "value": 1924.4505,
    "flags": [
     "provisorio"
    ],
@@ -543,7 +539,15 @@
   },
   {
    "period": "2026-09",
-   "value": 1954.064,
+   "value": 1954.3207,
+   "flags": [
+    "provisorio"
+   ],
+   "rawNote": "* Dato provisorio"
+  },
+  {
+   "period": "2026-10",
+   "value": 1989.7214,
    "flags": [
     "provisorio"
    ],
@@ -552,9 +556,9 @@
  ],
  "meta": {
   "firstPeriod": "2015-11",
-  "lastPeriod": "2026-09",
-  "retrievedAt": "2026-11-17T15:00:08.792Z",
-  "runId": "20261117T150007Z-dbac",
+  "lastPeriod": "2026-10",
+  "retrievedAt": "2026-11-18T15:00:29.847Z",
+  "runId": "20261118T150008Z-85ea",
   "dataset": "icc_precios_construccion",
   "query": "https://api.indec.gob.ar/v1/icc_precios_construccion?order=indicador%2Ccodigo_apertura%2Ccodigo_CPC_1%2Cclasificador%2Cnivel%2Cdescripcion%2Cperiodo%2Canio%2Cmes%2Ctipo_de_indicador%2Ctipo_de_indicador_descripcion%2Cregion%2Cunidad_de_medida",
   "publishedAt": null,

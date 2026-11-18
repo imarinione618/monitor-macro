@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/85",
   "methodology": "Depósitos de efectivo constituidos bajo la forma de cuenta corriente bancaria. Saldo neto de Utilización de Fondos Unificados de Cuentas Oficiales.",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-11"
+  "lastDate": "2026-11-12"
  },
  "observations": [
   {
@@ -23144,47 +23144,47 @@
   },
   {
    "date": "2026-08-03",
-   "value": 31988025
+   "value": 31988074
   },
   {
    "date": "2026-08-04",
-   "value": 30453098
+   "value": 30453102
   },
   {
    "date": "2026-08-05",
-   "value": 31332803
+   "value": 31333537
   },
   {
    "date": "2026-08-06",
-   "value": 31443387
+   "value": 31443392
   },
   {
    "date": "2026-08-07",
-   "value": 30416388
+   "value": 30416390
   },
   {
    "date": "2026-08-10",
-   "value": 31053057
+   "value": 31053069
   },
   {
    "date": "2026-08-11",
-   "value": 32734587
+   "value": 32734699
   },
   {
    "date": "2026-08-12",
-   "value": 33502386
+   "value": 33502613
   },
   {
    "date": "2026-08-13",
-   "value": 34252689
+   "value": 34252766
   },
   {
    "date": "2026-08-14",
-   "value": 32557376
+   "value": 32557385
   },
   {
    "date": "2026-08-18",
-   "value": 34824966
+   "value": 34825004
   },
   {
    "date": "2026-08-19",
@@ -23192,19 +23192,19 @@
   },
   {
    "date": "2026-08-20",
-   "value": 35544314
+   "value": 35544373
   },
   {
    "date": "2026-08-21",
-   "value": 35620365
+   "value": 35620449
   },
   {
    "date": "2026-08-24",
-   "value": 36042614
+   "value": 36043004
   },
   {
    "date": "2026-08-25",
-   "value": 37385982
+   "value": 37386002
   },
   {
    "date": "2026-08-26",
@@ -23212,11 +23212,11 @@
   },
   {
    "date": "2026-08-27",
-   "value": 36154012
+   "value": 36154013
   },
   {
    "date": "2026-08-28",
-   "value": 35703395
+   "value": 35703396
   },
   {
    "date": "2026-08-31",
@@ -23392,29 +23392,33 @@
   },
   {
    "date": "2026-10-30",
-   "value": 35206977
+   "value": 35155287
   },
   {
    "date": "2026-11-02",
-   "value": 34842266
+   "value": 34844495
   },
   {
    "date": "2026-11-03",
-   "value": 34179037
+   "value": 34181283
   },
   {
    "date": "2026-11-04",
-   "value": 34043414
+   "value": 34042030
   },
   {
    "date": "2026-11-05",
-   "value": 33764740
+   "value": 33762101
   },
   {
    "date": "2026-11-11",
-   "value": 35101268
+   "value": 35096012
+  },
+  {
+   "date": "2026-11-12",
+   "value": 37597407
   }
  ],
- "retrievedAt": "2026-11-17T15:00:15.224Z",
+ "retrievedAt": "2026-11-18T15:01:04.500Z",
  "stale": false
 }

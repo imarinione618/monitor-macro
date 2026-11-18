@@ -2643,3 +2643,15 @@
 {"seriesId":"actividad.ipi_minero.total.tc","period":"2026-06","oldValue":146.032679060259,"newValue":145.51096375854,"detectedAt":"2026-11-07T15:00:15.101Z","runId":"20261107T150007Z-81ef","kind":"revised"}
 {"seriesId":"actividad.ipi_minero.total.tc","period":"2026-07","oldValue":146.475026253047,"newValue":145.825812794189,"detectedAt":"2026-11-07T15:00:15.101Z","runId":"20261107T150007Z-81ef","kind":"revised"}
 {"seriesId":"actividad.ipi_minero.total.tc","period":"2026-08","oldValue":146.783300640704,"newValue":146.004426801092,"detectedAt":"2026-11-07T15:00:15.101Z","runId":"20261107T150007Z-81ef","kind":"revised"}
+{"seriesId":"precios.icc.ng","period":"2026-06","oldValue":1675.3528,"newValue":1675.3591,"detectedAt":"2026-11-18T15:00:29.847Z","runId":"20261118T150008Z-85ea","kind":"revised"}
+{"seriesId":"precios.icc.ng","period":"2026-07","oldValue":1710.0305,"newValue":1712.9685,"detectedAt":"2026-11-18T15:00:29.847Z","runId":"20261118T150008Z-85ea","kind":"revised"}
+{"seriesId":"precios.icc.ng","period":"2026-08","oldValue":1753.3865,"newValue":1759.372,"detectedAt":"2026-11-18T15:00:29.847Z","runId":"20261118T150008Z-85ea","kind":"revised"}
+{"seriesId":"precios.icc.ng","period":"2026-09","oldValue":1779.7227,"newValue":1787.2894,"detectedAt":"2026-11-18T15:00:29.847Z","runId":"20261118T150008Z-85ea","kind":"revised"}
+{"seriesId":"precios.icc.mano_obra","period":"2026-06","oldValue":1834.7012,"newValue":1834.7178,"detectedAt":"2026-11-18T15:00:29.847Z","runId":"20261118T150008Z-85ea","kind":"revised"}
+{"seriesId":"precios.icc.mano_obra","period":"2026-07","oldValue":1879.2512,"newValue":1885.8745,"detectedAt":"2026-11-18T15:00:29.847Z","runId":"20261118T150008Z-85ea","kind":"revised"}
+{"seriesId":"precios.icc.mano_obra","period":"2026-08","oldValue":1939.5149,"newValue":1953.0162,"detectedAt":"2026-11-18T15:00:29.847Z","runId":"20261118T150008Z-85ea","kind":"revised"}
+{"seriesId":"precios.icc.mano_obra","period":"2026-09","oldValue":1971.4462,"newValue":1988.3666,"detectedAt":"2026-11-18T15:00:29.847Z","runId":"20261118T150008Z-85ea","kind":"revised"}
+{"seriesId":"precios.icc.gastos_generales","period":"2026-06","oldValue":1836.0392,"newValue":1836.0295,"detectedAt":"2026-11-18T15:00:29.847Z","runId":"20261118T150008Z-85ea","kind":"revised"}
+{"seriesId":"precios.icc.gastos_generales","period":"2026-07","oldValue":1878.2594,"newValue":1878.102,"detectedAt":"2026-11-18T15:00:29.847Z","runId":"20261118T150008Z-85ea","kind":"revised"}
+{"seriesId":"precios.icc.gastos_generales","period":"2026-08","oldValue":1924.7976,"newValue":1924.4505,"detectedAt":"2026-11-18T15:00:29.847Z","runId":"20261118T150008Z-85ea","kind":"revised"}
+{"seriesId":"precios.icc.gastos_generales","period":"2026-09","oldValue":1954.064,"newValue":1954.3207,"detectedAt":"2026-11-18T15:00:29.847Z","runId":"20261118T150008Z-85ea","kind":"revised"}
