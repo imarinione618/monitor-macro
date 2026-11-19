@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/85",
   "methodology": "Depósitos de efectivo constituidos bajo la forma de cuenta corriente bancaria. Saldo neto de Utilización de Fondos Unificados de Cuentas Oficiales.",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-12"
+  "lastDate": "2026-11-13"
  },
  "observations": [
   {
@@ -23392,33 +23392,37 @@
   },
   {
    "date": "2026-10-30",
-   "value": 35155287
+   "value": 35212415
   },
   {
    "date": "2026-11-02",
-   "value": 34844495
+   "value": 34861549
   },
   {
    "date": "2026-11-03",
-   "value": 34181283
+   "value": 34184951
   },
   {
    "date": "2026-11-04",
-   "value": 34042030
+   "value": 34044211
   },
   {
    "date": "2026-11-05",
-   "value": 33762101
+   "value": 33748883
   },
   {
    "date": "2026-11-11",
-   "value": 35096012
+   "value": 35095986
   },
   {
    "date": "2026-11-12",
-   "value": 37597407
+   "value": 37610372
+  },
+  {
+   "date": "2026-11-13",
+   "value": 37400095
   }
  ],
- "retrievedAt": "2026-11-18T15:01:04.500Z",
+ "retrievedAt": "2026-11-19T15:01:01.055Z",
  "stale": false
 }

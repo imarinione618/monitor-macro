@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/100",
   "methodology": "Suma de total depósitos en efectivo (incluye Certificados de depósitos reprogramados) del sector privado no financiero en entidades financieras.",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-12"
+  "lastDate": "2026-11-13"
  },
  "observations": [
   {
@@ -23392,33 +23392,37 @@
   },
   {
    "date": "2026-10-30",
-   "value": 129874738
+   "value": 130065221
   },
   {
    "date": "2026-11-02",
-   "value": 129000832
+   "value": 129017719
   },
   {
    "date": "2026-11-03",
-   "value": 129028028
+   "value": 129030082
   },
   {
    "date": "2026-11-04",
-   "value": 129728348
+   "value": 129730529
   },
   {
    "date": "2026-11-05",
-   "value": 131684623
+   "value": 131581997
   },
   {
    "date": "2026-11-11",
-   "value": 128820993
+   "value": 128820967
   },
   {
    "date": "2026-11-12",
-   "value": 129046301
+   "value": 129058779
+  },
+  {
+   "date": "2026-11-13",
+   "value": 128921203
   }
  ],
- "retrievedAt": "2026-11-18T15:01:04.500Z",
+ "retrievedAt": "2026-11-19T15:01:01.055Z",
  "stale": false
 }

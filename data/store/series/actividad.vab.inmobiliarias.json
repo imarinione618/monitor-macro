@@ -365,8 +365,8 @@
  "meta": {
   "firstPeriod": "2004-Q1",
   "lastPeriod": "2026-Q2",
-  "retrievedAt": "2026-11-18T15:00:55.772Z",
-  "runId": "20261118T150008Z-85ea",
+  "retrievedAt": "2026-11-19T15:00:55.962Z",
+  "runId": "20261119T150007Z-2947",
   "query": "https://infra.datos.gob.ar/catalog/sspm/dataset/6/distribution/6.2/download/producto-interno-bruto-valores-trimestrales-base-2004.csv",
   "publishedAt": null,
   "stale": false

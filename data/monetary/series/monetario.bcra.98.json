@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/98",
   "methodology": "Depósitos de efectivo del sector privado no financiero en entidades financieras no incluidos en otros rubros. ",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-12"
+  "lastDate": "2026-11-13"
  },
  "observations": [
   {
@@ -23392,11 +23392,11 @@
   },
   {
    "date": "2026-10-30",
-   "value": 2180317
+   "value": 2180321
   },
   {
    "date": "2026-11-02",
-   "value": 2253744
+   "value": 2253639
   },
   {
    "date": "2026-11-03",
@@ -23408,7 +23408,7 @@
   },
   {
    "date": "2026-11-05",
-   "value": 2318852
+   "value": 2308422
   },
   {
    "date": "2026-11-11",
@@ -23416,9 +23416,13 @@
   },
   {
    "date": "2026-11-12",
-   "value": 2451377
+   "value": 2450951
+  },
+  {
+   "date": "2026-11-13",
+   "value": 2890400
   }
  ],
- "retrievedAt": "2026-11-18T15:01:04.500Z",
+ "retrievedAt": "2026-11-19T15:01:01.055Z",
  "stale": false
 }

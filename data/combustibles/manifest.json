@@ -1,12 +1,12 @@
 {
  "schemaVersion": 1,
- "updatedAt": "2026-11-18T15:01:14.582Z",
- "lastAttemptAt": "2026-11-18T15:01:14.582Z",
+ "updatedAt": "2026-11-19T15:01:14.526Z",
+ "lastAttemptAt": "2026-11-19T15:01:14.526Z",
  "surtidor": {
   "lastHistoricoAt": "2026-11-13T17:07:54.423Z",
-  "lastVigentesAt": "2026-11-18T15:01:14.582Z",
-  "lastEventAt": "2026-11-17 00:00",
-  "lastDay": "2026-11-16",
+  "lastVigentesAt": "2026-11-19T15:01:14.526Z",
+  "lastEventAt": "2026-11-18 13:07",
+  "lastDay": "2026-11-17",
   "mode": "vigentes"
  },
  "eess": {
@@ -16,67 +16,67 @@
  },
  "series": {
   "combustibles.surtidor.super.nacional": {
-   "count": 3242,
+   "count": 3243,
    "firstDate": "2018-01-01",
-   "lastDate": "2026-11-16",
+   "lastDate": "2026-11-17",
    "lastValue": 2239,
-   "retrievedAt": "2026-11-18T15:01:14.582Z",
+   "retrievedAt": "2026-11-19T15:01:14.526Z",
    "stale": false
   },
   "combustibles.surtidor.super.caba": {
-   "count": 3242,
+   "count": 3243,
    "firstDate": "2018-01-01",
-   "lastDate": "2026-11-16",
+   "lastDate": "2026-11-17",
    "lastValue": 2189,
-   "retrievedAt": "2026-11-18T15:01:14.582Z",
+   "retrievedAt": "2026-11-19T15:01:14.526Z",
    "stale": false
   },
   "combustibles.surtidor.premium.nacional": {
-   "count": 3242,
+   "count": 3243,
    "firstDate": "2018-01-01",
-   "lastDate": "2026-11-16",
+   "lastDate": "2026-11-17",
    "lastValue": 2499,
-   "retrievedAt": "2026-11-18T15:01:14.582Z",
+   "retrievedAt": "2026-11-19T15:01:14.526Z",
    "stale": false
   },
   "combustibles.surtidor.premium.caba": {
-   "count": 3242,
+   "count": 3243,
    "firstDate": "2018-01-01",
-   "lastDate": "2026-11-16",
+   "lastDate": "2026-11-17",
    "lastValue": 2489,
-   "retrievedAt": "2026-11-18T15:01:14.582Z",
+   "retrievedAt": "2026-11-19T15:01:14.526Z",
    "stale": false
   },
   "combustibles.surtidor.gasoil_g2.nacional": {
-   "count": 3242,
+   "count": 3243,
    "firstDate": "2018-01-01",
-   "lastDate": "2026-11-16",
+   "lastDate": "2026-11-17",
    "lastValue": 2467,
-   "retrievedAt": "2026-11-18T15:01:14.582Z",
+   "retrievedAt": "2026-11-19T15:01:14.526Z",
    "stale": false
   },
   "combustibles.surtidor.gasoil_g2.caba": {
-   "count": 3242,
+   "count": 3243,
    "firstDate": "2018-01-01",
-   "lastDate": "2026-11-16",
+   "lastDate": "2026-11-17",
    "lastValue": 2379,
-   "retrievedAt": "2026-11-18T15:01:14.582Z",
+   "retrievedAt": "2026-11-19T15:01:14.526Z",
    "stale": false
   },
   "combustibles.surtidor.gasoil_g3.nacional": {
-   "count": 3242,
+   "count": 3243,
    "firstDate": "2018-01-01",
-   "lastDate": "2026-11-16",
+   "lastDate": "2026-11-17",
    "lastValue": 2718,
-   "retrievedAt": "2026-11-18T15:01:14.582Z",
+   "retrievedAt": "2026-11-19T15:01:14.526Z",
    "stale": false
   },
   "combustibles.surtidor.gasoil_g3.caba": {
-   "count": 3242,
+   "count": 3243,
    "firstDate": "2018-01-01",
-   "lastDate": "2026-11-16",
-   "lastValue": 2679,
-   "retrievedAt": "2026-11-18T15:01:14.582Z",
+   "lastDate": "2026-11-17",
+   "lastValue": 2689,
+   "retrievedAt": "2026-11-19T15:01:14.526Z",
    "stale": false
   },
   "combustibles.eess.super.nacional": {

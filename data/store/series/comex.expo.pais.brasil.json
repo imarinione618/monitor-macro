@@ -1961,8 +1961,8 @@
  "meta": {
   "firstPeriod": "1986-01",
   "lastPeriod": "2026-09",
-  "retrievedAt": "2026-11-18T15:00:34.393Z",
-  "runId": "20261118T150008Z-85ea",
+  "retrievedAt": "2026-11-19T15:00:36.658Z",
+  "runId": "20261119T150007Z-2947",
   "dataset": "comercio_exterior_exportacion_bienes",
   "query": "https://api.indec.gob.ar/v1/comercio_exterior_exportacion_bienes?select=Anio%2CMes%2CPeriodo%2Crubro_cod%2Csubrubro_cod%2Cpais_cod%2Cvalor_FOB%2Cvalor_FOB_null&Periodo=gte.202411&order=Anio%2CMes%2CPeriodo%2Crubro_cod%2Csubrubro_cod%2Cpais_cod",
   "publishedAt": null,

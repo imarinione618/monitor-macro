@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/113",
   "methodology": "Préstamos de efectivo garantizados con prenda con registro o desplazamiento -inclusive la recibida por endoso-. Incluye los préstamos instrumentados de acuerdo con el \"Manual de originación y administración de préstamos prendarios sobre automotores - Estandarización de préstamos prendarios sobre automotores\".",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-12"
+  "lastDate": "2026-11-13"
  },
  "observations": [
   {
@@ -23404,11 +23404,11 @@
   },
   {
    "date": "2026-11-04",
-   "value": 7234397
+   "value": 6781149
   },
   {
    "date": "2026-11-05",
-   "value": 6745319
+   "value": 6745392
   },
   {
    "date": "2026-11-11",
@@ -23416,9 +23416,13 @@
   },
   {
    "date": "2026-11-12",
-   "value": 6689370
+   "value": 6689369
+  },
+  {
+   "date": "2026-11-13",
+   "value": 6672277
   }
  ],
- "retrievedAt": "2026-11-18T15:01:04.500Z",
+ "retrievedAt": "2026-11-19T15:01:01.055Z",
  "stale": false
 }
