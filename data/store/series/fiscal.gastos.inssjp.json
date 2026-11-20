@@ -516,13 +516,17 @@
   {
    "period": "2026-09",
    "value": 796134.6
+  },
+  {
+   "period": "2026-10",
+   "value": 834980.9
   }
  ],
  "meta": {
   "firstPeriod": "2016-01",
-  "lastPeriod": "2026-09",
-  "retrievedAt": "2026-11-19T15:00:56.999Z",
-  "runId": "20261119T150007Z-2947",
+  "lastPeriod": "2026-10",
+  "retrievedAt": "2026-11-20T15:00:53.187Z",
+  "runId": "20261120T150008Z-1d5a",
   "query": "https://infra.datos.gob.ar/catalog/sspm/dataset/452/distribution/452.3/download/imig-mensual.csv",
   "publishedAt": null,
   "stale": false

@@ -516,13 +516,17 @@
   {
    "period": "2026-09",
    "value": 2401603.3
+  },
+  {
+   "period": "2026-10",
+   "value": 2366284.2
   }
  ],
  "meta": {
   "firstPeriod": "2016-01",
-  "lastPeriod": "2026-09",
-  "retrievedAt": "2026-11-19T15:00:56.999Z",
-  "runId": "20261119T150007Z-2947",
+  "lastPeriod": "2026-10",
+  "retrievedAt": "2026-11-20T15:00:53.187Z",
+  "runId": "20261120T150008Z-1d5a",
   "publishedAt": null,
   "stale": false
  }

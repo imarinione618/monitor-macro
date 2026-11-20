@@ -2655,3 +2655,16 @@
 {"seriesId":"precios.icc.gastos_generales","period":"2026-07","oldValue":1878.2594,"newValue":1878.102,"detectedAt":"2026-11-18T15:00:29.847Z","runId":"20261118T150008Z-85ea","kind":"revised"}
 {"seriesId":"precios.icc.gastos_generales","period":"2026-08","oldValue":1924.7976,"newValue":1924.4505,"detectedAt":"2026-11-18T15:00:29.847Z","runId":"20261118T150008Z-85ea","kind":"revised"}
 {"seriesId":"precios.icc.gastos_generales","period":"2026-09","oldValue":1954.064,"newValue":1954.3207,"detectedAt":"2026-11-18T15:00:29.847Z","runId":"20261118T150008Z-85ea","kind":"revised"}
+{"seriesId":"comex.expo.total","period":"2026-09","oldValue":10035.975188019995,"newValue":10035.645532429991,"detectedAt":"2026-11-20T15:00:34.096Z","runId":"20261120T150008Z-1d5a","kind":"revised"}
+{"seriesId":"comex.expo.rubro.pp","period":"2026-09","oldValue":2025.5389191899997,"newValue":2042.4506480099994,"detectedAt":"2026-11-20T15:00:34.096Z","runId":"20261120T150008Z-1d5a","kind":"revised"}
+{"seriesId":"comex.expo.rubro.moa","period":"2026-09","oldValue":3029.7477653599985,"newValue":3067.7358436699988,"detectedAt":"2026-11-20T15:00:34.096Z","runId":"20261120T150008Z-1d5a","kind":"revised"}
+{"seriesId":"comex.expo.rubro.moi","period":"2026-09","oldValue":2393.571018100001,"newValue":2402.154664180001,"detectedAt":"2026-11-20T15:00:34.096Z","runId":"20261120T150008Z-1d5a","kind":"revised"}
+{"seriesId":"comex.expo.rubro.cye","period":"2026-09","oldValue":1363.7460007299999,"newValue":1318.2037821799997,"detectedAt":"2026-11-20T15:00:34.096Z","runId":"20261120T150008Z-1d5a","kind":"revised"}
+{"seriesId":"comex.expo.rubro.confidencial","period":"2026-09","oldValue":1223.37148464,"newValue":1205.10059439,"detectedAt":"2026-11-20T15:00:34.096Z","runId":"20261120T150008Z-1d5a","kind":"revised"}
+{"seriesId":"comex.expo.pais.brasil","period":"2026-09","oldValue":1203.4603662099998,"newValue":1206.5330959199998,"detectedAt":"2026-11-20T15:00:34.096Z","runId":"20261120T150008Z-1d5a","kind":"revised"}
+{"seriesId":"comex.expo.pais.china","period":"2026-09","oldValue":917.31508575,"newValue":920.41862343,"detectedAt":"2026-11-20T15:00:34.096Z","runId":"20261120T150008Z-1d5a","kind":"revised"}
+{"seriesId":"comex.expo.pais.eeuu","period":"2026-09","oldValue":992.00897008,"newValue":996.8738187399999,"detectedAt":"2026-11-20T15:00:34.096Z","runId":"20261120T150008Z-1d5a","kind":"revised"}
+{"seriesId":"comex.impo.total","period":"2026-09","oldValue":7059.50117813999,"newValue":7083.188725139989,"detectedAt":"2026-11-20T15:00:45.735Z","runId":"20261120T150008Z-1d5a","kind":"revised"}
+{"seriesId":"comex.impo.uso.cyl","period":"2026-09","oldValue":181.43020468000003,"newValue":205.11775168,"detectedAt":"2026-11-20T15:00:45.735Z","runId":"20261120T150008Z-1d5a","kind":"revised"}
+{"seriesId":"comex.impo.pais.brasil","period":"2026-09","oldValue":1375.01329444,"newValue":1384.51591244,"detectedAt":"2026-11-20T15:00:45.735Z","runId":"20261120T150008Z-1d5a","kind":"revised"}
+{"seriesId":"comex.saldo","period":"2026-09","oldValue":2976.474009880005,"newValue":2952.456807290002,"detectedAt":"2026-11-20T15:00:55.323Z","runId":"20261120T150008Z-1d5a","kind":"revised"}

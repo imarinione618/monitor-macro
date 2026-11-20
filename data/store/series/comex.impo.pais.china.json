@@ -1956,13 +1956,17 @@
   {
    "period": "2026-09",
    "value": 1815.50732542
+  },
+  {
+   "period": "2026-10",
+   "value": 1725.63471775
   }
  ],
  "meta": {
   "firstPeriod": "1986-01",
-  "lastPeriod": "2026-09",
-  "retrievedAt": "2026-11-19T15:00:47.867Z",
-  "runId": "20261119T150007Z-2947",
+  "lastPeriod": "2026-10",
+  "retrievedAt": "2026-11-20T15:00:45.735Z",
+  "runId": "20261120T150008Z-1d5a",
   "dataset": "comercio_exterior_importacion_bienes",
   "query": "https://api.indec.gob.ar/v1/comercio_exterior_importacion_bienes?select=Anio%2CMes%2CPeriodo%2Cuso_economico_cod%2Cgce_cod%2Cpais_cod%2Cvalor_CIF%2Cvalor_CIF_null&Periodo=gte.202411&order=Anio%2CMes%2CPeriodo%2Cuso_economico_cod%2Cgce_cod%2Cpais_cod",
   "publishedAt": null,

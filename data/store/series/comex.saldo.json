@@ -1955,14 +1955,18 @@
   },
   {
    "period": "2026-09",
-   "value": 2976.474009880005
+   "value": 2952.456807290002
+  },
+  {
+   "period": "2026-10",
+   "value": 3393.560891620008
   }
  ],
  "meta": {
   "firstPeriod": "1986-01",
-  "lastPeriod": "2026-09",
-  "retrievedAt": "2026-11-19T15:00:47.867Z",
-  "runId": "20261119T150007Z-2947",
+  "lastPeriod": "2026-10",
+  "retrievedAt": "2026-11-20T15:00:45.735Z",
+  "runId": "20261120T150008Z-1d5a",
   "publishedAt": null,
   "stale": false
  }
