@@ -445,8 +445,8 @@
  "meta": {
   "firstPeriod": "2017-07",
   "lastPeriod": "2026-08",
-  "retrievedAt": "2026-11-22T15:00:51.675Z",
-  "runId": "20261122T150006Z-393e",
+  "retrievedAt": "2026-11-23T15:00:54.494Z",
+  "runId": "20261123T150005Z-f32e",
   "query": "https://infra.datos.gob.ar/catalog/sspm/dataset/182/distribution/182.1/download/balance-cambiario.csv",
   "publishedAt": null,
   "stale": false
