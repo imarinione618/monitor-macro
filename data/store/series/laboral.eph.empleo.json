@@ -176,8 +176,8 @@
  "meta": {
   "firstPeriod": "2016-Q2",
   "lastPeriod": "2026-Q2",
-  "retrievedAt": "2026-11-23T15:00:18.358Z",
-  "runId": "20261123T150005Z-f32e",
+  "retrievedAt": "2026-11-24T15:00:19.993Z",
+  "runId": "20261124T150008Z-9277",
   "dataset": "mercado_trabajo_eph",
   "query": "https://api.indec.gob.ar/v1/mercado_trabajo_eph?order=area_geografica_nom%2Cperiodo",
   "publishedAt": null,

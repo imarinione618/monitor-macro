@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
- "updatedAt": "2026-11-23T15:00:57.115Z",
- "lastAttemptAt": "2026-11-23T15:00:57.115Z",
+ "updatedAt": "2026-11-24T15:01:00.896Z",
+ "lastAttemptAt": "2026-11-24T15:01:00.896Z",
  "lastFullAt": "2026-11-04T18:27:45.092Z",
  "series": {
   "monetario.bcra.44": {
@@ -688,7 +688,7 @@
    "count": 490,
    "firstDate": "2024-11-07",
    "lastDate": "2026-11-20",
-   "retrievedAt": "2026-11-23T15:00:57.115Z",
+   "retrievedAt": "2026-11-24T15:01:00.896Z",
    "stale": false
   }
  }
