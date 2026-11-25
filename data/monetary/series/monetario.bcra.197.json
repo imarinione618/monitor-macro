@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/197",
   "methodology": "Circulacion monetaria total - Efectivo en bancos en pesos-vista remunerada de personas jurídicas +Cuentas corrientes en pesos+ Cajas de ahorro en pesos",
   "firstDate": "2021-01-04",
-  "lastDate": "2026-11-13"
+  "lastDate": "2026-11-17"
  },
  "observations": [
   {
@@ -5096,7 +5096,7 @@
   },
   {
    "date": "2026-03-20",
-   "value": 54974458.591
+   "value": 54956128.939
   },
   {
    "date": "2026-03-25",
@@ -5444,39 +5444,39 @@
   },
   {
    "date": "2026-08-03",
-   "value": 68152897.21
+   "value": 68152984.21
   },
   {
    "date": "2026-08-04",
-   "value": 67720157.027
+   "value": 67720273.027
   },
   {
    "date": "2026-08-05",
-   "value": 67969925.475
+   "value": 67970013.475
   },
   {
    "date": "2026-08-06",
-   "value": 68799108.512
+   "value": 68799221.512
   },
   {
    "date": "2026-08-07",
-   "value": 66808775.598
+   "value": 66808793.598
   },
   {
    "date": "2026-08-10",
-   "value": 65287235.905
+   "value": 65287833.905
   },
   {
    "date": "2026-08-11",
-   "value": 64475587.441
+   "value": 64481405.441
   },
   {
    "date": "2026-08-12",
-   "value": 64615652.723
+   "value": 64616199.723
   },
   {
    "date": "2026-08-13",
-   "value": 64846090.927
+   "value": 64846637.927
   },
   {
    "date": "2026-08-14",
@@ -5500,19 +5500,19 @@
   },
   {
    "date": "2026-08-24",
-   "value": 62370227.352
+   "value": 62371963.352
   },
   {
    "date": "2026-08-25",
-   "value": 62690288.415
+   "value": 62691416.415
   },
   {
    "date": "2026-08-26",
-   "value": 63307715.092
+   "value": 63308706.092
   },
   {
    "date": "2026-08-27",
-   "value": 63987205.941
+   "value": 63988073.941
   },
   {
    "date": "2026-08-28",
@@ -5608,7 +5608,7 @@
   },
   {
    "date": "2026-09-30",
-   "value": 69306775.426
+   "value": 69307651.426
   },
   {
    "date": "2026-10-01",
@@ -5692,7 +5692,7 @@
   },
   {
    "date": "2026-10-30",
-   "value": 69283048.217
+   "value": 69282837.217
   },
   {
    "date": "2026-11-02",
@@ -5704,26 +5704,33 @@
   },
   {
    "date": "2026-11-04",
-   "value": 69357447.419
+   "value": 69356371.528
   },
   {
    "date": "2026-11-05",
-   "value": 70565294.407
+   "value": 70548986.695
   },
   {
    "date": "2026-11-11",
-   "value": 67813485.16
+   "value": 67811431.157
   },
   {
    "date": "2026-11-12",
-   "value": 68832859.166
+   "value": 68763347.569
   },
   {
    "date": "2026-11-13",
-   "value": 67408130.12
+   "value": 67408465.12
+  },
+  {
+   "date": "2026-11-16",
+   "value": 65909413.312
+  },
+  {
+   "date": "2026-11-17",
+   "value": 65262000.3
   }
  ],
- "retrievedAt": "2026-11-19T15:01:01.055Z",
- "stale": true,
- "error": "No se verificó catálogo BCRA: Paginación del catálogo BCRA inconsistente"
+ "retrievedAt": "2026-11-24T19:59:23.934Z",
+ "stale": false
 }

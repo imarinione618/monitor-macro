@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/14",
   "methodology": "Tasa de interés promedio ponderada por montos otorgados de préstamos personales en pesos a tasa de interés fija o repactable, considerando los datos informados por las entidades financieras, a través del SISCEN -0018 en la cuenta SISCEN 51 (préstamos personales).",
   "firstDate": "2010-07-01",
-  "lastDate": "2026-11-17"
+  "lastDate": "2026-11-19"
  },
  "observations": [
   {
@@ -15936,30 +15936,37 @@
   },
   {
    "date": "2026-11-05",
-   "value": 62.46
+   "value": 62.4
   },
   {
    "date": "2026-11-11",
-   "value": 67.69
+   "value": 67.71
   },
   {
    "date": "2026-11-12",
-   "value": 63.1
+   "value": 63.2
   },
   {
    "date": "2026-11-13",
-   "value": 62.77
+   "value": 62.89
   },
   {
    "date": "2026-11-16",
-   "value": 65.54
+   "value": 65.68
   },
   {
    "date": "2026-11-17",
-   "value": 61.94
+   "value": 61.99
+  },
+  {
+   "date": "2026-11-18",
+   "value": 62.23
+  },
+  {
+   "date": "2026-11-19",
+   "value": 62.73
   }
  ],
- "retrievedAt": "2026-11-19T15:01:01.055Z",
- "stale": true,
- "error": "No se verificó catálogo BCRA: Paginación del catálogo BCRA inconsistente"
+ "retrievedAt": "2026-11-24T19:59:23.934Z",
+ "stale": false
 }

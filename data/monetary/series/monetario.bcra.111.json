@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/111",
   "methodology": "Préstamos de efectivo a suscriptores de letras, pagarés, debentures u otros documentos. Incluye préstamos para la prefinanciación y financiación de exportaciones.",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-13"
+  "lastDate": "2026-11-17"
  },
  "observations": [
   {
@@ -23308,7 +23308,7 @@
   },
   {
    "date": "2026-09-30",
-   "value": 26319450
+   "value": 26321342
   },
   {
    "date": "2026-10-01",
@@ -23408,22 +23408,29 @@
   },
   {
    "date": "2026-11-05",
-   "value": 27776226
+   "value": 27776131
   },
   {
    "date": "2026-11-11",
-   "value": 27937279
+   "value": 27933333
   },
   {
    "date": "2026-11-12",
-   "value": 27652549
+   "value": 27653680
   },
   {
    "date": "2026-11-13",
-   "value": 27743516
+   "value": 27732702
+  },
+  {
+   "date": "2026-11-16",
+   "value": 27729584
+  },
+  {
+   "date": "2026-11-17",
+   "value": 27635024
   }
  ],
- "retrievedAt": "2026-11-19T15:01:01.055Z",
- "stale": true,
- "error": "No se verificó catálogo BCRA: Paginación del catálogo BCRA inconsistente"
+ "retrievedAt": "2026-11-24T19:59:23.934Z",
+ "stale": false
 }

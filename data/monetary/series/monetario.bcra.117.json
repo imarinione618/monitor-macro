@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/117",
   "methodology": "Suma del total de préstamos en efectivo otorgados al sector privado no financiero por las entidades financieras, neto de intereses documentados.",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-13"
+  "lastDate": "2026-11-17"
  },
  "observations": [
   {
@@ -22796,7 +22796,7 @@
   },
   {
    "date": "2026-03-20",
-   "value": 92594630
+   "value": 92587618
   },
   {
    "date": "2026-03-25",
@@ -23308,7 +23308,7 @@
   },
   {
    "date": "2026-09-30",
-   "value": 108665285
+   "value": 108638683
   },
   {
    "date": "2026-10-01",
@@ -23392,7 +23392,7 @@
   },
   {
    "date": "2026-10-30",
-   "value": 110309730
+   "value": 110308063
   },
   {
    "date": "2026-11-02",
@@ -23404,26 +23404,33 @@
   },
   {
    "date": "2026-11-04",
-   "value": 109890610
+   "value": 109895127
   },
   {
    "date": "2026-11-05",
-   "value": 109782675
+   "value": 109782084
   },
   {
    "date": "2026-11-11",
-   "value": 108887509
+   "value": 108982554
   },
   {
    "date": "2026-11-12",
-   "value": 110061428
+   "value": 110204115
   },
   {
    "date": "2026-11-13",
-   "value": 109419712
+   "value": 109410853
+  },
+  {
+   "date": "2026-11-16",
+   "value": 109475356
+  },
+  {
+   "date": "2026-11-17",
+   "value": 109917230
   }
  ],
- "retrievedAt": "2026-11-19T15:01:01.055Z",
- "stale": true,
- "error": "No se verificó catálogo BCRA: Paginación del catálogo BCRA inconsistente"
+ "retrievedAt": "2026-11-24T19:59:23.934Z",
+ "stale": false
 }

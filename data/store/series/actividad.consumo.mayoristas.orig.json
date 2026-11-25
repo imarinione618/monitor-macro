@@ -469,8 +469,8 @@
  "meta": {
   "firstPeriod": "2017-01",
   "lastPeriod": "2026-08",
-  "retrievedAt": "2026-11-24T15:00:55.393Z",
-  "runId": "20261124T150008Z-9277",
+  "retrievedAt": "2026-11-24T20:01:19.009Z",
+  "runId": "20261124T200036Z-f007",
   "query": "https://infra.datos.gob.ar/catalog/sspm/dataset/456/distribution/456.1/download/ventas-totales-autoservicios-mayoristas.csv",
   "publishedAt": null,
   "stale": false

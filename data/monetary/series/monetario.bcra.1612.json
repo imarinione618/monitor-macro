@@ -4168,7 +4168,6 @@
    "value": 62002099.287
   }
  ],
- "retrievedAt": "2026-11-19T15:01:01.055Z",
- "stale": true,
- "error": "No se verificó catálogo BCRA: Paginación del catálogo BCRA inconsistente"
+ "retrievedAt": "2026-11-24T19:59:23.934Z",
+ "stale": false
 }

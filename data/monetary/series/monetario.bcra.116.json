@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/116",
   "methodology": "Préstamos de efectivo no comprendidos en las definiciones de las cuentas: adelantos en cuenta corriente, otros adelantos, documentos a sola firma, documentos descontados, documentos comprados, hipotecarios, prendarios, personales, o a titulares del sistema de tarjetas de crédito. Incluye créditos documentarios. Neto de intereses documentados.",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-13"
+  "lastDate": "2026-11-17"
  },
  "observations": [
   {
@@ -22796,7 +22796,7 @@
   },
   {
    "date": "2026-03-20",
-   "value": 6071180
+   "value": 6070975
   },
   {
    "date": "2026-03-25",
@@ -23308,7 +23308,7 @@
   },
   {
    "date": "2026-09-30",
-   "value": 7493382
+   "value": 7493221
   },
   {
    "date": "2026-10-01",
@@ -23392,7 +23392,7 @@
   },
   {
    "date": "2026-10-30",
-   "value": 7700535
+   "value": 7701854
   },
   {
    "date": "2026-11-02",
@@ -23404,15 +23404,15 @@
   },
   {
    "date": "2026-11-04",
-   "value": 7761209
+   "value": 7765455
   },
   {
    "date": "2026-11-05",
-   "value": 7767261
+   "value": 7766760
   },
   {
    "date": "2026-11-11",
-   "value": 7742090
+   "value": 7741590
   },
   {
    "date": "2026-11-12",
@@ -23420,10 +23420,17 @@
   },
   {
    "date": "2026-11-13",
-   "value": 7689098
+   "value": 7691023
+  },
+  {
+   "date": "2026-11-16",
+   "value": 7665662
+  },
+  {
+   "date": "2026-11-17",
+   "value": 7622498
   }
  ],
- "retrievedAt": "2026-11-19T15:01:01.055Z",
- "stale": true,
- "error": "No se verificó catálogo BCRA: Paginación del catálogo BCRA inconsistente"
+ "retrievedAt": "2026-11-24T19:59:23.934Z",
+ "stale": false
 }

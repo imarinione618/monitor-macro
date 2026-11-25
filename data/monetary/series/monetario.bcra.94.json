@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/94",
   "methodology": "Depósitos de efectivo constituidos bajo la forma de cuenta corriente bancaria.",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-13"
+  "lastDate": "2026-11-17"
  },
  "observations": [
   {
@@ -23144,39 +23144,39 @@
   },
   {
    "date": "2026-08-03",
-   "value": 22042841
+   "value": 22042949
   },
   {
    "date": "2026-08-04",
-   "value": 21614887
+   "value": 21614946
   },
   {
    "date": "2026-08-05",
-   "value": 21511024
+   "value": 21511038
   },
   {
    "date": "2026-08-06",
-   "value": 21600704
+   "value": 21600798
   },
   {
    "date": "2026-08-07",
-   "value": 20778067
+   "value": 20778063
   },
   {
    "date": "2026-08-10",
-   "value": 21201953
+   "value": 21202551
   },
   {
    "date": "2026-08-11",
-   "value": 21219769
+   "value": 21225591
   },
   {
    "date": "2026-08-12",
-   "value": 21098558
+   "value": 21099105
   },
   {
    "date": "2026-08-13",
-   "value": 21602040
+   "value": 21602587
   },
   {
    "date": "2026-08-14",
@@ -23200,19 +23200,19 @@
   },
   {
    "date": "2026-08-24",
-   "value": 21702480
+   "value": 21704196
   },
   {
    "date": "2026-08-25",
-   "value": 22138516
+   "value": 22139634
   },
   {
    "date": "2026-08-26",
-   "value": 22189648
+   "value": 22190642
   },
   {
    "date": "2026-08-27",
-   "value": 21850393
+   "value": 21851217
   },
   {
    "date": "2026-08-28",
@@ -23392,7 +23392,7 @@
   },
   {
    "date": "2026-10-30",
-   "value": 22092530
+   "value": 22092341
   },
   {
    "date": "2026-11-02",
@@ -23404,26 +23404,33 @@
   },
   {
    "date": "2026-11-04",
-   "value": 22045168
+   "value": 22045353
   },
   {
    "date": "2026-11-05",
-   "value": 22355260
+   "value": 22356152
   },
   {
    "date": "2026-11-11",
-   "value": 23341989
+   "value": 23340035
   },
   {
    "date": "2026-11-12",
-   "value": 24170962
+   "value": 24128598
   },
   {
    "date": "2026-11-13",
-   "value": 22964581
+   "value": 22964840
+  },
+  {
+   "date": "2026-11-16",
+   "value": 22523550
+  },
+  {
+   "date": "2026-11-17",
+   "value": 22283890
   }
  ],
- "retrievedAt": "2026-11-19T15:01:01.055Z",
- "stale": true,
- "error": "No se verificó catálogo BCRA: Paginación del catálogo BCRA inconsistente"
+ "retrievedAt": "2026-11-24T19:59:23.934Z",
+ "stale": false
 }

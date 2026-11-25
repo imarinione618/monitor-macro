@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/88",
   "methodology": "Plazo fijo con clausula CER/UVI Uvas e Inversiones UVA con opción anticipada del sector privado",
   "firstDate": "2003-01-31",
-  "lastDate": "2026-11-13"
+  "lastDate": "2026-11-17"
  },
  "observations": [
   {
@@ -23056,23 +23056,23 @@
   },
   {
    "date": "2026-08-03",
-   "value": 1675159.967
+   "value": 1675114.967
   },
   {
    "date": "2026-08-04",
-   "value": 1670246.554
+   "value": 1670202.554
   },
   {
    "date": "2026-08-05",
-   "value": 1673806.111
+   "value": 1673762.111
   },
   {
    "date": "2026-08-06",
-   "value": 1673845.075
+   "value": 1673800.075
   },
   {
    "date": "2026-08-07",
-   "value": 1683501.161
+   "value": 1683457.161
   },
   {
    "date": "2026-08-10",
@@ -23080,7 +23080,7 @@
   },
   {
    "date": "2026-08-11",
-   "value": 1677506.811
+   "value": 1677461.811
   },
   {
    "date": "2026-08-12",
@@ -23112,19 +23112,19 @@
   },
   {
    "date": "2026-08-24",
-   "value": 1705804.596
+   "value": 1705731.596
   },
   {
    "date": "2026-08-25",
-   "value": 1703283.386
+   "value": 1703211.386
   },
   {
    "date": "2026-08-26",
-   "value": 1708257.88
+   "value": 1708185.88
   },
   {
    "date": "2026-08-27",
-   "value": 1702708.981
+   "value": 1702636.981
   },
   {
    "date": "2026-08-28",
@@ -23333,9 +23333,16 @@
   {
    "date": "2026-11-13",
    "value": 2070857.554
+  },
+  {
+   "date": "2026-11-16",
+   "value": 2084763.937
+  },
+  {
+   "date": "2026-11-17",
+   "value": 1992623.713
   }
  ],
- "retrievedAt": "2026-11-19T15:01:01.055Z",
- "stale": true,
- "error": "No se verificó catálogo BCRA: Paginación del catálogo BCRA inconsistente"
+ "retrievedAt": "2026-11-24T19:59:23.934Z",
+ "stale": false
 }

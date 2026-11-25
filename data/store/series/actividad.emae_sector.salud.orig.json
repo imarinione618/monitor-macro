@@ -1059,42 +1059,46 @@
   },
   {
    "period": "2026-01",
-   "value": 187.32954675161798
+   "value": 187.30655001435946
   },
   {
    "period": "2026-02",
-   "value": 176.98102863243227
+   "value": 176.98818221634497
   },
   {
    "period": "2026-03",
-   "value": 191.50307791936268
+   "value": 191.51892107270848
   },
   {
    "period": "2026-04",
-   "value": 195.3286454353799
+   "value": 195.4028200654069
   },
   {
    "period": "2026-05",
-   "value": 197.69982541332067
+   "value": 197.6336085699534
   },
   {
    "period": "2026-06",
-   "value": 204.66893753471174
+   "value": 204.66097974805209
   },
   {
    "period": "2026-07",
-   "value": 186.12572523624013
+   "value": 186.32210297000867
   },
   {
    "period": "2026-08",
-   "value": 186.27803991655833
+   "value": 185.54017648659402
+  },
+  {
+   "period": "2026-09",
+   "value": 183.648178805707
   }
  ],
  "meta": {
   "firstPeriod": "2004-01",
-  "lastPeriod": "2026-08",
-  "retrievedAt": "2026-11-24T15:00:09.267Z",
-  "runId": "20261124T150008Z-9277",
+  "lastPeriod": "2026-09",
+  "retrievedAt": "2026-11-24T20:00:36.729Z",
+  "runId": "20261124T200036Z-f007",
   "dataset": "estimador-mensual-de-actividad-economica-sectores",
   "query": "https://api.indec.gob.ar/v1/estimador-mensual-de-actividad-economica-sectores?order=anio%2Cmes%2Ccodigo%2Cdescripcion%2Cperiodo%2Ctipo_de_indicador",
   "publishedAt": null,

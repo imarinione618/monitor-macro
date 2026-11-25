@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/1457",
   "methodology": "Depósitos de efectivo constituidos bajo la forma de cuenta corriente bancaria. . Los depósitos son en moneda local y corresponden al sector público no financiero . Cuentas SISCEN asociadas: 140 . Para conocer la correspondencia conceptual entre las cuentas y atributos del sistema SISCEN y las definidas en el plan de cuentas de las entidades financieras se recomienda consultar la tabla SISCEN-T0010 CORRESPONDENCIA DE CUENTAS, disponible en http://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Tabt0010.xlshttp://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Tabt0010.xls",
   "firstDate": "1996-01-02",
-  "lastDate": "2026-11-16"
+  "lastDate": "2026-11-18"
  },
  "observations": [
   {
@@ -30132,23 +30132,23 @@
   },
   {
    "date": "2026-08-03",
-   "value": 20696380
+   "value": 20696412
   },
   {
    "date": "2026-08-04",
-   "value": 19503271
+   "value": 19503346
   },
   {
    "date": "2026-08-05",
-   "value": 20404120
+   "value": 20405268
   },
   {
    "date": "2026-08-06",
-   "value": 20353265
+   "value": 20370946
   },
   {
    "date": "2026-08-07",
-   "value": 20209129
+   "value": 20209161
   },
   {
    "date": "2026-08-10",
@@ -30156,7 +30156,7 @@
   },
   {
    "date": "2026-08-11",
-   "value": 22139084
+   "value": 22139312
   },
   {
    "date": "2026-08-12",
@@ -30188,19 +30188,19 @@
   },
   {
    "date": "2026-08-24",
-   "value": 25343723
+   "value": 25343172
   },
   {
    "date": "2026-08-25",
-   "value": 26319667
+   "value": 26319737
   },
   {
    "date": "2026-08-26",
-   "value": 25560919
+   "value": 25562789
   },
   {
    "date": "2026-08-27",
-   "value": 25364611
+   "value": 25364545
   },
   {
    "date": "2026-08-28",
@@ -30400,22 +30400,29 @@
   },
   {
    "date": "2026-11-11",
-   "value": 23286337
+   "value": 23286137
   },
   {
    "date": "2026-11-12",
-   "value": 25085417
+   "value": 25085438
   },
   {
    "date": "2026-11-13",
-   "value": 26261621
+   "value": 26274492
   },
   {
    "date": "2026-11-16",
-   "value": 28158120
+   "value": 28174474
+  },
+  {
+   "date": "2026-11-17",
+   "value": 26461908
+  },
+  {
+   "date": "2026-11-18",
+   "value": 27602832
   }
  ],
- "retrievedAt": "2026-11-19T15:01:01.055Z",
- "stale": true,
- "error": "No se verificó catálogo BCRA: Paginación del catálogo BCRA inconsistente"
+ "retrievedAt": "2026-11-24T19:59:23.934Z",
+ "stale": false
 }

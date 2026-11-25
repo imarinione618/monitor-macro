@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/19",
   "methodology": "Depósitos en cuenta corriente en pesos en el BCRA que forman parte de la base monetaria, difundido diariamente mediante Comunicación “C”.",
   "firstDate": "2001-06-01",
-  "lastDate": "2026-11-16"
+  "lastDate": "2026-11-18"
  },
  "observations": [
   {
@@ -25009,9 +25009,16 @@
   {
    "date": "2026-11-16",
    "value": 18543944
+  },
+  {
+   "date": "2026-11-17",
+   "value": 17346676
+  },
+  {
+   "date": "2026-11-18",
+   "value": 17530135
   }
  ],
- "retrievedAt": "2026-11-19T15:01:01.055Z",
- "stale": true,
- "error": "No se verificó catálogo BCRA: Paginación del catálogo BCRA inconsistente"
+ "retrievedAt": "2026-11-24T19:59:23.934Z",
+ "stale": false
 }

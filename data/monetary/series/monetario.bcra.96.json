@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/96",
   "methodology": "Plazo fijo totales + Inversiones a plazo constante + Inv. con opción de cancelación anticipada + Inv. con renovación por plazo determinado -Depositos CEDROS- Plazo fijo con clausula Cer (UVA)- Inv. UVA con opción de cancelación anticipada UVA sector público - Inv.UVA con opción de canc anticipada Sector privado",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-13"
+  "lastDate": "2026-11-17"
  },
  "observations": [
   {
@@ -23144,39 +23144,39 @@
   },
   {
    "date": "2026-08-03",
-   "value": 64808603.033
+   "value": 64808612.033
   },
   {
    "date": "2026-08-04",
-   "value": 65325233.446
+   "value": 65324253.446
   },
   {
    "date": "2026-08-05",
-   "value": 65210296.889
+   "value": 65210331.889
   },
   {
    "date": "2026-08-06",
-   "value": 65219272.925
+   "value": 65219271.925
   },
   {
    "date": "2026-08-07",
-   "value": 65395864.839
+   "value": 65395858.839
   },
   {
    "date": "2026-08-10",
-   "value": 65334177.133
+   "value": 65334170.133
   },
   {
    "date": "2026-08-11",
-   "value": 65624085.189
+   "value": 65624126.189
   },
   {
    "date": "2026-08-12",
-   "value": 64935179.213
+   "value": 64935172.213
   },
   {
    "date": "2026-08-13",
-   "value": 65310539.157
+   "value": 65310533.157
   },
   {
    "date": "2026-08-14",
@@ -23200,23 +23200,23 @@
   },
   {
    "date": "2026-08-24",
-   "value": 65550007.404
+   "value": 65550044.404
   },
   {
    "date": "2026-08-25",
-   "value": 65854919.614
+   "value": 65854980.614
   },
   {
    "date": "2026-08-26",
-   "value": 66063083.12
+   "value": 66063105.12
   },
   {
    "date": "2026-08-27",
-   "value": 66654330.019
+   "value": 66654364.019
   },
   {
    "date": "2026-08-28",
-   "value": 67079960.304
+   "value": 67079957.304
   },
   {
    "date": "2026-08-31",
@@ -23404,7 +23404,7 @@
   },
   {
    "date": "2026-11-04",
-   "value": 70818777.567
+   "value": 70818643.567
   },
   {
    "date": "2026-11-05",
@@ -23420,10 +23420,17 @@
   },
   {
    "date": "2026-11-13",
-   "value": 70652061.446
+   "value": 70653297.446
+  },
+  {
+   "date": "2026-11-16",
+   "value": 70321230.063
+  },
+  {
+   "date": "2026-11-17",
+   "value": 71005155.287
   }
  ],
- "retrievedAt": "2026-11-19T15:01:01.055Z",
- "stale": true,
- "error": "No se verificó catálogo BCRA: Paginación del catálogo BCRA inconsistente"
+ "retrievedAt": "2026-11-24T19:59:23.934Z",
+ "stale": false
 }

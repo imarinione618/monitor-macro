@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/91",
   "methodology": "Suma de total depósitos en efectivo (incluye Certificados de depósitos reprogramados), neto del Uso de Fondo Unificado de Cuentas Oficiales.",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-13"
+  "lastDate": "2026-11-17"
  },
  "observations": [
   {
@@ -23144,39 +23144,39 @@
   },
   {
    "date": "2026-08-03",
-   "value": 157730397
+   "value": 157729388
   },
   {
    "date": "2026-08-04",
-   "value": 156092195
+   "value": 156091465
   },
   {
    "date": "2026-08-05",
-   "value": 156856442
+   "value": 156857659
   },
   {
    "date": "2026-08-06",
-   "value": 157128403
+   "value": 157128486
   },
   {
    "date": "2026-08-07",
-   "value": 155711713
+   "value": 155711745
   },
   {
    "date": "2026-08-10",
-   "value": 153869828
+   "value": 153870419
   },
   {
    "date": "2026-08-11",
-   "value": 155101031
+   "value": 155107080
   },
   {
    "date": "2026-08-12",
-   "value": 155047763
+   "value": 155048303
   },
   {
    "date": "2026-08-13",
-   "value": 156800413
+   "value": 156800954
   },
   {
    "date": "2026-08-14",
@@ -23200,23 +23200,23 @@
   },
   {
    "date": "2026-08-24",
-   "value": 158842449
+   "value": 158844598
   },
   {
    "date": "2026-08-25",
-   "value": 160276112
+   "value": 160277296
   },
   {
    "date": "2026-08-26",
-   "value": 160635503
+   "value": 160638300
   },
   {
    "date": "2026-08-27",
-   "value": 161165732
+   "value": 161166530
   },
   {
    "date": "2026-08-28",
-   "value": 162225235
+   "value": 162225232
   },
   {
    "date": "2026-08-31",
@@ -23392,7 +23392,7 @@
   },
   {
    "date": "2026-10-30",
-   "value": 171347297
+   "value": 171347108
   },
   {
    "date": "2026-11-02",
@@ -23404,26 +23404,33 @@
   },
   {
    "date": "2026-11-04",
-   "value": 168820479
+   "value": 168820544
   },
   {
    "date": "2026-11-05",
-   "value": 169805991
+   "value": 169806874
   },
   {
    "date": "2026-11-11",
-   "value": 167247918
+   "value": 167234689
   },
   {
    "date": "2026-11-12",
-   "value": 169408093
+   "value": 169343384
   },
   {
    "date": "2026-11-13",
-   "value": 170760500
+   "value": 170768380
+  },
+  {
+   "date": "2026-11-16",
+   "value": 170816451
+  },
+  {
+   "date": "2026-11-17",
+   "value": 171811851
   }
  ],
- "retrievedAt": "2026-11-19T15:01:01.055Z",
- "stale": true,
- "error": "No se verificó catálogo BCRA: Paginación del catálogo BCRA inconsistente"
+ "retrievedAt": "2026-11-24T19:59:23.934Z",
+ "stale": false
 }

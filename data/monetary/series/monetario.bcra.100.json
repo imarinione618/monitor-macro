@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/100",
   "methodology": "Suma de total depósitos en efectivo (incluye Certificados de depósitos reprogramados) del sector privado no financiero en entidades financieras.",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-13"
+  "lastDate": "2026-11-17"
  },
  "observations": [
   {
@@ -23144,39 +23144,39 @@
   },
   {
    "date": "2026-08-03",
-   "value": 123140307
+   "value": 123140359
   },
   {
    "date": "2026-08-04",
-   "value": 123022532
+   "value": 123021624
   },
   {
    "date": "2026-08-05",
-   "value": 123270210
+   "value": 123270273
   },
   {
    "date": "2026-08-06",
-   "value": 123770409
+   "value": 123770460
   },
   {
    "date": "2026-08-07",
-   "value": 122573787
+   "value": 122573785
   },
   {
    "date": "2026-08-10",
-   "value": 120109709
+   "value": 120110300
   },
   {
    "date": "2026-08-11",
-   "value": 120008740
+   "value": 120014584
   },
   {
    "date": "2026-08-12",
-   "value": 119249646
+   "value": 119250186
   },
   {
    "date": "2026-08-13",
-   "value": 119689041
+   "value": 119689582
   },
   {
    "date": "2026-08-14",
@@ -23200,23 +23200,23 @@
   },
   {
    "date": "2026-08-24",
-   "value": 118248877
+   "value": 118250577
   },
   {
    "date": "2026-08-25",
-   "value": 118904300
+   "value": 118905417
   },
   {
    "date": "2026-08-26",
-   "value": 119757426
+   "value": 119758362
   },
   {
    "date": "2026-08-27",
-   "value": 121009195
+   "value": 121010021
   },
   {
    "date": "2026-08-28",
-   "value": 123459916
+   "value": 123459913
   },
   {
    "date": "2026-08-31",
@@ -23392,7 +23392,7 @@
   },
   {
    "date": "2026-10-30",
-   "value": 130065221
+   "value": 130065032
   },
   {
    "date": "2026-11-02",
@@ -23404,26 +23404,33 @@
   },
   {
    "date": "2026-11-04",
-   "value": 129730529
+   "value": 129730594
   },
   {
    "date": "2026-11-05",
-   "value": 131581997
+   "value": 131582880
   },
   {
    "date": "2026-11-11",
-   "value": 128820967
+   "value": 128807936
   },
   {
    "date": "2026-11-12",
-   "value": 129058779
+   "value": 128994049
   },
   {
    "date": "2026-11-13",
-   "value": 128921203
+   "value": 128921183
+  },
+  {
+   "date": "2026-11-16",
+   "value": 126438089
+  },
+  {
+   "date": "2026-11-17",
+   "value": 126428700
   }
  ],
- "retrievedAt": "2026-11-19T15:01:01.055Z",
- "stale": true,
- "error": "No se verificó catálogo BCRA: Paginación del catálogo BCRA inconsistente"
+ "retrievedAt": "2026-11-24T19:59:23.934Z",
+ "stale": false
 }

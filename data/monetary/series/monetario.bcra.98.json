@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/98",
   "methodology": "Depósitos de efectivo del sector privado no financiero en entidades financieras no incluidos en otros rubros. ",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-13"
+  "lastDate": "2026-11-17"
  },
  "observations": [
   {
@@ -23144,7 +23144,7 @@
   },
   {
    "date": "2026-08-03",
-   "value": 2174134
+   "value": 2174135
   },
   {
    "date": "2026-08-04",
@@ -23152,15 +23152,15 @@
   },
   {
    "date": "2026-08-05",
-   "value": 2122119
+   "value": 2122103
   },
   {
    "date": "2026-08-06",
-   "value": 2045460
+   "value": 2045444
   },
   {
    "date": "2026-08-07",
-   "value": 2137050
+   "value": 2137080
   },
   {
    "date": "2026-08-10",
@@ -23168,7 +23168,7 @@
   },
   {
    "date": "2026-08-11",
-   "value": 2090284
+   "value": 2090314
   },
   {
    "date": "2026-08-12",
@@ -23208,11 +23208,11 @@
   },
   {
    "date": "2026-08-26",
-   "value": 1871941
+   "value": 1871936
   },
   {
    "date": "2026-08-27",
-   "value": 1839138
+   "value": 1839134
   },
   {
    "date": "2026-08-28",
@@ -23408,22 +23408,29 @@
   },
   {
    "date": "2026-11-05",
-   "value": 2308422
+   "value": 2308413
   },
   {
    "date": "2026-11-11",
-   "value": 3028472
+   "value": 3013419
   },
   {
    "date": "2026-11-12",
-   "value": 2450951
+   "value": 2409030
   },
   {
    "date": "2026-11-13",
-   "value": 2890400
+   "value": 2888809
+  },
+  {
+   "date": "2026-11-16",
+   "value": 2659286
+  },
+  {
+   "date": "2026-11-17",
+   "value": 2380178
   }
  ],
- "retrievedAt": "2026-11-19T15:01:01.055Z",
- "stale": true,
- "error": "No se verificó catálogo BCRA: Paginación del catálogo BCRA inconsistente"
+ "retrievedAt": "2026-11-24T19:59:23.934Z",
+ "stale": false
 }

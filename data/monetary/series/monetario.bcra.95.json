@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/95",
   "methodology": "Depósitos de efectivo constituidos bajo el sistema de caja de ahorros. Incluye depósitos de efectivo en cuentas de ahorro vinculado a préstamos, en cuentas especiales para círculos cerrados, en la cuenta Fondo de desempleo, en cuentas abiertas bajo el sistema de usuras pupilares, en cuentas especiales para la acreditación de remuneraciones, en cuentas corrientes especiales para personas jurídicas y en las Cuentas especiales a las que se refiere la Ley 27.260 - Régimen de 27.260 - Régimen de sinceramiento fiscal – LIBRO II - Título I – Artículo 38, inciso c), Art. 41 y Art. 42, incisos b) y c) y Art. 41 y Art. 44 y Ley 27.613.",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-13"
+  "lastDate": "2026-11-17"
  },
  "observations": [
   {
@@ -23144,23 +23144,23 @@
   },
   {
    "date": "2026-08-03",
-   "value": 32826994
+   "value": 32826973
   },
   {
    "date": "2026-08-04",
-   "value": 32696384
+   "value": 32696441
   },
   {
    "date": "2026-08-05",
-   "value": 33140389
+   "value": 33140463
   },
   {
    "date": "2026-08-06",
-   "value": 33618552
+   "value": 33618571
   },
   {
    "date": "2026-08-07",
-   "value": 32966729
+   "value": 32966751
   },
   {
    "date": "2026-08-10",
@@ -23168,7 +23168,7 @@
   },
   {
    "date": "2026-08-11",
-   "value": 29784519
+   "value": 29784515
   },
   {
    "date": "2026-08-12",
@@ -23200,19 +23200,19 @@
   },
   {
    "date": "2026-08-24",
-   "value": 27726895
+   "value": 27726915
   },
   {
    "date": "2026-08-25",
-   "value": 27726167
+   "value": 27726177
   },
   {
    "date": "2026-08-26",
-   "value": 28311915
+   "value": 28311912
   },
   {
    "date": "2026-08-27",
-   "value": 29350044
+   "value": 29350088
   },
   {
    "date": "2026-08-28",
@@ -23404,7 +23404,7 @@
   },
   {
    "date": "2026-11-04",
-   "value": 33360295
+   "value": 33360309
   },
   {
    "date": "2026-11-05",
@@ -23412,18 +23412,25 @@
   },
   {
    "date": "2026-11-11",
-   "value": 31000967
+   "value": 31004943
   },
   {
    "date": "2026-11-12",
-   "value": 31035148
+   "value": 31054703
   },
   {
    "date": "2026-11-13",
-   "value": 31129095
+   "value": 31129171
+  },
+  {
+   "date": "2026-11-16",
+   "value": 29652045
+  },
+  {
+   "date": "2026-11-17",
+   "value": 29477668
   }
  ],
- "retrievedAt": "2026-11-19T15:01:01.055Z",
- "stale": true,
- "error": "No se verificó catálogo BCRA: Paginación del catálogo BCRA inconsistente"
+ "retrievedAt": "2026-11-24T19:59:23.934Z",
+ "stale": false
 }
