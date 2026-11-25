@@ -3,7 +3,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { writeJsonAtomic } from '../core/store';
 import { acquireLock } from '../ingest/lock';
-import { BcraClient } from './client';
+import { BcraClient, validDate } from './client';
 import { MONETARY_CATALOG } from './catalog';
 import { monetaryStoreDir, readMonetaryManifest, readMonetarySeries, writeMonetarySeries } from './store';
 import type { MonetaryDef, MonetaryManifest, MonetaryObservation } from './types';
@@ -48,6 +48,7 @@ export async function refreshMonetary(options: MonetaryRefreshOptions = {}) {
         if (catalogError) throw new Error(catalogError);
         const metadata = liveCatalog!.find(m => m.idVariable === def.bcraId);
         if (!metadata || metadata.unidadExpresion !== def.originalUnit || metadata.periodicidad !== def.frequency || metadata.descripcion.trim() !== def.name) throw new Error(`Cambió el esquema de la serie ${def.bcraId}; requiere revisión del catálogo`);
+        if (!validDate(metadata.primerFechaInformada) || !validDate(metadata.ultFechaInformada)) throw new Error(`Fechas informadas inválidas en el catálogo BCRA para la serie ${def.bcraId}`);
         const window = new Date(now); window.setUTCFullYear(window.getUTCFullYear() - 2);
         const from = full || !previous ? metadata.primerFechaInformada : [metadata.primerFechaInformada, window.toISOString().slice(0, 10)].sort().at(-1)!;
         const to = metadata.ultFechaInformada < today ? metadata.ultFechaInformada : today;

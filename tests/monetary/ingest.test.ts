@@ -37,6 +37,32 @@ describe('ingesta monetaria BCRA v4', () => {
       await expect(client.observations(44, '2024-10-01', '2024-10-03')).rejects.toThrow();
     }
   });
+  it.each([['total', (_offset: number) => 3001], ['restante desde offset', (offset: number) => 3001 - offset]])('pagina el catálogo con count = %s', async (_label, countAt) => {
+    const meta = (id: number) => ({ ...metadata, idVariable: id });
+    const fetcher = vi.fn().mockImplementation(async (url: string) => {
+      const offset = Number(new URL(url).searchParams.get('offset'));
+      const results = offset === 0 ? Array.from({ length: 3000 }, (_, i) => meta(i + 1)) : [meta(3001)];
+      return new Response(JSON.stringify({ status: 200, metadata: { resultset: { count: countAt(offset), offset, limit: 3000 } }, results }));
+    });
+    const client = new BcraClient({ fetch: fetcher, cacheDir: null, retries: 0 });
+    expect(await client.catalog()).toHaveLength(3001);
+  });
+  it('tolera variables del catálogo sin fechas informadas y las rechaza solo si se usan', async () => {
+    const body = { status: 200, metadata: { resultset: { count: 2, offset: 0, limit: 3000 } }, results: [metadata, { ...metadata, idVariable: 4020, ultFechaInformada: null, ultValorInformado: null }] };
+    const client = new BcraClient({ fetch: vi.fn().mockImplementation(async () => new Response(JSON.stringify(body))), cacheDir: null, retries: 0 });
+    expect(await client.catalog()).toHaveLength(2);
+    const dir = tmp();
+    const stub = { catalog: vi.fn().mockResolvedValue([{ ...metadata, ultFechaInformada: null }]), observations: vi.fn() };
+    await refreshMonetary({ dir, catalog: [def], client: stub, log: () => {}, now: () => new Date('2024-10-04T12:00:00Z') });
+    expect(stub.observations).not.toHaveBeenCalled();
+  });
+  it('rechaza paginación del catálogo inconsistente', async () => {
+    const fetcher = vi.fn().mockImplementation(async (url: string) => {
+      const offset = Number(new URL(url).searchParams.get('offset'));
+      return new Response(JSON.stringify({ status: 200, metadata: { resultset: { count: offset === 0 ? 3001 : 5, offset, limit: 3000 } }, results: offset === 0 ? Array.from({ length: 3000 }, (_, i) => ({ ...metadata, idVariable: i + 1 })) : [] }));
+    });
+    await expect(new BcraClient({ fetch: fetcher, cacheDir: null, retries: 0 }).catalog()).rejects.toThrow('inconsistente');
+  });
   it('reconcilia por fecha y elimina observaciones retiradas dentro de la ventana', () => {
     expect(reconcileObservations(observations, [{ date: '2024-10-03', value: 33 }], '2024-10-02', '2024-10-03')).toEqual([observations[0], { date: '2024-10-03', value: 33 }]);
   });

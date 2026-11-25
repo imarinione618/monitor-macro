@@ -60,18 +60,22 @@ export class BcraClient {
 
   async catalog(fresh = false): Promise<BcraMetadata[]> {
     const rows: BcraMetadata[] = [];
-    let expected: number | undefined;
+    let total: number | undefined;
     for (let offset = 0; ; offset += 3000) {
       const body = await this.request(`monetarias?limit=3000&offset=${offset}`, fresh);
       const count = body.metadata?.resultset.count;
-      if (!Number.isInteger(count) || count! < 0 || (expected !== undefined && count !== expected)) throw new Error('Paginación del catálogo BCRA inconsistente');
-      expected = count;
+      // Desde nov-2026 el catálogo informa en `count` las filas restantes desde el offset (total − offset)
+      // en lugar del total; se aceptan ambas semánticas, ancladas al total de la primera página.
+      if (!Number.isInteger(count) || count! < 0 || (total !== undefined && count !== total && count !== total - offset)) throw new Error('Paginación del catálogo BCRA inconsistente');
+      total ??= count!;
       rows.push(...body.results as BcraMetadata[]);
-      if (rows.length === count) break;
-      if (!body.results.length || rows.length > count!) throw new Error('Catálogo BCRA truncado');
+      if (rows.length === total) break;
+      if (!body.results.length || rows.length > total) throw new Error('Catálogo BCRA truncado');
     }
     const ids = new Set(rows.map(row => row.idVariable));
-    if (ids.size !== rows.length || rows.some(row => !Number.isInteger(row.idVariable) || !row.descripcion || !row.unidadExpresion || !validDate(row.primerFechaInformada) || !validDate(row.ultFechaInformada))) throw new Error('Metadatos BCRA inválidos');
+    // Las fechas se validan por serie al usarla (refresh): el BCRA publica variables nuevas sin fechas
+    // informadas (null) y eso no debe bloquear la actualización de las series del catálogo propio.
+    if (ids.size !== rows.length || rows.some(row => !Number.isInteger(row.idVariable) || !row.descripcion || !row.unidadExpresion)) throw new Error('Metadatos BCRA inválidos');
     return rows;
   }
 
