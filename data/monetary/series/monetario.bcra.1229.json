@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/1229",
   "methodology": "Saldo de depositos  en efectivo del sector público no financiero constituidos bajo la forma de cuenta corriente, cuentas a la vista, caja de ahorros, plazo fijo, inversiones a plazo, saldos inmovilizados y otros.",
   "firstDate": "2003-01-02",
-  "lastDate": "2026-11-17"
+  "lastDate": "2026-11-19"
  },
  "observations": [
   {
@@ -23388,7 +23388,7 @@
   },
   {
    "date": "2026-10-30",
-   "value": 41282077
+   "value": 41254744
   },
   {
    "date": "2026-11-02",
@@ -23412,21 +23412,29 @@
   },
   {
    "date": "2026-11-12",
-   "value": 40349313
+   "value": 40349334
   },
   {
    "date": "2026-11-13",
-   "value": 41847198
+   "value": 41817179
   },
   {
    "date": "2026-11-16",
-   "value": 44370306
+   "value": 44378363
   },
   {
    "date": "2026-11-17",
-   "value": 45369068
+   "value": 45396125
+  },
+  {
+   "date": "2026-11-18",
+   "value": 45537536
+  },
+  {
+   "date": "2026-11-19",
+   "value": 46800670
   }
  ],
- "retrievedAt": "2026-11-24T19:59:23.934Z",
+ "retrievedAt": "2026-11-25T15:15:02.048Z",
  "stale": false
 }

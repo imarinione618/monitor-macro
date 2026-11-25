@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/18",
   "methodology": "Saldo de efectivo en billetes y monedas que las entidades financieras mantienen en sus cajas y cajeros automáticos para atender las operaciones diarias con sus clientes. Se expresa en millones de pesos y se publica diariamente con dos días hábiles de rezago.",
   "firstDate": "1984-03-01",
-  "lastDate": "2026-11-18"
+  "lastDate": "2026-11-19"
  },
  "observations": [
   {
@@ -42120,7 +42120,7 @@
   },
   {
    "date": "2026-10-30",
-   "value": 2291925
+   "value": 2287092
   },
   {
    "date": "2026-11-02",
@@ -42136,7 +42136,7 @@
   },
   {
    "date": "2026-11-05",
-   "value": 2899194
+   "value": 2846373
   },
   {
    "date": "2026-11-11",
@@ -42148,7 +42148,7 @@
   },
   {
    "date": "2026-11-13",
-   "value": 2790299
+   "value": 2791554
   },
   {
    "date": "2026-11-16",
@@ -42160,9 +42160,13 @@
   },
   {
    "date": "2026-11-18",
-   "value": 2531232
+   "value": 2530928
+  },
+  {
+   "date": "2026-11-19",
+   "value": 2489590
   }
  ],
- "retrievedAt": "2026-11-24T19:59:23.934Z",
+ "retrievedAt": "2026-11-25T15:15:02.048Z",
  "stale": false
 }

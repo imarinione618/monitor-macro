@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/1565",
   "methodology": "Depósitos de efectivo constituidos bajo la forma de cuenta corriente bancaria. . Los depósitos son en moneda extranjera y corresponden al sector privado no financiero . Cuentas SISCEN asociadas: 140 . Para conocer la correspondencia conceptual entre las cuentas y atributos del sistema SISCEN y las definidas en el plan de cuentas de las entidades financieras se recomienda consultar la tabla SISCEN-T0010 CORRESPONDENCIA DE CUENTAS, disponible en http://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Tabt0010.xlshttp://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Tabt0010.xls",
   "firstDate": "1999-12-30",
-  "lastDate": "2026-11-18"
+  "lastDate": "2026-11-19"
  },
  "observations": [
   {
@@ -26425,8 +26425,12 @@
   {
    "date": "2026-11-18",
    "value": 45
+  },
+  {
+   "date": "2026-11-19",
+   "value": 44
   }
  ],
- "retrievedAt": "2026-11-24T19:59:23.934Z",
+ "retrievedAt": "2026-11-25T15:15:02.048Z",
  "stale": false
 }

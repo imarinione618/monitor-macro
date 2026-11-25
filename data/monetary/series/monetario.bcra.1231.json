@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/1231",
   "methodology": "Saldo de depositos constituidos bajo la forma de plazos fijos e inversiones a plazo.",
   "firstDate": "2003-01-02",
-  "lastDate": "2026-11-17"
+  "lastDate": "2026-11-19"
  },
  "observations": [
   {
@@ -23424,9 +23424,17 @@
   },
   {
    "date": "2026-11-17",
-   "value": 27935046
+   "value": 27940266
+  },
+  {
+   "date": "2026-11-18",
+   "value": 28125839
+  },
+  {
+   "date": "2026-11-19",
+   "value": 28543355
   }
  ],
- "retrievedAt": "2026-11-24T19:59:23.934Z",
+ "retrievedAt": "2026-11-25T15:15:02.048Z",
  "stale": false
 }

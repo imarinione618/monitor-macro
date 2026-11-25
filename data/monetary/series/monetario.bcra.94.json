@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/94",
   "methodology": "Depósitos de efectivo constituidos bajo la forma de cuenta corriente bancaria.",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-17"
+  "lastDate": "2026-11-18"
  },
  "observations": [
   {
@@ -23368,7 +23368,7 @@
   },
   {
    "date": "2026-10-22",
-   "value": 21204188
+   "value": 21205228
   },
   {
    "date": "2026-10-23",
@@ -23388,11 +23388,11 @@
   },
   {
    "date": "2026-10-29",
-   "value": 22326876
+   "value": 22326155
   },
   {
    "date": "2026-10-30",
-   "value": 22092341
+   "value": 22124421
   },
   {
    "date": "2026-11-02",
@@ -23408,7 +23408,7 @@
   },
   {
    "date": "2026-11-05",
-   "value": 22356152
+   "value": 22355775
   },
   {
    "date": "2026-11-11",
@@ -23416,11 +23416,11 @@
   },
   {
    "date": "2026-11-12",
-   "value": 24128598
+   "value": 24128428
   },
   {
    "date": "2026-11-13",
-   "value": 22964840
+   "value": 22815076
   },
   {
    "date": "2026-11-16",
@@ -23428,9 +23428,13 @@
   },
   {
    "date": "2026-11-17",
-   "value": 22283890
+   "value": 22289702
+  },
+  {
+   "date": "2026-11-18",
+   "value": 22190439
   }
  ],
- "retrievedAt": "2026-11-24T19:59:23.934Z",
+ "retrievedAt": "2026-11-25T15:15:02.048Z",
  "stale": false
 }

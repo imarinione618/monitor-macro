@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/1230",
   "methodology": "Saldo de depósitos constituidos bajo la forma de cuentas corrientes y cajas de ahorros.",
   "firstDate": "2003-01-02",
-  "lastDate": "2026-11-17"
+  "lastDate": "2026-11-19"
  },
  "observations": [
   {
@@ -23388,7 +23388,7 @@
   },
   {
    "date": "2026-10-30",
-   "value": 13948444
+   "value": 13921112
   },
   {
    "date": "2026-11-02",
@@ -23412,21 +23412,29 @@
   },
   {
    "date": "2026-11-12",
-   "value": 13943988
+   "value": 13944009
   },
   {
    "date": "2026-11-13",
-   "value": 14992205
+   "value": 14962187
   },
   {
    "date": "2026-11-16",
-   "value": 16889728
+   "value": 16897717
   },
   {
    "date": "2026-11-17",
-   "value": 15323746
+   "value": 15345418
+  },
+  {
+   "date": "2026-11-18",
+   "value": 16345688
+  },
+  {
+   "date": "2026-11-19",
+   "value": 17052345
   }
  ],
- "retrievedAt": "2026-11-24T19:59:23.934Z",
+ "retrievedAt": "2026-11-25T15:15:02.048Z",
  "stale": false
 }

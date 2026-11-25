@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/1233",
   "methodology": "Agregado monetario que comprende circulante en poder del público más cuentas corrientes y cajas de ahorro en pesos de los sectores público y privado no financieros. En 2003 y 2004 también incluye cuasimonedas.",
   "firstDate": "2003-01-02",
-  "lastDate": "2026-11-17",
+  "lastDate": "2026-11-19",
   "monthlyCompanionId": "monetario.bcra.1618"
  },
  "observations": [
@@ -22793,7 +22793,7 @@
   },
   {
    "date": "2026-03-20",
-   "value": 80156246.6821
+   "value": 80116768.6821
   },
   {
    "date": "2026-03-25",
@@ -23365,7 +23365,7 @@
   },
   {
    "date": "2026-10-22",
-   "value": 92209617.7839
+   "value": 92210613.7839
   },
   {
    "date": "2026-10-23",
@@ -23385,11 +23385,11 @@
   },
   {
    "date": "2026-10-29",
-   "value": 96189507.3512
+   "value": 96188681.3512
   },
   {
    "date": "2026-10-30",
-   "value": 96430746.7972
+   "value": 96460125.7972
   },
   {
    "date": "2026-11-02",
@@ -23401,33 +23401,41 @@
   },
   {
    "date": "2026-11-04",
-   "value": 94976800.9226
+   "value": 94979851.9226
   },
   {
    "date": "2026-11-05",
-   "value": 95765158.7015
+   "value": 95817606.7015
   },
   {
    "date": "2026-11-11",
-   "value": 93606355.7015
+   "value": 93606001.7015
   },
   {
    "date": "2026-11-12",
-   "value": 96273638.9715
+   "value": 96248372.9715
   },
   {
    "date": "2026-11-13",
-   "value": 96346417.4385
+   "value": 96227823.4385
   },
   {
    "date": "2026-11-16",
-   "value": 96393260.4383
+   "value": 96407553.4383
   },
   {
    "date": "2026-11-17",
-   "value": 94383010.1599
+   "value": 94398508.1599
+  },
+  {
+   "date": "2026-11-18",
+   "value": 95793861.1609
+  },
+  {
+   "date": "2026-11-19",
+   "value": 95919587.5207
   }
  ],
- "retrievedAt": "2026-11-24T19:59:23.934Z",
+ "retrievedAt": "2026-11-25T15:15:02.048Z",
  "stale": false
 }

@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/1262",
   "methodology": "Stock de pases pasivos para el BCRA hasta el 14 de julio de 2025.",
   "firstDate": "1996-01-02",
-  "lastDate": "2026-11-18",
+  "lastDate": "2026-11-19",
   "eligibleInstrument": true,
   "balanceSide": "liability",
   "issuer": "BCRA",
@@ -30431,8 +30431,12 @@
   {
    "date": "2026-11-18",
    "value": 0
+  },
+  {
+   "date": "2026-11-19",
+   "value": 0
   }
  ],
- "retrievedAt": "2026-11-24T19:59:23.934Z",
+ "retrievedAt": "2026-11-25T15:15:02.048Z",
  "stale": false
 }

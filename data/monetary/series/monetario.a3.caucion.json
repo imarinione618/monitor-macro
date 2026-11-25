@@ -20,7 +20,7 @@
   "sourceUrl": "https://a3mercados.com.ar/",
   "methodology": "Tasa de referencia diaria de caución en pesos a 1 día hábil publicada por A3 Mercados (índice I.CAUCION): mediana ponderada por volumen de las operaciones del día, redondeada al punto básico. A3 también publica los percentiles 1, 25, 75 y 99 y el volumen operado; acá se almacena solo la tasa de referencia. No es una serie del BCRA.",
   "firstDate": "2024-11-07",
-  "lastDate": "2026-11-20",
+  "lastDate": "2026-11-24",
   "regimeNotes": [
    "Fuente de mercado (A3 Mercados), no BCRA. Picos de volatilidad (p. ej. 102% TNA el 15/10/2025) son valores publicados, no errores de carga."
   ]
@@ -1985,8 +1985,12 @@
   {
    "date": "2026-11-20",
    "value": 20.6
+  },
+  {
+   "date": "2026-11-24",
+   "value": 20.5
   }
  ],
- "retrievedAt": "2026-11-24T19:59:33.322Z",
+ "retrievedAt": "2026-11-25T15:15:11.692Z",
  "stale": false
 }
