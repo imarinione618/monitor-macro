@@ -1,10 +1,10 @@
 {
  "schemaVersion": 1,
- "updatedAt": "2026-11-25T15:15:15.606Z",
- "lastAttemptAt": "2026-11-25T15:15:15.606Z",
+ "updatedAt": "2026-11-26T15:01:11.712Z",
+ "lastAttemptAt": "2026-11-26T15:01:11.712Z",
  "surtidor": {
   "lastHistoricoAt": "2026-11-22T15:00:56.018Z",
-  "lastVigentesAt": "2026-11-25T15:15:15.606Z",
+  "lastVigentesAt": "2026-11-26T15:01:11.712Z",
   "lastEventAt": "2026-11-24 08:00",
   "lastDay": "2026-11-23",
   "mode": "vigentes"
@@ -20,7 +20,7 @@
    "firstDate": "2018-01-01",
    "lastDate": "2026-11-23",
    "lastValue": 2239,
-   "retrievedAt": "2026-11-25T15:15:15.606Z",
+   "retrievedAt": "2026-11-26T15:01:11.712Z",
    "stale": false
   },
   "combustibles.surtidor.super.caba": {
@@ -28,7 +28,7 @@
    "firstDate": "2018-01-01",
    "lastDate": "2026-11-23",
    "lastValue": 2189,
-   "retrievedAt": "2026-11-25T15:15:15.606Z",
+   "retrievedAt": "2026-11-26T15:01:11.712Z",
    "stale": false
   },
   "combustibles.surtidor.premium.nacional": {
@@ -36,7 +36,7 @@
    "firstDate": "2018-01-01",
    "lastDate": "2026-11-23",
    "lastValue": 2499,
-   "retrievedAt": "2026-11-25T15:15:15.606Z",
+   "retrievedAt": "2026-11-26T15:01:11.712Z",
    "stale": false
   },
   "combustibles.surtidor.premium.caba": {
@@ -44,7 +44,7 @@
    "firstDate": "2018-01-01",
    "lastDate": "2026-11-23",
    "lastValue": 2489,
-   "retrievedAt": "2026-11-25T15:15:15.606Z",
+   "retrievedAt": "2026-11-26T15:01:11.712Z",
    "stale": false
   },
   "combustibles.surtidor.gasoil_g2.nacional": {
@@ -52,7 +52,7 @@
    "firstDate": "2018-01-01",
    "lastDate": "2026-11-23",
    "lastValue": 2467,
-   "retrievedAt": "2026-11-25T15:15:15.606Z",
+   "retrievedAt": "2026-11-26T15:01:11.712Z",
    "stale": false
   },
   "combustibles.surtidor.gasoil_g2.caba": {
@@ -60,7 +60,7 @@
    "firstDate": "2018-01-01",
    "lastDate": "2026-11-23",
    "lastValue": 2379,
-   "retrievedAt": "2026-11-25T15:15:15.606Z",
+   "retrievedAt": "2026-11-26T15:01:11.712Z",
    "stale": false
   },
   "combustibles.surtidor.gasoil_g3.nacional": {
@@ -68,7 +68,7 @@
    "firstDate": "2018-01-01",
    "lastDate": "2026-11-23",
    "lastValue": 2718,
-   "retrievedAt": "2026-11-25T15:15:15.606Z",
+   "retrievedAt": "2026-11-26T15:01:11.712Z",
    "stale": false
   },
   "combustibles.surtidor.gasoil_g3.caba": {
@@ -76,7 +76,7 @@
    "firstDate": "2018-01-01",
    "lastDate": "2026-11-23",
    "lastValue": 2689,
-   "retrievedAt": "2026-11-25T15:15:15.606Z",
+   "retrievedAt": "2026-11-26T15:01:11.712Z",
    "stale": false
   },
   "combustibles.eess.super.nacional": {

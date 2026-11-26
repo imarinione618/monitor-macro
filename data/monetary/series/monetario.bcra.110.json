@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/110",
   "methodology": "Cuentas corrientes abiertas en la entidad que arrojen saldo deudor.",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-18"
+  "lastDate": "2026-11-19"
  },
  "observations": [
   {
@@ -23392,7 +23392,7 @@
   },
   {
    "date": "2026-10-30",
-   "value": 10640009
+   "value": 10639604
   },
   {
    "date": "2026-11-02",
@@ -23412,7 +23412,7 @@
   },
   {
    "date": "2026-11-11",
-   "value": 11504818
+   "value": 11504985
   },
   {
    "date": "2026-11-12",
@@ -23424,7 +23424,7 @@
   },
   {
    "date": "2026-11-16",
-   "value": 11992133
+   "value": 12006120
   },
   {
    "date": "2026-11-17",
@@ -23432,9 +23432,13 @@
   },
   {
    "date": "2026-11-18",
-   "value": 11737700
+   "value": 11732767
+  },
+  {
+   "date": "2026-11-19",
+   "value": 11591628
   }
  ],
- "retrievedAt": "2026-11-25T15:15:02.048Z",
+ "retrievedAt": "2026-11-26T15:01:00.574Z",
  "stale": false
 }

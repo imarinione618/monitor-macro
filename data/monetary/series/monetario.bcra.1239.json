@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/1239",
   "methodology": "Medios de pago, comprende circulante en poder del público más depósitos a la vista en pesos del sector privado no financiero. Se calcula como la suma entre billetes y monedas en poder del público, cheques cancelatorios en pesos y cuentas corrientes y cajas de ahorros en pesos del sector privado no financiero. En 2003 y 2004 también incluye cuasimonedas.",
   "firstDate": "2017-01-02",
-  "lastDate": "2026-11-19"
+  "lastDate": "2026-11-20"
  },
  "observations": [
   {
@@ -9576,7 +9576,7 @@
   },
   {
    "date": "2026-10-30",
-   "value": 84826106
+   "value": 84828943
   },
   {
    "date": "2026-11-02",
@@ -9588,41 +9588,45 @@
   },
   {
    "date": "2026-11-04",
-   "value": 85252622
+   "value": 85252670
   },
   {
    "date": "2026-11-05",
-   "value": 86756140
+   "value": 86756194
   },
   {
    "date": "2026-11-11",
-   "value": 84576991
+   "value": 84495163
   },
   {
    "date": "2026-11-12",
-   "value": 85331261
+   "value": 85331346
   },
   {
    "date": "2026-11-13",
-   "value": 84057191
+   "value": 84057573
   },
   {
    "date": "2026-11-16",
-   "value": 82171529
+   "value": 82161666
   },
   {
    "date": "2026-11-17",
-   "value": 81651999
+   "value": 81651996
   },
   {
    "date": "2026-11-18",
-   "value": 81979101
+   "value": 81980332
   },
   {
    "date": "2026-11-19",
-   "value": 81356833
+   "value": 81355361
+  },
+  {
+   "date": "2026-11-20",
+   "value": 81144348
   }
  ],
- "retrievedAt": "2026-11-25T15:15:02.048Z",
+ "retrievedAt": "2026-11-26T15:01:00.574Z",
  "stale": false
 }

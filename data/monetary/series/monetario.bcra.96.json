@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/96",
   "methodology": "Plazo fijo totales + Inversiones a plazo constante + Inv. con opción de cancelación anticipada + Inv. con renovación por plazo determinado -Depositos CEDROS- Plazo fijo con clausula Cer (UVA)- Inv. UVA con opción de cancelación anticipada UVA sector público - Inv.UVA con opción de canc anticipada Sector privado",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-18"
+  "lastDate": "2026-11-19"
  },
  "observations": [
   {
@@ -23392,49 +23392,53 @@
   },
   {
    "date": "2026-10-30",
-   "value": 70948220.188
+   "value": 70948218.188
   },
   {
    "date": "2026-11-02",
-   "value": 70586364.97
+   "value": 70576364.97
   },
   {
    "date": "2026-11-03",
-   "value": 70860531.665
+   "value": 70850531.665
   },
   {
    "date": "2026-11-04",
-   "value": 70818643.567
+   "value": 70808643.567
   },
   {
    "date": "2026-11-05",
-   "value": 71191259.049
+   "value": 71181259.049
   },
   {
    "date": "2026-11-11",
-   "value": 70182420.556
+   "value": 70177731.556
   },
   {
    "date": "2026-11-12",
-   "value": 70130869.097
+   "value": 70120869.097
   },
   {
    "date": "2026-11-13",
-   "value": 70653297.446
+   "value": 70643297.446
   },
   {
    "date": "2026-11-16",
-   "value": 70321230.063
+   "value": 70311235.063
   },
   {
    "date": "2026-11-17",
-   "value": 71005781.287
+   "value": 70995781.287
   },
   {
    "date": "2026-11-18",
-   "value": 70845490.163
+   "value": 70837988.163
+  },
+  {
+   "date": "2026-11-19",
+   "value": 71249703.722
   }
  ],
- "retrievedAt": "2026-11-25T15:15:02.048Z",
+ "retrievedAt": "2026-11-26T15:01:00.574Z",
  "stale": false
 }

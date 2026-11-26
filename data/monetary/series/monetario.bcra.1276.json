@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/1276",
   "methodology": "Préstamos de efectivo comprendidos en las definiciones de las cuentas: adelantos en cuenta corriente, otros adelantos, documentos a sola firma, documentos descontados, documentos comprados, hipotecarios, prendarios, personales, o a titulares del sistema de tarjetas de crédito, créditos documentarios y otros préstamos.  Las operaciones corresponden a moneda local, asociadas a cuentas SISCEN N°:  44 a 54. Para conocer la correspondencia conceptual entre las cuentas del sistema SISCEN y las definidas en el plan de cuentas mínimo vigente, se recomiendo consultar la tabla SISCEN-T0010 CORRESPONDENCIA DE CUENTAS, disponible en http://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Tabt0010.xlsla página web del BCRA",
   "firstDate": "1996-04-01",
-  "lastDate": "2026-11-19",
+  "lastDate": "2026-11-20",
   "regimeNotes": [
    "Cobertura distinta de los préstamos privados netos de intereses documentados del Informe Monetario Diario; no sumar ni formar ratios cruzados sin conciliación."
   ]
@@ -30043,7 +30043,7 @@
   },
   {
    "date": "2026-09-30",
-   "value": 114582387
+   "value": 114584375
   },
   {
    "date": "2026-10-01",
@@ -30127,53 +30127,57 @@
   },
   {
    "date": "2026-10-30",
-   "value": 116062472
+   "value": 116061467
   },
   {
    "date": "2026-11-02",
-   "value": 116119788
+   "value": 116119765
   },
   {
    "date": "2026-11-03",
-   "value": 116040543
+   "value": 116040517
   },
   {
    "date": "2026-11-04",
-   "value": 115773644
+   "value": 115773608
   },
   {
    "date": "2026-11-05",
-   "value": 116136269
+   "value": 116136229
   },
   {
    "date": "2026-11-11",
-   "value": 115216119
+   "value": 115216669
   },
   {
    "date": "2026-11-12",
-   "value": 116257643
+   "value": 116256980
   },
   {
    "date": "2026-11-13",
-   "value": 115439050
+   "value": 115437728
   },
   {
    "date": "2026-11-16",
-   "value": 115670860
+   "value": 115874687
   },
   {
    "date": "2026-11-17",
-   "value": 116070985
+   "value": 116070502
   },
   {
    "date": "2026-11-18",
-   "value": 115956413
+   "value": 115951385
   },
   {
    "date": "2026-11-19",
-   "value": 115905080
+   "value": 115914270
+  },
+  {
+   "date": "2026-11-20",
+   "value": 116385967
   }
  ],
- "retrievedAt": "2026-11-25T15:15:02.048Z",
+ "retrievedAt": "2026-11-26T15:01:00.574Z",
  "stale": false
 }
