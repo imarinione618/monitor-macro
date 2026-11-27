@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/155",
   "methodology": "Saldo total en circulación. No incluye las emitidas como contrapartida de operaciones de pases con el BCRA. A partir de noviembre de 2018 se dejaron de emitir LEBAC y NOBAC",
   "firstDate": "2018-01-11",
-  "lastDate": "2026-11-24",
+  "lastDate": "2026-11-25",
   "eligibleInstrument": false,
   "balanceSide": "liability",
   "issuer": "BCRA",
@@ -8623,8 +8623,12 @@
   {
    "date": "2026-11-24",
    "value": 0
+  },
+  {
+   "date": "2026-11-25",
+   "value": 0
   }
  ],
- "retrievedAt": "2026-11-26T15:01:00.574Z",
+ "retrievedAt": "2026-11-27T15:00:55.949Z",
  "stale": false
 }

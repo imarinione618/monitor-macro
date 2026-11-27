@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/95",
   "methodology": "Depósitos de efectivo constituidos bajo el sistema de caja de ahorros. Incluye depósitos de efectivo en cuentas de ahorro vinculado a préstamos, en cuentas especiales para círculos cerrados, en la cuenta Fondo de desempleo, en cuentas abiertas bajo el sistema de usuras pupilares, en cuentas especiales para la acreditación de remuneraciones, en cuentas corrientes especiales para personas jurídicas y en las Cuentas especiales a las que se refiere la Ley 27.260 - Régimen de 27.260 - Régimen de sinceramiento fiscal – LIBRO II - Título I – Artículo 38, inciso c), Art. 41 y Art. 42, incisos b) y c) y Art. 41 y Art. 44 y Ley 27.613.",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-19"
+  "lastDate": "2026-11-20"
  },
  "observations": [
   {
@@ -23392,7 +23392,7 @@
   },
   {
    "date": "2026-10-30",
-   "value": 33555427
+   "value": 33555340
   },
   {
    "date": "2026-11-02",
@@ -23416,7 +23416,7 @@
   },
   {
    "date": "2026-11-12",
-   "value": 31054703
+   "value": 31054745
   },
   {
    "date": "2026-11-13",
@@ -23428,7 +23428,7 @@
   },
   {
    "date": "2026-11-17",
-   "value": 29477702
+   "value": 29482630
   },
   {
    "date": "2026-11-18",
@@ -23436,9 +23436,13 @@
   },
   {
    "date": "2026-11-19",
-   "value": 29427062
+   "value": 29427083
+  },
+  {
+   "date": "2026-11-20",
+   "value": 29499650
   }
  ],
- "retrievedAt": "2026-11-26T15:01:00.574Z",
+ "retrievedAt": "2026-11-27T15:00:55.949Z",
  "stale": false
 }

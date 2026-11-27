@@ -1,13 +1,14 @@
 {
  "schemaVersion": 1,
  "updatedAt": "2026-11-26T15:01:11.712Z",
- "lastAttemptAt": "2026-11-26T15:01:11.712Z",
+ "lastAttemptAt": "2026-11-27T15:01:08.112Z",
  "surtidor": {
   "lastHistoricoAt": "2026-11-22T15:00:56.018Z",
   "lastVigentesAt": "2026-11-26T15:01:11.712Z",
   "lastEventAt": "2026-11-24 08:00",
   "lastDay": "2026-11-23",
-  "mode": "vigentes"
+  "mode": "vigentes",
+  "error": "fetch failed"
  },
  "eess": {
   "lastVigenteAt": "2026-11-22T15:00:56.018Z",
@@ -21,7 +22,8 @@
    "lastDate": "2026-11-23",
    "lastValue": 2239,
    "retrievedAt": "2026-11-26T15:01:11.712Z",
-   "stale": false
+   "stale": true,
+   "error": "fetch failed"
   },
   "combustibles.surtidor.super.caba": {
    "count": 3249,
@@ -29,7 +31,8 @@
    "lastDate": "2026-11-23",
    "lastValue": 2189,
    "retrievedAt": "2026-11-26T15:01:11.712Z",
-   "stale": false
+   "stale": true,
+   "error": "fetch failed"
   },
   "combustibles.surtidor.premium.nacional": {
    "count": 3249,
@@ -37,7 +40,8 @@
    "lastDate": "2026-11-23",
    "lastValue": 2499,
    "retrievedAt": "2026-11-26T15:01:11.712Z",
-   "stale": false
+   "stale": true,
+   "error": "fetch failed"
   },
   "combustibles.surtidor.premium.caba": {
    "count": 3249,
@@ -45,7 +49,8 @@
    "lastDate": "2026-11-23",
    "lastValue": 2489,
    "retrievedAt": "2026-11-26T15:01:11.712Z",
-   "stale": false
+   "stale": true,
+   "error": "fetch failed"
   },
   "combustibles.surtidor.gasoil_g2.nacional": {
    "count": 3249,
@@ -53,7 +58,8 @@
    "lastDate": "2026-11-23",
    "lastValue": 2467,
    "retrievedAt": "2026-11-26T15:01:11.712Z",
-   "stale": false
+   "stale": true,
+   "error": "fetch failed"
   },
   "combustibles.surtidor.gasoil_g2.caba": {
    "count": 3249,
@@ -61,7 +67,8 @@
    "lastDate": "2026-11-23",
    "lastValue": 2379,
    "retrievedAt": "2026-11-26T15:01:11.712Z",
-   "stale": false
+   "stale": true,
+   "error": "fetch failed"
   },
   "combustibles.surtidor.gasoil_g3.nacional": {
    "count": 3249,
@@ -69,7 +76,8 @@
    "lastDate": "2026-11-23",
    "lastValue": 2718,
    "retrievedAt": "2026-11-26T15:01:11.712Z",
-   "stale": false
+   "stale": true,
+   "error": "fetch failed"
   },
   "combustibles.surtidor.gasoil_g3.caba": {
    "count": 3249,
@@ -77,7 +85,8 @@
    "lastDate": "2026-11-23",
    "lastValue": 2689,
    "retrievedAt": "2026-11-26T15:01:11.712Z",
-   "stale": false
+   "stale": true,
+   "error": "fetch failed"
   },
   "combustibles.eess.super.nacional": {
    "count": 130,

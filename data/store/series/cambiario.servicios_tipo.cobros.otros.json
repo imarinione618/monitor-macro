@@ -485,8 +485,8 @@
  "meta": {
   "firstPeriod": "2016-09",
   "lastPeriod": "2026-08",
-  "retrievedAt": "2026-11-26T15:00:58.659Z",
-  "runId": "20261126T150009Z-ab8e",
+  "retrievedAt": "2026-11-27T15:00:54.561Z",
+  "runId": "20261127T150007Z-dcb1",
   "query": "https://infra.datos.gob.ar/catalog/sspm/dataset/185/distribution/185.1/download/cobros-pagos-bienes-servicios.csv",
   "publishedAt": null,
   "stale": false

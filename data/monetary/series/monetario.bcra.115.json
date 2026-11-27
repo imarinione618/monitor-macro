@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/115",
   "methodology": "Cuentas del sistema de tarjetas de crédito que arrojen saldo deudor.",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-19"
+  "lastDate": "2026-11-20"
  },
  "observations": [
   {
@@ -23392,7 +23392,7 @@
   },
   {
    "date": "2026-10-30",
-   "value": 25692821
+   "value": 25695255
   },
   {
    "date": "2026-11-02",
@@ -23416,7 +23416,7 @@
   },
   {
    "date": "2026-11-12",
-   "value": 23681804
+   "value": 23681377
   },
   {
    "date": "2026-11-13",
@@ -23428,7 +23428,7 @@
   },
   {
    "date": "2026-11-17",
-   "value": 23667868
+   "value": 23773372
   },
   {
    "date": "2026-11-18",
@@ -23436,9 +23436,13 @@
   },
   {
    "date": "2026-11-19",
-   "value": 23940078
+   "value": 23950488
+  },
+  {
+   "date": "2026-11-20",
+   "value": 24139014
   }
  ],
- "retrievedAt": "2026-11-26T15:01:00.574Z",
+ "retrievedAt": "2026-11-27T15:00:55.949Z",
  "stale": false
 }

@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/1229",
   "methodology": "Saldo de depositos  en efectivo del sector público no financiero constituidos bajo la forma de cuenta corriente, cuentas a la vista, caja de ahorros, plazo fijo, inversiones a plazo, saldos inmovilizados y otros.",
   "firstDate": "2003-01-02",
-  "lastDate": "2026-11-20"
+  "lastDate": "2026-11-24"
  },
  "observations": [
   {
@@ -23388,57 +23388,61 @@
   },
   {
    "date": "2026-10-30",
-   "value": 41254744
+   "value": 41253286
   },
   {
    "date": "2026-11-02",
-   "value": 39955534
+   "value": 39965534
   },
   {
    "date": "2026-11-03",
-   "value": 39687021
+   "value": 39697021
   },
   {
    "date": "2026-11-04",
-   "value": 39089950
+   "value": 39099950
   },
   {
    "date": "2026-11-05",
-   "value": 38223993
+   "value": 38233993
   },
   {
    "date": "2026-11-11",
-   "value": 38426754
+   "value": 38438356
   },
   {
    "date": "2026-11-12",
-   "value": 40349334
+   "value": 40359334
   },
   {
    "date": "2026-11-13",
-   "value": 41817179
+   "value": 41827179
   },
   {
    "date": "2026-11-16",
-   "value": 44378363
+   "value": 44389198
   },
   {
    "date": "2026-11-17",
-   "value": 45396125
+   "value": 45406210
   },
   {
    "date": "2026-11-18",
-   "value": 45537536
+   "value": 45569274
   },
   {
    "date": "2026-11-19",
-   "value": 46800670
+   "value": 46814155
   },
   {
    "date": "2026-11-20",
-   "value": 46800670
+   "value": 46124648
+  },
+  {
+   "date": "2026-11-24",
+   "value": 46422114
   }
  ],
- "retrievedAt": "2026-11-26T15:01:00.574Z",
+ "retrievedAt": "2026-11-27T15:00:55.949Z",
  "stale": false
 }

@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/156",
   "methodology": "Stock de LEBAC en valor nominal, stock de LEGAR y LEMIN expresado en pesos según el Tipo de Cambio de Referencia)",
   "firstDate": "2003-01-02",
-  "lastDate": "2026-11-24",
+  "lastDate": "2026-11-25",
   "eligibleInstrument": false,
   "balanceSide": "liability",
   "issuer": "BCRA",
@@ -23447,8 +23447,12 @@
   {
    "date": "2026-11-24",
    "value": 229904.2751
+  },
+  {
+   "date": "2026-11-25",
+   "value": 233564.6572
   }
  ],
- "retrievedAt": "2026-11-26T15:01:00.574Z",
+ "retrievedAt": "2026-11-27T15:00:55.949Z",
  "stale": false
 }

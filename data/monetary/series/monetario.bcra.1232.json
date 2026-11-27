@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/1232",
   "methodology": "Agregado monetario que comprende circulante en poder del público (billetes y monedas y cheques cancelatorios en pesos) más cuentas corrientes en pesos de los sectores público y privado no financieros. En 2003 y 2004 también incluye cuasimonedas.",
   "firstDate": "2003-01-02",
-  "lastDate": "2026-11-20",
+  "lastDate": "2026-11-24",
   "monthlyCompanionId": "monetario.bcra.1612"
  },
  "observations": [
@@ -23389,7 +23389,7 @@
   },
   {
    "date": "2026-10-30",
-   "value": 62076267.7972
+   "value": 62069197.7972
   },
   {
    "date": "2026-11-02",
@@ -23401,45 +23401,49 @@
   },
   {
    "date": "2026-11-04",
-   "value": 61047953.9226
+   "value": 61048001.9226
   },
   {
    "date": "2026-11-05",
-   "value": 60871943.7015
+   "value": 60871997.7015
   },
   {
    "date": "2026-11-11",
-   "value": 62099887.7015
+   "value": 62047490.7015
   },
   {
    "date": "2026-11-12",
-   "value": 64689091.9715
+   "value": 64705320.9715
   },
   {
    "date": "2026-11-13",
-   "value": 64492389.4385
+   "value": 64492772.4385
   },
   {
    "date": "2026-11-16",
-   "value": 66179303.4383
+   "value": 66161495.4383
   },
   {
    "date": "2026-11-17",
-   "value": 64278692.1599
+   "value": 64269158.1599
   },
   {
    "date": "2026-11-18",
-   "value": 65126107.1609
+   "value": 65126864.1609
   },
   {
    "date": "2026-11-19",
-   "value": 65789635.5207
+   "value": 65809979.5207
   },
   {
    "date": "2026-11-20",
-   "value": 65794580.0207
+   "value": 65322974.0207
+  },
+  {
+   "date": "2026-11-24",
+   "value": 67603191.4981
   }
  ],
- "retrievedAt": "2026-11-26T15:01:00.574Z",
+ "retrievedAt": "2026-11-27T15:00:55.949Z",
  "stale": false
 }

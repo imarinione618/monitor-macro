@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/1234",
   "methodology": "Agregado monetario amplio, comprende circulante en poder del público más total de depósitos en pesos de los sectores público y privado no financieros. En 2003 y 2004 también incluye cuasimonedas.",
   "firstDate": "2003-01-02",
-  "lastDate": "2026-11-20",
+  "lastDate": "2026-11-24",
   "monthlyCompanionId": "monetario.bcra.1624"
  },
  "observations": [
@@ -23389,7 +23389,7 @@
   },
   {
    "date": "2026-10-30",
-   "value": 198231312.7972
+   "value": 198233501.7972
   },
   {
    "date": "2026-11-02",
@@ -23401,45 +23401,49 @@
   },
   {
    "date": "2026-11-04",
-   "value": 195824101.9226
+   "value": 195824149.9226
   },
   {
    "date": "2026-11-05",
-   "value": 196929289.7015
+   "value": 196929343.7015
   },
   {
    "date": "2026-11-11",
-   "value": 194240744.7015
+   "value": 194195291.7015
   },
   {
    "date": "2026-11-12",
-   "value": 196466437.9715
+   "value": 196519144.9715
   },
   {
    "date": "2026-11-13",
-   "value": 197907163.4385
+   "value": 197907542.4385
   },
   {
    "date": "2026-11-16",
-   "value": 198150692.4383
+   "value": 198136038.4383
   },
   {
    "date": "2026-11-17",
-   "value": 199116985.1599
+   "value": 199099112.1599
   },
   {
    "date": "2026-11-18",
-   "value": 199273317.1609
+   "value": 199297596.1609
   },
   {
    "date": "2026-11-19",
-   "value": 200368116.5207
+   "value": 200394106.5207
   },
   {
    "date": "2026-11-20",
-   "value": 200373061.0207
+   "value": 200334631.0207
+  },
+  {
+   "date": "2026-11-24",
+   "value": 200458159.4981
   }
  ],
- "retrievedAt": "2026-11-26T15:01:00.574Z",
+ "retrievedAt": "2026-11-27T15:00:55.949Z",
  "stale": false
 }

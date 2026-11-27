@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/13",
   "methodology": "Tasa de interés promedio ponderada por saldos pactada por el otorgamiento de préstamos a empresas del sector privado, no prestadoras de servicios financieros ni PyMEs, bajo la forma de adelantos en cuenta corriente con acuerdo, de 1 a 7 días de plazo, y de diez millones de pesos o más, en moneda nacional, según lo informado por la totalidad de entidades financieras a través del requerimiento informativo SISCEN-0018 en la cuenta SISCEN 44 (adelantos en cuenta corriente).",
   "firstDate": "2009-01-02",
-  "lastDate": "2026-11-24"
+  "lastDate": "2026-11-25"
  },
  "observations": [
   {
@@ -17420,7 +17420,7 @@
   },
   {
    "date": "2026-11-13",
-   "value": 26.13
+   "value": 26.12
   },
   {
    "date": "2026-11-16",
@@ -17440,13 +17440,17 @@
   },
   {
    "date": "2026-11-20",
-   "value": 25.7
+   "value": 25.74
   },
   {
    "date": "2026-11-24",
    "value": 24.85
+  },
+  {
+   "date": "2026-11-25",
+   "value": 25.69
   }
  ],
- "retrievedAt": "2026-11-26T15:01:00.574Z",
+ "retrievedAt": "2026-11-27T15:00:55.949Z",
  "stale": false
 }
