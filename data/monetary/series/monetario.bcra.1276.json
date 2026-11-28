@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/1276",
   "methodology": "Préstamos de efectivo comprendidos en las definiciones de las cuentas: adelantos en cuenta corriente, otros adelantos, documentos a sola firma, documentos descontados, documentos comprados, hipotecarios, prendarios, personales, o a titulares del sistema de tarjetas de crédito, créditos documentarios y otros préstamos.  Las operaciones corresponden a moneda local, asociadas a cuentas SISCEN N°:  44 a 54. Para conocer la correspondencia conceptual entre las cuentas del sistema SISCEN y las definidas en el plan de cuentas mínimo vigente, se recomiendo consultar la tabla SISCEN-T0010 CORRESPONDENCIA DE CUENTAS, disponible en http://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Tabt0010.xlsla página web del BCRA",
   "firstDate": "1996-04-01",
-  "lastDate": "2026-11-24",
+  "lastDate": "2026-11-25",
   "regimeNotes": [
    "Cobertura distinta de los préstamos privados netos de intereses documentados del Informe Monetario Diario; no sumar ni formar ratios cruzados sin conciliación."
   ]
@@ -30127,7 +30127,7 @@
   },
   {
    "date": "2026-10-30",
-   "value": 116059392
+   "value": 116066291
   },
   {
    "date": "2026-11-02",
@@ -30155,19 +30155,19 @@
   },
   {
    "date": "2026-11-13",
-   "value": 115437728
+   "value": 115438512
   },
   {
    "date": "2026-11-16",
-   "value": 115873640
+   "value": 115875550
   },
   {
    "date": "2026-11-17",
-   "value": 116186551
+   "value": 116185825
   },
   {
    "date": "2026-11-18",
-   "value": 115951385
+   "value": 116081256
   },
   {
    "date": "2026-11-19",
@@ -30175,13 +30175,17 @@
   },
   {
    "date": "2026-11-20",
-   "value": 116386333
+   "value": 116387300
   },
   {
    "date": "2026-11-24",
-   "value": 117105417
+   "value": 117165561
+  },
+  {
+   "date": "2026-11-25",
+   "value": 117949771
   }
  ],
- "retrievedAt": "2026-11-27T15:00:55.949Z",
+ "retrievedAt": "2026-11-28T15:00:53.213Z",
  "stale": false
 }

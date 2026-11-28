@@ -1141,8 +1141,8 @@
  "meta": {
   "firstPeriod": "2003-01",
   "lastPeriod": "2026-08",
-  "retrievedAt": "2026-11-27T15:00:54.221Z",
-  "runId": "20261127T150007Z-dcb1",
+  "retrievedAt": "2026-11-28T15:00:51.503Z",
+  "runId": "20261128T150006Z-2501",
   "query": "https://infra.datos.gob.ar/catalog/sspm/dataset/184/distribution/184.1/download/cobros-pagos-bienes-sectorial.csv",
   "publishedAt": null,
   "stale": false

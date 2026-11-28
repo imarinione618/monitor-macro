@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/117",
   "methodology": "Suma del total de préstamos en efectivo otorgados al sector privado no financiero por las entidades financieras, neto de intereses documentados.",
   "firstDate": "2002-12-31",
-  "lastDate": "2026-11-20"
+  "lastDate": "2026-11-24"
  },
  "observations": [
   {
@@ -23392,7 +23392,7 @@
   },
   {
    "date": "2026-10-30",
-   "value": 110300216
+   "value": 110309001
   },
   {
    "date": "2026-11-02",
@@ -23420,19 +23420,19 @@
   },
   {
    "date": "2026-11-13",
-   "value": 109526555
+   "value": 109529338
   },
   {
    "date": "2026-11-16",
-   "value": 109676079
+   "value": 109679991
   },
   {
    "date": "2026-11-17",
-   "value": 110002192
+   "value": 110001467
   },
   {
    "date": "2026-11-18",
-   "value": 110134049
+   "value": 110214224
   },
   {
    "date": "2026-11-19",
@@ -23440,9 +23440,13 @@
   },
   {
    "date": "2026-11-20",
-   "value": 110623607
+   "value": 110624862
+  },
+  {
+   "date": "2026-11-24",
+   "value": 111342793
   }
  ],
- "retrievedAt": "2026-11-27T15:00:55.949Z",
+ "retrievedAt": "2026-11-28T15:00:53.213Z",
  "stale": false
 }

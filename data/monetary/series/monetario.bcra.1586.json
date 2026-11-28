@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/1586",
   "methodology": "Depósitos de efectivo no incluidos en cuentas corriente, vista, plazo, inversiones, saldos inmobilizados, ordenes de pago, en garantia y asociados a operaciones de comercio exterior. Los depósitos son en moneda extranjera y corresponden al sector privado no financiero . Cuentas SISCEN asociadas: 167 . Para conocer la correspondencia conceptual entre las cuentas y atributos del sistema SISCEN y las definidas en el plan de cuentas de las entidades financieras se recomienda consultar la tabla SISCEN-T0010 CORRESPONDENCIA DE CUENTAS, disponible en http://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Tabt0010.xlshttp://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Tabt0010.xls",
   "firstDate": "1999-12-30",
-  "lastDate": "2026-11-24"
+  "lastDate": "2026-11-25"
  },
  "observations": [
   {
@@ -26437,8 +26437,12 @@
   {
    "date": "2026-11-24",
    "value": 160
+  },
+  {
+   "date": "2026-11-25",
+   "value": 185
   }
  ],
- "retrievedAt": "2026-11-27T15:00:55.949Z",
+ "retrievedAt": "2026-11-28T15:00:53.213Z",
  "stale": false
 }

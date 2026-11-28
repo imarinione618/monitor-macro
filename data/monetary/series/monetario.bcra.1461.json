@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/1461",
   "methodology": "Depósitos de efectivo constituidos bajo el sistema de caja de ahorros. Incluye depósitos de efectivo en cuentas de ahorro vinculado a préstamos, en cuentas especiales para círculos cerrados, en la cuenta Fondo de desempleo, en cuentas abiertas bajo el sistema de usuras pupilares, en cuentas especiales para la acreditación de remuneraciones, en cuentas corrientes especiales para personas jurídicas y en las Cuentas especiales a las que se refiere la Ley 27.260 - Régimen de 27.260 - Régimen de sinceramiento fiscal – LIBRO II - Título I – Artículo 38, inciso c), Art. 41 y Art. 42, incisos b) y c) y Art. 41 y Art. 44,  Ley 27.613 y Ley 27.743 . Los depósitos son en moneda local y corresponden al sector público no financiero . Cuentas SISCEN asociadas: 142 . Para conocer la correspondencia conceptual entre las cuentas y atributos del sistema SISCEN y las definidas en el plan de cuentas de las entidades financieras se recomienda consultar la tabla SISCEN-T0010 CORRESPONDENCIA DE CUENTAS, disponible en http://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Tabt0010.xlshttp://www.bcra.gob.ar/archivos/Pdfs/PublicacionesEstadisticas/Tabt0010.xls",
   "firstDate": "1999-12-30",
-  "lastDate": "2026-11-24"
+  "lastDate": "2026-11-25"
  },
  "observations": [
   {
@@ -26384,7 +26384,7 @@
   },
   {
    "date": "2026-10-30",
-   "value": 825306
+   "value": 824683
   },
   {
    "date": "2026-11-02",
@@ -26428,17 +26428,21 @@
   },
   {
    "date": "2026-11-19",
-   "value": 701010
+   "value": 701011
   },
   {
    "date": "2026-11-20",
-   "value": 726440
+   "value": 726439
   },
   {
    "date": "2026-11-24",
-   "value": 845352
+   "value": 845837
+  },
+  {
+   "date": "2026-11-25",
+   "value": 947125
   }
  ],
- "retrievedAt": "2026-11-27T15:00:55.949Z",
+ "retrievedAt": "2026-11-28T15:00:53.213Z",
  "stale": false
 }

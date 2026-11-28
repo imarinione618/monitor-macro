@@ -693,8 +693,8 @@
  "meta": {
   "firstPeriod": "2012-07",
   "lastPeriod": "2026-10",
-  "retrievedAt": "2026-11-27T15:00:53.186Z",
-  "runId": "20261127T150007Z-dcb1",
+  "retrievedAt": "2026-11-28T15:00:50.486Z",
+  "runId": "20261128T150006Z-2501",
   "query": "https://www.estadisticaciudad.gob.ar/eyc/wp-content/uploads/2026/09/IPCBA_base_2021100-Nivel_general_empalme.xlsx",
   "publishedAt": null,
   "stale": false

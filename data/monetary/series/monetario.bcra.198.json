@@ -19,7 +19,7 @@
   "sourceUrl": "https://api.bcra.gob.ar/estadisticas/v4.0/monetarias/198",
   "methodology": "Otros pasivos del BCRA",
   "firstDate": "2025-07-15",
-  "lastDate": "2026-11-25",
+  "lastDate": "2026-11-26",
   "issuer": "BCRA",
   "balanceSide": "liability",
   "eligibleInstrument": true
@@ -1344,8 +1344,12 @@
   {
    "date": "2026-11-25",
    "value": 5542459.4316
+  },
+  {
+   "date": "2026-11-26",
+   "value": 6083809.3954
   }
  ],
- "retrievedAt": "2026-11-27T15:00:55.949Z",
+ "retrievedAt": "2026-11-28T15:00:53.213Z",
  "stale": false
 }
